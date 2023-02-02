@@ -9,12 +9,15 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet',  href: '/main.css' },
+      { rel: 'stylesheet',  href: '/font.css' }
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~pages/css/md.less'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
