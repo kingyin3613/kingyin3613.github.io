@@ -59,13 +59,26 @@ div.group li{float:left;width:350px}
 div.group li:nth-child(odd){padding-right:100px}
 div.talk span{float:left;width:313px}
 div.talk iframe{padding-bottom:15px}
+.webgl-list a{
+        display:inline-block;
+        width: 33%;
+        margin-right: 0.33%;
+}
+.webgl-list a img{
+    width: 100%;
+}
 @media only screen and (max-width: 599px) {
     div.ftsubheader{padding-left:5px;padding-right:10px}
     div.heading div.img{padding-right:80px}
-    div.publication div.img{display:none}
-    div.talk{display:none}
+    /* div.publication div.img{display:none}
+    div.talk{display:none} */
     div.publication div.text{text-align:left}
-    div.content,div.publication{padding-top:0px;padding-bottom:10px}
+    div.publication div.img{
+        max-width: 100%;
+        margin-bottom: 12px;
+    }
+    div.content{padding-top:0px;padding-bottom:10px}
+    div.publication{padding: 12px;}
                                 div.group li:nth-child(odd){padding-right:0px}
     body{font-size:80%}
 }

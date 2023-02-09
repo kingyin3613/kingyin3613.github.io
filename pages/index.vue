@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="/main.css" /> -->
 
     <div class="outercontainer">
-      <Header/>
+      <Header />
       <div class="container body">
         <div class="content heading anchor" id="home">
           <div class="img">
@@ -160,48 +160,17 @@
         </div>
 -->
         <div class="content talk anchor" id="talks">
-          <div class="text front">
+          <div class="text front webgl-list">
             <h3>Visualizations</h3>
-            <span>
-              Naturally Supervised Vision (July 2022)
-              <div
-                src="/assets/y_DNZTDmA0s.html"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen=""
-              ></div>
-            </span>
-            <span>
-              Naturally Supervised Vision (July 2022)
-              <div
-                src="/assets/y_DNZTDmA0s.html"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen=""
-              ></div>
-            </span>
-            <span>
-              Multi-Sensory Neural Objects (Oct 2022)
-              <div
-                src="/assets/6b5M0kx_MKg.html"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen=""
-              ></div>
-            </span>
-            <span>
-              Research Overview (Apr 2021)
-              <div
-                src="/assets/0c6bEyXQ898.html"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen=""
-              ></div>
-            </span>
+            <a
+              target="_blank"
+              v-for="item in webglList"
+              :key="item.title"
+              :href="'/webgl/' + item.file"
+            >
+              {{ item.title }}
+              <img :src="'/webgl/img/' + item.img" />
+            </a>
           </div>
         </div>
 
@@ -466,14 +435,15 @@
 
 <script>
 import paperList from "../content/index";
+import webglList from "../static/webgl/index";
 export default {
   name: "IndexPage",
   async asyncData({ $content }) {
- 
     const page = await $content("hello").fetch();
 
     return {
       paperList,
+      webglList,
     };
   },
 };
