@@ -73,7 +73,7 @@ dist
 
 # vuepress build output
 .vuepress/dist
-
+# static/webgl
 # Serverless directories
 .serverless
 
