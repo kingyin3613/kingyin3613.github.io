@@ -5,7 +5,7 @@
           <div class="ftheader text">
             <a href="/#home">Hao Yin</a>
           </div>
-          <div class="ftsubheader text publication">
+          <div class="ftsubheader text">
             <a href="/#publications">Publications</a>
           </div>
           <div class="ftsubheader text talk">
@@ -15,7 +15,7 @@
             <a href="/#teaching">Teaching</a>
           </div>
           <div class="ftsubheader text group">
-            <a href="/#group">Group</a>
+            <a href="/#group">Visualizations</a>
           </div>
           <div class="ftsubheader text">
             <a href="/#home">Home</a>
