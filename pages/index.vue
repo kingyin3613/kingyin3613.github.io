@@ -166,7 +166,7 @@
               target="_blank"
               v-for="item in webglList"
               :key="item.title"
-              :href="'/webgl/' + item.file"
+              :href="'/paper-detail?paper=' + item.file"
             >
               {{ item.title }}
               <img :src="'/webgl/img/' + item.img" />
@@ -232,35 +232,23 @@
         <div class="content talk anchor" id="talks">
           <div class="text front">
             <h3>Talks</h3>
-            <span>
-              Naturally Supervised Vision (July 2022)
-              <div
-                src="/assets/y_DNZTDmA0s.html"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen=""
-              ></div>
-            </span>
-            <span>
-              Multi-Sensory Neural Objects (Oct 2022)
-              <div
-                src="/assets/6b5M0kx_MKg.html"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen=""
-              ></div>
-            </span>
-            <span>
-              Research Overview (Apr 2021)
-              <div
-                src="/assets/0c6bEyXQ898.html"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen=""
-              ></div>
+            <span v-for="item in talkList" :key="item.title">
+              <a
+                v-if="item.type === 'pdf'"
+                target="_blank"
+                :href="'/pdf/' + item.file + '.pdf'"
+              >
+                {{ item.title }}
+                <img :src="item.img" />
+              </a>
+              <a
+                v-else
+                target="_blank"
+                :href="'/paper-detail?paper=' + item.file"
+              >
+                {{ item.title }}
+                <img :src="item.img" />
+              </a>
             </span>
           </div>
         </div>
@@ -394,7 +382,18 @@
               </div>
               <div class="text">
                 <div class="title">
-                  <a :href="'/paper-detail?paper=' + item.mdFile">
+                  <a
+                    v-if="item.type === 'pdf'"
+                    :href="'/pdf/' + item.file + '.pdf'"
+                    target="_blank"
+                  >
+                    {{ item.title }}
+                  </a>
+                  <a
+                    v-else
+                    :href="'/paper-detail?paper=' + item.file"
+                    target="_blank"
+                  >
                     {{ item.title }}
                   </a>
                 </div>
@@ -435,6 +434,7 @@
 
 <script>
 import paperList from "../content/index";
+import talkList from "../content/talks";
 import webglList from "../static/webgl/index";
 export default {
   name: "IndexPage",
@@ -444,6 +444,7 @@ export default {
     return {
       paperList,
       webglList,
+      talkList,
     };
   },
 };
