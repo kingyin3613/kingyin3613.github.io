@@ -12,29 +12,29 @@
           </div>
 
           <div class="text info">
-            <h1>Hao Yin</h1>
+            <h1>Hao Yin (银皓)</h1>
             <p></p>
-            <div>Assistant Professor</div>
-            <div>Computer Science Department</div>
-            <div>Stanford University</div>
-            <div>Email:&nbsp;jiajunwu [at] cs (dot) stanford (dot) edu</div>
+            <div>PhD Candidate</div>
+            <div>Department of Civil and Environmental Engineering</div>
+            <div>Northwestern University</div>
+            <div>Email:&nbsp;haoyin2022 [at] u (dot) northwestern (dot) edu</div>
             <p>
               <span
                 ><a
-                  href="https://scholar.google.com/citations?user=2efgcS0AAAAJ&amp;hl=en&amp;oi=ao"
+                  href="https://scholar.google.com/citations?user=pB-bgC4AAAAJ&hl=en"
                   >Google Scholar</a
                 ></span
               >
               /
               <span
-                ><a href="http://dblp.dagstuhl.de/pers/hd/w/Wu_0001:Jiajun"
-                  >DBLP</a
+                ><a href="https://github.com/kingyin3613"
+                  >Github</a
                 ></span
               >
               /
               <span
-                ><a href="https://profiles.stanford.edu/jiajun-wu"
-                  >Stanford Profiles</a
+                ><a href="https://www.linkedin.com/in/hao-yin-a86a95166/"
+                  >LinkedIn</a
                 ></span
               >
             </p>
@@ -43,29 +43,29 @@
 
           <div class="text topic">
             <p></p>
-            <div class="title">Current Research Topics</div>
+            <div class="title">Research Interests</div>
             <ul>
               <li>
                 <a href="#phys" onclick="showPubs(2)"
-                  >Physical Scene Understanding</a
+                  >Lattice Models</a
                 >
               </li>
               <li>
-                <a href="#robot" onclick="showPubs(2)">Dynamics Models</a>
+                <a href="#robot" onclick="showPubs(2)">Fracture Mechanics</a>
               </li>
               <li>
                 <a href="#reason" onclick="showPubs(2)"
-                  >Neuro-Symbolic Visual Reasoning</a
+                  >Bio-inspired Materials</a
                 >
               </li>
               <li>
                 <a href="#gen" onclick="showPubs(2)"
-                  >Generative Visual Models</a
+                  >Multiphysics</a
                 >
               </li>
               <li>
                 <a href="#multi" onclick="showPubs(2)"
-                  >Multi-Modal Perception</a
+                  >Generative Geometry</a
                 >
               </li>
             </ul>
@@ -74,73 +74,26 @@
 
           <div class="text">
             <p>
-              I am an Assistant Professor of
-              <a href="https://cs.stanford.edu/">Computer Science</a> at
-              <a href="https://www.stanford.edu/">Stanford University</a>,
-              affiliated with the
-              <a href="http://svl.stanford.edu/"
-                >Stanford Vision and Learning Lab (SVL)</a
-              >
-              and the
-              <a href="https://ai.stanford.edu/">Stanford AI Lab (SAIL)</a>. I
-              study machine perception, reasoning, and interaction with the
-              physical world, drawing inspiration from human cognition.
-
-              <a href="javascript:showRecruit()"
-                >Here is some information for
-                <span class="highlight">prospective students and visitors</span
-                >.</a
-              >
-            </p>
-
-            <div class="recruit" id="recruit">
-              <p>
-                Thank you for your interest in joining my group! Due to the
-                large number of emails I receive, I cannot respond to every
-                email individually. Please review the information below before
-                contacting me. Thanks.
-              </p>
-
-              <p>
-                <span class="highlight">Current Stanford students</span>: please
-                fill out
-                <a href="https://forms.gle/TuCU51tLBpZimyCB8">this form</a>. For
-                MS students and undergraduates, the minimum time commitment is
-                15 hours per week for six months.
-              </p>
-
-              <p>
-                <span class="highlight"
-                  >Prospective postdocs and visiting graduate students</span
-                >: please email me directly with your CV. For visiting graduate
-                students, the minimum length of a research visit is six months.
-              </p>
-
-              <p>
-                <span class="highlight"
-                  >Prospective graduate students who are not currently at
-                  Stanford</span
-                >: please apply through the system and list me as a potential
-                advisor in your application. There is no need to contact me,
-                unless you have a particular research question/idea that you
-                would like to discuss further. If you email me, please describe
-                the research question concretely, and include your CV,
-                transcript, and no more than one published paper.
-              </p>
-            </div>
+              I am a Ph.D. candidate of
+              <a href="https://www.mccormick.northwestern.edu/civil-environmental/">Civil Engineering</a> 
+			  working in the <a href="https://sites.northwestern.edu/m2im/"
+                >Multiscale Mechanics of Infrastructure Materials (M2IM)</a
+              > at
+              <a href="https://www.northwestern.edu/">Northwestern University</a>. 
+			  I am currently completing my Ph.D. thesis, under the supervision of 
+			  <a href="https://www.cusatis.us/">Gianluca Cusatis</a>, 
+			  focusing on the construction of a novel computational framework for 
+			  thermo-hygro-mechanical analyses of complex lattice systems 
+			  (e.g., wood mesostructure, composites). My research interests include 
+			  computational mechanics, bio-inspired materials, multiphysics, poromechanics, and generative geometry.
+			</p>
 
             <p>
-              Before joining Stanford, I was a Visiting Faculty Researcher at
-              <a href="https://ai.google/">Google Research, New York City</a>,
-              working with
-              <a href="http://www.cs.cornell.edu/~snavely/">Noah Snavely</a>. I
-              finished my PhD at MIT, advised by
-              <a href="http://billf.mit.edu/">Bill Freeman</a> and
-              <a href="http://web.mit.edu/cocosci/josh.html">Josh Tenenbaum</a>,
-              and my undergraduate degrees at Tsinghua University, working with
-              <span class="author"
-                ><a href="http://pages.ucsd.edu/~ztu/">Zhuowen Tu</a></span
-              >.
+              Before joining Northwestern, I received my bachelor’s degree in Civil 
+			  Engineering from <a href="http://en.cau.edu.cn/">China Agricultural University (CAU)</a>, 
+			  China, and a master’s degree in <a href="https://cee.illinois.edu/">Civil Engineering</a>
+			  from 
+			  <a href="https://illinois.edu/">the University of Illinois at Urbana-Champaign (UIUC)</a>. 
             </p>
           </div>
         </div>
