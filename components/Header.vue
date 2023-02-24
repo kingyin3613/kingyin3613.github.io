@@ -9,13 +9,13 @@
             <a href="/#publications">Publications</a>
           </div>
           <div class="ftsubheader text talk">
-            <a href="/#talks">Talks</a>
+            <a href="/#teaching">Activities</a>
           </div>
-          <div class="ftsubheader text teaching">
+          <!-- <div class="ftsubheader text teaching">
             <a href="/#teaching">Teaching</a>
-          </div>
+          </div> -->
           <div class="ftsubheader text group">
-            <a href="/#group">Visualizations</a>
+            <a href="/#webgl">Visualizations</a>
           </div>
           <div class="ftsubheader text">
             <a href="/#home">Home</a>

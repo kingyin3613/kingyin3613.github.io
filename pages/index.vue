@@ -1,8 +1,5 @@
 <template>
   <div>
-    <!-- <link rel="stylesheet" href="/font.css" />
-    <link rel="stylesheet" href="/main.css" /> -->
-
     <div class="outercontainer">
       <Header />
       <div class="container body">
@@ -17,7 +14,9 @@
             <div>PhD Candidate</div>
             <div>Department of Civil and Environmental Engineering</div>
             <div>Northwestern University</div>
-            <div>Email:&nbsp;haoyin2022 [at] u (dot) northwestern (dot) edu</div>
+            <div>
+              Email:&nbsp;haoyin2022 [at] u (dot) northwestern (dot) edu
+            </div>
             <p>
               <span
                 ><a
@@ -26,11 +25,7 @@
                 ></span
               >
               /
-              <span
-                ><a href="https://github.com/kingyin3613"
-                  >Github</a
-                ></span
-              >
+              <span><a href="https://github.com/kingyin3613">Github</a></span>
               /
               <span
                 ><a href="https://www.linkedin.com/in/hao-yin-a86a95166/"
@@ -46,9 +41,7 @@
             <div class="title">Research Interests</div>
             <ul>
               <li>
-                <a href="#phys" onclick="showPubs(2)"
-                  >Lattice Models</a
-                >
+                <a href="#phys" onclick="showPubs(2)">Lattice Models</a>
               </li>
               <li>
                 <a href="#robot" onclick="showPubs(2)">Fracture Mechanics</a>
@@ -59,14 +52,10 @@
                 >
               </li>
               <li>
-                <a href="#gen" onclick="showPubs(2)"
-                  >Multiphysics</a
-                >
+                <a href="#gen" onclick="showPubs(2)">Multiphysics</a>
               </li>
               <li>
-                <a href="#multi" onclick="showPubs(2)"
-                  >Generative Geometry</a
-                >
+                <a href="#multi" onclick="showPubs(2)">Generative Geometry</a>
               </li>
             </ul>
             <p></p>
@@ -75,51 +64,50 @@
           <div class="text">
             <p>
               I am a Ph.D. candidate of
-              <a href="https://www.mccormick.northwestern.edu/civil-environmental/">Civil Engineering</a> 
-			  working in the <a href="https://sites.northwestern.edu/m2im/"
+              <a
+                href="https://www.mccormick.northwestern.edu/civil-environmental/"
+                >Civil Engineering</a
+              >
+              working in the
+              <a href="https://sites.northwestern.edu/m2im/"
                 >Multiscale Mechanics of Infrastructure Materials (M2IM)</a
-              > at
-              <a href="https://www.northwestern.edu/">Northwestern University</a>. 
-			  I am currently completing my Ph.D. thesis, under the supervision of 
-			  <a href="https://www.cusatis.us/">Gianluca Cusatis</a>, 
-			  focusing on the construction of a novel computational framework for 
-			  thermo-hygro-mechanical analyses of complex lattice systems 
-			  (e.g., wood mesostructure, composites). My research interests include 
-			  computational mechanics, bio-inspired materials, multiphysics, poromechanics, and generative geometry.
-			</p>
+              >
+              at
+              <a href="https://www.northwestern.edu/">Northwestern University</a
+              >. I am currently completing my Ph.D. thesis, under the
+              supervision of
+              <a href="https://www.cusatis.us/">Gianluca Cusatis</a>, focusing
+              on the construction of a novel computational framework for
+              thermo-hygro-mechanical analyses of complex lattice systems (e.g.,
+              wood mesostructure, composites). My research interests include
+              computational mechanics, bio-inspired materials, multiphysics,
+              poromechanics, and generative geometry.
+            </p>
 
             <p>
-              Before joining Northwestern, I received my bachelor’s degree in Civil 
-			  Engineering from <a href="http://en.cau.edu.cn/">China Agricultural University (CAU)</a>, 
-			  China, and a master’s degree in <a href="https://cee.illinois.edu/">Civil Engineering</a>
-			  from 
-			  <a href="https://illinois.edu/">the University of Illinois at Urbana-Champaign (UIUC)</a>. 
+              Before joining Northwestern, I received my bachelor’s degree in
+              Civil Engineering from
+              <a href="http://en.cau.edu.cn/"
+                >China Agricultural University (CAU)</a
+              >, China, and a master’s degree in
+              <a href="https://cee.illinois.edu/">Civil Engineering</a>
+              from
+              <a href="https://illinois.edu/"
+                >the University of Illinois at Urbana-Champaign (UIUC)</a
+              >.
             </p>
           </div>
         </div>
 
-        <!--        
-        <div class="content news">
-          <div class="text front">
-            <h3>News</h3>
-            <ul>
-              <li>I co-organized the <a href="http://mindsvsmachines.com/">Minds vs. Machines</a> workshop, 
-                the <a href="http://sightsound.org">Sight and Sound</a> workshop, 
-                the <a href="https://scene-understanding.com/">3D Scene Understanding</a> workshop, 
-                and the <a href="http://nscv.csail.mit.edu/">Neuro-Symbolic Visual Reasoning and Program Synthesis</a> tutorial at CVPR 2020.
-                I also gave an invited talk at the Learning 3D Generative Models workshop (<a href="https://www.youtube.com/watch?v=g7U7aarMHU0">video</a>).</li>
-            </ul>
-          </div>
-        </div>
--->
-        <div class="content talk anchor" id="talks">
+        <!-- webgl -->
+        <div class="content talk anchor" id="webgl">
           <div class="text front webgl-list">
-            <h3>Visualizations</h3>
+            <h2>Visualizations</h2>
             <a
               target="_blank"
               v-for="item in webglList"
               :key="item.title"
-              :href="'/paper-detail?paper=' + item.file"
+              :href="'/webgl/' + item.file"
             >
               {{ item.title }}
               <img :src="'/webgl/img/' + item.img" />
@@ -129,6 +117,8 @@
 
         <div class="content teaching anchor" id="teaching">
           <div class="text front">
+            <h2>Activities</h2>
+
             <h3>Teaching</h3>
             <ul>
               <li>
@@ -208,7 +198,7 @@
 
         <div class="content anchor" id="publications">
           <div class="text front">
-            <h3>
+            <h2>
               Publications (
               <a
                 href=""
@@ -233,7 +223,7 @@
                 style=""
                 >show all by topic</a
               >)
-            </h3>
+            </h2>
             <div>
               <span class="venue">Year:</span>
               <span class="tag"
@@ -343,6 +333,13 @@
                     {{ item.title }}
                   </a>
                   <a
+                    v-else-if="item.type === 'link'"
+                    :href="item.file"
+                    target="_blank"
+                  >
+                    {{ item.title }}
+                  </a>
+                  <a
                     v-else
                     :href="'/paper-detail?paper=' + item.file"
                     target="_blank"
@@ -351,30 +348,19 @@
                   </a>
                 </div>
                 <div class="authors">
-                  <span class="author"
-                    ><a href="https://ai.stanford.edu/~rhgao/">Hao Yin</a
-                    >*</span
-                  >
-
-                  <span class="author jw">Hao Yin</span>
+                  <span class="author" v-html="item.author"></span>
                 </div>
                 <div>
                   <span class="venue"
-                    ><a href="https://cvpr2022.thecvf.com/"
+                    ><a
                       >{{ item.publisher }}
                       {{ (item.date + "").slice(0, 4) }}</a
                     ></span
                   >
                   /
-                  <span class="tag"
-                    ><a href="papers/objectfolder2_cvpr.pdf">Paper</a></span
-                  >
+                  <span class="tag"><a>Paper</a></span>
                   /
-                  <span class="tag"
-                    ><a href="https://ai.stanford.edu/~rhgao/objectfolder2.0/"
-                      >Project Page</a
-                    ></span
-                  >
+                  <span class="tag"><a>Project Page</a></span>
                 </div>
               </div>
             </div>

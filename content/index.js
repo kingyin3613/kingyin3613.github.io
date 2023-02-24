@@ -1,13 +1,26 @@
 // 论文目录
 /**
  *  论文中静态资源放到static下 (YH: 单击名字指向外部链接/加粗名字/加星号)
+ *  type:默认调用content下md文件；pdf——static/pdf/下文件 ；link——外部访问链接
  */
 export default [
     {
         // type: 'pdf', //(YH:这里可否直接指向外部网址？)
-        file: 'hello', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径
+        file: 'hello', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径 link：外部链接
 
         title: 'Connector-beam lattice model for wood: from micromorphology simulation to macroscopic behaviors prediction',//列表中展示的标题
+        author: '<b>Hao Yin</b>, Parinaz Belalpour Dastjerdi, Eric Landis, Gianluca Cusatis', // 作者
+        desc: '11-CBL-W',// 描述
+        img: '/assets/11.png',// 列表封面：static目录下图片的路径
+        date: '2023',// 发表日期
+        publisher: 'Arxiv', // 出版商
+
+    },
+    {
+        type: 'link', //lin
+        file: '//wwww.google.com', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径 link：外部链接
+
+        title: 'link-test-title-Connector-beam lattice model for wood: from micromorphology simulation to macroscopic behaviors prediction',//列表中展示的标题
         author: '<b>Hao Yin</b>, Parinaz Belalpour Dastjerdi, Eric Landis, Gianluca Cusatis', // 作者
         desc: '11-CBL-W',// 描述
         img: '/assets/11.png',// 列表封面：static目录下图片的路径
