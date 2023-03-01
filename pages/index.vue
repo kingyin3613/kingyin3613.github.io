@@ -20,16 +20,22 @@
             <p>
               <span
                 ><a
-                  href="https://scholar.google.com/citations?user=pB-bgC4AAAAJ&hl=en"
+                  href="https://scholar.google.com/citations?user=pB-bgC4AAAAJ&hl=en/"
                   >Google Scholar</a
                 ></span
               >
               /
-              <span><a href="https://github.com/kingyin3613">Github</a></span>
+              <span><a href="https://github.com/kingyin3613/">Github</a></span>
               /
               <span
                 ><a href="https://www.linkedin.com/in/hao-yin-a86a95166/"
                   >LinkedIn</a
+                ></span
+              >
+			  /
+              <span
+                ><a href="https://twitter.com/king_yin3613/"
+                  >Twitter</a
                 ></span
               >
             </p>
