@@ -70,17 +70,17 @@
               >
               working in the
               <a href="https://sites.northwestern.edu/m2im/"
-                >Multiscale Mechanics of Infrastructure Materials (M2IM)</a
+                >Multiscale Mechanics of Infrastructure Materials (M2IM) Lab</a
               >
               at
               <a href="https://www.northwestern.edu/">Northwestern University</a
               >. I am currently completing my Ph.D. thesis, under the
-              supervision of
-              <a href="https://www.cusatis.us/">Gianluca Cusatis</a>, focusing
+              supervision of Dr. 
+			  <a href="https://www.cusatis.us/">Gianluca Cusatis</a>, focusing
               on the construction of a novel computational framework for
               thermo-hygro-mechanical analyses of complex lattice systems (e.g.,
-              wood mesostructure, composites). My research interests include
-              computational mechanics, bio-inspired materials, multiphysics,
+              wood mesostructure, bio-inspired composites). My research interests 
+			  include computational mechanics, bio-inspired materials, multiphysics,
               poromechanics, and generative geometry.
             </p>
 
@@ -122,51 +122,46 @@
             <h3>Teaching</h3>
             <ul>
               <li>
-                SYMSYS1/SYMSYS200/CS24/LINGUIST35/PHIL99/PSYCH35: Minds and
-                Machines, Fall 2022 (with
-                <a href="https://web.stanford.edu/~icard/">Thomas Icard</a>)
-              </li>
-              <li>
-                <a href="http://cs231n.stanford.edu/"
-                  >CS231N: Deep Learning for Computer Vision, Spring 2022</a
+                <a href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
+                  >CIV_ENV 216: Mechanics of Materials I, Winter 2022</a
                 >
-                (with
-                <a href="https://profiles.stanford.edu/fei-fei-li"
-                  >Fei-Fei Li</a
-                >
-                and <a href="https://ai.stanford.edu/~rhgao/">Ruohan Gao</a>)
-              </li>
-              <li>
-                <a href="https://cs322.stanford.edu/"
-                  >PSYCH225/CS322: Triangulating Intelligence: Melding
-                  Neuroscience, Psychology, and AI, Winter 2022</a
-                >
-                (with
-                <a href="http://web.stanford.edu/~hyo/Home.html">Hyo Gweon</a>
-                and <a href="https://web.stanford.edu/~yamins/">Dan Yamins</a>)
-              </li>
-              <li>
-                <a href="http://cs348i.stanford.edu/"
-                  >CS348I: Computer Graphics in the Era of AI, Fall 2021, Fall
-                  2020</a
-                >
-                (with
-                <a href="https://tml.stanford.edu/people/karen-liu">Karen Liu</a
+                (<a href="https://profiles.stanford.edu/fei-fei-li"
+                  >Course Evaluation</a
                 >)
               </li>
               <li>
-                <a href="https://stanford-cs221.github.io/winter2021/"
-                  >CS221: Artificial Intelligence: Principles and Techniques,
-                  Winter 2021</a
+                <a href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
+                  >CIV_ENV 216: Mechanics of Materials I, Spring 2021</a
                 >
-                (with <a href="https://thashim.github.io/">Tatsu Hashimoto</a>)
+                (<a href="https://profiles.stanford.edu/fei-fei-li"
+                  >Course Evaluation</a
+                >)
               </li>
               <li>
-                <a href="http://vision.stanford.edu/teaching/cs131_fall2021/"
-                  >CS131: Computer Vision: Foundations and Applications, Fall
-                  2020</a
+                <a href="https://www.mccormick.northwestern.edu/mechanical/academics/courses/descriptions/327-finite-element-methods-in-mechanics.html"
+                  >MECH_ENG 327: Finite Elements Methods in Mechanics, Fall 2020</a
                 >
-                (with <a href="http://www.niebles.net/">Juan Carlos Niebles</a>)
+                (<a href="https://profiles.stanford.edu/fei-fei-li"
+                  >Course Evaluation</a
+                >)
+              </li>
+              <li>
+                <a href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
+                  >CIV_ENV 216: Mechanics of Materials I, Spring 2020</a
+                >
+                (<a href="https://profiles.stanford.edu/fei-fei-li"
+                  >Course Evaluation</a
+                >)
+              </li>
+              <li>
+                <a href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
+                  >CIV_ENV 216: Mechanics of Materials I, Winter 2020</a
+                >
+              </li>
+              <li>
+                <a href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
+                  >CIV_ENV 216: Mechanics of Materials I, Winter 2019</a
+                >
               </li>
             </ul>
           </div>
