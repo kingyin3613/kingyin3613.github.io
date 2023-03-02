@@ -9,7 +9,7 @@ export default [
         file: 'hello', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径 link：外部链接
 
         title: 'Connector-beam lattice model for wood: from micromorphology simulation to macroscopic behaviors prediction',//列表中展示的标题
-        author: '<b>Hao Yin</b>, Parinaz Belalpour Dastjerdi, Eric Landis, Gianluca Cusatis*', // 作者
+        author: '<b>Hao Yin</b>, Parinaz Belalpour Dastjerdi, Eric Landis, Gianluca Cusatis', // 作者
         desc: '11-CBL-W',// 描述
         img: '/assets/11.png',// 列表封面：static目录下图片的路径
         date: '2023',// 发表日期
@@ -22,7 +22,7 @@ export default [
         file: 'hello', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径
 
         title: 'RingsPy: a python package for voronoi mesh generation of cellular solids with radial growth pattern',//列表中展示的标题
-        author: 'Hao Yin*, Gianluca Cusatis*', // 作者
+        author: '<b>Hao Yin</b>, Gianluca Cusatis', // 作者
         desc: '10-ringspy',// 描述
         img: '/assets/10.gif',// 列表封面：static目录下图片的路径
         date: '2023',// 发表日期
@@ -35,7 +35,7 @@ export default [
         file: '9', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径
 
         title: 'Flow lattice model for the simulation of chemistry dependent transport phenomena in cementitious materials',//列表中展示的标题
-        author: 'Hao Yin, Antonio Cibelli, Susan Alexis Brown, Lifu Yang, Lei Shen, Mohammed Alnaggar, Gianluca Cusatis, Giovanni Di Luzio*', // 作者
+        author: '<b>Hao Yin</b>, Antonio Cibelli, Susan Alexis Brown, Lifu Yang, Lei Shen, Mohammed Alnaggar, Gianluca Cusatis, Giovanni Di Luzio', // 作者
         desc: '9-HTC-edge',// 描述
         img: '/assets/9.png',// 列表封面：static目录下图片的路径
         date: '2023',// 发表日期
@@ -48,7 +48,7 @@ export default [
         file: '//arxiv.org/pdf/2209.01420.pdf', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径
 
         title: 'Homogenization of discrete diffusion models by asymptotic expansion',//列表中展示的标题
-        author: 'Jan Eliáš, Hao Yin, Gianluca Cusatis*', // 作者
+        author: 'Jan Eliáš, <b>Hao Yin</b>, Gianluca Cusatis', // 作者
         desc: '8-Homogenization',// 描述
         img: '/assets/8.png',// 列表封面：static目录下图片的路径
         date: '2022',// 发表日期
@@ -61,7 +61,7 @@ export default [
         file: '//www.sciencedirect.com/science/article/abs/pii/S002074032200501X', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径
 
         title: 'Mesoscopic discrete modeling of multiaxial load-induced thermal strain of concrete at high temperature',//列表中展示的标题
-        author: 'Lei Shen*, Huayi Zhang, Giovanni Di Luzio, Hao Yin, Lifu Yang, Gianluca Cusatis', // 作者
+        author: 'Lei Shen, Huayi Zhang, Giovanni Di Luzio, <b>Hao Yin</b>, Lifu Yang, Gianluca Cusatis', // 作者
         desc: '7-LDPM-high-temp',// 描述
         img: '/assets/7.jpg',// 列表封面：static目录下图片的路径
         date: '2022',// 发表日期
@@ -74,7 +74,7 @@ export default [
         file: '6', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径
 
         title: 'Generalized formulation for the behavior of geometrically curved and twisted three-dimensional timoshenko beams and its isogeometric analysis implementation',//列表中展示的标题
-        author: 'Hao Yin, Erol Lale, Gianluca Cusatis*', // 作者
+        author: '<b>Hao Yin</b>, Erol Lale, Gianluca Cusatis', // 作者
         desc: '6-IGA-beam',// 描述
         img: '/assets/6.png',// 列表封面：static目录下图片的路径
         date: '2022',// 发表日期
@@ -87,7 +87,7 @@ export default [
         file: '//www.sciencedirect.com/science/article/abs/pii/S2352710221007257', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径
 
         title: 'Performance of alkali-activated cementitious composite mortar used for insulating walls',//列表中展示的标题
-        author: 'Chongyang Wang, Hongtao Peng*, Libo Bian, Hao Yin, Massoud Sofi, Zihao Song, Zhiyuan Zhou', // 作者
+        author: 'Chongyang Wang, Hongtao Peng, Libo Bian, <b>Hao Yin</b>, Massoud Sofi, Zihao Song, Zhiyuan Zhou', // 作者
         desc: '5-insulating-mortar',// 描述
         img: '/assets/5.jpg',// 列表封面：static目录下图片的路径
         date: '2021',// 发表日期
@@ -100,7 +100,7 @@ export default [
         file: '//journals.sagepub.com/doi/abs/10.1177/0954409718805274?journalCode=pifa', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径
 
         title: 'Numerical and experimental analysis of single tie push tests on different shapes of concrete sleepers in ballasted tracks',//列表中展示的标题
-        author: 'Guoqing Jing, Peyman Aela*, Hao Fu, Hao Yin', // 作者
+        author: 'Guoqing Jing, Peyman Aela, Hao Fu, <b>Hao Yin</b>', // 作者
         desc: '4-DEM-sleepers',// 描述
         img: '/assets/4.png',// 列表封面：static目录下图片的路径
         date: '2019',// 发表日期
@@ -113,7 +113,7 @@ export default [
         file: '3', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径
 
         title: 'Investigation of relationship between train speed and bolted rail joint fatigue life using finite element analysis',//列表中展示的标题
-        author: 'Hao Yin, Yu Qian*, J. Riley Edwards, Kaijun Zhu', // 作者
+        author: '<b>Hao Yin</b>, Yu Qian, J. Riley Edwards, Kaijun Zhu', // 作者
         desc: '3-FEM-railjoint',// 描述
         img: '/assets/3.gif',// 列表封面：static目录下图片的路径
         date: '2018',// 发表日期
@@ -126,7 +126,7 @@ export default [
         file: '2', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径
 
         title: 'Ballast flight risk assessment based on reliability theory',//列表中展示的标题
-        author: 'Shuai Shao, Guoqing Jing*, Hao Yin', // 作者
+        author: 'Shuai Shao, Guoqing Jing, <b>Hao Yin</b>', // 作者
         desc: '2-Ballast-flight',// 描述
         img: '/assets/2.png',// 列表封面：static目录下图片的路径
         date: '2016',// 发表日期
@@ -139,7 +139,7 @@ export default [
         file: '//www.sciencedirect.com/science/article/abs/pii/S0263224114005594', //这里可否直接指向外部网址？
 
         title: 'Analysis of ballast direct shear tests by discrete element method under different normal stress',//列表中展示的标题
-        author: 'Zijie Wang, Guoqing Jing*, Qifan Yu, Hao Yin', // 作者
+        author: 'Zijie Wang, Guoqing Jing, Qifan Yu, <b>Hao Yin</b>', // 作者
         desc: '1-DEM-direct-shear-tests',// 描述
         img: '/assets/1.gif',// 列表封面：static目录下图片的路径
         date: '2015',// 发表日期

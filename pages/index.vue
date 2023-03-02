@@ -47,21 +47,21 @@
             <div class="title">Research Interests</div>
             <ul>
               <li>
-                <a href="#phys" onclick="showPubs(2)">Lattice Models</a>
+                <a href="#lattice" onclick="showPubs(2)">Lattice Models</a>
               </li>
               <li>
-                <a href="#robot" onclick="showPubs(2)">Fracture Mechanics</a>
+                <a href="#fracture" onclick="showPubs(2)">Fracture Mechanics</a>
               </li>
               <li>
-                <a href="#reason" onclick="showPubs(2)"
+                <a href="#bio-inspired" onclick="showPubs(2)"
                   >Bio-inspired Materials</a
                 >
               </li>
               <li>
-                <a href="#gen" onclick="showPubs(2)">Multiphysics</a>
+                <a href="#multiphysics" onclick="showPubs(2)">Multiphysics</a>
               </li>
               <li>
-                <a href="#multi" onclick="showPubs(2)">Generative Geometry</a>
+                <a href="#geometry" onclick="showPubs(2)">Generative Geometry</a>
               </li>
             </ul>
             <p></p>
@@ -108,7 +108,7 @@
         <!-- webgl -->
         <div class="content talk anchor" id="webgl">
           <div class="text front webgl-list">
-            <h2>Visualizations</h2>
+            <h2>Research</h2>
             <a
               target="_blank"
               v-for="item in webglList"
