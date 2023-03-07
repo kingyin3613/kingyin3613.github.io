@@ -14,7 +14,7 @@ export default [
 
     },
     {
-        type: 'pdf',
+        type: 'pdf', //加link
         file: 'test', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径
 
         title: 'talk-test-ObjectFolder 2.0: A Multisensory Object Dataset for Sim2Real Transfer',//列表中展示的标题
@@ -22,6 +22,7 @@ export default [
         img: '/assets/1.jpg',// 列表封面：static目录下图片的路径
 
     },
+    
 
 
 ]

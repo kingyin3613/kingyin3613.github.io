@@ -44,7 +44,8 @@ span.highlight {
 h3 {
   margin-block-end: 0.5em
 }
-b{
+
+b {
   color: #000;
 }
 
@@ -205,6 +206,10 @@ div.heading span.tag {
   padding-right: 15px
 }
 
+span.tag:last-child span {
+  display: none;
+}
+
 div.heading ul {
   padding-bottom: 0px
 }
@@ -284,7 +289,15 @@ div.talk iframe {
   padding-bottom: 15px
 }
 
-.webgl-list a {
+.webgl-list li {
+  cursor: pointer;
+}
+
+.webgl-list .webgl-card {
+  /* display: none; */
+}
+
+.webgl-list .webgl-card a {
   display: inline-block;
   width: 33%;
   margin-right: 0.33%;

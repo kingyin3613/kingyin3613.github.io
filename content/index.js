@@ -14,6 +14,7 @@ export default [
         img: '/assets/11.png',// 列表封面：static目录下图片的路径
         date: '2023',// 发表日期
         publisher: 'arXiv', // 出版商
+        topic:'Lattice Models'
 
     },
 
@@ -27,6 +28,7 @@ export default [
         img: '/assets/10.gif',// 列表封面：static目录下图片的路径
         date: '2023',// 发表日期
         publisher: 'Journal of Open Source Software', // 出版商
+        topic:'Fracture Mechanics'
 
     },
 
@@ -40,6 +42,7 @@ export default [
         img: '/assets/9.png',// 列表封面：static目录下图片的路径
         date: '2023',// 发表日期
         publisher: 'European Journal of Environmental and Civil Engineering', // 出版商
+        topic:'Bio-inspired Materials'
 
     },
 	
@@ -53,7 +56,7 @@ export default [
         img: '/assets/8.png',// 列表封面：static目录下图片的路径
         date: '2022',// 发表日期
         publisher: 'International Journal for Numerical and Analytical Methods in Geomechanics', // 出版商
-
+        topic:'Bio-inspired Materials'
     },
 
     {
@@ -66,6 +69,7 @@ export default [
         img: '/assets/7.jpg',// 列表封面：static目录下图片的路径
         date: '2022',// 发表日期
         publisher: 'International Journal of Mechanical Sciences', // 出版商
+        topic:'Multiphysics',
 
     },
 
