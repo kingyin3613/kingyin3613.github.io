@@ -3,26 +3,37 @@
  *  论文中静态资源放到static下
  */
 export default [
-    {
-        // type: 'pdf',
-        file: 'hello', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径
 
-        title: 'talk-test-ObjectFolder 2.0: A Multisensory Object Dataset for Sim2Real Transfer',//列表中展示的标题
-
-        img: '/assets/1.jpg',// 列表封面：static目录下图片的路径
-
-
-    },
     {
         type: 'pdf', //加link
-        file: 'test', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径
+        file: 'EMI2022_Yin_220601', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径
 
-        title: 'talk-test-ObjectFolder 2.0: A Multisensory Object Dataset for Sim2Real Transfer',//列表中展示的标题
+        title: 'ASCE-EMI 2022',//列表中展示的标题
 
-        img: '/assets/1.jpg',// 列表封面：static目录下图片的路径
+        img: '/assets/EMI2022_Yin_220601.png',// 列表封面：static目录下图片的路径
 
     },
-    
+
+    {
+        type: 'pdf', //加link
+        file: 'NUGroup_Yin_210510', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径
+
+        title: 'NU Group',//列表中展示的标题
+
+        img: '/assets/NUGroup_Yin_210510.png',// 列表封面：static目录下图片的路径
 
 
+    },
+
+    {
+        type: 'pdf', //加link
+        file: 'NUGroup_Yin_190917', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径
+
+        title: 'How to analyze a 3D curved beam',//列表中展示的标题
+
+        img: '/assets/NUGroup_Yin_190917.png',// 列表封面：static目录下图片的路径
+
+
+    },
+	
 ]

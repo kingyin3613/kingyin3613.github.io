@@ -1,0 +1,182 @@
+<!DOCTYPE HTML> 
+<html lang="en"> 
+<head>
+<title>flight simulator by king_yin3613 </title>
+<meta charset="utf-8"> 
+</head>  
+
+<script type="x-shader/x-vertex" id="vshaderSB">
+     uniform mat4 pMatrix;
+     uniform mat4 mvMatrix;
+     attribute vec3 coords;
+     varying vec3 vCoords;
+     void main() {
+        vec4 eyeCoords = mvMatrix * vec4(coords,1.0);
+        gl_Position = pMatrix * eyeCoords;
+        vCoords = coords;
+     }
+</script>
+
+<script type="x-shader/x-fragment" id="fshaderSB">
+     precision mediump float;
+     varying vec3 vCoords;
+     uniform samplerCube skybox;
+     void main() {
+        gl_FragColor = textureCube(skybox, vCoords);
+     }
+</script>
+
+<script id="shader-vs" type="x-shader/x-vertex">
+   attribute vec3 aVertexPosition;
+   attribute vec3 aVertexNormal;
+   attribute vec4 aVertexColor;
+
+   uniform mat4 uMVMatrix; // Model View
+   uniform mat4 uPMatrix; // Projection
+   uniform mat3 uNMatrix; // Normal Transformation
+
+   varying vec4 vColor;
+   varying vec3 VertexPosition3;
+   varying vec3 normalInterp;  // Surface normal
+   varying vec3 vertexPositionEye3; // Vertex position
+
+
+   void main(void){
+        // Here VertexPosition3 will be passed to fragement shader
+        VertexPosition3 = vec3(aVertexPosition);
+        // Get the vertex position in eye coordinates
+        vec4 vertexPositionEye4 = uMVMatrix * vec4(aVertexPosition, 1.0);
+        vertexPositionEye3 = vec3(vertexPositionEye4.xyz);
+        
+        // Transform the normal (n) to eye coordinates
+        normalInterp = vec3(uNMatrix * aVertexNormal);
+
+        gl_Position = uPMatrix*uMVMatrix*vec4(aVertexPosition, 1.0);
+        vColor = aVertexColor;
+}
+ 
+</script>
+    
+<script id="shader-fs" type="x-shader/x-fragment">
+    precision mediump float;
+
+    uniform vec3 uLightPosition;
+    
+    uniform vec3 uAmbientLightColor;
+    uniform vec3 uDiffuseLightColor;
+    uniform vec3 uSpecularLightColor;
+    
+    uniform vec3 uAmbientMaterialColor;
+    uniform vec3 uSpecularMaterialColor;
+    uniform vec3 uDiffuseMaterialColor;
+    uniform float uShininess;
+
+    varying vec4 vColor;
+    varying vec3 VertexPosition3; // Vertex position passed from vertex shader
+    varying vec3 normalInterp;  // Surface normal passed from vshader
+    varying vec3 vertexPositionEye3; // Vertex position passed from vshader
+
+    void main(void) {
+
+    // Calculate the vector (l) to the light source
+    vec3 vectorToLightSource = normalize(uLightPosition - vertexPositionEye3);
+    
+    // Transform the normal (n) to eye coordinates
+    vec3 normalEye = normalize(normalInterp);
+    
+    // The camera in eye coordinates is located in the origin and is pointing
+    // along the negative z-axis. Calculate viewVector (v) 
+    // in eye coordinates as:
+    // (0.0, 0.0, 0.0) - vertexPositionEye3
+    vec3 viewVectorEye = -normalize(vertexPositionEye3);
+
+    // Calculate n dot l for diffuse lighting （a.k.a. "Lambert's cosine law"）
+    float diffuseLightWeightning = max(dot(normalEye, 
+                                    vectorToLightSource), 0.0);
+
+    // ==================== Blinn-Phong Illumination Model =====================                                  
+    // Calculate the halfway vector (h) of vector (l) to the light source and viewVector (v)
+
+    vec3 halfwayVector = normalize(viewVectorEye + vectorToLightSource);
+
+    // Compute the specular term 
+    // Replace pow(rdotv, uShininess) by pow(hdotn, modified_uShininess)
+    float hdotn = max(dot(halfwayVector,normalEye), 0.0);
+    float specularLightWeightning = pow(hdotn, uShininess * 4.0);
+    
+    
+    // ==================== Phong Illumination Model (For comparison) =====================
+
+    // Calculate the reflection vector (r) that is needed for specular light
+    //vec3 reflectionVector = normalize(reflect(-vectorToLightSource, 
+    //                                         normalEye));
+    //float rdotv = max(dot(reflectionVector, viewVectorEye), 0.0);
+    //float specularLightWeightning = pow(rdotv, uShininess);
+
+
+    // ==================== Implementation of Distance Fog =====================
+    // Compute the distance from fragment to camera
+    float fogCoord = (gl_FragCoord.z/gl_FragCoord.w);
+
+    // Set the fog color (here the fog color is white) 
+    vec4 fogColor = vec4(1.0,1.0,1.0,1.0);
+    // Calculate fog factor
+    const float LOG2 = 1.442695;
+
+    float fogDensity = 0.0008;
+    float fogFactor = exp2(-fogDensity * fogDensity * fogCoord * fogCoord * LOG2);
+    //float fogFactor = 1.0 - z;
+    fogFactor = clamp(fogFactor, 0.0, 1.0);
+
+    // Fragment color computed by shading model (here is the Blinn-Phong Model)
+    vec4 fragColor = vec4(((uAmbientLightColor*uAmbientMaterialColor)
+                + (uDiffuseLightColor*uDiffuseMaterialColor) * diffuseLightWeightning
+                + (uSpecularLightColor*uSpecularMaterialColor) * specularLightWeightning),1.0);
+
+    // Use linear interpolation to mix fog color with the fragment color
+    //gl_FragColor = mix(fogColor, vColor, fogFactor);
+    //------------ Original color ---------------
+    gl_FragColor = vColor;
+}
+
+</script>
+
+<script src="gl-matrix-min.js"></script> 
+<script src="webgl-utils.js"></script> 
+<script src="Flight.js"></script>   
+
+<body onload="startup();" scroll="no">
+    <h3 class="title" style="font-size: 1.6em; margin: 0px auto; line-height: 1.2em; font-family: Arial, Helvetica, sans-serif; background-color: rgb(255, 255, 255);">WebGL: Terrain From Textures
+    </h3>
+    
+    <form style="font-family: Arial, Helvetica, sans-serif; font-size: 13.44px; line-height: 20.16px; background-color: rgb(255, 255, 255);">
+    Please select which shading method to use:
+    <div>
+    <input type="radio" id="phong-phong"
+     name="shader" value="phong-phong">
+    <label for="phong-phong">Shaded version (to be developed)</label>
+
+    <input type="radio" id="gouraud-phong"
+     name="shader" value="gouraud-phong" checked>
+    <label for="gouraud-phong">Image-based color map version</label>
+    </div>
+    </form>
+
+    <canvas id="myGLCanvas" width="1200" height="600"></canvas>
+
+
+    <div class="content-middle" style="font-family: Arial, Helvetica, sans-serif; font-size: 13.44px; line-height: 20.16px; background-color: rgb(255, 255, 255);">
+    <div class="node" style="margin: 0.5em 0px 1em; padding-bottom: 1em; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(187, 187, 187); clear: both;">
+    <div class="content" style="margin: 0.5em 0px;">
+    <p>Here is a simple airplane simulator,the airplane would automatically move forward at a fixed speed. You can control the bank and tilt of the airplane through the arrow or WSAD keys.</p>
+
+    <ul>
+    <li>Pressing the left or A (right or D) arrow key will make the plane roll to its left (right).</li>
+    <li>Pressing the up or W (down or S) arrow key will cause the airplane to pitch up (down).</li>
+    <li>Pressing the + (-) key will increase (decrease) the airplane&#39;s speed.</li>
+    </ul>
+    </div>
+    </div>
+    </div>
+</body>
+</html>

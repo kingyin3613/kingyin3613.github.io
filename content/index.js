@@ -19,8 +19,8 @@ export default [
     },
 
     {
-        type: 'pdf',
-        file: 'hello', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径
+        type: 'link',
+        file: '//joss.theoj.org/papers/10.21105/joss.04945', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径
 
         title: 'RingsPy: a python package for voronoi mesh generation of cellular solids with radial growth pattern',//列表中展示的标题
         author: '<b>Hao Yin</b>, Gianluca Cusatis', // 作者
@@ -28,7 +28,7 @@ export default [
         img: '/assets/10.gif',// 列表封面：static目录下图片的路径
         date: '2023',// 发表日期
         publisher: 'Journal of Open Source Software', // 出版商
-        topic:'Fracture Mechanics'
+        topic:'Generative Geometry'
 
     },
 
@@ -42,7 +42,7 @@ export default [
         img: '/assets/9.png',// 列表封面：static目录下图片的路径
         date: '2023',// 发表日期
         publisher: 'European Journal of Environmental and Civil Engineering', // 出版商
-        topic:'Bio-inspired Materials'
+        topic:'Multiphysics'
 
     },
 	
@@ -56,7 +56,7 @@ export default [
         img: '/assets/8.png',// 列表封面：static目录下图片的路径
         date: '2022',// 发表日期
         publisher: 'International Journal for Numerical and Analytical Methods in Geomechanics', // 出版商
-        topic:'Bio-inspired Materials'
+        topic:'Multiphysics'
     },
 
     {
@@ -69,7 +69,7 @@ export default [
         img: '/assets/7.jpg',// 列表封面：static目录下图片的路径
         date: '2022',// 发表日期
         publisher: 'International Journal of Mechanical Sciences', // 出版商
-        topic:'Multiphysics',
+        topic:'Lattice Models',
 
     },
 
@@ -83,6 +83,7 @@ export default [
         img: '/assets/6.png',// 列表封面：static目录下图片的路径
         date: '2022',// 发表日期
         publisher: 'ASME Journal of Applied Mechanics', // 出版商
+		topic:'Lattice Models',
 
     },
 	

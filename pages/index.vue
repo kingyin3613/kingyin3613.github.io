@@ -12,7 +12,6 @@
             <h1>Hao Yin (银皓)</h1>
             <p></p>
             <div>PhD Candidate</div>
-            <div>Department of Civil and Environmental Engineering</div>
             <div>Northwestern University</div>
             <div>
               Email:&nbsp;haoyin2022 [at] u (dot) northwestern (dot) edu
@@ -99,7 +98,7 @@
               >. I am currently completing my Ph.D. thesis, under the
               supervision of Dr.
               <a href="https://www.cusatis.us/">Gianluca Cusatis</a>, focusing
-              on the construction of a novel computational framework for
+              on the development of a novel computational framework for
               thermo-hygro-mechanical analyses of complex lattice systems (e.g.,
               wood mesostructure, bio-inspired composites). My research
               interests include computational mechanics, bio-inspired materials,
@@ -152,51 +151,44 @@
             <h3>Teaching</h3>
             <ul>
               <li>
-                <a
-                  href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
+                <a href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
                   >CIV_ENV 216: Mechanics of Materials I, Winter 2022</a
                 >
-                (<a href="https://profiles.stanford.edu/fei-fei-li"
+                (<a href="/pdf/Evaluation_CIV_ENV216_WI22.pdf"
                   >Course Evaluation</a
                 >)
               </li>
               <li>
-                <a
-                  href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
+                <a href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
                   >CIV_ENV 216: Mechanics of Materials I, Spring 2021</a
                 >
-                (<a href="https://profiles.stanford.edu/fei-fei-li"
+                (<a href="/pdf/Evaluation_CIV_ENV216_SP21.pdf"
                   >Course Evaluation</a
                 >)
               </li>
               <li>
-                <a
-                  href="https://www.mccormick.northwestern.edu/mechanical/academics/courses/descriptions/327-finite-element-methods-in-mechanics.html"
-                  >MECH_ENG 327: Finite Elements Methods in Mechanics, Fall
-                  2020</a
+                <a href="https://www.mccormick.northwestern.edu/mechanical/academics/courses/descriptions/327-finite-element-methods-in-mechanics.html"
+                  >MECH_ENG 327: Finite Elements Methods in Mechanics, Fall 2020</a
                 >
-                (<a href="https://profiles.stanford.edu/fei-fei-li"
+                (<a href="/pdf/Evaluation_MECH_ENG327_FA20.pdf"
                   >Course Evaluation</a
                 >)
               </li>
               <li>
-                <a
-                  href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
+                <a href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
                   >CIV_ENV 216: Mechanics of Materials I, Spring 2020</a
                 >
-                (<a href="https://profiles.stanford.edu/fei-fei-li"
+                (<a href="/pdf/Evaluation_CIV_ENV216_SP20.pdf"
                   >Course Evaluation</a
                 >)
               </li>
               <li>
-                <a
-                  href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
+                <a href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
                   >CIV_ENV 216: Mechanics of Materials I, Winter 2020</a
                 >
               </li>
               <li>
-                <a
-                  href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
+                <a href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
                   >CIV_ENV 216: Mechanics of Materials I, Winter 2019</a
                 >
               </li>
