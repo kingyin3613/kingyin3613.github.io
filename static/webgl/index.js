@@ -1,7 +1,34 @@
 // webGl效果配置文件
 export default [
   {
+    category: 'test-title Computational modeling of micromechanics of wood, cross-laminated timber (CLT), and other quasi-brittle materials',
+    desc:'test-desc test-desctest-desctest-desctest-desctest-desctest-desctest-desctest-descComputational modeling of micromechanics of wood, cross-laminated timber (CLT), and other quasi-brittle materials',
+    list: [
+      {
+        file: "shading/Teapot.html", ///static/webgl目录下需要访问的html文件
+        title: "Modeling of wood micromorphology", //列表中展示的标题
+
+        img: "/Pine_cs.jpg", // 列表封面：static/webGl/img目录下图片的路径
+      },
+      {
+		file: "normal_mapping/Normal.html", ///static/webgl目录下需要访问的html文件
+		title:
+		  "Isogeometric Beam lattice", //列表中展示的标题
+
+        img: "/Single_woodfiber.jpg", // 列表封面：static/webGl/img目录下图片的路径
+      },
+      {
+		file: "terrain/Flight.html", ///static/webgl目录下需要访问的html文件
+		title:
+		  "Connector-beam lattice model of wood", //列表中展示的标题
+
+		img: "/adem202100646-fig-0001-m.jpg", // 列表封面：static/webGl/img目录下图片的路径
+      },
+    ]
+  },
+  {
     category: 'Computational modeling of micromechanics of wood, cross-laminated timber (CLT), and other quasi-brittle materials',
+    
     list: [
       {
         file: "shading/Teapot.html", ///static/webgl目录下需要访问的html文件

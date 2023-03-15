@@ -121,7 +121,7 @@
         </div>
 
         <!-- webgl -->
-        <div class="content talk anchor" id="webgl">
+        <div class="content talk anchor" id="research">
           <div class="text front webgl-list">
             <h2>Research</h2>
             <ul>
@@ -132,6 +132,7 @@
               >
                 <a>{{ item.category }}</a>
                 <div class="webgl-card" v-if="taggleShow === index">
+                  <p>{{item.desc}}</p>
                   <template v-for="(it, idx) in item.list">
                     <a target="_blank" :key="idx" :href="'/webgl/' + it.file">
                       {{ it.title }}
@@ -144,14 +145,15 @@
           </div>
         </div>
 
-        <div class="content teaching anchor" id="teaching">
+        <div class="content teaching anchor" id="Activitie">
           <div class="text front">
             <h2>Activities</h2>
 
             <h3>Teaching</h3>
             <ul>
               <li>
-                <a href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
+                <a
+                  href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
                   >CIV_ENV 216: Mechanics of Materials I, Winter 2022</a
                 >
                 (<a href="/pdf/Evaluation_CIV_ENV216_WI22.pdf"
@@ -159,7 +161,8 @@
                 >)
               </li>
               <li>
-                <a href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
+                <a
+                  href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
                   >CIV_ENV 216: Mechanics of Materials I, Spring 2021</a
                 >
                 (<a href="/pdf/Evaluation_CIV_ENV216_SP21.pdf"
@@ -167,15 +170,18 @@
                 >)
               </li>
               <li>
-                <a href="https://www.mccormick.northwestern.edu/mechanical/academics/courses/descriptions/327-finite-element-methods-in-mechanics.html"
-                  >MECH_ENG 327: Finite Elements Methods in Mechanics, Fall 2020</a
+                <a
+                  href="https://www.mccormick.northwestern.edu/mechanical/academics/courses/descriptions/327-finite-element-methods-in-mechanics.html"
+                  >MECH_ENG 327: Finite Elements Methods in Mechanics, Fall
+                  2020</a
                 >
                 (<a href="/pdf/Evaluation_MECH_ENG327_FA20.pdf"
                   >Course Evaluation</a
                 >)
               </li>
               <li>
-                <a href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
+                <a
+                  href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
                   >CIV_ENV 216: Mechanics of Materials I, Spring 2020</a
                 >
                 (<a href="/pdf/Evaluation_CIV_ENV216_SP20.pdf"
@@ -183,12 +189,14 @@
                 >)
               </li>
               <li>
-                <a href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
+                <a
+                  href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
                   >CIV_ENV 216: Mechanics of Materials I, Winter 2020</a
                 >
               </li>
               <li>
-                <a href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
+                <a
+                  href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html"
                   >CIV_ENV 216: Mechanics of Materials I, Winter 2019</a
                 >
               </li>
@@ -199,24 +207,38 @@
         <div class="content talk anchor" id="talks">
           <div class="text front">
             <h3>Talks</h3>
-            <span v-for="(item, index) in talkList" :key="item.title + index">
-              <a
-                v-if="item.type === 'pdf'"
-                target="_blank"
-                :href="'/pdf/' + item.file + '.pdf'"
-              >
-                {{ item.title }}
-                <img :src="item.img" />
-              </a>
-              <a
-                v-else
-                target="_blank"
-                :href="'/paper-detail?paper=' + item.file"
-              >
-                {{ item.title }}
-                <img :src="item.img" />
-              </a>
-            </span>
+            <div>
+              <span v-for="(item, index) in talkList" :key="item.title + index">
+                <a
+                  v-if="item.type === 'pdf'"
+                  target="_blank"
+                  :href="'/pdf/' + item.file + '.pdf'"
+                >
+                  {{ item.title }}
+                  <img :src="item.img" />
+                </a>
+                <a
+                  v-else-if="item.type === 'link'"
+                  target="_blank"
+                  :href="item.file"
+                >
+                  {{ item.title }}
+                  <img :src="item.img" />
+                </a>
+                <a
+                  v-else
+                  target="_blank"
+                  :href="'/paper-detail?paper=' + item.file"
+                >
+                  {{ item.title }}
+                  <img :src="item.img" />
+                </a>
+                <p class="justify-between">
+                  <span>{{item.date}}</span>
+                  <span>{{item.address}}</span>
+                </p>
+              </span>
+            </div>
           </div>
         </div>
 
@@ -332,9 +354,11 @@ export default {
   data() {
     return {
       taggleShow: "",
-      paperDate: [...new Set(paperList.map((v) => v.date))].sort(
-        (a, b) => b - a
-      ),
+      paperDate: [
+        ...new Set(
+          paperList.map((v) => (v.date > 2021 ? v.date : "2021 and before"))
+        ),
+      ].sort((a, b) => b - a),
       paperTopic: [...new Set(paperList.map((v) => v.topic))],
       paperList: [
         {
@@ -350,13 +374,19 @@ export default {
     categoryCounter(anchor, categoryType) {
       var data = {};
       paperList.forEach((v) => {
-        data[v[categoryType]] = data[v[categoryType]] || {
-          categoryName: v[categoryType],
+        const cate =
+          categoryType == "date" && v[categoryType] < 2022
+            ? "2021 and before"
+            : v[categoryType];
+        data[cate] = data[cate] || {
+          categoryName: cate,
           list: [],
         };
-        data[v[categoryType]].list.push(v);
+        data[cate].list.push(v);
       });
-      this.paperList = Object.values(data).reverse();
+      this.paperList = Object.values(data).sort(
+        (a, b) => b.categoryName - a.categoryName
+      );
 
       setTimeout(() => {
         window["pubs" + anchor] &&

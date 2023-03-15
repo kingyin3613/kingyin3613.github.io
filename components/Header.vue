@@ -9,7 +9,7 @@
             <a href="/#publications">Publications</a>
           </div>
           <div class="ftsubheader text talk">
-            <a href="/#activities">Activities</a>
+            <a href="/#Activitie">Activities</a>
           </div>
           <!-- <div class="ftsubheader text teaching">
             <a href="/#teaching">Teaching</a>
