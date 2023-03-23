@@ -525,7 +525,7 @@ function startup() {
         cameraLocation[0] = 0.3 * Math.sin(degToRad(angle));
         cameraLocation[2] = 0.3 * Math.cos(degToRad(angle));
         rotator = new SimpleRotator(canvas,draw);
-        rotator.setView( cameraLocation, [0,1,0], 40 );
+        rotator.setView( cameraLocation, [0,1,0], 45 );
         loadTeapotModel();
         teapot = createModel(teapotModel);
         cube = createModelSB(cube(1000));

@@ -357,7 +357,7 @@ var yawRotation = quat.create();
 var rollAngle = 0.0;
 var pitchAngle = 0.0;
 var yawAngle = 0.0;
-var velocity = 0.50;
+var velocity = 0.25;
 var conjugateRot = quat.create();
 var orthoRot = vec3.fromValues(0.0, 1.0, 0.0);
 var upRotated = vec3.fromValues(0.0, 1.0, 0.0);
@@ -649,10 +649,9 @@ function OnLoadedImages(result)
   setupBuffers(1023,vTerrain,cTerrain,nTerrain,fTerrain,numT);
 
   cube = createModelSB(cube(10000));
-  //loadTextureCube(); // It is still needed to load all images simultaneously. Currently the problem is loadTextureCube() is running later than loadImage(), and this will lead to the result that terrain buffers deleted when loading the texture cube
+  loadTextureCube(); // It is still needed to load all images simultaneously. Currently the problem is loadTextureCube() is running later than loadImage(), and this will lead to the result that terrain buffers deleted when loading the texture cube
 
   tick();
-  loadTextureCube(); 
 }
 
 function generateNormals_New(vTerrain, fTerrain, numT, nTerrain) {
@@ -776,9 +775,9 @@ function loadTextureCube(urls) {
     var ct = 0;
     var img = new Array(6);
     var urls = [
-       "sample/pos-x.jpg", "sample/neg-x.jpg", 
-       "sample/pos-y.jpg", "sample/neg-y.jpg", 
-       "sample/pos-z.jpg", "sample/neg-z.jpg"
+       "sample/pos-x.png", "sample/neg-x.png", 
+       "sample/pos-y.png", "sample/neg-y.png", 
+       "sample/pos-z.png", "sample/neg-z.png"
 
        //"sample/pos-x.jpg", "sample/neg-x.jpg", 
        //"sample/pos-y.jpg", "sample/neg-y.jpg", 
@@ -992,7 +991,8 @@ function setupShaders() {
  * Populate buffers with data
  */
 function setupBuffers(gridN,vTerrain,cTerrain,nTerrain,fTerrain,numT) {
-    setupTerrainBuffers_Extension(gridN,vTerrain,cTerrain,nTerrain,fTerrain,numT); 
+    //setupTerrainBuffers(); // For MP2 Part 1 and 2
+    setupTerrainBuffers_Extension(gridN,vTerrain,cTerrain,nTerrain,fTerrain,numT); // For MP2 4-Credit Extension
 }
 
 /**
@@ -1058,7 +1058,7 @@ function draw() {
     if (texID) {
     gl.enableVertexAttribArray(aCoords_SB);
     cube.render();  
-    gl.disableVertexAttribArray(aCoords_SB);
+    //gl.disableVertexAttribArray(aCoords_SB); // comment this line fixed problem in line 652 
     }
       
     // Draw Terrain
@@ -1078,11 +1078,10 @@ function draw() {
 function startup() {
     canvas = document.getElementById("myGLCanvas");
     gl = createGLContext(canvas);
-	gl.clearColor(1.0,1.0,1.0,1.0);//background Color
-	
+
     loadHeightMap("colorHMBIG;heightHMBIG");
 
-    
+    gl.clearColor(1.0,1.0,1.0,1.0);//background Color
     document.onkeydown = handleKeyDown;
     document.onkeyup = handleKeyUp;
     tick();

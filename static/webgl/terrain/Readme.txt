@@ -9,7 +9,7 @@ npm install -g httpserver
 
 3. Change to your directory containing your working files (e.g. js, html files):
 
-cd C:\Users\yourname\Box Sync\CS418\MP3\
+cd C:\Users\yourname\terrain
 
 4. Enter the following:
 
@@ -23,4 +23,4 @@ server started: http://0.0.0.0:8080
 
 now you can see your working directory 
 
-(or directly go to the address like http://localhost:8080/mp3.html to open the html file)
+(or directly go to the address like http://localhost:8080/Flight.html to open the html file)

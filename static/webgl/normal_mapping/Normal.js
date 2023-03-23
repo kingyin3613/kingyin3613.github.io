@@ -18,7 +18,7 @@ function configure(){
  
     //Creates and sets up the camera location
     camera = new Camera(CAMERA_ORBITING_TYPE);
-    camera.goHome([0,0,6.0]);
+    camera.goHome([0,0,4.0]);
     camera.setFocus([0.0,0.0,0.0]);
     camera.setAzimuth(-45);
     camera.setElevation(2500);

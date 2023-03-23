@@ -6,7 +6,7 @@
 export default [
     {
         // type: 'pdf', //(YH:这里可否直接指向外部网址？)
-        file: 'hello', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径 link：外部链接
+        file: 'rail', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径 link：外部链接
 
         title: 'Connector-beam lattice model for wood: from micromorphology simulation to macroscopic behaviors prediction',//列表中展示的标题
         author: '<b>Hao Yin</b>, Parinaz Belalpour Dastjerdi, Eric Landis, Gianluca Cusatis', // 作者

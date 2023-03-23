@@ -66,16 +66,16 @@
               </li>
               <li>
                 <a
-                  href="#multiphysics"
-                  @click="categoryCounter('Multiphysics', 'topic')"
-                  >Multiphysics</a
+                  href="#geometry"
+                  @click="categoryCounter('Generative Geometry', 'topic')"
+                  >Generative Geometry</a
                 >
               </li>
               <li>
                 <a
-                  href="#geometry"
-                  @click="categoryCounter('Generative Geometry', 'topic')"
-                  >Generative Geometry</a
+                  href="#multiphysics"
+                  @click="categoryCounter('Multiphysics', 'topic')"
+                  >Multiphysics</a
                 >
               </li>
             </ul>
@@ -100,7 +100,7 @@
               <a href="https://www.cusatis.us/">Gianluca Cusatis</a>, focusing
               on the development of a novel computational framework for
               thermo-hygro-mechanical analyses of complex lattice systems (e.g.,
-              wood mesostructure, bio-inspired composites). My research
+              wood microstructure, bio-inspired composites). My research
               interests include computational mechanics, bio-inspired materials,
               multiphysics, poromechanics, and generative geometry.
             </p>
@@ -145,7 +145,7 @@
           </div>
         </div>
 
-        <div class="content teaching anchor" id="Activitie">
+        <div class="content teaching anchor" id="activities">
           <div class="text front">
             <h2>Activities</h2>
 
