@@ -43,13 +43,42 @@ Figure below shows the components of FE model generated in the simulation.
 
 Contact interactions between components were formulated using surface-to-surface contact discretization, and a master-slave surface pair was defined for each contact pair. This contact formulation method prevents large and undetected penetrations from nodes on the master surface into slave surface, providing more accurate stress and strain results compared with other methods. The basic Coulomb friction model with the penalty friction formulation was used to simulate the frictional force response at the contact interface. The maximum allowable frictional stress is related to contact pressure by the coefficient of friction (COF) between contacting bodies.
 
-<img src="assets/rail/rail1.png"   width="100%" height="100%"/>
 
-All the parts (i.e. wheel, rail, rail joint) were assumed to behave elastically in the dynamic FE analysis and a correction of long-term behavior of materials was performed in conjunction with the fatigue life analysis. The Young’s modulus, Poisson’s ratio, and the density of the wheel, rails, rail joints, and bolts were assigned as 29,000 ksi (199.9 GPa), 0.33, and 0.283 lb/in3 (7,833.4 kg/m3), respectively. The supporting system (e.g. crosstie, ballast, etc.) was represented in the model by linear spring and dashpot elements, with details of the simplifications included in an earlier publication (8). k_t and C_t were the spring stiffness and damper coefficients, and the equivalent springs and dampers were ones contributed from the crosstie, rail pad, ballast, subgrade, etc. Using a track modulus of 4,000 psi (27.58 MPa) provided by NYCTA and results from previous research pertaining to equivalent springs and dampers, k_t=90,000 lbf/in. (15,761 kN/m) and C_t=90 lbf∙s/in. (15.76 kN∙s/m) were selected. Similarly, k_w and C_w were the spring stiffness and damper coefficient of springs representing the suspension system of a train car and k_t=1,000 lbf/in. (175.13 kN/m) and C_t=0.8 lbf∙s/in. (0.14 kN∙s/m) were selected, which are consistent with other studies (10,11).
+All the parts (i.e., wheel, rail, rail joint) were assumed to behave elastically in the dynamic FE analysis and a correction of long-term behavior of materials was performed in conjunction with the fatigue life analysis. The supporting system (e.g. crosstie, ballast, etc.) was represented in the model by linear spring and dashpot elements. The equivalent springs and dampers were ones contributed from the crosstie, rail pad, ballast, subgrade, etc.
+
+Examples of the simulation results at train speed of 20 mph (32.1 km/h), from top to bottom: (a) wheel-rail contact patch (b) Von Mises stress around rail-end bolt hole (c) Von Mises stress at rail-end upper fillet (d) vertical displacement at rail-end.
+
+<img src="assets/rail/rail1.png"   width="100%" height="100%"/>
 
 <img src="assets/rail/rail2.png"   width="100%" height="100%"/>
 
+Below is the contact force history of wheel-rail interface of bolted rail joint at train speed of 20 mph (32.1 km/h).
+
 <img src="assets/rail/rail3.png"   width="70%" height="70%"/>
+
+Based on a test report provided by NYCTA, the ultimate tensile strength (UTS) of the steel used for 115RE rail was approximately 177.0 ksi (1,220 MPa), strength at 107 cycles (Fatigue Limit) was 61.5 ksi (424 MPa), which were two key parameters used for the fatigue life analysis. The fatigue limit represents a cyclic stress amplitude below which the material does not fail and could be cycled indefinitely (i.e. an infinite fatigue life). For ductile steel specifically, the fatigue limit is the strength of the material at 107 cycles of loading. In other words, if the steel structural system could experience at least 107 cycles of loading without cracking or other damage, it is assumed that no fatigue damage would occur under the same loading conditions (16). 
+
+Fatigue Analysis Algorithms
+The Brown-Miller criterion was selected for this specific fatigue analysis, which gave the most realistic fatigue life estimates for ductile metals. The Brown-Miller equation suggests that the maximum fatigue damage occurs on the plane which experiences the maximum shear strain amplitude, and that damage is a function of both this shear strain amplitude (Δγmax/2) and the normal strain amplitude (Δεn/2).  Accordingly, different from the conventional strain-life equation (Equation 2), the Brown-Miller equation (Equation 3) alters the left-hand side of the equation with the addition of shear strain amplitude and normal strain amplitude (17).
+
+Mean Stress Corrections
+Typically, it is common for a load history to have a non-zero mean stress, σ_m, which is defined in Equation 4. The fatigue performance would vary as the mean stress changes. The influence of mean stress can be characterized as the influence of stress amplitude, σ_a, the distance of minimum stress to maximum stress in a fatigue loading cycle (Equation 5).  
+
+Generally, it can be observed that for mean stress, a tensile mean stress has a detrimental effect on endurance cycles N_f, whereas a compressive mean stress has a beneficial effect. For stress amplitude, the endurance cycles N_f increases as the applied stress amplitude σ_a decreases (19). To correct the influence of mean stress, the Morrow mean stress correction was adopted for Brown-Miller criterion. After the application of Morrow mean stress correction, the Brown-Miller equation (Equation 3) becomes Equation 6, with a corrected elastic term by subtracting the mean normal stress on the plane, σ_(n,m) (20).
+
+<img src="assets/rail/rail7.png"   width="80%" height="80%"/>
+
+<img src="assets/rail/fatiguelife.png"   width="65%" height="65%"/>
+
+Prevailing rail industry knowledge would state that the contact force generally decreases monotonically decreasing train speed (21), but findings shown in Figure 7 from this study are not in agreement with the literature. The concept that dynamic load increases with the traveling speed increases in the literature is based on the well-established vehicle-track interaction theory without considering the joints. However, there are two important differences between this study and existing literature: 1) the gap between the two rails and 2) the differential displacement of the two rails at the joint. Due to the gap between the two rails, the sending rail and the receiving rail will not have the same displacement at the same time. When the wheel is approaching the end of the sending rail, the displacement of the end of the sending rail increases. The displacement of the sending rail will cause the joint bar to move together. The displacement of the joint bar will then cause the displacement of the receiving rail. The sending rail will reach its maximum displacement when the wheel is on top of the end of the rail (8), right before the wheel rolls over the gap. However, the receiving rail will not reach the same displacement simultaneously. The differential displacement of the two rails will cause additional height mismatch (h_w) before the wheel hit the receiving rail (Figure 8). Previous research has shown the maximum contact force when the wheel hits the receiving rail increases as a function of height mismatch (10). Figure 9 shows the height mismatch increased when the speed decreased. Figure 8 and 9, when combined, show that when the operation speed reduced, the rail height mismatch would increase, and as a result, the maximum contact force could increase. Due to the rail height mismatch at the joint and the relationship of the operation speed and the rail mismatch discussed above, the maximum contact force may not decrease monotonically with the operation speed decreases, as illustrated again in Figure 10. 
+
+<img src="assets/rail/rail8.png"   width="75%" height="75%"/>
+
+<p align="center">
+      <img src="assets/rail/rail8.png" width="50%" height="50%" align="left">
+      <img src="assets/rail/rail9.png" width="50%" height="50%">
+</p>
+
 
 ## Lab measurements of near bolt-hole strain fields
 
