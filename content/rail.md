@@ -61,7 +61,7 @@ All the parts (i.e. wheel, rail, rail joint) were assumed to behave elastically 
 
 
 
-<video src="https://youtu.be/KqQZqdWWqUs" /> 
+<video src="/video/1.mp4" style="max-width:100%" controls> </video>
 
 If you find this work useful, or if it helps you in your research on rail joints, we kindly ask that you cite this paper:
 ```

@@ -130,11 +130,20 @@
                 :key="item.category + index"
                 @click="taggleShowClick(index)"
               >
-                <a>{{ item.category }}</a>
+                <a style="color: #0055aa">{{ item.category }}</a>
                 <div class="webgl-card" v-if="taggleShow === index">
-                  <p>{{item.desc}}</p>
+                  <p v-html="item.desc"></p>
                   <template v-for="(it, idx) in item.list">
-                    <a target="_blank" :key="idx" :href="'/webgl/' + it.file">
+                    <a
+                      @click.stop=""
+                      target="_blank"
+                      :key="idx"
+                      :href="
+                        it.type == 'md'
+                          ? '/paper-detail?paper=' + it.file
+                          : '/webgl/' + it.file
+                      "
+                    >
                       {{ it.title }}
                       <img :src="'/webgl/img/' + it.img" />
                     </a>
@@ -234,8 +243,8 @@
                   <img :src="item.img" />
                 </a>
                 <p class="justify-between">
-                  <span>{{item.date}}</span>
-                  <span>{{item.address}}</span>
+                  <span>{{ item.date }}+++ {{ item.address }}</span>
+                  <!-- <span></span> -->
                 </p>
               </span>
             </div>
