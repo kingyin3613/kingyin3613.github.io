@@ -69,6 +69,20 @@ This directory contains your Vuex store files. Creating a file in this directory
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
 taching talk 合并active
 
-md 有部分跳转到外部了解
-名字加粗
-webgl无法查看
+# 部署
+
+### 登陆服务器
+`ssh -i myWebSite.pem ubuntu@3.101.55.0`
+
+## 代码目录
+`/home/yh-website`
+## 拉取代码
+`git pull` 
+- 没有保存账号会提示输入
+
+## 打包
+`npm run build`
+
+## 重启服务
+`pm2 restart nuxt`
+ 
