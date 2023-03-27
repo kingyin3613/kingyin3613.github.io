@@ -1,17 +1,12 @@
-# Investigation of relationship between train speed and bolted rail joint fatigue life using finite element analysis
+# Voronoi tessellation-based mesh generator for the mesoscale structure of prismatic cellular materials
 
-Reducing the allowable operating speed or imposing temporary speed restrictions are common practices to prevent further damage to rail track when defects are detected related to certain track components. However, the speeds chosen for restricted operation are typically based on past experience without considering the magnitude of the impact load around the rail joints. Due to the discontinuity of geometry and track stiffness at the bolted rail joints, an impact load always exists. Thus, slower speeds may not necessarily reduce the stresses at the critical locations around the rail joint area to a safe level. Previously, the relationship between speed and the impact load around the rail joints has not been thoroughly investigated. 
+This project contains both mechanical and hygro-thermal models of wood specimens and engineering wood composites (e.g. Cross Laminated Timber, CLT) at both macroscale (structural) and mesoscale (wood cells) level.
 
-Recent research performed at the University of Illinois at Urbana-Champaign (UIUC) has focused on investigating the rail response to load at the joint area. A finite element model (FEM) with the capability of simulating a moving wheel load has been developed to better understand the stress propagation at the joint area under different loading scenarios and track structures. This study investigated the relationship between train speed and impact load and corresponding stress propagation around the rail joints to better understand the effectiveness of speed restrictions for bolted joint track. 
+<img src="assets/ringspy/woodmultiscale.png"   width="100%" height="100%"/>
 
-Preliminary results from this study indicate that the contact force at the wheel–rail interface would not change monotonically with the changing train speed. In other words, when train speed is reduced, the maximum contact force at the wheel–rail interface may not necessarily reduce commensurately.
+The lattice mesh generator for the microstructure of timber has been developed. The plane section mesh is featured by its Voronoi tessellation-based plane partition algorithm, each polygon in the plane mesh can be seen as a cell and the boundaries can be seen as the cell walls of the wood. The radius of the timber section, the annual ring width, the earlywood and latewood distribution, and the representative cell size are taken into consideration in lattice mesh generation, while the longitudinal extrusion algorithm is characterized by the microfibril angle, the longitudinal fiber length, and the segment length distribution. The clipping box technique is implemented to cut the 3D wood lattice mesh into any desired shape of the specimen. The small element removal technique is also developed in order to speed up the explicit analyses of the lattice model, by taking out elements with critical time steps smaller than the threshold.
 
-
-&nbsp;<br>
-
-*Our work on the homepage of UIUC CEE website! See below:*
-
-<img src="assets/rail/lookatthisonuiucceewebsite.png"   width="80%" height="80%"/>
+<img src="assets/10.gif"   width="40%" height="40%"/>
 
 ## Near bolt-hole cracking of rail joint
 A rail joint is a component used in railway tracks to connect two pieces of rails end to end. Since rail tracks need to cover long distances, the rails used in tracks are typically made of sections or lengths, rather than a continuous piece. Rail joints are used to connect these sections of rails together, creating a continuous track that can carry trains.
@@ -50,11 +45,7 @@ All the parts (i.e., wheel, rail, rail joint) were assumed to behave elastically
 Examplar simulation results at train speed of 20 mph (32.1 km/h) are shown in video and figure below. In the figure, from top to bottom: (a) wheel-rail contact patch (b) Von Mises stress around rail-end bolt hole (c) Von Mises stress at rail-end upper fillet (d) vertical displacement at rail-end.
 
 
-<video src="/videos/3.webm" style="max-width:100%" controls> </video>
-
-<img src="assets/rail/rail1.png"   width="100%" height="100%"/>
-
-<img src="assets/rail/rail2.png"   width="100%" height="100%"/>
+<video src="/videos/extrusion.webm" style="max-width:100%" controls> </video>
 
 Below is the contact force history of wheel-rail interface of bolted rail joint at train speed of 20 mph (32.1 km/h).
 
@@ -62,7 +53,7 @@ Below is the contact force history of wheel-rail interface of bolted rail joint 
 
 Based on a test report provided by NYCTA, the ultimate tensile strength (UTS) of the steel used for 115RE rail was approximately 177.0 ksi (1,220 MPa), strength at 107 cycles (Fatigue Limit) was 61.5 ksi (424 MPa), which were two key parameters used for the fatigue life analysis. The fatigue limit represents a cyclic stress amplitude below which the material does not fail and could be cycled indefinitely (i.e., an infinite fatigue life). For ductile steel specifically, the fatigue limit is the strength of the material at 107 cycles of loading. In other words, if the steel structural system could experience at least 107 cycles of loading without cracking or other damage, it is assumed that no fatigue damage would occur under the same loading conditions. 
 
-The  $xyz$ Brown-Miller criterion was selected for this specific fatigue analysis, which gave the most realistic fatigue life estimates for ductile metals. The Brown-Miller equation suggests that the maximum fatigue damage occurs on the plane which experiences the maximum shear strain amplitude, and that damage is a function of both this shear strain amplitude (Δγmax/2) and the normal strain amplitude (Δεn/2).  Accordingly, different from the conventional strain-life equation (Equation 2), the Brown-Miller equation (Equation 3) alters the left-hand side of the equation with the addition of shear strain amplitude and normal strain amplitude.
+The Brown-Miller criterion was selected for this specific fatigue analysis, which gave the most realistic fatigue life estimates for ductile metals. The Brown-Miller equation suggests that the maximum fatigue damage occurs on the plane which experiences the maximum shear strain amplitude, and that damage is a function of both this shear strain amplitude (Δγmax/2) and the normal strain amplitude (Δεn/2).  Accordingly, different from the conventional strain-life equation (Equation 2), the Brown-Miller equation (Equation 3) alters the left-hand side of the equation with the addition of shear strain amplitude and normal strain amplitude.
 
 $$
 \frac{\Delta \varepsilon}{2}=\frac{\sigma_f^{\prime}}{E}\left(2 N_f\right)^b+\varepsilon_f^{\prime}\left(2 N_f\right)^c
@@ -78,31 +69,21 @@ Prevailing rail industry knowledge would state that the contact force generally 
 
 <img src="assets/rail/rail7.png"   width="80%" height="80%"/>
 
-<img src="assets/rail/fatiguelife.png"   width="65%" height="65%"/>
-
-<img src="assets/rail/rail8.png"   width="75%" height="75%"/>
-
-
-## Lab measurements of near bolt-hole strain fields
-
-<img src="assets/rail/rail4.png"   width="80%" height="80%"/>
-
-<img src="assets/rail/rail5.png"   width="75%" height="75%"/>
-
-<img src="assets/rail/rail6.png"   width="60%" height="60%"/>
-
-
 
 If you find this work useful, or if it helps you in your research on rail joints, we kindly ask that you cite this paper:
+[![DOI](https://joss.theoj.org/papers/10.21105/joss.04945/status.svg)](https://doi.org/10.21105/joss.04945)
+
 ```
-@article{yin2018investigation,
-  title={Investigation of relationship between train speed and bolted rail joint fatigue life using finite element analysis},
-  author={Yin, Hao and Qian, Yu and Edwards, J Riley and Zhu, Kaijun},
-  journal={Transportation Research Record},
-  volume={2672},
-  number={10},
-  pages={85--95},
-  year={2018},
-  publisher={SAGE Publications Sage CA: Los Angeles, CA}
+@article{ringspy,
+    doi = {10.21105/joss.04945},
+    url = {https://doi.org/10.21105/joss.04945},
+    year = {2023},
+    publisher = {The Open Journal},
+    volume = {8},
+    number = {83},
+    pages = {4945},
+    author = {Hao Yin and Gianluca Cusatis},
+    title = {RingsPy: A Python package for Voronoi mesh generation of cellular solids with radial growth pattern},
+    journal = {Journal of Open Source Software}
 }
 ```

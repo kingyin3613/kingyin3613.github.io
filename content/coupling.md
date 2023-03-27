@@ -1,9 +1,7 @@
----
-title: wood model
-description: 'Empower your NuxtJS application with @nuxt/content module: write in a content/ directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a Git-based Headless CMS.'
----
+# Two-way coupling framework for Multiphysics-LDPM
 
-# Voronoi tessellation-based mesh generator for the mesoscale structure of prismatic cellular materials
+Previously proposed for Multiphysics-LDPM (M-LDPM), the Flow Lattice Model (FLM) has proved its capability of capturing the mass transport and heat transfer with a discrete-type dual mesh of LDPM. Now coupled with LDPM, the multiphysics problems such as the thermal-hydro-mechanical problem can be solved in a two-way coupled FLM-LDPM analysis framework with the help of the Interprocess Communication (IPC). The periodic data communication between two Abaqus solvers (Abaqus/standard for the thermal/diffusion part and Abaqus/Explicit for the mechanical part) and spatial & temporal mappings between the two solvers allow the coupling process to run smoothly and robustly. 
+
 ## Writing content
 
 Learn how to write your `content/`, supporting Markdown, YAML, CSV and JSON: https://content.nuxtjs.org/writing.

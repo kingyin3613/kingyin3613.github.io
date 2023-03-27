@@ -243,7 +243,7 @@
                   <img :src="item.img" />
                 </a>
                 <p class="justify-between">
-                  <span>{{ item.date }}+++ {{ item.address }}</span>
+                  <span>{{ item.date }} &nbsp;&nbsp;&nbsp;{{ item.address }}</span>
                   <!-- <span></span> -->
                 </p>
               </span>

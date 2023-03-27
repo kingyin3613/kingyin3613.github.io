@@ -1,19 +1,12 @@
-# Investigation of relationship between train speed and bolted rail joint fatigue life using finite element analysis
+# Isogeometric beam lattice
 
-This article presents a novel derivation for the governing equations of geometrically curved and twisted three-dimensional Timoshenko beams. The kinematic model of the beam was derived rigorously by adopting a parametric description of the axis of the beam, using the local Frenet–Serret reference system, and introducing the constraint of the beam cross ection planarity into the classical, first-order strain versus displacement relations for Cauchy’s continua. The resulting beam kinematic model includes a multiplicative term consisting of the inverse of the Jacobian of the beam axis curve. This term is not included in classical beam formulations available in the literature; its contribution vanishes exactly for straight beams and is negligible only for curved and twisted beams with slender geometry. Furthermore, to simplify the description of complex beam geometries, the governing equations were derived with reference to a generic position of the beam axis within the beam cross section. Finally, this study pursued the numerical implementation of the curved beam formulation within the conceptual framework of isogeometric analysis, which allows the exact description of the beam geometry. This avoids stress locking issues and the corresponding convergence problems encountered when classical straight beam finite elements are used to discretize the geometry of curved and twisted beams. Finally, this article presents the solution of several numerical examples to demonstrate the accuracy and effectiveness of the proposed theoretical formulation and numerical implementation.
+This work developed a novel derivation for the governing equations of geometrically curved and twisted three-dimensional Timoshenko beams. The kinematic model of the beam was derived rigorously by adopting a parametric description of the axis of the beam, using the local Frenet–Serret reference system, and introducing the constraint of the beam cross ection planarity into the classical, first-order strain versus displacement relations for Cauchy’s continua. The resulting beam kinematic model includes a multiplicative term consisting of the inverse of the Jacobian of the beam axis curve. This term is not included in classical beam formulations available in the literature; its contribution vanishes exactly for straight beams and is negligible only for curved and twisted beams with slender geometry. Furthermore, to simplify the description of complex beam geometries, the governing equations were derived with reference to a generic position of the beam axis within the beam cross section. Finally, this study pursued the numerical implementation of the curved beam formulation within the conceptual framework of isogeometric analysis, which allows the exact description of the beam geometry. This avoids stress locking issues and the corresponding convergence problems encountered when classical straight beam finite elements are used to discretize the geometry of curved and twisted beams. Finally, this article presents the solution of several numerical examples to demonstrate the accuracy and effectiveness of the proposed theoretical formulation and numerical implementation.
 
 &nbsp;<br>
 
-*Our work on the homepage of UIUC CEE website! See below:*
+<img src="assets/IGAbeam/NSF-CLT.png"   width="100%" height="100%"/>
 
-<img src="assets/rail/lookatthisonuiucceewebsite.png"   width="80%" height="80%"/>
-
-## Near bolt-hole cracking of rail joint
-A rail joint is a component used in railway tracks to connect two pieces of rails end to end. Since rail tracks need to cover long distances, the rails used in tracks are typically made of sections or lengths, rather than a continuous piece. Rail joints are used to connect these sections of rails together, creating a continuous track that can carry trains.
-
-Rail joints are typically made of steel and consist of two pieces: a male end and a female end. The male end is typically a smaller piece of rail that has a raised edge on one side, while the female end is a larger piece of rail with a groove that the male end fits into. When the two pieces of rail are placed together, they form a secure connection that can withstand the weight and force of passing trains.
-
-Proper installation and maintenance of rail joints is important for the safe and efficient operation of railway tracks. In some cases, defects in rail joints can lead to derailments or other accidents, so regular inspection and repair of rail joints is crucial for maintaining safe rail transport. (Credit to ChatGPT for this amazing description!)
+## Generalized formulation of 3D Timoshenko beams with irregular cross-sections
 
 <img src="assets/rail/joint.jpg"   width="90%" height="90%"/>
 
@@ -22,7 +15,7 @@ Fatigue crackings can happen as illustrated in pictures below: bolt-hole crackin
 
 <img src="assets/rail/photo.png"   width="90%" height="90%"/>
 
-## Dynamic finite element model
+## Isogeometric analysis implementation of generalized Timoshenko beams 
 A finite element model of rail joint system was developed to simulate the dynamic response of the rail joint system to the impact load caused by moving wheels. The 115RE rail and standard joint bars were selected to represent a typical joint used in rail transit systems in the United States.
 The total length of each rail was 216 in. (548.6 cm), based on the sensitivity analysis of rail length in our earlier research, the length of each rail modeled with 3-D deformable solid elements set to 36 in. (91.4 cm), and the remaining 180 in. (457.2 cm) of each rail was simplified by assigning rail section properties to linear beam elements. 
 The crossties were modeled with vertical spring and dashpot systems.
@@ -46,23 +39,9 @@ Examples of the simulation results at train speed of 20 mph (32.1 km/h), from to
 
 <img src="assets/rail/rail1.png"   width="100%" height="100%"/>
 
-<img src="assets/rail/rail2.png"   width="100%" height="100%"/>
-
-Below is the contact force history of wheel-rail interface of bolted rail joint at train speed of 20 mph (32.1 km/h).
-
 <img src="assets/rail/rail3.png"   width="70%" height="70%"/>
 
 Based on a test report provided by NYCTA, the ultimate tensile strength (UTS) of the steel used for 115RE rail was approximately 177.0 ksi (1,220 MPa), strength at 107 cycles (Fatigue Limit) was 61.5 ksi (424 MPa), which were two key parameters used for the fatigue life analysis. The fatigue limit represents a cyclic stress amplitude below which the material does not fail and could be cycled indefinitely (i.e. an infinite fatigue life). For ductile steel specifically, the fatigue limit is the strength of the material at 107 cycles of loading. In other words, if the steel structural system could experience at least 107 cycles of loading without cracking or other damage, it is assumed that no fatigue damage would occur under the same loading conditions (16). 
-
-Fatigue Analysis Algorithms
-The Brown-Miller criterion was selected for this specific fatigue analysis, which gave the most realistic fatigue life estimates for ductile metals. The Brown-Miller equation suggests that the maximum fatigue damage occurs on the plane which experiences the maximum shear strain amplitude, and that damage is a function of both this shear strain amplitude (Δγmax/2) and the normal strain amplitude (Δεn/2).  Accordingly, different from the conventional strain-life equation (Equation 2), the Brown-Miller equation (Equation 3) alters the left-hand side of the equation with the addition of shear strain amplitude and normal strain amplitude (17).
-
-Mean Stress Corrections
-Typically, it is common for a load history to have a non-zero mean stress, σ_m, which is defined in Equation 4. The fatigue performance would vary as the mean stress changes. The influence of mean stress can be characterized as the influence of stress amplitude, σ_a, the distance of minimum stress to maximum stress in a fatigue loading cycle (Equation 5).  
-
-Generally, it can be observed that for mean stress, a tensile mean stress has a detrimental effect on endurance cycles N_f, whereas a compressive mean stress has a beneficial effect. For stress amplitude, the endurance cycles N_f increases as the applied stress amplitude σ_a decreases (19). To correct the influence of mean stress, the Morrow mean stress correction was adopted for Brown-Miller criterion. After the application of Morrow mean stress correction, the Brown-Miller equation (Equation 3) becomes Equation 6, with a corrected elastic term by subtracting the mean normal stress on the plane, σ_(n,m) (20).
-
-<img src="assets/rail/rail7.png"   width="80%" height="80%"/>
 
 <img src="assets/rail/fatiguelife.png"   width="65%" height="65%"/>
 
@@ -75,18 +54,16 @@ Prevailing rail industry knowledge would state that the contact force generally 
       <img src="assets/rail/rail9.png" width="50%" height="50%">
 </p>
 
+## Isogeometric beam lattice in connector-beam lattice model
 
-## Lab measurements of near bolt-hole strain fields
 
-<img src="assets/rail/rail4.png"   width="80%" height="80%"/>
+<img src="assets/IGAbeam/Singlewoodfiber_softwood.png"   width="80%" height="80%"/>
 
 <img src="assets/rail/rail5.png"   width="75%" height="75%"/>
 
 <img src="assets/rail/rail6.png"   width="60%" height="60%"/>
 
 
-
-<video src="https://youtu.be/KqQZqdWWqUs" /> 
 
 If you find this work useful, or if it helps you in your research on rail joints, we kindly ask that you cite this paper:
 ```
