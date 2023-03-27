@@ -9,10 +9,22 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
+
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet',  href: '/main.css' },
-      { rel: 'stylesheet',  href: '/font.css' }
+      { rel: 'stylesheet', href: '/main.css' },
+      { rel: 'stylesheet', href: '/font.css' }
+
+    ],
+    script: [
+      {
+        type: 'text/javascript',
+        src: '//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+        body: true //<script>是否在body中
+      },
+     
     ]
+
+
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
