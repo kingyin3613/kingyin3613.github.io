@@ -16,12 +16,12 @@ export default {
 
     ],
     script: [
-      {
-        type: 'text/javascript',
-        src: '//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
-        body: true //<script>是否在body中
-      },
-     
+      // {
+      //   type: 'text/javascript',
+      //   src: '//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+      //   body: true //<script>是否在body中
+      // },
+
     ]
 
 
@@ -34,6 +34,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '~/plugins/mathjs', ssr: false },
+
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

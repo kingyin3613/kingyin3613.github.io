@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <script type="text/x-mathjax-config">
+    <!-- <script type="text/x-mathjax-config">
          if(MathJax){
         MathJax.Hub.Config({
           jax: ["input/TeX","output/HTML-CSS", "output/PreviewHTML"],  //输出格式配置：latex 解析为 DOM结构
@@ -18,10 +18,10 @@
           },
         });
       }
-    </script>
+    </script> -->
     <div class="outercontainer">
       <div class="container body md-body" id="mdContainer">
-        <nuxt-content v-if="page" :document="page" />
+        <nuxt-content v-if="page" v-katex :document="page" />
         <div v-else>暂无数据</div>
       </div>
     </div>
@@ -29,6 +29,9 @@
 </template>
 
 <script>
+import katex from "katex";
+// const katex = require('katex');
+// require('katex/contrib/mhchem');
 export default {
   name: "paperDetail",
   async asyncData({ $content, query }) {
@@ -43,18 +46,9 @@ export default {
   },
   mounted() {
     setTimeout(() => {
-      // if (window.isMathjaxConfig === false) {
-      //   // 如果：没有配置MathJax
-      //   window.initMathjaxConfig();
-      // }
-      // // 如果，不传入第三个参数，则渲染整个document
-      // // 因为使用的Vuejs，所以指明#app，以提高速度
-      // window.MathJax.Hub.Queue([
-      //   "Typeset",
-      //   MathJax.Hub,
-      //   document.getElementById("mdContainer"),
-      // ]);
-    }, 10000000);
+      const content = document.getElementsByClassName("nuxt-content")[0];
+      content.innerHTML = katex.renderToString(content.innerHTML);
+    }, 100);
   },
 };
 </script>
