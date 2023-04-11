@@ -1,76 +1,72 @@
-# Voronoi tessellation-based mesh generator for the mesoscale structure of prismatic cellular materials
+# Voronoi tessellation-based mesh generator for the mesoscale structure of wood
 
-This project contains both mechanical and hygro-thermal models of wood specimens and engineering wood composites (e.g. Cross Laminated Timber, CLT) at both macroscale (structural) and mesoscale (wood cells) level.
+Wood has a unique micromorphology featuring a local pattern of prismatic cells and a global pattern of annual growth rings. Understanding the role of locally irregular and globally radial micromorphology in determining material properties offers a new path to unveil the behavior of wood and wood-based materials with functionalities, such as anisotropic material properties, stress redirection, and oriented impact energy dissipation. 
+While laboratory and in-situ imaging approaches are reliable for the reconstruction of high-resolution wood micromorphologies in computational modeling, algorithm-based generation of wood microstructure geometries are still in high demand. They have the advantage of lowering cost while enabling rapid prototyping and stochastic analysis of wood products during the design phase. This study develops a rapid wood micromorphology modeling technique, based on Voronoi tessellation and Lloyd's relaxation algorithm, to mimic the prismatic cellular microstructure for softwood in 3D. The generated wood microstructure is then integrated with the Connector-Beam Lattice Model for wood (CBL-W) to establish a pipeline for numerical simulations of the quasi-static and fracture properties of wood and wood-based materials.
 
+<img src="assets/ringspy/1a71c89aaa01bc48024753d2e207c281.jpg"   width="90%" height="90%"/>
+
+## Multiscale structure of wood
+
+Wood and engineered wood composites are biological composite materials that are made up of several hierarchical levels of organization. They have different structures at different levels of scale, from the macroscopic to the microscopic.
+
+<p align="center">
 <img src="assets/ringspy/woodmultiscale.png"   width="100%" height="100%"/>
+</p>
 
-The lattice mesh generator for the microstructure of timber has been developed. The plane section mesh is featured by its Voronoi tessellation-based plane partition algorithm, each polygon in the plane mesh can be seen as a cell and the boundaries can be seen as the cell walls of the wood. The radius of the timber section, the annual ring width, the earlywood and latewood distribution, and the representative cell size are taken into consideration in lattice mesh generation, while the longitudinal extrusion algorithm is characterized by the microfibril angle, the longitudinal fiber length, and the segment length distribution. The clipping box technique is implemented to cut the 3D wood lattice mesh into any desired shape of the specimen. The small element removal technique is also developed in order to speed up the explicit analyses of the lattice model, by taking out elements with critical time steps smaller than the threshold.
+At the macroscopic level, wood has a complex structure of annual growth rings, which are formed as a result of variations in the rate of growth of the tree over the course of a year. The growth rings are composed of concentric layers of wood, each with its own distinct properties, such as density, porosity, and strength.
 
+At the mesoscopic level, wood has a cellular structure that consists of longitudinal cells called tracheids and fibers, which are responsible for the mechanical strength and flexibility of the material. These cells are arranged in layers in the longitudinal direction, which give wood its characteristic grain pattern.
+
+<p align="center">
+<img src="assets/ringspy/41578_2020_195_Figa_HTML.png"   width="60%" height="60%"/>
+</p>
+
+At the microscopic level, wood is composed of cellulose fibers that are arranged in a helical pattern, surrounded by a matrix of lignin and other compounds. The arrangement of these fibers gives wood its unique mechanical properties, including high stiffness and strength, as well as the ability to withstand bending and compression.
+
+In this project, we focus on the <b>mesoscale</b> structure of wood, at which the solid constituents (i.e., tracheids and fibers) exhibit the "intrinsic heterogeneity and anisotropy" of the material at the µm level.
+
+## Voronoi tessellation for wood mesostructure
+
+The cellular mesostructure of wood is a natural outcome of local cell growth that follows simple intrinsic physical rules, among these, Voronoi diagram [(click here for more details)](https://en.wikipedia.org/wiki/Voronoi_diagram), has been proposed to be one of the simple but accurate approximations of cell interfaces at the steady-state by the equilibrium of intracellular pressures and the intercellular surface tension in a plane. This Voronoi diagram is also suitable for representing sections of other cellular materials, such as trabecular bone, skeletal muscle fiber and some 3D printed biomimetic composites.
+
+To generate a 2D Voronoi diagram for wood section, we firstly pick a set of input points (a.k.a., seeds), which will determine the Voronoi cells and follows rules such as the wood cell density distribution. Then for each input point, we determine the set of points that are closest to it. These points form the boundary of the Voronoi cell for that input point. We then connect adjacent Voronoi cells to form the edges of the diagram, these edges represent wood cell walls. In some cases, the Voronoi cells may extend infinitely far in one or more direction, these infinite cells combined with the finite cells on the boundary lines of the model are truncated and trimed.
+
+<img src="assets/ringspy/voronoi.png"   width="100%" height="100%"/>
+
+Apart from the basic Voronoi diagram, another technique is adopted to achieve a more realistic wood cellular structure: Lloyd's relaxation, also known as Lloyd's algorithm or Voronoi iteration, is a computational method for finding an optimal set of points that minimize the distance between the points and a given set of data. The algorithm iteratively partitions the data space into cells by computing Voronoi diagrams and then moves the points to the centroid of each cell. This process is repeated until convergence, which means that the point set no longer changes significantly. By using Lloyd's relaxation with appropriate boundary conditions, we can simulate the radial growth process of wood cells. One example of the simulation of softwood growth is as shown in figure below:
+
+<p align="center">
 <img src="assets/10.gif"   width="40%" height="40%"/>
+</p>
 
-## Near bolt-hole cracking of rail joint
-A rail joint is a component used in railway tracks to connect two pieces of rails end to end. Since rail tracks need to cover long distances, the rails used in tracks are typically made of sections or lengths, rather than a continuous piece. Rail joints are used to connect these sections of rails together, creating a continuous track that can carry trains.
+The formation of the annual growth rings follows density models of annual rings. We firstly employ a truncated normal distribution for the annual ring widths, then within each annual ring, the variability of wood cell density is considered via the transition from early wood (larger cell size but smaller cellwall thickness) to late wood (smaller cell size but larger cellwall thickness).
 
-Rail joints are typically made of steel and consist of two pieces: a male end and a female end. The male end is typically a smaller piece of rail that has a raised edge on one side, while the female end is a larger piece of rail with a groove that the male end fits into. When the two pieces of rail are placed together, they form a secure connection that can withstand the weight and force of passing trains.
+<img src="assets/ringspy/growth_rule_binary.png"   width="90%" height="90%"/>
 
-Proper installation and maintenance of rail joints is important for the safe and efficient operation of railway tracks. In some cases, defects in rail joints can lead to derailments or other accidents, so regular inspection and repair of rail joints is crucial for maintaining safe rail transport. (Credit to ChatGPT for this amazing description!)
-
-<img src="assets/rail/joint.jpg"   width="90%" height="90%"/>
-
-Fatigue is a major issue with rail joints that can result in highly hazardous circumstances. Rail joints are subject to repeated stress as trains pass over them, which can cause fatigue and ultimately lead to cracking or failure of the joint. 
-Fatigue crackings can happen as illustrated in pictures below: bolt-hole cracking (left), and upper fillet cracking (head-web separation).
-
-<img src="assets/rail/photo.png"   width="90%" height="90%"/>
-
-## Dynamic finite element model
-A finite element model of rail joint system was developed to simulate the dynamic response of the rail joint system to the impact load caused by moving wheels. The 115RE rail and standard joint bars were selected to represent a typical joint used in rail transit systems in the United States.
-The total length of each rail was 216 in. (548.6 cm), based on the sensitivity analysis of rail length in our earlier research, the length of each rail modeled with 3-D deformable solid elements set to 36 in. (91.4 cm), and the remaining 180 in. (457.2 cm) of each rail was simplified by assigning rail section properties to linear beam elements. 
-The crossties were modeled with vertical spring and dashpot systems.
-The initial height mismatch between the sending rail and receiving rail was also introduced in this dynamic FE model to better simulate the geometric imperfections at the rail joints caused by poor assembly, ground settlement, etc.
-Below is a schematic diagram of the FE model of bolted rail joint. 
-
-<img src="assets/rail/Model.png"   width="80%" height="80%"/>
-
-For the geometry of wheel, the diameter of wheel was set to R = 17 in. (43.2 cm), which was a typical size of railcar wheel used in heavy rail transit systems, such as the MTA New York City Transit Authority. Due to the fact that the behavior of rail joint system was primarily studied in the vertical plane and the models were loaded vertically and symmetrically in the longitudinal direction of the rail, the railcar wheel was modeled as a cylinder without a flange.
-Figure below shows the components of FE model generated in the simulation.
-
-<img src="assets/rail/Assembly.png"   width="50%" height="50%"/>
-
-
-Contact interactions between components were formulated using surface-to-surface contact discretization, and a master-slave surface pair was defined for each contact pair. This contact formulation method prevents large and undetected penetrations from nodes on the master surface into slave surface, providing more accurate stress and strain results compared with other methods. The basic Coulomb friction model with the penalty friction formulation was used to simulate the frictional force response at the contact interface. The maximum allowable frictional stress is related to contact pressure by the coefficient of friction (COF) between contacting bodies.
-
-
-All the parts (i.e., wheel, rail, rail joint) were assumed to behave elastically in the dynamic FE analysis and a correction of long-term behavior of materials was performed in conjunction with the fatigue life analysis. The supporting system (e.g. crosstie, ballast, etc.) was represented in the model by linear spring and dashpot elements. The equivalent springs and dampers were ones contributed from the crosstie, rail pad, ballast, subgrade, etc.
-
-Examplar simulation results at train speed of 20 mph (32.1 km/h) are shown in video and figure below. In the figure, from top to bottom: (a) wheel-rail contact patch (b) Von Mises stress around rail-end bolt hole (c) Von Mises stress at rail-end upper fillet (d) vertical displacement at rail-end.
-
+The 2D Voronoi diagram is then rotated and extruded in the longitudinal (out-of-plane) direction, to form the straw-like shapes of wood tracheids or fibers. The extrusion in the longitudinal direction can be cut into many layers, the segments have various lengths which are dependent on the wood species. The rotation angle of wood tracheids or fibers during the extrusion represents the natural inclination during tree growth. The video below illustrates the whole process of longitudinal extrusion, and boundary formation:
 
 <video src="/videos/extrusion.webm" style="max-width:100%" controls> </video>
 
-Below is the contact force history of wheel-rail interface of bolted rail joint at train speed of 20 mph (32.1 km/h).
+## RingsPy package for wood micromorphology modeling
 
-<img src="assets/rail/rail3.png"   width="70%" height="70%"/>
+RingsPy ([https://github.com/kingyin3613/ringspy](https://github.com/kingyin3613/ringspy)) is our open-source package entirely written in Python that generates 3D meshes of prismatic cellular solids with tunable radial growth rules featured by many natural or architectured cellular solids with a radial, differential cell growth pattern. The 2D geometry of the cellular structure of the solid is first constructed with a 2D Voronoi tessellation, 
+and then the 2D Voronoi cells are extruded in the longitudinal (parallel-to-grain) direction with a certain grain angle around the longitudinal axis. This process is supposed to mimic the morphology and dynamic growth of natural or additively manufactured cellular materials. 
 
-Based on a test report provided by NYCTA, the ultimate tensile strength (UTS) of the steel used for 115RE rail was approximately 177.0 ksi (1,220 MPa), strength at 107 cycles (Fatigue Limit) was 61.5 ksi (424 MPa), which were two key parameters used for the fatigue life analysis. The fatigue limit represents a cyclic stress amplitude below which the material does not fail and could be cycled indefinitely (i.e., an infinite fatigue life). For ductile steel specifically, the fatigue limit is the strength of the material at 107 cycles of loading. In other words, if the steel structural system could experience at least 107 cycles of loading without cracking or other damage, it is assumed that no fatigue damage would occur under the same loading conditions. 
+<img src="assets/ringspy/ModelVisualization.png"   width="100%" height="100%"/>
 
-The Brown-Miller criterion was selected for this specific fatigue analysis, which gave the most realistic fatigue life estimates for ductile metals. The Brown-Miller equation suggests that the maximum fatigue damage occurs on the plane which experiences the maximum shear strain amplitude, and that damage is a function of both this shear strain amplitude (Δγmax/2) and the normal strain amplitude (Δεn/2).  Accordingly, different from the conventional strain-life equation (Equation 2), the Brown-Miller equation (Equation 3) alters the left-hand side of the equation with the addition of shear strain amplitude and normal strain amplitude.
+The package is dependent only on `numpy` and `scipy` for core implementation, however, regular cells (e.g., hexagonal honeycomb structure) option is also provided, with the help of Python package `hexalattice`. The visualization of the generated geometry is implemented using Python package `matplotlib` for 2D cross-sectional images, and for 3D models using the VTK or STL format files (which can be then used in scientific visualization tools such as Paraview and for 3D printing).
 
-$$
-\frac{\Delta \varepsilon}{2}=\frac{\sigma_f^{\prime}}{E}\left(2 N_f\right)^b+\varepsilon_f^{\prime}\left(2 N_f\right)^c
-$$
-
-$$
-\frac{\Delta \gamma_{\max }}{2}+\frac{\Delta \varepsilon_n}{2}=C_1 \frac{\sigma_f^{\prime}}{E}\left(2 N_f\right)^b+C_2 \varepsilon_f^{\prime}\left(2 N_f\right)^c
-$$
-
-Generally, it can be observed that for mean stress, a tensile mean stress has a detrimental effect on endurance cycles N_f, whereas a compressive mean stress has a beneficial effect. For stress amplitude, the endurance cycles N_f increases as the applied stress amplitude σ_a decreases. To correct the influence of mean stress, the Morrow mean stress correction was adopted for Brown-Miller criterion. After the application of Morrow mean stress correction, the Brown-Miller equation (Equation 3) becomes Equation 6, with a corrected elastic term by subtracting the mean normal stress on the plane, σ_(n,m).
-
-Prevailing rail industry knowledge would state that the contact force generally decreases monotonically decreasing train speed, but findings shown in figure below from this study are not in agreement with the literature. The concept that dynamic load increases with the traveling speed increases in the literature is based on the well-established vehicle-track interaction theory without considering the joints. However, there are two important differences between this study and existing literature: 1) the gap between the two rails, and 2) the differential displacement of the two rails at the joint. Due to the gap between the two rails, the sending rail and the receiving rail will not have the same displacement at the same time. When the wheel is approaching the end of the sending rail, the displacement of the end of the sending rail increases. The displacement of the sending rail will cause the joint bar to move together. The displacement of the joint bar will then cause the displacement of the receiving rail. The sending rail will reach its maximum displacement when the wheel is on top of the end of the rail, right before the wheel rolls over the gap. However, the receiving rail will not reach the same displacement simultaneously. The differential displacement of the two rails will cause additional height mismatch before the wheel hit the receiving rail. Previous research has shown the maximum contact force when the wheel hits the receiving rail increases as a function of height mismatch. Due to the rail height mismatch at the joint and the relationship of the operation speed and the rail mismatch discussed above, the maximum contact force may not decrease monotonically with the operation speed decreases. 
-
-<img src="assets/rail/rail7.png"   width="80%" height="80%"/>
+<p align="center">
+<img src="assets/ringspy/Model2DPreview.png"   width="80%" height="80%"/>
+</p>
 
 
-If you find this work useful, or if it helps you in your research on rail joints, we kindly ask that you cite this paper:
+<p align="center">
+<img src="assets/ringspy/comparison.png"   width="80%" height="80%"/>
+</p>
+
+
+If you take use of this package, or if it helps you in your research on cellular solids, we kindly ask that you cite this paper:
 [![DOI](https://joss.theoj.org/papers/10.21105/joss.04945/status.svg)](https://doi.org/10.21105/joss.04945)
 
 ```

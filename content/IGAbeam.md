@@ -1,80 +1,177 @@
 # Isogeometric beam lattice
 
-This work developed a novel derivation for the governing equations of geometrically curved and twisted three-dimensional Timoshenko beams. The kinematic model of the beam was derived rigorously by adopting a parametric description of the axis of the beam, using the local Frenet–Serret reference system, and introducing the constraint of the beam cross ection planarity into the classical, first-order strain versus displacement relations for Cauchy’s continua. The resulting beam kinematic model includes a multiplicative term consisting of the inverse of the Jacobian of the beam axis curve. This term is not included in classical beam formulations available in the literature; its contribution vanishes exactly for straight beams and is negligible only for curved and twisted beams with slender geometry. Furthermore, to simplify the description of complex beam geometries, the governing equations were derived with reference to a generic position of the beam axis within the beam cross section. Finally, this study pursued the numerical implementation of the curved beam formulation within the conceptual framework of isogeometric analysis, which allows the exact description of the beam geometry. This avoids stress locking issues and the corresponding convergence problems encountered when classical straight beam finite elements are used to discretize the geometry of curved and twisted beams. Finally, this article presents the solution of several numerical examples to demonstrate the accuracy and effectiveness of the proposed theoretical formulation and numerical implementation.
+We approximate the internal structure of wood with a lattice system in which curved
+beam elements are located at the the common longitudinal sides shared by multiple cells
+(for examples, points A, B, C, D, E, and F in the figure below). The cross section of these beam elements is
+composed by portions of the cell walls attached to the shared edges. Each cell wall will be
+subdivided in two equal portions assigned to the two adjacent beams. 
 
-&nbsp;<br>
+The beam behavior is governed by a newly derived Timoshenko beam formulation, which account for the geometrical curvature and torsion in 3D. The kinematic model of the beam was derived rigorously by adopting a parametric description of the axis of the beam, using the local Frenet–Serret reference system, and introducing the constraint of the beam cross ection planarity into the classical, first-order strain versus displacement relations for Cauchy' s continua. The resulting beam kinematic model includes a multiplicative term consisting of the inverse of the Jacobian of the beam axis curve. Its contribution vanishes exactly for straight beams and is negligible only for curved and twisted beams with slender geometry. Furthermore, to simplify the description of complex beam geometries, the governing equations were derived with reference to a generic position of the beam axis within the beam cross section.
+
+Finally, this study pursued the numerical implementation of the curved beam formulation within the conceptual framework of isogeometric analysis, which allows the exact description of the beam geometry. This avoids stress locking issues and the corresponding convergence problems encountered when classical straight beam finite elements are used to discretize the geometry of curved and twisted beams.
 
 <img src="assets/IGAbeam/NSF-CLT.png"   width="100%" height="100%"/>
 
 ## Generalized formulation of 3D Timoshenko beams with irregular cross-sections
 
-<img src="assets/rail/joint.jpg"   width="90%" height="90%"/>
+The underlying assumptions for the new beam formulation are the same as those made in classical Timoshenko beam theory: 1) the beam axis is orthogonal to the beam cross-sections before the deformation; 2) the cross-sections remain planar and preserve their shape and size during deformation; and 3) displacements and rotations are small compared to the beam size (first-order theory). The warping effects of the section planes are neglected in this work.
 
-Fatigue is a major issue with rail joints that can result in highly hazardous circumstances. Rail joints are subject to repeated stress as trains pass over them, which can cause fatigue and ultimately lead to cracking or failure of the joint. 
-Fatigue crackings can happen as illustrated in pictures below: bolt-hole cracking (left), and upper fillet cracking (head-web separation).
+The geometry of a curved and twisted beam can be represented by a parametric curve of the beam axis $\mathbf{r}(s)$, as a function of the arc-length $s$, and a position vector on the cross-section $\mathbf{p}(p_{n},p_{b})$. 
 
-<img src="assets/rail/photo.png"   width="90%" height="90%"/>
+$$
+\mathbf{x}(s,p_n,p_b) = \mathbf{r}(s) + p_n\mathbf{n}+ p_b\mathbf{b}
+$$
 
-## Isogeometric analysis implementation of generalized Timoshenko beams 
-A finite element model of rail joint system was developed to simulate the dynamic response of the rail joint system to the impact load caused by moving wheels. The 115RE rail and standard joint bars were selected to represent a typical joint used in rail transit systems in the United States.
-The total length of each rail was 216 in. (548.6 cm), based on the sensitivity analysis of rail length in our earlier research, the length of each rail modeled with 3-D deformable solid elements set to 36 in. (91.4 cm), and the remaining 180 in. (457.2 cm) of each rail was simplified by assigning rail section properties to linear beam elements. 
-The crossties were modeled with vertical spring and dashpot systems.
-The initial height mismatch between the sending rail and receiving rail was also introduced in this dynamic FE model to better simulate the geometric imperfections at the rail joints caused by poor assembly, ground settlement, etc.
-Below is a schematic diagram of the FE model of bolted rail joint. 
-
-<img src="assets/rail/Model.png"   width="80%" height="80%"/>
-
-For the geometry of wheel, the diameter of wheel was set to R = 17 in. (43.2 cm), which was a typical size of railcar wheel used in heavy rail transit systems, such as the MTA New York City Transit Authority. Due to the fact that the behavior of rail joint system was primarily studied in the vertical plane and the models were loaded vertically and symmetrically in the longitudinal direction of the rail, the railcar wheel was modeled as a cylinder without a flange.
-Figure below shows the components of FE model generated in the simulation.
-
-<img src="assets/rail/Assembly.png"   width="50%" height="50%"/>
-
-
-Contact interactions between components were formulated using surface-to-surface contact discretization, and a master-slave surface pair was defined for each contact pair. This contact formulation method prevents large and undetected penetrations from nodes on the master surface into slave surface, providing more accurate stress and strain results compared with other methods. The basic Coulomb friction model with the penalty friction formulation was used to simulate the frictional force response at the contact interface. The maximum allowable frictional stress is related to contact pressure by the coefficient of friction (COF) between contacting bodies.
-
-
-All the parts (i.e., wheel, rail, rail joint) were assumed to behave elastically in the dynamic FE analysis and a correction of long-term behavior of materials was performed in conjunction with the fatigue life analysis. The supporting system (e.g. crosstie, ballast, etc.) was represented in the model by linear spring and dashpot elements. The equivalent springs and dampers were ones contributed from the crosstie, rail pad, ballast, subgrade, etc.
-
-Examples of the simulation results at train speed of 20 mph (32.1 km/h), from top to bottom: (a) wheel-rail contact patch (b) Von Mises stress around rail-end bolt hole (c) Von Mises stress at rail-end upper fillet (d) vertical displacement at rail-end.
-
-<img src="assets/rail/rail1.png"   width="100%" height="100%"/>
-
-<img src="assets/rail/rail3.png"   width="70%" height="70%"/>
-
-Based on a test report provided by NYCTA, the ultimate tensile strength (UTS) of the steel used for 115RE rail was approximately 177.0 ksi (1,220 MPa), strength at 107 cycles (Fatigue Limit) was 61.5 ksi (424 MPa), which were two key parameters used for the fatigue life analysis. The fatigue limit represents a cyclic stress amplitude below which the material does not fail and could be cycled indefinitely (i.e. an infinite fatigue life). For ductile steel specifically, the fatigue limit is the strength of the material at 107 cycles of loading. In other words, if the steel structural system could experience at least 107 cycles of loading without cracking or other damage, it is assumed that no fatigue damage would occur under the same loading conditions (16). 
-
-<img src="assets/rail/fatiguelife.png"   width="65%" height="65%"/>
-
-Prevailing rail industry knowledge would state that the contact force generally decreases monotonically decreasing train speed (21), but findings shown in Figure 7 from this study are not in agreement with the literature. The concept that dynamic load increases with the traveling speed increases in the literature is based on the well-established vehicle-track interaction theory without considering the joints. However, there are two important differences between this study and existing literature: 1) the gap between the two rails and 2) the differential displacement of the two rails at the joint. Due to the gap between the two rails, the sending rail and the receiving rail will not have the same displacement at the same time. When the wheel is approaching the end of the sending rail, the displacement of the end of the sending rail increases. The displacement of the sending rail will cause the joint bar to move together. The displacement of the joint bar will then cause the displacement of the receiving rail. The sending rail will reach its maximum displacement when the wheel is on top of the end of the rail (8), right before the wheel rolls over the gap. However, the receiving rail will not reach the same displacement simultaneously. The differential displacement of the two rails will cause additional height mismatch (h_w) before the wheel hit the receiving rail (Figure 8). Previous research has shown the maximum contact force when the wheel hits the receiving rail increases as a function of height mismatch (10). Figure 9 shows the height mismatch increased when the speed decreased. Figure 8 and 9, when combined, show that when the operation speed reduced, the rail height mismatch would increase, and as a result, the maximum contact force could increase. Due to the rail height mismatch at the joint and the relationship of the operation speed and the rail mismatch discussed above, the maximum contact force may not decrease monotonically with the operation speed decreases, as illustrated again in Figure 10. 
-
-<img src="assets/rail/rail8.png"   width="75%" height="75%"/>
+The vector $\mathbf{r}(s)$ allows calculating the Frenet-Serret local basis, as well as the local curvature $\kappa$ and torsion $\tau$, as shown in figure below: 
 
 <p align="center">
-      <img src="assets/rail/rail8.png" width="50%" height="50%" align="left">
-      <img src="assets/rail/rail9.png" width="50%" height="50%">
+<img src="assets/IGAbeam/kinematics.png"   width="55%" height="55%"/>
 </p>
+
+A generic point $\mathbf{x}$ can achieve a displacement vector $\mathbf{u} =\mathbf{u}(s,p_n,p_b)$, and this displacement can be decomposed into two parts: one is the displacement induced by rigid body translation of the cross section, another part is the displacement induced by the rigid body rotation of the cross section. For the rigid body rotation part, assume that the position vector of generic point after rotation $\mathbf{p}^{\prime}$, and the rotation matrix $\mathbf{R}$, according to Rodrigues' formula:
+$$
+    \mathbf{p'} = \mathbf{R}\mathbf{p}
+$$
+where 
+$$
+    \mathbf{R} = \mathbf{I}+(\sin{\theta})\mathbf{K}+(1-\cos{\theta})\mathbf{K}^2 ~~~~~~~~ \theta = \| \boldsymbol{\theta}\|
+$$
+
+if the small rotation assumption applies, the displacement due to the rigid body rotation of the cross section
+$$
+    \mathbf{\Delta p} = \mathbf{p'}-\mathbf{p}= (\mathbf{R}-\mathbf{I})\mathbf{p}= [(\sin{\theta})\mathbf{K}+(1-\cos{\theta})\mathbf{K}^2]\mathbf{p}\approx \theta\mathbf{K}\mathbf{p}
+$$
+one can further derive that
+$$
+    \theta\mathbf{K}\mathbf{p} = \boldsymbol{\theta} \times \mathbf{p}
+$$
+hence the total displacement of a point at a generic point can be calculated as 
+
+$$\mathbf{u} = \mathbf{u}_0+\boldsymbol{\theta} \times \mathbf{p}$$
+
+where $\mathbf{u}_0(s)$ is the cross-section translation, $\boldsymbol{\theta}(s)$ is the cross-section rotation with reference to point $O$ corresponding to the intersection between the axis and the cross-section. Point $O$ is any point in the cross-section and it does not need to be the cross-section centroid.
+
+<p align="center">
+<img src="assets/IGAbeam/disp.png"   width="55%" height="55%"/>
+</p>
+
+For the compatibility condition, note that the local Frenet-Serret coordinate ($t-n-b$) system is a curvilinear system, so we need to transform the displacement gradient $\nabla_{\mathbf{t}} \mathbf{u}$ back to the Cartesian system to use the small strain formula. The displacement gradient in the global reference system can be calculated as $\nabla_{\mathbf{X}} \mathbf{u}=\nabla_{\mathbf{t}} \mathbf{u} \cdot \mathbf{J}^{-1}$, where $\nabla_{\mathbf{t}} \mathbf{u}$ is the displacement gradient in the local system of reference and $\mathbf{J}$ is the Jacobian of the local to global transformation, the inverse of Jacobian:
+
+$$
+\mathbf{J}^{-1} 
+        = \frac{1}{J}\left[\begin{array}{@{}c@{}}
+    \mathbf{t},
+    J\mathbf{n}+\tau p_b \mathbf{t},
+    J\mathbf{b}-\tau p_n \mathbf{t}
+    \end{array} \right]
+$$
+where $J=1-\kappa p_{n}$. The small strain tensor in the global system of reference reads:
+
+$$
+\boldsymbol{\epsilon} = \frac{1}{2}\left(\nabla_{\mathbf{X}} \mathbf{u}+\nabla_{\mathbf{X}} \mathbf{u}^{\rm T}\right)
+$$
+
+
+<img src="assets/6.png"   width="55%" height="55%"/> <img src="assets/IGAbeam/TB_curvilinear_coordinate_system_3D.png"   width="40%" height="40%"/>
+
+
+with non-zero components: one normal strain $\varepsilon_{tt} = \mathbf{t}^{\rm T}\cdot \boldsymbol{\epsilon}\cdot \mathbf{t}$, and two shear strains $\gamma_{tn} = \mathbf{n}^{\rm T}\cdot \boldsymbol{\epsilon}\cdot \mathbf{t}+\mathbf{t}^{\rm T}\cdot \boldsymbol{\epsilon}\cdot \mathbf{n}$, $\gamma_{tb} = \mathbf{b}^{\rm T}\cdot \boldsymbol{\epsilon}\cdot \mathbf{t}+\mathbf{t}^{\rm T}\cdot \boldsymbol{\epsilon}\cdot \mathbf{b}$. If we rewrite the non-zero components as a strain vector:
+
+$$
+\boldsymbol{\varepsilon} = \frac{1}{J}( \boldsymbol{\varepsilon}_0+\boldsymbol{\chi}\times\mathbf{p})
+$$
+where $\boldsymbol{\varepsilon}_0 = d\mathbf{u}_0/d s-\boldsymbol{\theta}\times\mathbf{t}$ is the generalized strain vector and $\boldsymbol{\chi}$ is the beam torsional/flexural curvature vector. 
+
+the above equation differs from the strain definition in classical Timoshenko beam formulations, which do not have the multiplier term $1/J=1/(1-\kappa p_n)$.
+The equilibrium of beam functions are somehow trivial, we followed the principle of virtual work to derive the governing equations of beam, the results are summarized in the figure below:
+
+<img src="assets/IGAbeam/formulation1.png"   width="100%" height="100%"/>
+
+In linear elastic regime, we can write the stresses as $\sigma_{tt}=E\varepsilon_{tt}$, $\tau_{tn}=G\gamma_{tn}$, and $\tau_{tb}=G\gamma_{tb}$, where $E$ is the elastic modulus, $G=E/(2+2\nu)$ is the elastic shear modulus, and $\nu$ is Poisson's ratio. 
+
+In terms of stress resultants versus generalized strains and curvatures, the elastic behavior can be written as $\mathbf{f}=\mathbf{E}\boldsymbol{\eta}$. $\mathbf{f}=\left[N, Q_{n},Q_{b},M_{t},M_{n},M_{b} \right]^{\rm T}$ is the stress resultant vector,
+$\boldsymbol{\eta}=\left[\varepsilon_{0tt}, \gamma_{0tn},{\gamma_{0tb}},{\chi_{t}} ,{\chi_{n}},{\chi_{b}} \right]^{\rm T}$ is the generalized strain vector, $\mathbf{E}$ is the sectional stiffness matrix, as summarized in figure below:
+
+<img src="assets/IGAbeam/formulation2.png"   width="100%" height="100%"/>
+
+## Isogeometric analysis implementation of generalized Timoshenko beams 
+Isogeometric analysis (IGA) technique, populated by Hughes et al. in 2005, was used to accurately represent the geometry, and to alleviate the shear locking of curved beams during the analysis.
+
+The IGA uses Non-Uniform Rational B-Splines (NURBS), which are originally used to represent the geometry in CAD industry, as shape functions to interpolate also the solution fields.
+<img src="assets/IGAbeam/FEMIGA.jpg"   width="100%" height="100%"/>
+
+In the connector-beam lattice model (CBL), the beam wings that are respectively belonging to two neighboring beam lattice elements are inter-linked with cohesive connector elements, which will play an important role in the discrete aspect of the modeling.
+However, in IGA, the nodes that participate in the calculation are the control points, generally, they are not locating on the beam axis (see figure below).
+
+<p align="center">
+<img src="assets/IGAbeam/FEMIGAbeam1.png"   width="65%" height="65%"/>
+</p>
+
+To having computational nodes on beam axis, we can map the field variables at the control points on the beam axis, or use another approach, called "Bézier Extraction". 
+
+The basic concept of IGA is discretizing the geometry and variable fields by the linear combination of the non-uniform rational basis splines (NURBS) control points and NURBS basis functions. A NURBS curve can be written as
+
+$$
+\mathbf{T}(\xi)=\sum_{A=1}^n R_A(\xi) \mathbf{P}_A=\mathbf{P}^{\mathrm{T}} \mathbf{R}(\xi)
+$$
+
+where $\mathbf{R}(\xi)=\mathbf{W N}(\xi) / W(\xi), W(\xi)=\sum_{i=1}^n w_i N_i(\xi), \mathbf{W}$ is the NURBS weights matrix, $N(\xi)$ is the B-spline basis functions.
+
+The corresponding Bézier curve is defined by 
+
+$$
+\mathbf{T}(\xi)=\sum_{A=1}^{\mathrm{H}} B_A(\xi) \mathbf{P}_A^b=\left(\mathbf{P}^b\right)^{\mathbf{T}} \mathbf{B}(\xi)
+$$
+
+where $\mathbf{B}(\xi)$ is the Bernstein polynomial basis functions. We can also rewrite the weight function $W(\xi)$ in terms of the Bernstein basis as
+
+$$
+W(\xi) =\sum_{A=1}^{n} w_{A} N_{A}(\xi)=\mathbf{w}^{\mathrm{T}} \mathbf{N}(\xi) =\mathbf{w}^{\mathrm{T}} \mathbf{C B}(\xi)=\left(\mathbf{C}^{\mathrm{T}} \mathbf{w}\right)^{\mathrm{T}} \mathbf{B}(\xi)=\left(\mathbf{w}^{b}\right)^{\mathrm{T}} \mathbf{B}(\xi)=W^{b}(\xi)
+$$
+
+
+
+The Bézier extraction operator is defined by: 
+
+$$
+\mathbf{N}(\xi) = \mathbf{C}\mathbf{B}(\xi)
+$$
+
+where $\mathbf{w}^{b}=\mathbf{C}^{\mathrm{T}} \mathbf{w}$ are the weights associated with the Bézier basis functions. The Bézier control points are now computed as
+
+$$
+\mathbf{P}^{b}=\left(\mathbf{W}^{b}\right)^{-1} \mathbf{C}^{\mathrm{T}} \mathbf{W} \mathbf{P}
+$$
+
+This equation can be interpreted as mapping the original control points into projective space, applying the extraction operator to compute the control points of the projected Bézier elements, and then mapping these control points back from projective space.
+
+<img src="assets/IGAbeam/Bezierbeam.png"   width="80%" height="80%"/>
 
 ## Isogeometric beam lattice in connector-beam lattice model
 
+At the meso-scale, the morphology of softwood is characterized by a cellular structure in which each cell
+has a straw-like appearance. The cross section of each cell has approximately a polyhedral shape with, in the majority of
+cases, 4-6 sides. The thickness of the cell wall is not constant and it tends to be larger for latewood than
+earlywood. Reflecting on the cross-sectional properties of beam lattices, the number of wings, the lengths and widths of wings vary in accordance with the wood micromorphology.
+The length scale of the beam lattices is 20-50 microns, depending on the wood species and the cell size earlywood, latewood. 
 
-<img src="assets/IGAbeam/Singlewoodfiber_softwood.png"   width="80%" height="80%"/>
+<img src="webgl/img/beam.png"   width="100%" height="100%"/>
 
-<img src="assets/rail/rail5.png"   width="75%" height="75%"/>
+The isogeometric beam lattice elements have been implemented with Abaqus user subroutines "UEL" and "VUEL" for both implicit and explicit analyses. The numerical verification of beam lattice 
+with varying cross-sectional properties has been performed, one example is shown in figure below:
+<img src="assets/IGAbeam/IGAbeamresult.png"   width="90%" height="90%"/>
 
-<img src="assets/rail/rail6.png"   width="60%" height="60%"/>
+If you find this work useful, or if it helps you in your research on Timoshenko beam theory, we kindly ask that you cite this paper:
 
-
-
-If you find this work useful, or if it helps you in your research on rail joints, we kindly ask that you cite this paper:
 ```
-@article{yin2018investigation,
-  title={Investigation of relationship between train speed and bolted rail joint fatigue life using finite element analysis},
-  author={Yin, Hao and Qian, Yu and Edwards, J Riley and Zhu, Kaijun},
-  journal={Transportation Research Record},
-  volume={2672},
-  number={10},
-  pages={85--95},
-  year={2018},
-  publisher={SAGE Publications Sage CA: Los Angeles, CA}
+@article{yin2022generalized,
+  title={Generalized Formulation for the Behavior of Geometrically Curved and Twisted Three-Dimensional Timoshenko Beams and Its Isogeometric Analysis Implementation},
+  author={Yin, Hao and Lale, Erol and Cusatis, Gianluca},
+  journal={Journal of Applied Mechanics},
+  volume={89},
+  number={7},
+  pages={071003},
+  year={2022},
+  publisher={American Society of Mechanical Engineers}
 }
 ```
