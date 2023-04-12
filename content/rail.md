@@ -1,10 +1,7 @@
 # Investigation of relationship between train speed and bolted rail joint fatigue life using finite element analysis
-$$
-\begin{bmatrix}
-   a & b \\
-   c & d 
-\end{bmatrix}
-$$
+
+
+
 
 Reducing the allowable operating speed or imposing temporary speed restrictions are common practices to prevent further damage to rail track when defects are detected related to certain track components. However, the speeds chosen for restricted operation are typically based on past experience without considering the magnitude of the impact load around the rail joints. Due to the discontinuity of geometry and track stiffness at the bolted rail joints, an impact load always exists. Thus, slower speeds may not necessarily reduce the stresses at the critical locations around the rail joint area to a safe level. Previously, the relationship between speed and the impact load around the rail joints has not been thoroughly investigated. 
 
@@ -13,7 +10,7 @@ Recent research performed at the University of Illinois at Urbana-Champaign (UIU
 Preliminary results from this study indicate that the contact force at the wheel–rail interface would not change monotonically with the changing train speed. In other words, when train speed is reduced, the maximum contact force at the wheel–rail interface may not necessarily reduce commensurately.
 
 
-&nbsp;<br>
+&nbsp;<br/>
 
 *Our work on the homepage of UIUC CEE website! See below:*
 
