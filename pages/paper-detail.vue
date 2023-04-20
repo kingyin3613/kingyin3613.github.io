@@ -7,7 +7,7 @@
           jax: ["input/TeX","output/HTML-CSS", "output/PreviewHTML"],  //输出格式配置：latex 解析为 DOM结构
           tex2jax: {
             inlineMath: [['$','$']],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            displayMath: [ ['$$','$$']]
           },
           "HTML-CSS": {
             showMathMenu: false,            // 隐藏右键菜单展示

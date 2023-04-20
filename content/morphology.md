@@ -3,7 +3,9 @@
 Wood has a unique micromorphology featuring a local pattern of prismatic cells and a global pattern of annual growth rings. Understanding the role of locally irregular and globally radial micromorphology in determining material properties offers a new path to unveil the behavior of wood and wood-based materials with functionalities, such as anisotropic material properties, stress redirection, and oriented impact energy dissipation. 
 While laboratory and in-situ imaging approaches are reliable for the reconstruction of high-resolution wood micromorphologies in computational modeling, algorithm-based generation of wood microstructure geometries are still in high demand. They have the advantage of lowering cost while enabling rapid prototyping and stochastic analysis of wood products during the design phase. This study develops a rapid wood micromorphology modeling technique, based on Voronoi tessellation and Lloyd's relaxation algorithm, to mimic the prismatic cellular microstructure for softwood in 3D. The generated wood microstructure is then integrated with the Connector-Beam Lattice Model for wood (CBL-W) to establish a pipeline for numerical simulations of the quasi-static and fracture properties of wood and wood-based materials.
 
-<img src="assets/ringspy/1a71c89aaa01bc48024753d2e207c281.jpg"   width="90%" height="90%"/>
+<p align="center">
+<img src="assets/ringspy/pine_cs.jpg"   width="80%" height="80%"/>
+</p>
 
 ## Multiscale structure of wood
 
@@ -43,9 +45,26 @@ The formation of the annual growth rings follows density models of annual rings.
 
 <img src="assets/ringspy/growth_rule_binary.png"   width="90%" height="90%"/>
 
+We also developed a `neighbor-merge-algorithm` for cell walls which lengths fall below a threshold. This is for removing too small elements with too small critical stable time increments $\Delta t_{c r i t}$ in our computational model that will be introduced later. Notice that $\Delta t_{c r i t} \propto l / \sqrt{E / \rho}$, where $l$ is the cell wall length in a planar view, $E$ and $\rho$ are material elastic modulus and density, respectively.
+
+<p align="center">
+<img src="assets/ringspy/merge.png"   width="80%" height="80%"/>
+</p>
+
+
 The 2D Voronoi diagram is then rotated and extruded in the longitudinal (out-of-plane) direction, to form the straw-like shapes of wood tracheids or fibers. The extrusion in the longitudinal direction can be cut into many layers, the segments have various lengths which are dependent on the wood species. The rotation angle of wood tracheids or fibers during the extrusion represents the natural inclination during tree growth. The video below illustrates the whole process of longitudinal extrusion, and boundary formation:
 
 <video src="/videos/extrusion.webm" style="max-width:100%" controls> </video>
+
+After edge clipping and trimming, the mesh information for the 3D wood mesostructure is stored in a data structure called "connector-beam" system. In this system, we first form a point cloud which contains the featured positions (e.g., boundary, mid point, etc.) of the model, then many of these points are connected to establish a connectivity and geometry data representing the wood tracheids or fibers in 3D, this is so-called "beam" data. 
+
+Neighboring beams are then inter-connected by "connectors", and these "connectors" can represent the cell walls if assigned with corresponding geometric properties such as cell wall thicknesses and segment heights. Once we have the connectivity data for "beams" and "connectors", after determining the association relationship between "beams" and "connectors", we can finally establish a 3D model, which contains the information for every single wood tracheid or fiber and the connection. 
+
+A examplar 3D model of wood mesostructure is like what is shown in figure below (notched tensile test sample provided by our colleagues from the University of Maine):
+
+<p align="center">
+<img src="assets/ringspy/p90sample.png"   width="100%" height="100%"/>
+</p>
 
 ## RingsPy package for wood micromorphology modeling
 

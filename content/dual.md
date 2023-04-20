@@ -3,7 +3,7 @@
 Lattice models of solids have been motivated, in large part, by the discontinuous and heterogeneous nature of material structure and its breakdown under external loading. These models have been extensively developed over the past few decades, enabling researchers to study the material structure-property relationships in new and innovative ways. Furthermore, lattice models are now being extended to include additional physical, chemical, or biological processes to ensure the material's durability and sustainability under rapidly changing environmental conditions.
 
 Discretization of the material domain plays a crucial role in the representation of mechanical or transport behaviors in the presence of large-scale material heterogeneity. 
-Among the various discretization techniques, the most promising method is one that naturally captures the intrinsic material geometric properties (e.g., heterogeneity, anisotropy) while also possessing a topologically dual geometric system. This approach can be particularly powerful for analyzing the interplay between mechanical and transport behaviors of the material.
+Among the various discretization techniques, the most promising method is one that naturally captures the intrinsic geometric properties of material internal structure (e.g., heterogeneity, anisotropy) while also possessing a topologically dual geometric system. This approach can be particularly powerful for analyzing the interplay between mechanical and transport behaviors of the material.
 
 ## Voronoi Delaunay duality
 
@@ -26,7 +26,7 @@ The Voronoi Delaunay duality is the observation that there is a one-to-one corre
 A example of using Voronoi Delaunay duality for the geometrical characterization is the multiscale multiphysics analysis of wood. As introduced in the 
 The Voronoi ridges (cell walls) of is shown as the solid line. The representitive transport network that is connecting all nodes for transport fields is shown as the dashed lines in figure below.
 
-This model is still under construction!
+Under construction!
 
 <p align="center">
 <img src="assets/dual/40571_2022_473_Fig1_HTML.png"   width="40%" height="40%"/>

@@ -12,6 +12,7 @@
             <h1>Hao Yin (银皓)</h1>
             <p></p>
             <div>PhD Candidate</div>
+
             <div>Northwestern University</div>
             <div>
               Email:&nbsp;haoyin2022 [at] u (dot) northwestern (dot) edu

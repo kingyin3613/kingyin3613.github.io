@@ -1,56 +1,138 @@
-# Two-way coupling framework for Multiphysics-LDPM
+# Two-way coupling framework for multiphysics analyses of lattice models
 
-Previously proposed for Multiphysics-LDPM (M-LDPM), the Flow Lattice Model (FLM) has proved its capability of capturing the mass transport and heat transfer with a discrete-type dual mesh of LDPM. Now coupled with LDPM, the multiphysics problems such as the thermal-hydro-mechanical problem can be solved in a two-way coupled FLM-LDPM analysis framework with the help of the Interprocess Communication (IPC). The periodic data communication between two Abaqus solvers (Abaqus/standard for the thermal/diffusion part and Abaqus/Explicit for the mechanical part) and spatial & temporal mappings between the two solvers allow the coupling process to run smoothly and robustly. 
+As previously introduced, topologically dual systems of lattice models can be used to represent one- or two-way couplings involving the network structure and field variables of interest. There are various forms of coupling. One way is to introduce simultaneous coupling of field variables within theoretical formulations using, for instance, the effective stress concept of Biot. Alternatively, a sequential procedure can be used whereby one set of field variables is calculated separately, assuming the other field variables are in a steady-state condition. In many cases, results from the potential field analyses are used in the mechanical analyses. Iterative solutions can account for interplay between the different field variables within each computational cycle, which may better account for the path-dependent, irreversible nature of crack propagation. Coupled multiphysics processes are also central to several geoscience applications, where considerable progress has been made in modeling.
 
-## Importance of 
+In contrast to continuous or other discrete models, in which the same nodal sites are often used to represent mechanical (i.e., displacements) and flow-related quantities (e.g., moisture content and temperature), in topologically dual systems of lattice models, the nodal sites of the transport/flow network and mechanical lattices are always different. Furthermore, a challenge arises if different solvers are chosen for different analyses (e.g., explicit for mechanical solver, implicit for flow solver), as the time step sizes would then vary substantially. Different meshes and time scales of the coupled fields can complicate the coupling process (also referred to as "multidomain" or "multimodel" coupling). In the following section, a framework for coupled analyses of lattice models will be discussed.
 
-After crack formation, however, the conduit elements are highly skew to the crack path, which (in a conceptual sense)
-follows the boundaries of the discrete bodies. This misalignment of the flow elements with the crack path does not allow
-for realistic simulations of crack-assisted flow and its dependence on crack opening.
-By defining the flow network on the particle boundaries (e.g., on the edges of the Voronoi tessellation or generally on the
-dual grid), both pre-cracking and postcracking flow can be simulated. The cross-section areas of the flow elements
-scale according to the corresponding facets of the Delaunay tetrahedra, enabling precise simulations of uniform flow through the
-uncracked material. Furthermore, flow elements are now aligned with potential cracks. The mechanical
-analysis provides values of crack opening, which govern the properties of the flow elements along the crack path.
-This one-way coupling between fracture analyses and crack-assisted transport is relevant to a variety of durability problems of
-mechanical concrete, since most of the deterioration mechanisms are affected by the presence and transport of water or chemical
-species in solution. Such analysis is difficult in homogeneous continuum models as the information about
-crack connectivity and opening is not directly available. Using this dual network complex, two-way couplings between fluid pressure
-and evolving crack networks enable simulations of hydraulic driven fracture in concrete and other geomaterials.
-Whereas these representations of post-cracking flow or flow-driven fracture are realistic, this dual-lattice approach introduces
-several complicating factors.
-
-• In three dimensions, the dual lattice defined by the edges of the tessellation is computationally more expensive than its
-Delaunay counterpart. The numbers of dual lattice vertices and flow lattice elements are dramatically greater than those of
-the Delaunay vertices and mechanical lattice elements, respectively.
-
-• Coupling of the displacement and flow fields is complicated by the use of different nodal sets for each respective field.
-
-• The occurrence of essentially zero-length conduit elements can ill-condition the system of equations associated with the
-flow field analyses. Such zero-length edges rarely occur from the random placement of mechanical nodes, but some regular
-arrangements of nodes lead to degenerate Delaunay tessellations and zero-length Voronoi edges. The problem can be mitigated
-by assigning a sufficiently large length to the elements in question.
-
-
-In summary, crack development introduces new pathways for mass transport, which can be readily handled by discrete
-approaches, albeit with increased computational cost. In contrast, continuum approaches may require remeshing to accommodate
-crack development and the associated new pathways for mass transport. This is complicated for various reasons, including difficulties
-in simulating the transition from diffused to localized cracking, the need to transfer history-dependent internal variables onto the
-new mesh configurations and occurrence of crack-induced flow anisotropy.
+<p align="center">
+<img src="assets/coupling/MLDPM0.png"   width="90%" height="90%"/>
+</p>
 
 ## Inter-process communication
 
-Learn how to fetch your content with `$content`: https://content.nuxtjs.org/fetching.
+Inter-process communication (IPC) refers to the coordination of activities among cooperating processes. This communication could involve a process letting another process know that some event has occurred or the transferring of data from one process to another.
+For our applications of IPC in solving Multiphysics problems, the processes are different simulation solvers (e.g. Abaqus/Ansys/in-house codes/other solvers). 
+
+We used named pipes as the IPC media. Named pipe is a simple synchronized way of passing information between two processes. A pipe can be viewed as a special file that can store only a limited amount of data and uses a "First In First Out (FIFO)" access scheme to retrieve data. In a logical view of a pipe, data is written to one end and read from the other.
+
+
+<p align="center">
+<img src="assets/coupling/namedpipes.png"   width="85%" height="85%"/>
+</p>
 
 ## Coupling schemes
 
-As noted, discrete models can represent one- or two-way couplings involving the network structure and field quantities of interest.
-Several forms of coupling exist. Simultaneous coupling of the field quantities can be introduced within the theoretical formulations
-(using, e.g., the effective stress concept of Biot). Alternatively a sequential procedure can be used, where one set of field quantities is
-calculated separately, assuming the other field quantities are in a steady-state condition. In many cases, results of the potential field
-analyses feed forward into the mechanical analyses [41,205]. Iterative solutions can account for interplay between the differing
-field variables within each computational cycle, which may better account for the path dependent, irreversible nature of crack
-propagation [215]. Coupled hydro-mechanical processes are central to several geoscience applications, where many advancements
-in modeling have been made [216]. 
+During a two-way coupling analysis, each process suspends operations periodically at one of two locations, referred to as synchronization points, and performs a data exchange with the coupled process. The first synchronization point is located at the initialization step of the analysis, prior to commencing the first time increment. This synchronization point will be called only once and, hence, allows for initial configurations to be exchanged between processes. The second synchronization point occurs at the end of a completed increment when the target time is reached in each process. This synchronization point is called multiple times as the simulation advances in time. At every synchronization point each process waits to receive the requested data from the coupled process before continuing. Therefore, for a two-way coupled simulation the synchronization point represents a point when both analyses coincide in solution time.
 
-<img src="assets/8.png"   width="50%" height="50%"/>
+### Coupling scheme
+
+Parallel explicit coupling scheme (Jacobi):
+in a parallel explicit coupling scheme, both simulations are executed concurrently, exchanging fields to update the respective solutions at the next target time. This scheme is more efficient in the use of computing resources; less stable than the sequential scheme.
+
+Sequential explicit coupling scheme (Gauss-Seidel):
+in a sequential explicit coupling scheme, the simulations are executed in sequential order. One analysis leads while the other analysis lags the co-simulation.
+
+Below is an illustration of the parallel coupling scheme that is used in this work, the horizontal lines represent simulation time. The vertical lines represent increments (or time steps) for a particular analysis in the coupled simulation. The dashed arrows denote data exchange in the direction of the arrowheads between the analysis codes.
+
+<p align="center">
+<img src="assets/coupling/couplingscheme.png"   width="60%" height="60%"/>
+</p>
+
+### Time Incrementation Scheme
+
+Sometimes the coupled two processes may have very distinct scales of time increments (e.g., for a coupled poromechanics problem, explicit mechanical analysis has a stable time increment typically ranged $10^{-7}$--$10^{-3}$ s, while implicit transport/flow analysis has no stable time increment requirement, but for better convergence a time increment ranged $10^{-3}$--$10^{1}$ s is used).
+
+Given the time increments differ largely, one may use time scaling factor to scale the time increment of one analysis for the synchronization, or use other technique such as subcycling time incrementation scheme. In subcycling, the analysis with larger time increment (generally, implicit analysis) ramps loads from the values of the previous coupling step to the values at the target time; In the analysis with smaller time increment (generally, explicit analysis) the loads are applied at the start of the coupling step and kept constant over the coupling step. The time interpolation may be used. 
+
+<p align="center">
+<img src="assets/coupling/incrementationscheme.png"   width="60%" height="60%"/>
+</p>
+
+## Multiphysics-LDPM (M-LDPM) framework for concrete
+
+Previously proposed for Multiphysics-LDPM (M-LDPM), the Flow Lattice Model (FLM) has proved its capability of capturing the mass 
+transport and heat transfer with a discrete-type dual mesh of LDPM. Now coupled with LDPM, the multiphysics problems such as the 
+thermal-hydro-mechanical problem can be solved in a two-way coupled FLM-LDPM analysis framework with the help of the Interprocess Communication (IPC). 
+The periodic data communication between two Abaqus solvers (Abaqus/standard for the thermal/diffusion part and Abaqus/Explicit for 
+the mechanical part) and spatial & temporal mappings between the two solvers allow the coupling process to run smoothly and robustly. 
+
+<p align="center">
+<img src="assets/coupling/MLDPM.png"   width="100%" height="100%"/>
+</p>
+
+<p align="center">
+<img src="assets/coupling/schematic.png"   width="100%" height="100%"/>
+</p>
+
+### One-way coupling example: poroelasticity problem
+The capability of the coupled lattice approach to describe the interaction of flow and mechanical response is demonstrated by analysing the fluid pressure and elastic radial displacement distribution in a thick-walled cylinder subjected to an inner fluid pressure, $P_ {fi}$.
+
+<p align="center">
+<img src="assets/coupling/poro.png"   width="75%" height="75%"/>
+</p>
+
+This is a one-way coupling situation, the uncoupled radial fluid pressure $P_f$ diffused from the inner surface throughout a thick-walled cylinder, at the steady-state, the fluid pressure field can be expressed as:
+
+$$
+P_{\mathrm{f}}=P_{\mathrm{fi}} \frac{\ln \frac{r_0}{r_r}}{\ln \frac{r_0}{r_{\mathrm{i}}}}
+$$
+
+The fluid pressure is then passed to the mechanical lattices through the M-LDPM framework, leads to the radial expansion (displacement) in the thin-walled cylinder. The analytical solution can be found in [Grassl et al. 2015](https://doi.org/10.1016/j.jmps.2014.11.011): 
+
+<p align="center">
+<img src="assets/coupling/eq1.png"   width="75%" height="75%"/>
+</p>
+
+where 
+$$ \bar{u} =\frac{u}{r_i} \quad \bar{r}=\frac{r}{r_i} \quad \bar{r}_o=\frac{r_o}{r_i}$$
+
+$$ \bar{P}_f =\frac{P_f}{E_c} $$ 
+
+$$\bar{P}_ {fi}=\frac{P_{fi} }{E_c} $$
+
+$$ E_c =\frac{2+3 \alpha}{4+\alpha} E_0 \quad \nu=\frac{1-\alpha}{4+\alpha}$$
+
+$E_c$ - Macroscopic Young's modulus, $\nu$ - Macroscopic Poisson's ratio,
+$E_0$ - Mesoscopic Young's modulus, $\alpha$ - Mesoscopic shear-normal coupling coefficient.
+
+<p align="center">
+<img src="assets/coupling/2dpresure.png"   width="70%" height="70%"/>
+</p>
+
+### Two-way coupling example: linear Terzaghi’s 1D consolidation, loaded by pressure
+
+The model is first verified by simulating Terzaghi's consolidation. A prism of material of size $0.5 × 0.1 × 0.1$ m$^3$ is initially under zero pressure and zeros strain. The $x$ axis runs along its longest central axis, the domain begins at
+$x = 0$ m and ends at $x = 0.5$ m. The prism is sealed at all boundaries except the front end at $x = 0$ where pressure $p^{*}$ is prescribed at time $t = 0$ and kept constant throughout the simulation. The mechanical boundary conditions prescribe
+zero rotations at all boundaries, zero $x$ displacement at the rear end at $x = 0.5$ m and zero $y$ and $z$ displacements at
+all rectangular sides. Total traction $t_x$ is prescribed at the front end at $x = 0$ and kept constant the whole simulation. Biot coefficient $b = 0.5$ and reference pressure $p_0 = 0$ MPa; linear elastic material behavior is enforced.
+
+<p align="center">
+<img src="assets/coupling/terzaghi.png"   width="75%" height="75%"/>
+</p>
+
+The analytical solution can be found in [Detournay and Cheng 1993](https://geo.mff.cuni.cz/seismosoft/clanky/Detournay.Cheng.Fundamentalsofporoelasticity.1993.pdf): 
+
+$$
+p(\chi, \tau)=p^{\star} F_1(\chi, \tau) \quad u(\chi, \tau)=-\frac{p^{\star} \Upsilon L}{G} F_2(\chi, \tau)
+$$
+
+where
+
+$$
+F_1(\chi, \tau)=1-\sum_{m=1,3, \ldots}^{\infty} \frac{4}{m \pi} \sin \left(\frac{m \pi \chi}{2}\right) \exp \left(-m^2 \pi^2 \tau\right)$$
+
+$$
+F_2(\chi, \tau)=\sum_{m=1,3, \ldots .}^{\infty} \frac{8}{m^2 \pi^2} \cos \left(\frac{m \pi \chi}{2}\right)\left[1-\exp \left(-m^2 \pi^2 \tau\right)\right]
+$$
+
+$$\chi=\frac{x}{L} \quad \tau=\frac{\lambda t}{4 C L^2} \quad Y=\frac{b(1-2 \nu)}{2(1-\nu)}$$
+$$G=\frac{E}{2(1+\nu)} \quad C=\frac{\left(1-\nu_u\right)(1-2 \nu)}{M_b(1-\nu)\left(1-2 \nu_u\right)}$$
+$$M_b=\frac{1}{c} \quad \nu_u=\frac{3 K_u-2 G}{2\left(3 K_u+G\right)} \quad K_u=M_b b^2+\frac{E}{3(1-2 \nu)}$$
+
+$E$ - Macroscopic Young's modulus, $\nu$ - Macroscopic Poisson's ratio,
+$M_b$ - Biot modulus of the porous media (the reciprocal of
+the storage coefficient $c$), $\lambda$ - permeability coefficient of the porous media.
+
+<p align="center">
+<img src="assets/coupling/1dterzaghi.png"   width="65%" height="65%"/>
+</p>
