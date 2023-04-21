@@ -6,12 +6,31 @@ Interest in engineered wood products (EWP) in construction industry is at a new 
 
 ### Isogeometric beam lattice
 
+The detailed derivation, formulation and implementation of isogeometric beam lattice can be found [here](http://haoyin.io/paper-detail?paper=IGAbeam) or in [this paper](https://doi.org/10.1115/1.4054438).
+
+At the meso-scale, the morphology of softwood is characterized by a cellular structure in which each cell
+has a straw-like appearance. The cross section of each cell has approximately a polyhedral shape with, in the majority of
+cases, 4-6 sides. The thickness of the cell wall is not constant and it tends to be larger for latewood than
+earlywood. Reflecting on the cross-sectional properties of beam lattices, the number of wings, the lengths and widths of wings vary in accordance with the wood micromorphology.
+The length scale of the beam lattices is 20-50 microns, depending on the wood species and the cell size earlywood, latewood. 
+
+<p align="center">
+<img src="webgl/img/beam.png"   width="85%" height="85%"/>
+</p>
+
 ### Connector
 
+Under construction!
+
+<p align="center">
+<img src="assets/cbl/longitudinal.png"   width="100%" height="100%"/>
+</p>
 
 ### Computational pipeline for wood simulations
 Pre-processing
 Post-processing
+Ghost mesh
+Paraview visualization
 
 ## Numerical simulations
 
@@ -19,7 +38,29 @@ Post-processing
 
 ### Size effect in transverse fracture
 
+<p align="center">
+<img src="assets/cbl/global-plot-T-notched-comparsion-better.png"   width="60%" height="60%"/>
+</p>
 
 ### Growth ring orientation effects in transverse fracture
 
-<img src="assets/cbl/Orientation_effect_wood1.png"   width="100%" height="100%"/>
+<p align="center">
+<img src="assets/cbl/Orientation_effect_wood1.png"   width="90%" height="90%"/>
+</p>
+
+<video src="/videos/Cube_Notched_4x4mm_a0_QM_v10_120622-abq1.webm" style="max-width:100%" controls> </video>
+
+<video src="/videos/Cube_Notched_4x4mm_a45_QM_v10_120822-abq.webm" style="max-width:100%" controls> </video>
+
+<video src="/videos/Cube_Notched_4x4mm_a60_QM_v10_120822-abq.webm" style="max-width:100%" controls> </video>
+
+<video src="/videos/Cube_Notched_4x4mm_a60_QM_v10_120822-abq.webm" style="max-width:100%" controls> </video>
+
+<video src="/videos/Cube_Notched_4x4mm_QM_v10_120322-abq1.webm" style="max-width:100%" controls> </video>
+
+<p align="center">
+<img src="assets/cbl/global-plot-T-notched-comparsion-diff-alpha.png"   width="60%" height="60%"/>
+</p>
+
+<video src="/videos/Cube_Notched_38x38mm_a0_QML_v10_012323_abq.webm" style="max-width:100%" controls> </video>
+

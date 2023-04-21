@@ -55,34 +55,25 @@ where $\mathbf{u}_0(s)$ is the cross-section translation, $\boldsymbol{\theta}(s
 <img src="assets/IGAbeam/disp.png"   width="55%" height="55%"/>
 </p>
 
-For the compatibility condition, note that the local Frenet-Serret coordinate ($t-n-b$) system is a curvilinear system, so we need to transform the displacement gradient $\nabla_{\mathbf{t}} \mathbf{u}$ back to the Cartesian system to use the small strain formula. The displacement gradient in the global reference system can be calculated as $\nabla_{\mathbf{X}} \mathbf{u}=\nabla_{\mathbf{t}} \mathbf{u} \cdot \mathbf{J}^{-1}$, where $\nabla_{\mathbf{t}} \mathbf{u}$ is the displacement gradient in the local system of reference and $\mathbf{J}$ is the Jacobian of the local to global transformation, the inverse of Jacobian:
+For the compatibility condition, note that the local Frenet-Serret coordinate ($t-n-b$) system is a curvilinear system, so we need to transform the displacement gradient $\nabla_{\mathbf{t}} \mathbf{u}$ back to the Cartesian system to use the small strain formula. The displacement gradient in the global reference system can be calculated as $\nabla_{\mathbf{X}} \mathbf{u}=\nabla_{\mathbf{t}} \mathbf{u} \cdot \mathbf{J}^{-1}$, where $\nabla_{\mathbf{t}} \mathbf{u}$ is the displacement gradient in the local system of reference and $\mathbf{J}$ is the Jacobian of the local to global transformation.
 
-$$
-\mathbf{J}^{-1} 
-        = \frac{1}{J}\left[\begin{array}{@{}c@{}}
-    \mathbf{t},
-    J\mathbf{n}+\tau p_b \mathbf{t},
-    J\mathbf{b}-\tau p_n \mathbf{t}
-    \end{array} \right]
-$$
-where $J=1-\kappa p_{n}$. The small strain tensor in the global system of reference reads:
+The small strain tensor in the global system of reference reads:
 
 $$
 \boldsymbol{\epsilon} = \frac{1}{2}\left(\nabla_{\mathbf{X}} \mathbf{u}+\nabla_{\mathbf{X}} \mathbf{u}^{\rm T}\right)
 $$
 
-
 <img src="assets/6.png"   width="55%" height="55%"/> <img src="assets/IGAbeam/TB_curvilinear_coordinate_system_3D.png"   width="40%" height="40%"/>
 
-
-with non-zero components: one normal strain $\varepsilon_{tt} = \mathbf{t}^{\rm T}\cdot \boldsymbol{\epsilon}\cdot \mathbf{t}$, and two shear strains $\gamma_{tn} = \mathbf{n}^{\rm T}\cdot \boldsymbol{\epsilon}\cdot \mathbf{t}+\mathbf{t}^{\rm T}\cdot \boldsymbol{\epsilon}\cdot \mathbf{n}$, $\gamma_{tb} = \mathbf{b}^{\rm T}\cdot \boldsymbol{\epsilon}\cdot \mathbf{t}+\mathbf{t}^{\rm T}\cdot \boldsymbol{\epsilon}\cdot \mathbf{b}$. If we rewrite the non-zero components as a strain vector:
+with non-zero components: one normal strain $\varepsilon_{tt} = \mathbf{t}^{\rm T}\cdot \boldsymbol{\epsilon}\cdot \mathbf{t}$, and two shear strains $\gamma_{tn} = \mathbf{n}^{\rm T}\cdot \boldsymbol{\epsilon}\cdot \mathbf{t}+\mathbf{t}^{\rm T}\cdot \boldsymbol{\epsilon}\cdot \mathbf{n}$, $\gamma_{tb} = \mathbf{b}^{\rm T}\cdot \boldsymbol{\epsilon}\cdot \mathbf{t}+\mathbf{t}^{\rm T}\cdot \boldsymbol{\epsilon}\cdot \mathbf{b}$. We can calculate and rewrite the non-zero components as a strain vector:
 
 $$
 \boldsymbol{\varepsilon} = \frac{1}{J}( \boldsymbol{\varepsilon}_0+\boldsymbol{\chi}\times\mathbf{p})
 $$
 where $\boldsymbol{\varepsilon}_0 = d\mathbf{u}_0/d s-\boldsymbol{\theta}\times\mathbf{t}$ is the generalized strain vector and $\boldsymbol{\chi}$ is the beam torsional/flexural curvature vector. 
 
-the above equation differs from the strain definition in classical Timoshenko beam formulations, which do not have the multiplier term $1/J=1/(1-\kappa p_n)$.
+The above equation differs from the strain definition in classical Timoshenko beam formulations, which do not have the multiplier term $1/J=1/(1-\kappa p_n)$. An observation here is that the multiplier term is comprehensively governed by the local curvature $\kappa$ of beam axis, as well as by the cross-section size $p_n$ in the direction towards the curvature center. Hence this term is <b>not negligible especially for highly curved, low-slenderness ratio (deep) beams</b>.
+
 The equilibrium of beam functions are somehow trivial, we followed the principle of virtual work to derive the governing equations of beam, the results are summarized in the figure below:
 
 <img src="assets/IGAbeam/formulation1.png"   width="100%" height="100%"/>
@@ -145,21 +136,22 @@ $$
 
 This equation can be interpreted as mapping the original control points into projective space, applying the extraction operator to compute the control points of the projected Bézier elements, and then mapping these control points back from projective space.
 
+<p align="center">
 <img src="assets/IGAbeam/Bezierbeam.png"   width="80%" height="80%"/>
+</p>
 
-## Isogeometric beam lattice in connector-beam lattice model
-
-At the meso-scale, the morphology of softwood is characterized by a cellular structure in which each cell
-has a straw-like appearance. The cross section of each cell has approximately a polyhedral shape with, in the majority of
-cases, 4-6 sides. The thickness of the cell wall is not constant and it tends to be larger for latewood than
-earlywood. Reflecting on the cross-sectional properties of beam lattices, the number of wings, the lengths and widths of wings vary in accordance with the wood micromorphology.
-The length scale of the beam lattices is 20-50 microns, depending on the wood species and the cell size earlywood, latewood. 
-
-<img src="webgl/img/beam.png"   width="100%" height="100%"/>
+## Implementation of isogeometric beam lattice
 
 The isogeometric beam lattice elements have been implemented with Abaqus user subroutines "UEL" and "VUEL" for both implicit and explicit analyses. The numerical verification of beam lattice 
 with varying cross-sectional properties has been performed, one example is shown in figure below:
-<img src="assets/IGAbeam/IGAbeamresult.png"   width="90%" height="90%"/>
+
+<p align="center">
+<img src="assets/IGAbeam/IGAbeamresult1.png"   width="80%" height="80%"/>
+</p>
+
+IGA beam verification, free vibration: a) the model setup, b) ratio of simulated result $\lambda_n$ over the reference result $\lambda_n^{ref}$ for first 10 non-dimensionalized natural frequencies for a circular simply-supported beam (quadratic elements):
+
+<img src="assets/IGAbeam/freevib.png"   width="90%" height="90%"/>
 
 If you find this work useful, or if it helps you in your research on Timoshenko beam theory, we kindly ask that you cite this paper:
 
