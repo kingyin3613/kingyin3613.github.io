@@ -3,8 +3,16 @@
 Wood has a unique micromorphology featuring a local pattern of prismatic cells and a global pattern of annual growth rings. Understanding the role of locally irregular and globally radial micromorphology in determining material properties offers a new path to unveil the behavior of wood and wood-based materials with functionalities, such as anisotropic material properties, stress redirection, and oriented impact energy dissipation. 
 While laboratory and in-situ imaging approaches are reliable for the reconstruction of high-resolution wood micromorphologies in computational modeling, algorithm-based generation of wood microstructure geometries are still in high demand. They have the advantage of lowering cost while enabling rapid prototyping and stochastic analysis of wood products during the design phase. This study develops a rapid wood micromorphology modeling technique, based on Voronoi tessellation and Lloyd's relaxation algorithm, to mimic the prismatic cellular microstructure for softwood in 3D. The generated wood microstructure is then integrated with the Connector-Beam Lattice Model for wood (CBL-W) to establish a pipeline for numerical simulations of the quasi-static and fracture properties of wood and wood-based materials.
 
-<p align="center">
-<img src="assets/ringspy/pine_cs.jpg"   width="80%" height="80%"/>
+<p align="left">
+<img src="assets/ringspy/1a71c89aaa01bc48024753d2e207c281.jpg"   width="90%" height="90%"/>
+</p>
+
+<p align = "center">
+<small>
+<span style="color:grey">
+Image credit: Fritts, Harold. <i>Tree rings and climate</i>. Elsevier, 2012.
+</span>
+</small>
 </p>
 
 ## Multiscale structure of wood
@@ -23,6 +31,14 @@ At the mesoscopic level, wood has a cellular structure that consists of longitud
 <img src="assets/ringspy/41578_2020_195_Figa_HTML.png"   width="60%" height="60%"/>
 </p>
 
+<p align = "center">
+<small>
+<span style="color:grey">
+Image credit: Chen, Chaoji, et al. "Structure–property–function relationships of natural and engineered wood."  <i>Nature Reviews Materials</i> 5.9 (2020): 642-666.
+</span>
+</small>
+</p>
+
 At the microscopic level, wood is composed of cellulose fibers that are arranged in a helical pattern, surrounded by a matrix of lignin and other compounds. The arrangement of these fibers gives wood its unique mechanical properties, including high stiffness and strength, as well as the ability to withstand bending and compression.
 
 In this project, we focus on the <b>mesoscale</b> structure of wood, at which the solid constituents (i.e., tracheids and fibers) exhibit the "intrinsic heterogeneity and anisotropy" of the material at the µm level.
@@ -30,6 +46,18 @@ In this project, we focus on the <b>mesoscale</b> structure of wood, at which th
 ## Voronoi tessellation for wood mesostructure
 
 The cellular mesostructure of wood is a natural outcome of local cell growth that follows simple intrinsic physical rules, among these, Voronoi diagram [(click here for more details)](https://en.wikipedia.org/wiki/Voronoi_diagram), has been proposed to be one of the simple but accurate approximations of cell interfaces at the steady-state by the equilibrium of intracellular pressures and the intercellular surface tension in a plane. This Voronoi diagram is also suitable for representing sections of other cellular materials, such as trabecular bone, skeletal muscle fiber and some 3D printed biomimetic composites.
+
+<p align="center">
+<img src="assets/ringspy/Voronoi-in-Nature-05.jpg"   width="45%" height="45%"/>
+</p>
+
+<p align = "center">
+<small>
+<span style="color:grey">
+Image credit: Parametric House
+</span>
+</small>
+</p>
 
 To generate a 2D Voronoi diagram for wood section, we firstly pick a set of input points (a.k.a., seeds), which will determine the Voronoi cells and follows rules such as the wood cell density distribution. Then for each input point, we determine the set of points that are closest to it. These points form the boundary of the Voronoi cell for that input point. We then connect adjacent Voronoi cells to form the edges of the diagram, these edges represent wood cell walls. In some cases, the Voronoi cells may extend infinitely far in one or more direction, these infinite cells combined with the finite cells on the boundary lines of the model are truncated and trimed.
 
@@ -45,13 +73,13 @@ The formation of the annual growth rings follows density models of annual rings.
 
 <img src="assets/ringspy/growth_rule_binary.png"   width="90%" height="90%"/>
 
-We also developed a `neighbor-merge-algorithm` for cell walls which lengths fall below a threshold. This is for removing too small elements with too small critical stable time increments $\Delta t_{c r i t}$ in our computational model that will be introduced later. Notice that $\Delta t_{c r i t} \propto l / \sqrt{E / \rho}$, where $l$ is the cell wall length in a planar view, $E$ and $\rho$ are material elastic modulus and density, respectively.
+<!--We also developed a `neighbor-merge-algorithm` for cell walls which lengths fall below a threshold. This is for removing too small elements with too small critical stable time increments $\Delta t_{c r i t}$ in our computational model that will be introduced later. Notice that $\Delta t_{c r i t} \propto l / \sqrt{E / \rho}$, where $l$ is the cell wall length in a planar view, $E$ and $\rho$ are material elastic modulus and density, respectively.
 
 <p align="center">
 <img src="assets/ringspy/merge.png"   width="80%" height="80%"/>
 </p>
 
-
+-->
 The 2D Voronoi diagram is then rotated and extruded in the longitudinal (out-of-plane) direction, to form the straw-like shapes of wood tracheids or fibers. The extrusion in the longitudinal direction can be cut into many layers, the segments have various lengths which are dependent on the wood species. The rotation angle of wood tracheids or fibers during the extrusion represents the natural inclination during tree growth. The video below illustrates the whole process of longitudinal extrusion, and boundary formation:
 
 <video src="/videos/extrusion.webm" style="max-width:100%" controls> </video>
@@ -85,7 +113,8 @@ The package is dependent only on `numpy` and `scipy` for core implementation, ho
 </p>
 
 
-If you take use of this package, or if it helps you in your research on cellular solids, we kindly ask that you cite this paper:
+If this package helps you in building a even cooler software or package, or it helps you in your research on wood, honeycomb structure, or other prismatic cellular solids, we kindly ask that you cite this paper:
+
 [![DOI](https://joss.theoj.org/papers/10.21105/joss.04945/status.svg)](https://doi.org/10.21105/joss.04945)
 
 ```

@@ -13,13 +13,34 @@ A Voronoi diagram is a partitioning of a plane into regions based on the distanc
 
 A Delaunay triangulation, on the other hand, is a triangulation of a set of points such that no point is inside the circumcircle of any triangle in the triangulation. In other words, the Delaunay triangulation is a way to connect the input points with edges such that the resulting triangles are "as large and as equilateral as possible".
 
+<p align="center">
+<img src="assets/dual/dual.png"   width="80%" height="80%"/>
+</p>
+
+<p align = "center">
+<small>
+<span style="color:grey">
+Image credit: Wolfram MathWorld
+</span>
+</small>
+</p>
+
 The Voronoi Delaunay duality is the observation that there is a one-to-one correspondence between the Voronoi diagram of a set of points and the Delaunay triangulation of the same set of points. Specifically, the vertices of the Voronoi diagram correspond to the circumcenters of the triangles in the Delaunay triangulation, and the edges of the Voronoi diagram correspond to the edges of the Delaunay triangulation. This duality has many important applications in computational geometry and computer graphics, such as in mesh generation, proximity queries, and geometric optimization.
 
  This duality is specifically important to the lattice models: because for many lattice models, for the purposes of getting unbiased spatial discretization or capturing the intrinsic heterogeneous structure of the material, they incline to use Voronoi and/or Delaunay diagrams as the geometric characterization approach; if one geometric structure aforementioned is used for spatial discretization, the duality provides a naturally coupled spatial discretization for the void/different phase of material in the same model domain. This will facilitate the multi-field analysis with strong coupling between different phases.
  
 <p align="center">
-<img src="assets/dual/duality.png_large"   width="80%" height="80%"/>
+<img src="assets/dual/duality.png_large"   width="70%" height="70%"/>
 </p>
+
+<p align = "center">
+<small>
+<span style="color:grey">
+Image Credit： Twitter@FreyaHolmer
+</span>
+</small>
+</p>
+
 
 ## Dual mesh for multiscale analysis of wood (or other prismatic cellular materials)
 
@@ -29,9 +50,12 @@ The Voronoi ridges (cell walls) of is shown as the solid line. The representitiv
 Under construction!
 
 <p align="center">
-<img src="assets/dual/40571_2022_473_Fig1_HTML.png"   width="40%" height="40%"/>
+<img src="assets/dual/40571_2022_473_Fig1_HTML.png"   width="35%" height="35%"/>
 </p>
 
+<p align = "center">
+<b>Image Credits - Fig.2 - 4K Mountains Wallpaper</b>
+</p>
 
 ## Dual mesh for multiscale analysis of concrete
 

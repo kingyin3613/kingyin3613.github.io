@@ -25,7 +25,7 @@ $$
 The vector $\mathbf{r}(s)$ allows calculating the Frenet-Serret local basis, as well as the local curvature $\kappa$ and torsion $\tau$, as shown in figure below: 
 
 <p align="center">
-<img src="assets/IGAbeam/kinematics.png"   width="55%" height="55%"/>
+<img src="assets/IGAbeam/kinematics.png"   width="45%" height="45%"/>
 </p>
 
 A generic point $\mathbf{x}$ can achieve a displacement vector $\mathbf{u} =\mathbf{u}(s,p_n,p_b)$, and this displacement can be decomposed into two parts: one is the displacement induced by rigid body translation of the cross section, another part is the displacement induced by the rigid body rotation of the cross section. For the rigid body rotation part, assume that the position vector of generic point after rotation $\mathbf{p}^{\prime}$, and the rotation matrix $\mathbf{R}$, according to Rodrigues' formula:
@@ -76,14 +76,18 @@ The above equation differs from the strain definition in classical Timoshenko be
 
 The equilibrium of beam functions are somehow trivial, we followed the principle of virtual work to derive the governing equations of beam, the results are summarized in the figure below:
 
+<p align="center">
 <img src="assets/IGAbeam/formulation1.png"   width="100%" height="100%"/>
+</p>
 
 In linear elastic regime, we can write the stresses as $\sigma_{tt}=E\varepsilon_{tt}$, $\tau_{tn}=G\gamma_{tn}$, and $\tau_{tb}=G\gamma_{tb}$, where $E$ is the elastic modulus, $G=E/(2+2\nu)$ is the elastic shear modulus, and $\nu$ is Poisson's ratio. 
 
 In terms of stress resultants versus generalized strains and curvatures, the elastic behavior can be written as $\mathbf{f}=\mathbf{E}\boldsymbol{\eta}$. $\mathbf{f}=\left[N, Q_{n},Q_{b},M_{t},M_{n},M_{b} \right]^{\rm T}$ is the stress resultant vector,
 $\boldsymbol{\eta}=\left[\varepsilon_{0tt}, \gamma_{0tn},{\gamma_{0tb}},{\chi_{t}} ,{\chi_{n}},{\chi_{b}} \right]^{\rm T}$ is the generalized strain vector, $\mathbf{E}$ is the sectional stiffness matrix, as summarized in figure below:
 
+<p align="center">
 <img src="assets/IGAbeam/formulation2.png"   width="100%" height="100%"/>
+</p>
 
 ## Isogeometric analysis implementation of generalized Timoshenko beams 
 Isogeometric analysis (IGA) technique, populated by Hughes et al. in 2005, was used to accurately represent the geometry, and to alleviate the shear locking of curved beams during the analysis.
@@ -117,7 +121,7 @@ $$
 where $\mathbf{B}(\xi)$ is the Bernstein polynomial basis functions. We can also rewrite the weight function $W(\xi)$ in terms of the Bernstein basis as
 
 $$
-W(\xi) =\sum_{A=1}^{n} w_{A} N_{A}(\xi)=\mathbf{w}^{\mathrm{T}} \mathbf{N}(\xi) =\mathbf{w}^{\mathrm{T}} \mathbf{C B}(\xi)=\left(\mathbf{C}^{\mathrm{T}} \mathbf{w}\right)^{\mathrm{T}} \mathbf{B}(\xi)=\left(\mathbf{w}^{b}\right)^{\mathrm{T}} \mathbf{B}(\xi)=W^{b}(\xi)
+W(\xi) =\mathbf{w}^{\mathrm{T}} \mathbf{N}(\xi) =\mathbf{w}^{\mathrm{T}} \mathbf{C B}(\xi)=\left(\mathbf{C}^{\mathrm{T}} \mathbf{w}\right)^{\mathrm{T}} \mathbf{B}(\xi)=\left(\mathbf{w}^{b}\right)^{\mathrm{T}} \mathbf{B}(\xi)=W^{b}(\xi)
 $$
 
 

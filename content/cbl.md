@@ -36,6 +36,15 @@ Paraview visualization
 
 ### Orthotropic Elasticity
 
+Wood is often idealized as a homogeneous, orthotropic material 
+in engineering practice. Based on the direction of wood grains, three principal orthogonal directions of
+elasticity for wood, i.e., longitudinal (L), tangential (T) and radial (R) are determined. Within elastic regime, because of the symmetry of mutually perpendicular planes and the relationship of Poisson's ratios $\nu_{ij}/E_{i}=\nu_{ji}/E_{j}$ (no sums), twelve independent elastic constants such as three elastic
+moduli, $E_L$, $E_T$, $E_R$, three transverse elastic moduli, $G_{TR}$, $G_{RL}$, $G_{LT}$, and six Poisson's ratios, $\nu_{T R}$, $\nu_{T L}$, $\nu_{R L}$, $\nu_{R T}$, $\nu_{L T}$, $\nu_{L R}$, are determined.
+
+<p align="center">
+<img src="assets/cbl/Orthotropic elasticity1.png"   width="35%" height="35%"/>
+</p>
+
 ### Size effect in transverse fracture
 
 <p align="center">
