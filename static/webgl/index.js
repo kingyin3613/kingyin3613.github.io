@@ -37,9 +37,9 @@ export default [
 
   {
     category: 'Computational framework for coupled hygro-thermal-mechanical analyses of lattice systems',
-    desc: 'The behavior of solids, particularly their susceptibility to cracking, can be influenced by various chemical and physical phenomena. Changes in environmental conditions can have opposing effects on different materials: for example, rise in temperature makes solids either stronger and more brittle (e.g., early-age concrete) or weaker and more ductile (e.g., wood and composites) within a typical application temperature range. Likewise, variations in moisture content or temperature can cause volumetric changes that, when restrained, lead to the development of stress within the solid. In addition to mechanical loading, hygral or thermal effects may also contribute to crack initiation and propagation. Consequently, the durability of solids is often affected by a combination of mechanical, hygral, and/or thermal processes, which typically commence at production stages and evolve over the life cycle of the solid. Therefore, for many applications, solid fracture should be modeled using a multiphysics analysis framework.' +
+    desc: 'The mechanical behaviors of porous materials, particularly their susceptibility to cracking, can be influenced by various chemical and physical phenomena. Changes in environmental conditions can have opposing effects on different materials: for example, rise in temperature makes porous materials either stronger and more brittle (e.g., early-age concrete) or weaker and more ductile (e.g., wood and composites) within a typical application temperature range. Likewise, variations in moisture content or temperature can cause volumetric changes that, when restrained, lead to the development of stress within the material. In addition to mechanical loading, hygral or thermal effects may also contribute to crack initiation and propagation. Consequently, the durability of materials is often affected by a combination of mechanical, hygral, and/or thermal processes, which typically commence at production stages and evolve over the life cycle of the material. Therefore, for many applications, fracture analysis should be modeled under a multiphysics context.' +
       '&nbsp;<br/>' + 
-	  '<br/>This research proposes a newly developed computational pipeline for multiphysics analyses and fracture behavior of lattice systems for solids, through the Inter-Process Communication (IPC) between mechanical and flow/transport solvers, with a particular emphasis on the mesoscale hygro-thermal-mechanical modeling of wood and concrete.',
+	  '<br/>This research proposes a newly developed computational pipeline for multiphysics analyses and fracture behavior of lattice systems for porous materials, through the Inter-Process Communication (IPC) between mechanical and flow/transport solvers, with a particular emphasis on the mesoscale hygro-thermal-mechanical modeling of wood and concrete.',
     list: [
       {
         type:'md',
@@ -61,7 +61,7 @@ export default [
         type:'md',
         file: "coupling", ///content目录下需要访问的md文件
         title:
-          "Multiphysics with lattice models", //列表中展示的标题
+          "Multiphysics in lattice models", //列表中展示的标题
 
         img: "/poro.gif", // 列表封面：static/webGl/img目录下图片的路径
       },
