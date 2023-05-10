@@ -74,7 +74,7 @@ where $\boldsymbol{\varepsilon}_0 = d\mathbf{u}_0/d s-\boldsymbol{\theta}\times\
 
 The above equation differs from the strain definition in classical Timoshenko beam formulations, which do not have the multiplier term $1/J=1/(1-\kappa p_n)$. An observation here is that the multiplier term is comprehensively governed by the local curvature $\kappa$ of beam axis, as well as by the cross-section size $p_n$ in the direction towards the curvature center. Hence this term is <b>not negligible especially for highly curved, low-slenderness ratio (deep) beams</b>.
 
-The equilibrium of beam functions are somehow trivial, we followed the principle of virtual work to derive the governing equations of beam, the results are summarized in the figure below:
+The equilibrium of beam functions is somehow trivial, we followed the principle of virtual work to derive the governing equations of beam, the results are summarized in the figure below:
 
 <p align="center">
 <img src="assets/IGAbeam/formulation1.png"   width="100%" height="100%"/>
