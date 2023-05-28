@@ -108,7 +108,9 @@ the storage coefficient $c$), $\lambda$ - permeability coefficient of the porous
 
 The simulation results of M-LDPM are shown in figures and animations below.
 
+<p align="center">
 <video src="/videos/1DTerzaghi_loadbypressure.webm" style="max-width:75%" controls> </video>
+</p>
 
 <p align = "center">
 <small>
@@ -159,7 +161,9 @@ The simulation results of M-LDPM are shown in figures and animations below.
 <img src="assets/coupling/2dpresure.png"   width="70%" height="70%"/>
 </p>
 
+<p align="center">
 <video src="/videos/grasslDisk.webm" style="max-width:75%" controls> </video>
+</p>
 
 <p align = "center">
 <small>
@@ -169,7 +173,9 @@ Transient pressure contours in cylindrical disk
 </small>
 </p>
 
+<p align="center">
 <video src="/videos/grasslDisk_eigensig.webm" style="max-width:75%" controls> </video>
+</p>
 
 <p align = "center">
 <small>
@@ -225,7 +231,9 @@ crack opening and pressure contours at time t=1.0total time
 </small>
 </p>
 
+<p align="center">
 <video src="/videos/fracture2.webm" style="max-width:75%" controls> </video>
+</p>
 
 <p align = "center">
 <small>
@@ -235,7 +243,9 @@ Transient crack paths in fractured cylindrical disk
 </small>
 </p>
 
+<p align="center">
 <video src="/videos/fracture.webm" style="max-width:75%" controls> </video>
+</p>
 
 <p align = "center">
 <small>
