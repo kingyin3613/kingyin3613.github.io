@@ -108,7 +108,7 @@ the storage coefficient $c$), $\lambda$ - permeability coefficient of the porous
 
 The simulation results of M-LDPM are shown in figures and animations below.
 
-<video src="/videos/1DTerzaghi_loadbypressure.webm" style="max-width:100%" controls> </video>
+<video src="/videos/1DTerzaghi_loadbypressure.webm" style="max-width:75%" controls> </video>
 
 <p align = "center">
 <small>
@@ -119,7 +119,7 @@ Transient pressure contours in prism
 </p>
 
 <p align="center">
-<img src="assets/coupling/1dterzaghi.png"   width="65%" height="65%"/>
+<img src="assets/coupling/1dterzaghi.png"   width="95%" height="95%"/>
 </p>
 
 ### Example 2: Radial poroelastic expansion of pressurized cylindrical disk
@@ -159,7 +159,7 @@ The simulation results of M-LDPM are shown in figures and animations below.
 <img src="assets/coupling/2dpresure.png"   width="70%" height="70%"/>
 </p>
 
-<video src="/videos/grasslDisk.webm" style="max-width:100%" controls> </video>
+<video src="/videos/grasslDisk.webm" style="max-width:75%" controls> </video>
 
 <p align = "center">
 <small>
@@ -169,7 +169,7 @@ Transient pressure contours in cylindrical disk
 </small>
 </p>
 
-<video src="/videos/grasslDisk_eigensig.webm" style="max-width:100%" controls> </video>
+<video src="/videos/grasslDisk_eigensig.webm" style="max-width:75%" controls> </video>
 
 <p align = "center">
 <small>
@@ -190,7 +190,7 @@ Loading by pressure, the Biot coefficient introduces pressure to contribute to t
 As shown in figures and animations below, as cracks grow, the pressure distribution is not axial-symmetric anymore: the pressure distribution tends to "follow" the cracks. The crack openings result in an easy pressure "invasion" in these locations, due to the higher permeability of pressure. Higher pressure diffuses alongside the crack paths, leading to the conentration of impose stress and even faster move of crack tips.
 
 <p align="center">
-<img src="assets/coupling/grasslDiskt0.png"   width="75%" height="75%"/>
+<img src="assets/coupling/grasslDiskt0.png"   width="95%" height="95%"/>
 </p>
 
 <p align = "center">
@@ -202,7 +202,7 @@ crack opening and pressure contours at time t=0.3total time
 </p>
 
 <p align="center">
-<img src="assets/coupling/grasslDiskt1.png"   width="75%" height="75%"/>
+<img src="assets/coupling/grasslDiskt1.png"   width="95%" height="95%"/>
 </p>
 
 <p align = "center">
@@ -214,7 +214,7 @@ crack opening and pressure contours at time t=0.7total time
 </p>
 
 <p align="center">
-<img src="assets/coupling/grasslDiskt2.png"   width="75%" height="75%"/>
+<img src="assets/coupling/grasslDiskt2.png"   width="95%" height="95%"/>
 </p>
 
 <p align = "center">
@@ -225,7 +225,7 @@ crack opening and pressure contours at time t=1.0total time
 </small>
 </p>
 
-<video src="/videos/fracture2.webm" style="max-width:100%" controls> </video>
+<video src="/videos/fracture2.webm" style="max-width:75%" controls> </video>
 
 <p align = "center">
 <small>
@@ -235,7 +235,7 @@ Transient crack paths in fractured cylindrical disk
 </small>
 </p>
 
-<video src="/videos/fracture.webm" style="max-width:100%" controls> </video>
+<video src="/videos/fracture.webm" style="max-width:75%" controls> </video>
 
 <p align = "center">
 <small>
