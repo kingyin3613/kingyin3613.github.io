@@ -1,7 +1,7 @@
 # Discrete models for transport phenomena
 In this section, two discrete models for transport phenomena for porous materials will be presented, one is called the `Flow Cell Model (FCM)` for the hygral-thermal behaviors of wood at the mesoscale level. The `FCM` uses the topologically dual structure of the Voronoi-based `Connector-Beam Lattice Model (CBL)`, a Delaunay lattice network, as the transport system. 
 Another work that will be introduced is called three-dimensional `Flow Lattice Model (FLM)` with application to the Hygro-Thermo-Chemical (HTC) model for analysis of moisture transport and heat transfer in cementitious materials.
-The `FLM` is a discrete transport model formulated in association with a mechanical model for mesoscale structure of concrete, the `Lattice Discrete Particle Model (LDPM)`. These two models enables the simulation of transport phenomena at the length scale at which the material exhibits <b>intrinsic heterogeneity</b>.
+The `FLM` is a discrete transport model formulated in association with a mechanical model for mesoscale structure of concrete, the `Lattice Discrete Particle Model (LDPM)`. These two models enables the simulation of transport phenomena at the length scale at which the material exhibits intrinsic <b>heterogeneity</b> and <b>tortuosity</b> of flow paths.
 
 ## Discretization of the scalar potential field variable(s)
 
@@ -115,15 +115,15 @@ The `FLM` is implementated through the Abaqus user element subroutines for impli
 <img src="assets/flow/solimansettings1.png"   width="65%" height="65%"/>
 </p>
 
-The `FLM` solutions were compared with those of a continuum finite element implementation of the HTC model and experimental data available from the literature, two examples of temperature-dependent desorption isotherm, and concrete drying at early-age are shown in plots below, respectively. 
-
-The overall agreement demonstrates the reliability of the proposed approach in reproducing phenomena such as cement hydration, self-desiccation, temperature-dependent moisture drying, etc.
+The `FLM` solutions were compared with those of a continuum finite element implementation of the HTC model and experimental data available from the literature. Two examples of concrete drying at early-age (left) and temperature-dependent desorption isotherm (right) are shown in figures below. 
 
 <p align="center">
 <img src="assets/flow/HD.png"   width="40%" height="40%"/>
 
 <img src="assets/flow/isotherm.png"   width="40%" height="40%"/>
 </p>
+
+The overall agreement demonstrates the reliability of the proposed approach in reproducing phenomena such as cement hydration, self-desiccation, temperature-dependent moisture drying, etc.
 
 For more details of related work of discrete modeling of transport/flow phenomena in concrete can be found in this paper:
 

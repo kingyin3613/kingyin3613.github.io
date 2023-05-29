@@ -45,7 +45,7 @@ In this project, we focus on the <b>mesoscale</b> structure of wood, at which th
 
 ## Voronoi tessellation for wood mesostructure
 
-The cellular mesostructure of wood is a natural outcome of local cell growth that follows simple intrinsic physical rules, among these, Voronoi diagram [(click here for more details)](https://en.wikipedia.org/wiki/Voronoi_diagram), has been proposed to be one of the simple but accurate approximations of cell interfaces at the steady-state by the equilibrium of intracellular pressures and the intercellular surface tension in a plane. This Voronoi diagram is also suitable for representing sections of other cellular materials, such as trabecular bone, skeletal muscle fiber and some 3D printed biomimetic composites.
+The cellular mesostructure of wood is a natural outcome of local cell growth that follows simple intrinsic physical rules, among these, Voronoi diagram [(Voronoi diagram - Wikipedia)](https://en.wikipedia.org/wiki/Voronoi_diagram), has been proposed to be one of the simple but accurate approximations of cell interfaces at the steady-state by the equilibrium of intracellular pressures and the intercellular surface tension in a plane. This Voronoi diagram is also suitable for representing sections of other cellular materials, such as trabecular bone, skeletal muscle fiber and some 3D printed biomimetic composites.
 
 <p align="center">
 <img src="assets/ringspy/Voronoi-in-Nature-05.jpg"   width="45%" height="45%"/>
