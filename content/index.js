@@ -9,7 +9,7 @@ export default [
         file: 'cbl', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径 link：外部链接
 
         title: 'Connector-beam lattice model for wood: from micromorphology simulation to macroscopic behaviors prediction',//列表中展示的标题
-        author: '<b>Hao Yin</b>, Parinaz Belalpour Dastjerdi, Eric Landis, Gianluca Cusatis', // 作者
+        author: '<b>Hao Yin</b>, Eric Landis, Gianluca Cusatis', // 作者
         desc: '11-CBL-W',// 描述
         img: '/assets/11.png',// 列表封面：static目录下图片的路径
         date: '2023',// 发表日期
@@ -29,6 +29,20 @@ export default [
         date: '2023',// 发表日期
         publisher: 'Journal of Open Source Software', // 出版商
         topic:'Generative Geometry'
+
+    },
+	
+    {
+        type: 'link',
+        file: '//assets.researchsquare.com/files/rs-2159913/v1_covered.pdf?c=1666018675', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径
+
+        title: 'Orthotropic hygroscopic behavior of mass timber: theory, computation, and experimental validation',//列表中展示的标题
+        author: 'Danyang Tong, Susan Alexis Brown, <b>Hao Yin</b>, David Corr, Eric Landis, Giovanni Di Luzio, Gianluca Cusatis', // 作者
+        desc: '12-woodHT',// 描述
+        img: '/assets/12.jpg',// 列表封面：static目录下图片的路径
+        date: '2023',// 发表日期
+        publisher: 'Materials and Structures', // 出版商
+        topic:'Multiphysics'
 
     },
 

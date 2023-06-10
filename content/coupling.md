@@ -131,7 +131,7 @@ The capability of the two-way coupling framework to simulate the interaction of 
 <img src="assets/coupling/poro.png"   width="75%" height="75%"/>
 </p>
 
-This is a one-way coupling situation, the uncoupled radial fluid pressure $P_f$ diffused from the inner surface throughout a thick-walled cylinder, at the steady-state, the fluid pressure field can be expressed as:
+This is essentially an one-way coupling situation, the uncoupled radial fluid pressure $P_f$ diffused from the inner surface throughout a thick-walled cylinder, at the steady-state, the fluid pressure field can be expressed as:
 
 $$
 P_{\mathrm{f}}=P_{\mathrm{fi}} \frac{\ln \frac{r_0}{r_r}}{\ln \frac{r_0}{r_{\mathrm{i}}}}
@@ -158,7 +158,39 @@ $E_0$ - Mesoscopic Young's modulus, $\alpha$ - Mesoscopic shear-normal coupling 
 The simulation results of M-LDPM are shown in figures and animations below.
 
 <p align="center">
-<img src="assets/coupling/2dpresure.png"   width="70%" height="70%"/>
+<img src="assets/coupling/grasslDisk_nu0_300dpi.png"   width="70%" height="70%"/>
+</p>
+
+<p align = "center">
+<small>
+<span style="color:grey">
+Normalized radial expansions v.s. normalized radii, macrosopic Poisson's ratio = 0
+</span>
+</small>
+</p>
+
+<p align="center">
+<img src="assets/coupling/grasslDisk_nu01_300dpi.png"   width="70%" height="70%"/>
+</p>
+
+<p align = "center">
+<small>
+<span style="color:grey">
+Normalized radial expansions v.s. normalized radii, macrosopic Poisson's ratio = 0.1
+</span>
+</small>
+</p>
+
+<p align="center">
+<img src="assets/coupling/grasslDisk_nu02_300dpi.png"   width="70%" height="70%"/>
+</p>
+
+<p align = "center">
+<small>
+<span style="color:grey">
+Normalized radial expansions v.s. normalized radii, macrosopic Poisson's ratio = 0.2
+</span>
+</small>
 </p>
 
 <p align="center">
