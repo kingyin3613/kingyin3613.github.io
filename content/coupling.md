@@ -158,7 +158,7 @@ $E_0$ - Mesoscopic Young's modulus, $\alpha$ - Mesoscopic shear-normal coupling 
 The simulation results of M-LDPM are shown in figures and animations below.
 
 <p align="center">
-<img src="assets/coupling/grasslDisk_nu0_300dpi.png"   width="70%" height="70%"/>
+<img src="assets/coupling/grasslDisk_nu0_300dpi.png"   width="50%" height="50%"/>
 </p>
 
 <p align = "center">
@@ -170,7 +170,7 @@ Normalized radial expansions v.s. normalized radii, macrosopic Poisson's ratio =
 </p>
 
 <p align="center">
-<img src="assets/coupling/grasslDisk_nu01_300dpi.png"   width="70%" height="70%"/>
+<img src="assets/coupling/grasslDisk_nu01_300dpi.png"   width="50%" height="50%"/>
 </p>
 
 <p align = "center">
@@ -182,7 +182,7 @@ Normalized radial expansions v.s. normalized radii, macrosopic Poisson's ratio =
 </p>
 
 <p align="center">
-<img src="assets/coupling/grasslDisk_nu02_300dpi.png"   width="70%" height="70%"/>
+<img src="assets/coupling/grasslDisk_nu02_300dpi.png"   width="50%" height="50%"/>
 </p>
 
 <p align = "center">
