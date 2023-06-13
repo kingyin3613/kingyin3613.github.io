@@ -23,7 +23,7 @@ In contrast to continuous or other discrete models, in which the same nodal site
 ## Inter-process communication
 
 Inter-process communication (IPC) refers to the coordination of activities among cooperating processes. This communication could involve a process letting another process know that some event has occurred or the transferring of data from one process to another.
-For our applications of IPC in solving Multiphysics problems, the processes are different simulation solvers (e.g. Abaqus/Ansys/in-house codes/other solvers). 
+For our applications of IPC in solving Multiphysics problems, the processes are different simulation solvers (e.g., Abaqus/Ansys/in-house codes/other solvers). 
 
 We used named pipes as the IPC media. Named pipe is a simple synchronized way of passing information between two processes. A pipe can be viewed as a special file that can store only a limited amount of data and uses a "First In First Out (FIFO)" access scheme to retrieve data. In a logical view of a pipe, data is written to one end and read from the other.
 
@@ -74,7 +74,7 @@ the mechanical part) and spatial & temporal mappings between the two solvers all
 
 ### Example 1: linear Terzaghi’s 1D consolidation
 
-The first application of the two-way coupling framework is a famous, classical poromechanics problem: 1D Terzaghi's consolidation. A prism of material of length $L = 0.5 m$ and square cross-section $0.1\times0.1$ m$^3$ is initially under zero pressure and zeros strain, then is loaded by a boundary pressure. The $x$ axis runs along its longest central axis, the domain begins at
+The first application of the two-way coupling framework is a famous, classical poromechanics problem: 1D Terzaghi's consolidation. A prism of material of length $L = 0.5$ m and square cross-section $0.1\times0.1$ m$^3$ is initially under zero pressure and zeros strain, then is loaded by a boundary pressure. The $x$ axis runs along its longest central axis, the domain begins at
 $x = 0$ m and ends at $x = 0.5$ m. The prism is sealed at all boundaries except the front end at $x = 0$ where pressure $p^{*}$ is prescribed at time $t = 0$ and kept constant throughout the simulation. The mechanical boundary conditions prescribe
 zero rotations at all boundaries, zero $x$ displacement at the rear end at $x = 0.5$ m and zero $y$ and $z$ displacements at
 all rectangular sides. Biot coefficient $b = 0.5$ and reference pressure $p_0 = 0$ MPa. This is a very typical poroelasticity problem, so linear elastic mechanical behavior is assumed.
@@ -218,8 +218,8 @@ Transient imposed stress contours in cylindrical disk
 </p>
 
 ### Example 3: hydraulic fracturing of pressurized cylindrical disk
-The fracture behavior, as well as the interaction between pressure flow and fracture is demonstrated in this example. The same cylindrical disk used in example 2 is again used here. This time, however, the mechanical behaviors of the material is not purely elastic anymore, we use the material constitutive model describing the softening and fracture behavior of quasi-brittle materials in this [LDPM paper](https://www.sciencedirect.com/science/article/abs/pii/S0958946511000345). The nonlinear constitutive behaviors of the material will not only introduce the change in mechanical behavior, it will also affect the pressure flow by introducing the changes in transport properties due to crack openings (e.g., the growth of crack openings leads to higher pressure permeability in local microstrcture).
-Loading by pressure, the Biot coefficient introduces pressure to contribute to the formation of crack opening (through imposed normal stress). This two-way coupling procedure is summarized in figure below, for detailed derivations, one can refer to this paper [Li et al.](https://link.springer.com/article/10.1007/s00603-018-1625-8).
+The fracture behavior, as well as the interaction between pressure flow and fracture is demonstrated in this example. The same cylindrical disk used in example 2 is again used here. This time, however, the mechanical behaviors of the material is not purely elastic anymore, we use the material constitutive model describing the softening and fracture behavior of quasi-brittle materials in this [LDPM 2011 paper](https://www.sciencedirect.com/science/article/abs/pii/S0958946511000345). The nonlinear constitutive behaviors of the material will not only introduce the change in mechanical behavior, it will also affect the pressure flow by introducing the changes in transport properties due to crack openings (e.g., the growth of crack openings leads to higher pressure permeability in local microstrcture).
+Loading by pressure, the Biot coefficient introduces pressure to contribute to the formation of crack opening (through imposed normal stress). This two-way coupling procedure is summarized in figure below, for the detailed derivation of model formulation, one can refer to this paper [Li et al. 2018](https://link.springer.com/article/10.1007/s00603-018-1625-8).
 
 <p align="center">
 <img src="assets/coupling/poro_fracture.png"   width="75%" height="75%"/>

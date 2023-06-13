@@ -103,7 +103,7 @@
               thermo-hygro-mechanical analyses of complex lattice systems (e.g.,
               wood microstructure, bio-inspired composites). My research
               interests include lattice/discrete models, bio-inspired materials,
-              fracture mechanics, and generative geometry.
+              fracture mechanics, multiphysics, and generative geometry.
             </p>
 
             <p>
@@ -116,7 +116,15 @@
               from
               <a href="https://illinois.edu/"
                 >the University of Illinois at Urbana-Champaign (UIUC)</a
-              >. While not playing with my models, I spend my time staying with my two little chinchillas and traveling across the country. My detailed Curriculum Vitae can be found <a href="http://haoyin.io/pdf/Yin-CV-05172023.pdf">here</a>.
+              >.
+			</p>
+			
+            <p>
+              While not playing with my models, I spend my time staying with my two little chinchillas and traveling across the country.
+            </p>
+
+            <p>
+			  My detailed Curriculum Vitae can be found <a href="http://haoyin.io/pdf/Yin-CV-05172023.pdf">here</a>.
             </p>
           </div>
         </div>
