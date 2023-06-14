@@ -1,7 +1,7 @@
 // webGl效果配置文件
 export default [
   {
-    category: 'Computational modeling of micromechanics of wood, cross-laminated timber (CLT), and other fiberous materials ',
+    category: 'Computational modeling of micromechanics of wood, cross-laminated timber (CLT), and other fibrous materials',
     desc: 'A 3D discrete connector-beam lattice (CBL) model to simulate the mechanical behaviors of wood and engineered wood products (e.g., wood panel, CLT) at the mesoscale has been developed. The basic element of this lattice model is the 3D curved beam characterized by (a) arbitrary curvature and torsion of the beam axis and (b) an irregular, cruciform cross-section. The various branches for the cross-section represent the cell walls of the cellular wood microstructure and the beam axis is the line at which various cell walls meet. The Isogeometric Analysis (IGA) technique has been employed to describe the beam geometries accurately. The joints (both transverse and longitudinal) between neighboring beams are modeled with the "connector" elements, characterized by the smeared crack model for the cell wall failure and by the cohesive fracture laws for the softening strain-stress relationship of quasi-brittle materials (including wood, fiber-composites).' +
       '&nbsp;<br>' + 
 	  '<br/>The beam lattice and connector elements have been implemented with Abaqus user subroutines "UEL" and "VUEL" for both implicit and explicit analyses. A preprocessing-analysis-postprocessing pipeline has been formed. The codes has been optimized to allow the simulation of large models (number of elements > 10 millions), the length scale of specimens can be up to tens centimeters as a mesoscale model with element sizes of 10~100 microns.\n' +

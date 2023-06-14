@@ -120,11 +120,11 @@
 			</p>
 			
             <p>
-              While not playing with my models, I spend my time staying with my two little chinchillas and traveling across the country.
+              While not playing with my models, I spend my time staying with my two little chinchillas or traveling across the country.
             </p>
 
             <p>
-			  My detailed Curriculum Vitae can be found <a href="http://haoyin.io/pdf/Yin-CV-05172023.pdf">here</a>.
+			  My detailed Curriculum Vitae can be found <a href="http://haoyin.io/pdf/Yin-CV-06122023.pdf">here</a>.
             </p>
           </div>
         </div>
