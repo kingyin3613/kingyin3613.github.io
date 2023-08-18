@@ -53,9 +53,6 @@ Under construction!
 <img src="assets/dual/40571_2022_473_Fig1_HTML.png"   width="35%" height="35%"/>
 </p>
 
-<p align = "center">
-<b>Image Credits - Fig.2 - 4K Mountains Wallpaper</b>
-</p>
 
 ## Dual mesh for multiscale analysis of concrete
 
@@ -74,14 +71,16 @@ With the tessellated domain, a flow network can be formed by connecting the tet 
 Related work of dual lattices can be found in this paper:
 
 ```
-@article{yin2022generalized,
-  title={Generalized Formulation for the Behavior of Geometrically Curved and Twisted Three-Dimensional Timoshenko Beams and Its Isogeometric Analysis Implementation},
-  author={Yin, Hao and Lale, Erol and Cusatis, Gianluca},
-  journal={Journal of Applied Mechanics},
-  volume={89},
-  number={7},
-  pages={071003},
-  year={2022},
-  publisher={American Society of Mechanical Engineers}
+@article{doi:10.1080/19648189.2023.2242456,
+author = {Hao Yin and Antonio Cibelli and Susan-Alexis Brown and Lifu Yang and Lei Shen and Mohammed Alnaggar and Gianluca Cusatis and Giovanni Di Luzio},
+title = {Flow Lattice Model for the simulation of chemistry dependent transport phenomena in cementitious materials},
+journal = {European Journal of Environmental and Civil Engineering},
+volume = {0},
+number = {0},
+pages = {1-25},
+year  = {2023},
+publisher = {Taylor & Francis},
+doi = {10.1080/19648189.2023.2242456},
+URL = {https://doi.org/10.1080/19648189.2023.2242456}
 }
 ```

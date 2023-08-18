@@ -1,11 +1,12 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Hao Yin',
+    title: 'Hao Yin - Personal Website',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+	  { name: 'keywords', content: 'Hao Yin, Yin Hao, 银皓, Northwestern University, Research' },
+      { name: 'description', content: 'Hao Yin (银皓)- personal research website. Hao Yin is a Ph.D. candidate of Civil Engineering working in the Multiscale Mechanics of Infrastructure Materials (M2IM) Lab at Northwestern University. He is currently completing his Ph.D. thesis, under the supervision of Dr. Gianluca Cusatis, focusing on the development of a novel computational framework for thermo-hygro-mechanical analyses of complex lattice systems (e.g., wood microstructure, bio-inspired composites). His research interests include lattice/discrete models, bio-inspired materials, fracture mechanics, multiphysics, and generative geometry..' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
