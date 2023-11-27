@@ -102,7 +102,7 @@
               on the development of a novel computational framework for
               thermo-hygro-mechanical analyses of complex lattice systems (e.g.,
               wood microstructure, bio-inspired composites). My research
-              interests include lattice/discrete models, bio-inspired materials,
+              interests include lattice/discrete models,
               fracture mechanics, multiphysics, and generative geometry.
             </p>
 
@@ -128,7 +128,7 @@
             </p>
 			
 			<p>
-			  2023-11-07 Update: I recently graduated! My dissertation titled "Discrete Modeling of Fracture 
+			  (2023-11-07 Update) I recently graduated! My dissertation titled "Discrete Modeling of Fracture 
 			  and Flow in Porous Quasi-brittle Materials by Capturing the Internal Structure" 
 			  (Committee: Zdeněk Bažant, Gianluca Cusatis, Eric Landis, and John Rudnicki)
 			  is temporarily unavailable to the public, due to copyright issues. However, you may click the research topics below to see my work during doctoral training.
