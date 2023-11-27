@@ -83,15 +83,7 @@
             <p></p>
           </div>
 
-          <div class="text">
-            <p>
-			  I recently graduated! My dissertation titled "Discrete Modeling of Fracture 
-			  and Flow in Porous Quasi-brittle Materials by Capturing the Internal Structure" 
-			  (Committee: Zdeněk Bažant, Gianluca Cusatis, Eric Landis, and John Rudnicki)
-			  is temporarily unavailable to the public, due to copyright issues. However, you may click the research topics below to see my work during doctoral training.
-			  I will continue at Northwestern as a Postdoc for a while, and I am actively looking for more collaborations and oppurtunities!
-            </p>  
-			
+          <div class="text">			
 			<p>
 			  I am a Ph.D. candidate of
               <a
@@ -133,6 +125,17 @@
 
             <p>
 			  My detailed Curriculum Vitae can be found <a href="http://haoyin.io/pdf/Yin-CV-08292023.pdf">here</a>.
+            </p>
+			
+			<p>
+			  2023-11-07 Update: I recently graduated! My dissertation titled "Discrete Modeling of Fracture 
+			  and Flow in Porous Quasi-brittle Materials by Capturing the Internal Structure" 
+			  (Committee: Zdeněk Bažant, Gianluca Cusatis, Eric Landis, and John Rudnicki)
+			  is temporarily unavailable to the public, due to copyright issues. However, you may click the research topics below to see my work during doctoral training.
+			</p>
+			
+			<p>
+			  I will continue at Northwestern as a Postdoc for a while, and I am actively looking for more collaborations and oppurtunities!
             </p>
           </div>
         </div>
