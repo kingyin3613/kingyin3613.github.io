@@ -89,18 +89,16 @@
               <a href="https://sites.northwestern.edu/m2im/"
                 >Multiscale Mechanics of Infrastructure Materials (M2IM) Lab</a
               >
-              at Department of Civil and Environmental Engineering
+              at 
               <a
                 href="https://www.mccormick.northwestern.edu/civil-environmental/"
-                >Civil Engineering</a
-              >, 
-              <a href="https://www.northwestern.edu/">Northwestern University</a
+                >Department of Civil and Environmental Engineering, Northwestern University</a
               >. I am focusing
               on the development of a novel computational framework for
               thermo-hygro-mechanical analyses of complex lattice systems (e.g.,
               wood microstructure, bio-inspired composites). My research
               interests include lattice/discrete models,
-              fracture mechanics, multiphysics, bio-inspired materials and generative geometry.
+              fracture mechanics, multiphysics, bio-inspired materials, and generative geometry.
             </p>
 
             <p>
@@ -112,6 +110,9 @@
 			  (Committee: Zdeněk Bažant, Gianluca Cusatis, Eric Landis, and John Rudnicki)
 			  is temporarily unavailable to the public, due to copyright issues. 
 			  However, you may click the research topics below to see my work during doctoral training.
+			</p>
+
+            <p>
 			  Before joining Northwestern, I received my bachelor’s degree in
               Civil Engineering from
               <a href="http://en.cau.edu.cn/"
