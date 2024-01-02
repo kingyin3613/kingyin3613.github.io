@@ -26,7 +26,7 @@ export default [
         author: '<b>Hao Yin</b>, Eric Landis, Gianluca Cusatis', // 作者
         desc: '11-CBL-W',// 描述
         img: '/assets/11.png',// 列表封面：static目录下图片的路径
-        date: '2023',// 发表日期
+        date: '2024',// 发表日期
         publisher: 'In preparation', // 出版商
         topic:'Lattice Models'
 

@@ -11,7 +11,7 @@
           <div class="text info">
             <h1>Hao Yin (银皓)</h1>
             <p></p>
-            <div>PhD Candidate</div>
+            <div>Postdoctoral Scholar</div>
 
             <div>Northwestern University</div>
             <div>
@@ -85,29 +85,34 @@
 
           <div class="text">			
 			<p>
-			  I am a Ph.D. candidate of
-              <a
-                href="https://www.mccormick.northwestern.edu/civil-environmental/"
-                >Civil Engineering</a
-              >
-              working in the
+			  I am a Postdoctoral Scholar working in the
               <a href="https://sites.northwestern.edu/m2im/"
                 >Multiscale Mechanics of Infrastructure Materials (M2IM) Lab</a
               >
-              at
+              at Department of Civil and Environmental Engineering
+              <a
+                href="https://www.mccormick.northwestern.edu/civil-environmental/"
+                >Civil Engineering</a
+              >, 
               <a href="https://www.northwestern.edu/">Northwestern University</a
-              >. I am currently completing my Ph.D. thesis, under the
-              supervision of Dr.
-              <a href="https://www.cusatis.us/">Gianluca Cusatis</a>, focusing
+              >. I am focusing
               on the development of a novel computational framework for
               thermo-hygro-mechanical analyses of complex lattice systems (e.g.,
               wood microstructure, bio-inspired composites). My research
               interests include lattice/discrete models,
-              fracture mechanics, multiphysics, and generative geometry.
+              fracture mechanics, multiphysics, bio-inspired materials and generative geometry.
             </p>
 
             <p>
-              Before joining Northwestern, I received my bachelor’s degree in
+              I received my Ph.D. in Civil Engineering from Northwestern, under the
+              supervision of Dr.
+              <a href="https://www.cusatis.us/">Gianluca Cusatis</a>. 
+			  My dissertation titled "Discrete Modeling of Fracture 
+			  and Flow in Porous Quasi-brittle Materials by Capturing the Internal Structure" 
+			  (Committee: Zdeněk Bažant, Gianluca Cusatis, Eric Landis, and John Rudnicki)
+			  is temporarily unavailable to the public, due to copyright issues. 
+			  However, you may click the research topics below to see my work during doctoral training.
+			  Before joining Northwestern, I received my bachelor’s degree in
               Civil Engineering from
               <a href="http://en.cau.edu.cn/"
                 >China Agricultural University (CAU)</a
@@ -120,22 +125,11 @@
 			</p>
 			
             <p>
-              While not playing with my models, I spend my time staying with my two little chinchillas or traveling across the country.
+              While not playing with my models, I spend my time staying with my two little chinchillas (sadly, now only one) or traveling across the country.
             </p>
 
             <p>
-			  My detailed Curriculum Vitae can be found <a href="http://haoyin.io/pdf/Yin-CV-08292023.pdf">here</a>.
-            </p>
-			
-			<p>
-			  (2023-11-07 Update) I recently graduated! My dissertation titled "Discrete Modeling of Fracture 
-			  and Flow in Porous Quasi-brittle Materials by Capturing the Internal Structure" 
-			  (Committee: Zdeněk Bažant, Gianluca Cusatis, Eric Landis, and John Rudnicki)
-			  is temporarily unavailable to the public, due to copyright issues. However, you may click the research topics below to see my work during doctoral training.
-			</p>
-			
-			<p>
-			  I will continue at Northwestern as a Postdoc for a while, and I am actively looking for more collaborations and oppurtunities!
+			  My detailed Curriculum Vitae can be found <a href="http://haoyin.io/pdf/Yin-CV-01012024.pdf">here</a>.
             </p>
           </div>
         </div>
