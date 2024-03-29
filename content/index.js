@@ -8,13 +8,13 @@ export default [
         // type: 'pdf', //(YH:这里可否直接指向外部网址？)
         file: 'coupling', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径 link：外部链接
 
-        title: 'An Interprocess Communication-based Multimodel Two-way Coupling Framework for Multiphysics Phenomena in Lattice Systems',//列表中展示的标题
+        title: 'An interprocess communication-based two-way coupling approach for implicit-explicit multiphysics lattice discrete particle model simulations',//列表中展示的标题
         author: '<b>Hao Yin</b>, Matthew Treomner, Weixin Li, Lifu Yang, Lei Shen, Mohammed Alnaggar, Giovanni Di Luzio, Gianluca Cusatis', // 作者
         desc: '13-coupling',// 描述
         img: '/assets/13.png',// 列表封面：static目录下图片的路径
         date: '2024',// 发表日期
         publisher: 'In preparation', // 出版商
-        topic:'Lattice Models'
+        topic:'Multiphysics'
 
     },
 	
@@ -105,7 +105,7 @@ export default [
         type: 'pdf',
         file: '6', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径
 
-        title: 'Generalized formulation for the behavior of geometrically curved and twisted three-dimensional timoshenko beams and its isogeometric analysis implementation',//列表中展示的标题
+        title: 'Generalized formulation for the behavior of geometrically curved and twisted three-dimensional Timoshenko beams and its isogeometric analysis implementation',//列表中展示的标题
         author: '<b>Hao Yin</b>, Erol Lale, Gianluca Cusatis', // 作者
         desc: '6-IGA-beam',// 描述
         img: '/assets/6.png',// 列表封面：static目录下图片的路径

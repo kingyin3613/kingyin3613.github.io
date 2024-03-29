@@ -15,7 +15,7 @@
 
             <div>Northwestern University</div>
             <div>
-              Email:&nbsp;haoyin2022 [at] u (dot) northwestern (dot) edu
+              Email:&nbsp;hao.yin [at] northwestern (dot) edu
             </div>
             <p>
               <span
@@ -130,7 +130,7 @@
             </p>
 
             <p>
-			  My detailed Curriculum Vitae can be found <a href="http://haoyin.io/pdf/Yin-CV-01012024.pdf">here</a>.
+			  My detailed Curriculum Vitae can be found <a href="http://haoyin.io/pdf/Yin-CV-03012024.pdf">here</a>.
             </p>
           </div>
         </div>
