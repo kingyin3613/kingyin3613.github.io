@@ -6,6 +6,17 @@ export default [
 
     {
         type: 'pdf', //加link
+        file: 'EMI2024_Yin_240529', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径 link 为相对路径资源
+      
+        title: 'M-LDPM coupling framework (ASCE-EMI 24)',//列表中展示的标题
+
+        img: '/assets/EMI2024_Yin_240529.png',// 列表封面：static目录下图片的路径
+        date:'May 29, 2024',
+        address:'Chicago, IL'
+    },
+	
+    {
+        type: 'pdf', //加link
         file: 'EMI2022_Yin_220601', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径 link 为相对路径资源
       
         title: 'Connector-beam lattice model (ASCE-EMI 22)',//列表中展示的标题
