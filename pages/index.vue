@@ -11,11 +11,11 @@
           <div class="text info">
             <h1>Hao Yin (银皓)</h1>
             <p></p>
-            <div>Postdoctoral Scholar</div>
+            <div>Research Associate</div>
 
-            <div>Northwestern University</div>
+            <div>Cambridge University</div>
             <div>
-              Email:&nbsp;hao.yin [at] northwestern (dot) edu
+              Email:&nbsp;hy423 [at] cam (dot) ac (dot) uk
             </div>
             <p>
               <span
@@ -60,9 +60,9 @@
               </li>
               <li>
                 <a
-                  href="#bio-inspired"
-                  @click="categoryCounter('Bio-inspired Materials', 'topic')"
-                  >Bio-inspired Materials</a
+                  href="#Architected"
+                  @click="categoryCounter('Architected Materials', 'topic')"
+                  >Architected Materials</a
                 >
               </li>
               <li>
@@ -83,50 +83,35 @@
             <p></p>
           </div>
 
-          <div class="text">			
+          <div class="text">
 			<p>
-			  I am a Postdoctoral Scholar working in the
-              <a href="https://sites.northwestern.edu/m2im/"
-                >Multiscale Mechanics of Infrastructure Materials (M2IM) Lab</a
-              >
-              at 
-              <a
-                href="https://www.mccormick.northwestern.edu/civil-environmental/"
-                >Department of Civil and Environmental Engineering, Northwestern University</a
-              >. I am focusing
-              on the development of a novel computational framework for
-              thermo-hygro-mechanical analyses of complex lattice systems (e.g.,
-              wood microstructure, bio-inspired composites). My research
+			  I am a Research Associate working in the
+              <a href="https://cambridgesolidmechanics.co.uk/"
+                >Cambridge Solid Mechanics Group</a
+              >. I am focusing on the development of advanced analytical techniques for
+              coupled transport-mechanical behaviors of complex lattice systems (e.g., architected composites, wood microstructure). My research
               interests include lattice/discrete models,
-              fracture mechanics, multiphysics, bio-inspired materials, and generative geometry.
+              fracture mechanics, multiphysics, architected materials, and generative geometry.
             </p>
 
             <p>
-              I received my Ph.D. in Civil Engineering from Northwestern, under the
-              supervision of Dr.
-              <a href="https://www.cusatis.us/">Gianluca Cusatis</a>. 
+	          Before joining Cambridge, I received my PhD in Civil Engineering
+			  from Northwestern University, under the supervision of 
+              <a href="https://sites.northwestern.edu/m2im/">Dr. Gianluca Cusatis</a>, and continued as a postdoc. 
 			  My dissertation titled "Discrete Modeling of Fracture 
 			  and Flow in Porous Quasi-brittle Materials by Capturing the Internal Structure" 
 			  (Committee: Zdeněk Bažant, Gianluca Cusatis, Eric Landis, and John Rudnicki)
 			  is temporarily unavailable to the public, due to copyright issues. 
-			  However, you may click the research topics below to see my work during doctoral training.
-			</p>
-
-            <p>
-			  Before joining Northwestern, I received my bachelor’s degree in
-              Civil Engineering from
+			  However, you may click the research topics below to see my work during doctoral training. I also got my master’s degree in
+              Civil Engineering from <a href="https://cee.illinois.edu/">the University of Illinois at Urbana-Champaign (UIUC)</a>
+               and my bachelor’s degree in Civil Engineering from
               <a href="http://en.cau.edu.cn/"
-                >China Agricultural University (CAU)</a
-              >, China, and a master’s degree in
-              <a href="https://cee.illinois.edu/">Civil Engineering</a>
-              from
-              <a href="https://illinois.edu/"
-                >the University of Illinois at Urbana-Champaign (UIUC)</a
-              >.
+              >China Agricultural University (CAU)</a
+              >, China.
 			</p>
 			
             <p>
-              While not playing with my models, I spend my time staying with my two little chinchillas (sadly, now only one) or traveling across the country.
+              While not focusing on my research, I spend my time staying with my two little chinchillas (sadly, now both two went to a better place) or traveling across the country.
             </p>
 
             <p>
