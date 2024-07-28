@@ -88,7 +88,7 @@
 			  I am a Research Associate working in the
               <a href="https://cambridgesolidmechanics.co.uk/"
                 >Cambridge Solid Mechanics Group</a
-              >. I am focusing on the development of advanced analytical techniques for
+              > in collaboration with Dr. Vikram Deshpande. I am focusing on the development of advanced analytical techniques for
               coupled transport-mechanical behaviors of complex lattice systems (e.g., architected composites, wood microstructure). My research
               interests include lattice/discrete models,
               fracture mechanics, multiphysics, architected materials, and generative geometry.
@@ -115,7 +115,7 @@
             </p>
 
             <p>
-			  My detailed Curriculum Vitae can be found <a href="http://haoyin.io/pdf/Yin-CV-03012024.pdf">here</a>.
+			  My detailed Curriculum Vitae can be found <a href="http://haoyin.io/pdf/Yin-CV-07282024.pdf">here</a>.
             </p>
           </div>
         </div>
