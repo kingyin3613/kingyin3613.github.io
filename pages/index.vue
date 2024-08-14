@@ -97,14 +97,13 @@
             <p>
 	          Before joining Cambridge, I received my PhD in Civil Engineering
 			  from Northwestern University, under the supervision of 
-              <a href="https://sites.northwestern.edu/m2im/">Dr. Gianluca Cusatis</a>, and continued as a postdoc. 
+              <a href="https://sites.northwestern.edu/m2im/">Dr. Gianluca Cusatis</a>. 
 			  My dissertation titled "Discrete Modeling of Fracture 
 			  and Flow in Porous Quasi-brittle Materials by Capturing the Internal Structure" 
 			  (Committee: Zdeněk Bažant, Gianluca Cusatis, Eric Landis, and John Rudnicki)
 			  is temporarily unavailable to the public, due to copyright issues. 
-			  However, you may click the research topics below to see my work during doctoral training. I also got my master’s degree in
-              Civil Engineering from <a href="https://cee.illinois.edu/">the University of Illinois at Urbana-Champaign (UIUC)</a>
-               and my bachelor’s degree in Civil Engineering from
+			  However, you may click the research topics below to see my work during doctoral training. I got my master’s degree from <a href="https://cee.illinois.edu/">the University of Illinois at Urbana-Champaign (UIUC)</a>
+               and my bachelor’s degree from
               <a href="http://en.cau.edu.cn/"
               >China Agricultural University (CAU)</a
               >, China.
