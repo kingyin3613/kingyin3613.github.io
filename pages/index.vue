@@ -13,7 +13,7 @@
             <p></p>
             <div>Research Associate</div>
 
-            <div>Cambridge University</div>
+            <div>University of Cambridge</div>
             <div>
               Email:&nbsp;hy423 [at] cam (dot) ac (dot) uk
             </div>
@@ -114,7 +114,7 @@
             </p>
 
             <p>
-			  My detailed Curriculum Vitae can be found <a href="http://haoyin.io/pdf/Yin-CV-07282024.pdf">here</a>.
+			  My detailed Curriculum Vitae can be found <a href="http://haoyin.io/pdf/Yin-CV-10012024.pdf">here</a>.
             </p>
           </div>
         </div>
