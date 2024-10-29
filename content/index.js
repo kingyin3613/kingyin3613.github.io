@@ -6,6 +6,32 @@
 export default [
     {
         type: 'pdf', //(YH:这里可否直接指向外部网址？)
+        file: '15', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径 link：外部链接
+
+        title: 'Generative conforming delaunay graph for the discrete modeling of intercellular flow',//列表中展示的标题
+        author: '<b>Hao Yin</b>, Gianluca Cusatis', // 作者
+        desc: '15-conforming',// 描述
+        img: '/assets/15.png',// 列表封面：static目录下图片的路径
+        date: '2025',// 发表日期
+        publisher: 'In preparation', // 出版商
+        topic:'Generative Geometry'
+    },
+	
+    {
+        type: 'pdf', //(YH:这里可否直接指向外部网址？)
+        file: '14', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径 link：外部链接
+
+        title: 'High-fidelity method for mesoscopic rheology of fresh fiber-reinforced concrete based on sph-dem',//列表中展示的标题
+        author: 'Cheng Huang, Lei Shen, Wenyan Yu, Nizar Faisal Alkayem, Zhenghong Tian, <b>Hao Yin</b>, Gianluca Cusatis', // 作者
+        desc: '14-rheology',// 描述
+        img: '/assets/14.png',// 列表封面：static目录下图片的路径
+        date: '2024',// 发表日期
+        publisher: 'Under review', // 出版商
+        topic:'Lattice Models'
+    },
+	
+    {
+        type: 'pdf', //(YH:这里可否直接指向外部网址？)
         file: '13', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径 link：外部链接
 
         title: 'An interprocess communication-based two-way coupling approach for implicit-explicit multiphysics lattice discrete particle model simulations',//列表中展示的标题
@@ -105,7 +131,7 @@ export default [
         type: 'pdf',
         file: '6', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径
 
-        title: 'Generalized formulation for the behavior of geometrically curved and twisted three-dimensional Timoshenko beams and its isogeometric analysis implementation',//列表中展示的标题
+        title: 'Generalized formulation for the behavior of geometrically curved and twisted three-dimensional timoshenko beams and its isogeometric analysis implementation',//列表中展示的标题
         author: '<b>Hao Yin</b>, Erol Lale, Gianluca Cusatis', // 作者
         desc: '6-IGA-beam',// 描述
         img: '/assets/6.png',// 列表封面：static目录下图片的路径
