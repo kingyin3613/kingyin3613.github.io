@@ -8,7 +8,7 @@ export default [
         type: 'pdf', //(YH:这里可否直接指向外部网址？)
         file: '15', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径 link：外部链接
 
-        title: 'Generative conforming delaunay graph for the discrete modeling of intercellular flow',//列表中展示的标题
+        title: 'Generative conforming delaunay graph for the discrete modeling of intercellular transport',//列表中展示的标题
         author: '<b>Hao Yin</b>, Gianluca Cusatis', // 作者
         desc: '15-conforming',// 描述
         img: '/assets/15.png',// 列表封面：static目录下图片的路径

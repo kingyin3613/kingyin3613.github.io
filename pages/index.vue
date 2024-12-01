@@ -114,7 +114,7 @@
             </p>
 
             <p>
-			  My detailed Curriculum Vitae can be found <a href="http://haoyin.io/pdf/Yin-CV-10012024.pdf">here</a>.
+			  My detailed Curriculum Vitae can be found <a href="http://haoyin.io/pdf/Yin-CV-11012024.pdf">here</a>.
             </p>
           </div>
         </div>
