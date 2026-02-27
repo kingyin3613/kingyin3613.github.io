@@ -23,6 +23,8 @@ jobs:
 
       - name: Generate static site
         run: yarn generate
+        env:
+          NODE_OPTIONS: --openssl-legacy-provider
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
