@@ -4,6 +4,77 @@
  *  type:默认调用content下md文件；pdf——static/pdf/下文件 ；link——外部访问链接
  */
 export default [
+
+    {
+        type: 'pdf', //(YH:这里可否直接指向外部网址？)
+        file: 'xrd', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径 link：外部链接
+
+        title: 'unknown',//列表中展示的标题
+        author: '<b>Hao Yin</b>', // 作者
+        desc: '20-xrd',// 描述
+        img: '/assets/20.gif',// 列表封面：static目录下图片的路径
+        date: '2026',// 发表日期
+        publisher: 'In preparation', // 出版商
+        topic:'Physical Data Acquisition',
+		
+    },
+	
+    {
+        type: 'pdf', //(YH:这里可否直接指向外部网址？)
+        file: 'ise', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径 link：外部链接
+
+        title: 'Mechanisms of size effects in elastic architected solids',//列表中展示的标题
+        author: 'Sahin Celik, <b>Hao Yin</b>, Ivan Grega, Ankit Srivastava, and Vikram Deshpande', // 作者
+        desc: '19-rheology',// 描述
+        img: '/assets/19.png',// 列表封面：static目录下图片的路径
+        date: '2026',// 发表日期
+        publisher: 'Acta Materialia', // 出版商
+ 		topic:'Computational Mechanics',
+		
+    },
+	
+    {
+        type: 'pdf', //(YH:这里可否直接指向外部网址？)
+        file: '//chemrxiv.org/doi/pdf/10.26434/chemrxiv-2025-qfm1t', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径
+
+        title: 'Contact loss in all solid-state Li-ion batteries via deposition of impurities',//列表中展示的标题
+        author: 'Sundeep Vema, James Gott, <b>Hao Yin</b>, Ashley Roach, Geoff West, Norman Fleck, Vikram Deshpande, Clare Grey', // 作者
+        desc: '18-batteries',// 描述
+        img: '/assets/18.png',// 列表封面：static目录下图片的路径
+        date: '2026',// 发表日期
+        publisher: 'Under review', // 出版商
+        topic:'Fracture and Failure',
+		
+    },
+	
+    {
+        type: 'link',
+        file: '//www.sciencedirect.com/science/article/pii/S095006182504111X', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径
+
+        title: 'Multi-scale interfacial adaptation of ECC/UHPC under marine chloride wet-dry cycles',//列表中展示的标题
+        author: 'Arslan Shamim, Yingwu Zhou, Zhongfeng Zhu, Menghuan Guo, Biao Hu, <b>Hao Yin</b>, Muhammad Hassan Riaz', // 作者
+        desc: '17-chloride',// 描述
+        img: '/assets/17.png',// 列表封面：static目录下图片的路径
+        date: '2025',// 发表日期
+        publisher: 'Construction and Building Materials', // 出版商
+        topic:'Multiphysics',
+
+    },
+
+    {
+        type: 'link',
+        file: '//joss.theoj.org/papers/10.21105/joss.04945', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径
+
+        title: 'MXene materials: developments and sensor applications in modern infrastructure',//列表中展示的标题
+        author: 'Zi Zhang, Chengcheng Tao, <b>Hao Yin</b>, Wenjian Nie, Junyi Duan, Ying Huang, Xingyu Wang', // 作者
+        desc: '16-MXene',// 描述
+        img: '/assets/16.png',// 列表封面：static目录下图片的路径
+        date: '2025',// 发表日期
+        publisher: 'Journal of Materials Science', // 出版商
+		topic:'High-throughput Measurement',
+
+    },
+	
     {
         type: 'pdf', //(YH:这里可否直接指向外部网址？)
         file: '15', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径 link：外部链接
@@ -14,7 +85,8 @@ export default [
         img: '/assets/15.png',// 列表封面：static目录下图片的路径
         date: '2025',// 发表日期
         publisher: 'In preparation', // 出版商
-        topic:'Generative Geometry'
+        topic:'Multiphysics',
+		
     },
 	
     {
@@ -25,9 +97,10 @@ export default [
         author: 'Cheng Huang, Lei Shen, Wenyan Yu, Nizar Faisal Alkayem, Zhenghong Tian, <b>Hao Yin</b>, Gianluca Cusatis', // 作者
         desc: '14-rheology',// 描述
         img: '/assets/14.png',// 列表封面：static目录下图片的路径
-        date: '2024',// 发表日期
-        publisher: 'Under review', // 出版商
-        topic:'Lattice Models'
+        date: '2025',// 发表日期
+        publisher: 'International Journal of Mechanical Sciences', // 出版商
+ 		topic:'Computational Mechanics',
+		
     },
 	
     {
@@ -40,7 +113,7 @@ export default [
         img: '/assets/13.png',// 列表封面：static目录下图片的路径
         date: '2024',// 发表日期
         publisher: 'Engineering Fracture Mechanics', // 出版商
-        topic:'Multiphysics'
+        topic:'Multiphysics',
 
     },
 	
@@ -54,7 +127,7 @@ export default [
         img: '/assets/11.png',// 列表封面：static目录下图片的路径
         date: '2024',// 发表日期
         publisher: 'In preparation', // 出版商
-        topic:'Lattice Models'
+		topic:'Computational Mechanics',
 
     },
 
@@ -68,7 +141,7 @@ export default [
         img: '/assets/10.gif',// 列表封面：static目录下图片的路径
         date: '2023',// 发表日期
         publisher: 'Journal of Open Source Software', // 出版商
-        topic:'Generative Geometry'
+		topic:'Computational Mechanics',
 
     },
 	
@@ -82,7 +155,7 @@ export default [
         img: '/assets/12.jpg',// 列表封面：static目录下图片的路径
         date: '2023',// 发表日期
         publisher: 'Materials and Structures', // 出版商
-        topic:'Multiphysics'
+        topic:'Multiphysics',
 
     },
 
@@ -96,7 +169,7 @@ export default [
         img: '/assets/9.png',// 列表封面：static目录下图片的路径
         date: '2023',// 发表日期
         publisher: 'European Journal of Environmental and Civil Engineering', // 出版商
-        topic:'Multiphysics'
+        topic:'Multiphysics',
 
     },
 	
@@ -110,7 +183,7 @@ export default [
         img: '/assets/8.png',// 列表封面：static目录下图片的路径
         date: '2022',// 发表日期
         publisher: 'International Journal for Numerical and Analytical Methods in Geomechanics', // 出版商
-        topic:'Multiphysics'
+        topic:'Multiphysics',
     },
 
     {
@@ -123,7 +196,7 @@ export default [
         img: '/assets/7.jpg',// 列表封面：static目录下图片的路径
         date: '2022',// 发表日期
         publisher: 'International Journal of Mechanical Sciences', // 出版商
-        topic:'Lattice Models',
+        topic:'Fracture and Failure',
 
     },
 
@@ -137,7 +210,7 @@ export default [
         img: '/assets/6.png',// 列表封面：static目录下图片的路径
         date: '2022',// 发表日期
         publisher: 'ASME Journal of Applied Mechanics', // 出版商
-		topic:'Lattice Models',
+		topic:'Computational Mechanics',
 
     },
 	
@@ -151,7 +224,7 @@ export default [
         img: '/assets/5.jpg',// 列表封面：static目录下图片的路径
         date: '2021',// 发表日期
         publisher: 'Journal of Building Engineering', // 出版商
-
+		topic:'Multiphysics',
     },
 	
     {
@@ -164,7 +237,7 @@ export default [
         img: '/assets/4.png',// 列表封面：static目录下图片的路径
         date: '2019',// 发表日期
         publisher: 'Journal of Rail and Rapid Transit', // 出版商
-
+		topic:'Computational Mechanics',
     },
 	
     {
@@ -177,7 +250,7 @@ export default [
         img: '/assets/3.gif',// 列表封面：static目录下图片的路径
         date: '2018',// 发表日期
         publisher: 'Transportation Research Record', // 出版商
-
+		topic:'Computational Mechanics',
     },
 
     {
@@ -190,7 +263,7 @@ export default [
         img: '/assets/2.png',// 列表封面：static目录下图片的路径
         date: '2016',// 发表日期
         publisher: 'International Journal of Simulation Systems, Science & Technology', // 出版商
-
+		topic:'Computational Mechanics',
     },
 	
     {
@@ -203,6 +276,6 @@ export default [
         img: '/assets/1.gif',// 列表封面：static目录下图片的路径
         date: '2015',// 发表日期
         publisher: 'Measurement', // 出版商
-
+		topic:'Physical Data Acquisition',
     },
 ]

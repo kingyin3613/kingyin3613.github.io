@@ -32,10 +32,6 @@
                   >LinkedIn</a
                 ></span
               >
-              /
-              <span
-                ><a href="https://twitter.com/king_yin3613/">Twitter</a></span
-              >
             </p>
             <p></p>
           </div>
@@ -46,37 +42,37 @@
             <ul>
               <li>
                 <a
-                  href="#lattice"
-                  @click="categoryCounter('Lattice Models', 'topic')"
-                  >Lattice Models</a
+                  href="#physicaldata"
+                  @click="categoryCounter('Physical Data Acquisition', 'topic')"
+                  >Physical Data Acquisition</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#measurement"
+                  @click="categoryCounter('High-throughput Measurement', 'topic')"
+                  >High-throughput Measurement</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#mechanics"
+                  @click="categoryCounter('Computational Mechanics', 'topic')"
+                  >Computational Mechanics</a
                 >
               </li>
               <li>
                 <a
                   href="#fracture"
-                  @click="categoryCounter('Fracture Mechanics', 'topic')"
-                  >Fracture Mechanics</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#Architected"
-                  @click="categoryCounter('Architected Materials', 'topic')"
-                  >Architected Materials</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#geometry"
-                  @click="categoryCounter('Generative Geometry', 'topic')"
-                  >Generative Geometry</a
+                  @click="categoryCounter('Fracture and Failure', 'topic')"
+                  >Fracture and Failure</a
                 >
               </li>
               <li>
                 <a
                   href="#multiphysics"
-                  @click="categoryCounter('Multiphysics', 'topic')"
-                  >Multiphysics</a
+                  @click="categoryCounter('Multiphysics Modeling', 'topic')"
+                  >Multiphysics Modeling</a
                 >
               </li>
             </ul>
@@ -88,15 +84,12 @@
 			  I am a Research Associate working in the
               <a href="https://cambridgesolidmechanics.co.uk/"
                 >Cambridge Solid Mechanics Group</a
-              > in collaboration with Dr. Vikram Deshpande. I am focusing on the development of advanced analytical techniques for
-              coupled transport-mechanical behaviors of complex lattice systems (e.g., architected composites, wood microstructure). My research
-              interests include lattice/discrete models,
-              fracture mechanics, multiphysics, architected materials, and generative geometry.
+              > in collaboration with Dr. Vikram Deshpande. I am focusing on the development of integrated measurement-computation techniques for
+              solving physics-driven and/or data-driven mechanics problems (for, e.g., metal fatigue, fracture of cement/wood/composites).
             </p>
 
             <p>
-	          Before joining Cambridge, I received my PhD in Civil Engineering
-			  from Northwestern University, under the supervision of 
+	          Before joining Cambridge, I received my PhD in Mechanics from Northwestern University, under the supervision of 
               <a href="https://sites.northwestern.edu/m2im/">Dr. Gianluca Cusatis</a>. 
 			  My dissertation titled "Discrete Modeling of Fracture 
 			  and Flow in Porous Quasi-brittle Materials by Capturing the Internal Structure" 
@@ -108,13 +101,9 @@
               >China Agricultural University (CAU)</a
               >, China.
 			</p>
-			
-            <p>
-              While not focusing on my research, I spend my time staying with my two little chinchillas (sadly, now both two went to a better place) or traveling across the country.
-            </p>
 
             <p>
-			  My detailed Curriculum Vitae can be found <a href="http://haoyin.io/pdf/Yin-CV-11012024.pdf">here</a>.
+			  My detailed Curriculum Vitae can be found <a href="http://kingyin3613.github.io/pdf/HaoYin-CV-01012026.pdf">here</a>.
             </p>
           </div>
         </div>
@@ -349,7 +338,7 @@ import webglList from "../static/webgl/index";
 
 // 左上角topiclist
 
-const topicList = ["Lattice Models"];
+const topicList = ["Physical Data Acquisition"];
 export default {
   name: "IndexPage",
   async asyncData({ $content }) {
