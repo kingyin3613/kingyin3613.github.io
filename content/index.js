@@ -54,7 +54,7 @@ export default [
         title: 'Multi-scale interfacial adaptation of ECC/UHPC under marine chloride wet-dry cycles',//列表中展示的标题
         author: 'Arslan Shamim, Yingwu Zhou, Zhongfeng Zhu, Menghuan Guo, Biao Hu, <b>Hao Yin</b>, Muhammad Hassan Riaz', // 作者
         desc: '17-chloride',// 描述
-        img: '/assets/17.png',// 列表封面：static目录下图片的路径
+        img: '/assets/17.jpg',// 列表封面：static目录下图片的路径
         date: '2025',// 发表日期
         publisher: 'Construction and Building Materials', // 出版商
         topic:'Multiphysics',
