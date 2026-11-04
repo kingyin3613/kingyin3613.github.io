@@ -6,11 +6,23 @@
 export default [
 
     {
+        file: 'rno', // md文档：content/rno.md
+        title: 'Learning elastoplastic constitutive laws of high-performance alloys from in-situ EDXRD and DIC measurements with recurrent neural operators',//列表中展示的标题
+        author: '<b>Hao Yin</b>, et al.', // 作者 (author list to be confirmed)
+        desc: '21-rno',// 描述
+        img: '/webgl/img/rno.svg',// 列表封面：static目录下图片的路径
+        date: '2026',// 发表日期
+        publisher: 'In preparation', // 出版商
+        topic:'Scientific Machine Learning',
+
+    },
+
+    {
         type: 'pdf', //(YH:这里可否直接指向外部网址？)
         file: 'xrd', //md文档则在content目录下md文档文件名 pdf:static/pdf下的文件路径 link：外部链接
 
-        title: 'unknown',//列表中展示的标题
-        author: '<b>Hao Yin</b>', // 作者
+        title: 'Democratisation of lab-based energy dispersive x-ray diffraction for enhancing measured datasets for mechanical properties',//列表中展示的标题
+        author: 'Bar Amir, <b>Hao Yin</b>, Ruoyu Wu, Zhicheng Meng, Thomas Dennis, Vatsa Gandhi, Angkur J. D. Shaikeea, Burigede Liu, Vikram Deshpande', // 作者
         desc: '20-xrd',// 描述
         img: '/assets/20.gif',// 列表封面：static目录下图片的路径
         date: '2026',// 发表日期

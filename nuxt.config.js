@@ -7,8 +7,8 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-	  { name: 'keywords', content: 'Hao Yin, Yin Hao, 银皓, Northwestern University, Research' },
-      { name: 'description', content: 'Hao Yin (银皓)- personal research website. Hao Yin is a Ph.D. candidate of Civil Engineering working in the Multiscale Mechanics of Infrastructure Materials (M2IM) Lab at Northwestern University. He is currently completing his Ph.D. thesis, under the supervision of Dr. Gianluca Cusatis, focusing on the development of a novel computational framework for thermo-hygro-mechanical analyses of complex lattice systems (e.g., wood microstructure, bio-inspired composites). His research interests include lattice/discrete models, bio-inspired materials, fracture mechanics, multiphysics, and generative geometry..' },
+	  { name: 'keywords', content: 'Hao Yin, Yin Hao, 银皓, University of Cambridge, Northwestern University, Research, Scientific Machine Learning, Computational Mechanics, Neural Operator, Lattice Model' },
+      { name: 'description', content: 'Hao Yin (银皓) - personal research website. Hao Yin is a Research Associate in the Cambridge Solid Mechanics Group at the University of Cambridge, working with Prof. Vikram Deshpande. He develops integrated measurement-computation techniques for physics-driven and data-driven mechanics, including scientific machine learning (recurrent neural operators for constitutive laws, graph-based learning of architected solids), in-situ full-field measurement (EDXRD, DIC, X-ray CT), and lattice/discrete models for fracture and multiphysics of wood, concrete and composites. He received his Ph.D. from Northwestern University under Dr. Gianluca Cusatis.' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [

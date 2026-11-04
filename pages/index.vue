@@ -71,8 +71,15 @@
               <li>
                 <a
                   href="#multiphysics"
-                  @click="categoryCounter('Multiphysics Modeling', 'topic')"
+                  @click="categoryCounter('Multiphysics', 'topic')"
                   >Multiphysics Modeling</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#ml"
+                  @click="categoryCounter('Scientific Machine Learning', 'topic')"
+                  >Scientific Machine Learning</a
                 >
               </li>
             </ul>
@@ -86,6 +93,10 @@
                 >Cambridge Solid Mechanics Group</a
               > in collaboration with Dr. Vikram Deshpande. I am focusing on the development of integrated measurement-computation techniques for
               solving physics-driven and/or data-driven mechanics problems (for, e.g., metal fatigue, fracture of cement/wood/composites).
+              On the data-driven side, I develop scientific machine learning methods for mechanics: learning elastoplastic constitutive laws of
+              high-performance alloys from in-situ full-field measurements (EDXRD, DIC) with recurrent neural operators, and graph-based learning
+              and design of architected solids validated by in-situ X-ray CT and digital volume correlation. See the
+              <a href="#research">Research</a> section for details.
             </p>
 
             <p>

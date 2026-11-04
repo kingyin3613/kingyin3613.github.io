@@ -1,6 +1,38 @@
 // webGl效果配置文件
 export default [
   {
+    category: 'Scientific machine learning for data-driven mechanics: learning constitutive laws and architected solids from full-field measurements',
+    desc: 'Full-field measurement techniques such as Energy Dispersive X-ray Diffraction (EDXRD), Digital Image Correlation (DIC) and in-situ X-ray computed tomography produce far richer data than classical constitutive models can absorb. This line of work develops integrated measurement-computation methods in which the material model is learned directly from such data, under realistic loading conditions, and then deployed inside finite element and lattice solvers.' +
+      '&nbsp;<br>' +
+      '<br/>Two threads are active. The first is a Recurrent Neural Operator (RNO) framework for learning elastoplastic constitutive laws of high-performance alloys (additively manufactured and rolled Ti-6Al-4V, Ti-6242, Al 7075) from noisy in-situ EDXRD and DIC measurements. The operator keeps the structure of classical plasticity, with learned hidden internal variables that carry the loading history, so that it can be driven by an arbitrary strain path as a drop-in material model. The second is graph-based learning and design of architected solids (mechanical metamaterials), where the lattice is treated as a graph, and the effective properties and the indentation size effect are learned from, and validated against, in-situ X-ray CT and digital volume correlation (DVC) measurements.' +
+      '&nbsp;<br>' +
+      '<br/>Both threads are built on automated, Python-based pipelines from raw data to design decision, which grew out of the end-to-end lattice simulation workflows developed for engineered wood products. The figures on these pages are schematics of the methods; results are being prepared for publication.',
+    list: [
+      {
+        type:'md',
+        file: "rno", ///content目录下需要访问的md文件
+        title: "Learning constitutive laws from full-field measurements", //列表中展示的标题
+
+        img: "/rno.svg", // 列表封面：static/webGl/img目录下图片的路径
+      },
+      {
+        type:'md',
+        file: "graphml", ///content目录下需要访问的md文件
+        title: "Graph-based learning and design of architected solids", //列表中展示的标题
+
+        img: "/graphml.svg", // 列表封面：static/webGl/img目录下图片的路径
+      },
+      {
+        type:'md',
+        file: "mlpipeline", ///content目录下需要访问的md文件
+        title: "Data-driven mechanics pipelines", //列表中展示的标题
+
+        img: "/mlpipeline.svg", // 列表封面：static/webGl/img目录下图片的路径
+      },
+    ]
+  },
+
+  {
     category: 'Computational modeling of micromechanics of wood, cross-laminated timber (CLT), and other fibrous materials',
     desc: 'A 3D discrete connector-beam lattice (CBL) model to simulate the mechanical behaviors of wood and engineered wood products (e.g., wood panel, CLT) at the mesoscale has been developed. The basic element of this lattice model is the 3D curved beam characterized by (a) arbitrary curvature and torsion of the beam axis and (b) an irregular, cruciform cross-section. The various branches for the cross-section represent the cell walls of the cellular wood microstructure and the beam axis is the line at which various cell walls meet. The Isogeometric Analysis (IGA) technique has been employed to describe the beam geometries accurately. The joints (both transverse and longitudinal) between neighboring beams are modeled with the "connector" elements, characterized by the smeared crack model for the cell wall failure and by the cohesive fracture laws for the softening strain-stress relationship of quasi-brittle materials (including wood, fiber-composites).' +
       '&nbsp;<br>' + 
