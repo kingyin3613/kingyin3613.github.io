@@ -14,7 +14,7 @@ A Voronoi diagram is a partitioning of a plane into regions based on the distanc
 A Delaunay triangulation, on the other hand, is a triangulation of a set of points such that no point is inside the circumcircle of any triangle in the triangulation. In other words, the Delaunay triangulation is a way to connect the input points with edges such that the resulting triangles are "as large and as equilateral as possible".
 
 <p align="center">
-<img src="assets/dual/dual.png"   width="80%" height="80%"/>
+<img src="/assets/dual/dual.png"   width="80%" height="80%"/>
 </p>
 
 <p align = "center">
@@ -30,7 +30,7 @@ The Voronoi Delaunay duality is the observation that there is a one-to-one corre
  This duality is specifically important to the lattice models: because for many lattice models, for the purposes of getting unbiased spatial discretization or capturing the intrinsic heterogeneous structure of the material, they incline to use Voronoi and/or Delaunay diagrams as the geometric characterization approach; if one geometric structure aforementioned is used for spatial discretization, the duality provides a naturally coupled spatial discretization for the void/different phase of material in the same model domain. This will facilitate the multi-field analysis with strong coupling between different phases.
  
 <p align="center">
-<img src="assets/dual/duality.png_large"   width="70%" height="70%"/>
+<img src="/assets/dual/duality.png_large"   width="70%" height="70%"/>
 </p>
 
 <p align = "center">
@@ -50,7 +50,7 @@ The Voronoi ridges (cell walls) of is shown as the solid line. The representitiv
 Under construction!
 
 <p align="center">
-<img src="assets/dual/40571_2022_473_Fig1_HTML.png"   width="35%" height="35%"/>
+<img src="/assets/dual/40571_2022_473_Fig1_HTML.png"   width="35%" height="35%"/>
 </p>
 
 
@@ -65,7 +65,7 @@ Idealized spherical particles that approximate the aggregate particles of concre
 With the tessellated domain, a flow network can be formed by connecting the tet points belonging to each pair of two adjacent LDPM tetrahedra with 1D line transport elements, the resulting network is shown in figure below.
 
 <p align="center">
-<img src="assets/dual/LDPM1.png"   width="100%" height="100%"/>
+<img src="/assets/dual/LDPM1.png"   width="100%" height="100%"/>
 </p>
 
 Related work of dual lattices can be found in this paper:

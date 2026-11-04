@@ -3,7 +3,7 @@
 As previously introduced, topologically dual systems of lattice models can be used to represent one- or two-way couplings involving the network structure and field variables of interest. There are various forms of coupling. One way is to introduce simultaneous coupling of field variables within theoretical formulations using, for instance, the effective stress concept of Biot. Alternatively, a sequential procedure can be used whereby one set of field variables is calculated separately, assuming the other field variables are in a steady-state condition. In many cases, results from the potential field analyses are used in the mechanical analyses. Iterative solutions can account for interplay between the different field variables within each computational cycle, which may better account for the path-dependent, irreversible nature of crack propagation. Coupled multiphysics processes are also central to several geoscience applications, where considerable progress has been made in modeling.
 
 <p align="center">
-<img src="assets/coupling/schematic.png"   width="100%" height="100%"/>
+<img src="/assets/coupling/schematic.png"   width="100%" height="100%"/>
 </p>
 
 <p align = "center">
@@ -17,7 +17,7 @@ Image credit: Shen, Lei. Personal communication
 In contrast to continuous or other discrete models, in which the same nodal sites are often used to represent mechanical (i.e., displacements) and flow-related quantities (e.g., moisture content and temperature), in topologically dual systems of lattice models, the nodal sites of the transport/flow network and mechanical lattices are always different. Furthermore, a challenge arises if different solvers are chosen for different analyses (e.g., explicit for mechanical solver, implicit for flow solver), as the time step sizes would then vary substantially. Different meshes and time scales of the coupled fields can complicate the coupling process (also referred to as "multidomain" or "multimodel" coupling). In the following section, a framework for coupled analyses of lattice models will be discussed.
 
 <p align="center">
-<img src="assets/coupling/MLDPM0.png"   width="90%" height="90%"/>
+<img src="/assets/coupling/MLDPM0.png"   width="90%" height="90%"/>
 </p>
 
 ## Inter-process communication
@@ -29,7 +29,7 @@ We used named pipes as the IPC media. Named pipe is a simple synchronized way of
 
 
 <p align="center">
-<img src="assets/coupling/namedpipes.png"   width="85%" height="85%"/>
+<img src="/assets/coupling/namedpipes.png"   width="85%" height="85%"/>
 </p>
 
 ## Coupling schemes
@@ -47,7 +47,7 @@ in a sequential explicit coupling scheme, the simulations are executed in sequen
 Below is an illustration of the parallel coupling scheme that is used in this work, the horizontal lines represent simulation time. The vertical lines represent increments (or time steps) for a particular analysis in the coupled simulation. The dashed arrows denote data exchange in the direction of the arrowheads between the analysis codes.
 
 <p align="center">
-<img src="assets/coupling/couplingscheme.png"   width="60%" height="60%"/>
+<img src="/assets/coupling/couplingscheme.png"   width="60%" height="60%"/>
 </p>
 
 ### Time incrementation scheme
@@ -57,7 +57,7 @@ Sometimes the coupled two processes may have very distinct scales of time increm
 Given the time increments differ largely, one may use time scaling factor to scale the time increment of one analysis for the synchronization, or use other technique such as subcycling time incrementation scheme. In subcycling, the analysis with larger time increment (generally, implicit analysis) ramps loads from the values of the previous coupling step to the values at the target time; In the analysis with smaller time increment (generally, explicit analysis) the loads are applied at the start of the coupling step and kept constant over the coupling step. The time interpolation may be used. 
 
 <p align="center">
-<img src="assets/coupling/incrementationscheme.png"   width="60%" height="60%"/>
+<img src="/assets/coupling/incrementationscheme.png"   width="60%" height="60%"/>
 </p>
 
 ## Application of two-way coupling framework: the Multiphysics-Lattice Discrete Particle Model (M-LDPM)
@@ -69,7 +69,7 @@ The periodic data communication between two Abaqus solvers (Abaqus/standard for 
 the mechanical part) and spatial & temporal mappings between the two solvers allow the coupling process to run smoothly and robustly. 
 
 <p align="center">
-<img src="assets/coupling/MLDPM.png"   width="100%" height="100%"/>
+<img src="/assets/coupling/MLDPM.png"   width="100%" height="100%"/>
 </p>
 
 ### Example 1: linear Terzaghi’s 1D consolidation
@@ -80,7 +80,7 @@ zero rotations at all boundaries, zero $x$ displacement at the rear end at $x = 
 all rectangular sides. Biot coefficient $b = 0.5$ and reference pressure $p_0 = 0$ MPa. This is a very typical poroelasticity problem, so linear elastic mechanical behavior is assumed.
 
 <p align="center">
-<img src="assets/coupling/terzaghi.png"   width="75%" height="75%"/>
+<img src="/assets/coupling/terzaghi.png"   width="75%" height="75%"/>
 </p>
 
 The analytical solution can be found in [Detournay and Cheng 1993](https://geo.mff.cuni.cz/seismosoft/clanky/Detournay.Cheng.Fundamentalsofporoelasticity.1993.pdf): 
@@ -121,14 +121,14 @@ Transient pressure contours in prism
 </p>
 
 <p align="center">
-<img src="assets/coupling/1dterzaghi.png"   width="95%" height="95%"/>
+<img src="/assets/coupling/1dterzaghi.png"   width="95%" height="95%"/>
 </p>
 
 ### Example 2: Radial poroelastic expansion of pressurized cylindrical disk
 The capability of the two-way coupling framework to simulate the interaction of flow and mechanical response is also demonstrated by analysing the fluid pressure and elastic radial displacement distributions in a thick-walled cylindrical disk subjected to a influx fluid pressure. A hollow disk of inner radius $r_i$ and outer radius $r_o$ is loaded by constant fluid pressure, $P_ {fi}$ on the inner surface. Zero pressure is prescribed on the outer surface and zero boundary flux is prescribed on the top and bottom surfaces.
 
 <p align="center">
-<img src="assets/coupling/poro.png"   width="75%" height="75%"/>
+<img src="/assets/coupling/poro.png"   width="75%" height="75%"/>
 </p>
 
 This is essentially an one-way coupling situation, the uncoupled radial fluid pressure $P_f$ diffused from the inner surface throughout a thick-walled cylinder, at the steady-state, the fluid pressure field can be expressed as:
@@ -140,7 +140,7 @@ $$
 The fluid pressure is then passed to the mechanical lattices through the M-LDPM framework, leads to the radial expansion (displacement) in the thin-walled cylinder. The analytical solution can be found in [Grassl et al. 2015](https://doi.org/10.1016/j.jmps.2014.11.011): 
 
 <p align="center">
-<img src="assets/coupling/eq1.png"   width="75%" height="75%"/>
+<img src="/assets/coupling/eq1.png"   width="75%" height="75%"/>
 </p>
 
 where 
@@ -158,7 +158,7 @@ $E_0$ - Mesoscopic Young's modulus, $\alpha$ - Mesoscopic shear-normal coupling 
 The simulation results of M-LDPM are shown in figures and animations below.
 
 <p align="center">
-<img src="assets/coupling/grasslDisk_nu0_300dpi.png"   width="50%" height="50%"/>
+<img src="/assets/coupling/grasslDisk_nu0_300dpi.png"   width="50%" height="50%"/>
 </p>
 
 <p align = "center">
@@ -170,7 +170,7 @@ Normalized radial expansions v.s. normalized radii, macrosopic Poisson's ratio =
 </p>
 
 <p align="center">
-<img src="assets/coupling/grasslDisk_nu01_300dpi.png"   width="50%" height="50%"/>
+<img src="/assets/coupling/grasslDisk_nu01_300dpi.png"   width="50%" height="50%"/>
 </p>
 
 <p align = "center">
@@ -182,7 +182,7 @@ Normalized radial expansions v.s. normalized radii, macrosopic Poisson's ratio =
 </p>
 
 <p align="center">
-<img src="assets/coupling/grasslDisk_nu02_300dpi.png"   width="50%" height="50%"/>
+<img src="/assets/coupling/grasslDisk_nu02_300dpi.png"   width="50%" height="50%"/>
 </p>
 
 <p align = "center">
@@ -222,13 +222,13 @@ The fracture behavior, as well as the interaction between pressure flow and frac
 Loading by pressure, the Biot coefficient introduces pressure to contribute to the formation of crack opening (through imposed normal stress). This two-way coupling procedure is summarized in figure below, for the detailed derivation of model formulation, one can refer to [my note](http://haoyin.io/pdf/FLM_poromechanics_derivation.pdf) or to this paper [Li et al. 2018](https://link.springer.com/article/10.1007/s00603-018-1625-8).
 
 <p align="center">
-<img src="assets/coupling/poro_fracture.png"   width="75%" height="75%"/>
+<img src="/assets/coupling/poro_fracture.png"   width="75%" height="75%"/>
 </p>
 
 As shown in figures and animations below, as cracks grow, the pressure distribution is not axial-symmetric anymore: the pressure distribution tends to "follow" the cracks. The crack openings result in an easy pressure "invasion" in these locations, due to the higher permeability of pressure. Higher pressure diffuses alongside the crack paths, leading to the conentration of impose stress and even faster move of crack tips.
 
 <p align="center">
-<img src="assets/coupling/grasslDiskt0.png"   width="95%" height="95%"/>
+<img src="/assets/coupling/grasslDiskt0.png"   width="95%" height="95%"/>
 </p>
 
 <p align = "center">
@@ -240,7 +240,7 @@ crack opening and pressure contours at time t=0.3total time
 </p>
 
 <p align="center">
-<img src="assets/coupling/grasslDiskt1.png"   width="95%" height="95%"/>
+<img src="/assets/coupling/grasslDiskt1.png"   width="95%" height="95%"/>
 </p>
 
 <p align = "center">
@@ -252,7 +252,7 @@ crack opening and pressure contours at time t=0.7total time
 </p>
 
 <p align="center">
-<img src="assets/coupling/grasslDiskt2.png"   width="95%" height="95%"/>
+<img src="/assets/coupling/grasslDiskt2.png"   width="95%" height="95%"/>
 </p>
 
 <p align = "center">

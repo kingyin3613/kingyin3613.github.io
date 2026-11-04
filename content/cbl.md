@@ -3,7 +3,7 @@
 Interest in engineered wood products (EWP) in construction industry is at a new high due to the low CO2 emission relative to structural properties and innovations of mass timber (e.g., gluelam, cross laminated timber). However, persistent issues stuck in front of the development of engineered wood products are the complex material behaviors of wood due to its inherent material anisotropy and heterogeneity, and consequently the reliance on extensive broad-based laboratory testing for the design and code approval of new products. To guide the laboratory testing and provide a computational tool to obtain data with high fidelity for the material properties of EWP, we propose a `Connector-Beam Lattice Model for Wood (CBL-W)` in 3D, which aims to naturally capture the morphological features of wood cellular micro-structure by using the connector-beam system, and to explicitly simulate the damages/cracks at the constituent material level by employing discrete-type cohesive fracture constitutive laws. The `CBL-W model` is a discrete-type model established on a morphologically-reproduced geometry of wood cellular structure at the microscale, and is calibrated and validated through a series of laboratory tests and mining of a vast database of wood product performance.
 
 <p align="center">
-<img src="assets/cbl/CBL.png"   width="88%" height="88%"/>
+<img src="/assets/cbl/CBL.png"   width="88%" height="88%"/>
 </p>
 
 ## Model formulation
@@ -17,7 +17,7 @@ earlywood. Reflecting on the cross-sectional properties of beam lattices, the nu
 The length range of the beam lattices is 20-50 microns, depending on the wood species and the cell types of earlywood, latewood. 
 
 <p align="center">
-<img src="webgl/img/beam.png"   width="88%" height="88%"/>
+<img src="/webgl/img/beam.png"   width="88%" height="88%"/>
 </p>
 
 The detailed derivation, formulation and implementation of isogeometric beam lattice can be found in the page of [Isogeometric beam lattice](http://haoyin.io/paper-detail?paper=IGAbeam) or in [this paper](https://doi.org/10.1115/1.4054438).
@@ -29,7 +29,7 @@ Except the beam lattices, 1D nonlinear cohesive elements, named `connectors`, al
 Each `connector` element is substantially a 1D straight connecting-strut with length $l$ at the undeformed state (initial/total configuration), it connects a pair of "axis nodes" on the associated beam axes (red dots in figure below) in the lattice system. 
 
 <p align="center">
-<img src="assets/cbl/WoodLatticeModel1.png"   width="75%" height="75%"/>
+<img src="/assets/cbl/WoodLatticeModel1.png"   width="75%" height="75%"/>
 </p>
 
 Each connector is assigned a constant cross-section $C$ that is corresponding to the joint surface of the cell wall. This surface is selected as the representitive failure surface. Once the system deforms, the two halves of the connector element move respectively and can separate, compress, and/or slide at the center-section $C$, which will lead to a displacement jump at the center-section. 
@@ -88,7 +88,7 @@ For pure shear ($\omega=0$), $H_0=0$, no softening and perfect plasticity is ass
 Another type of connector also exists and can represent the weak joint (e.g., pit in the figure below) in the longitudinal direction. These longitudinal connectors have been considered in the model to permit the simulation of fiber rupture. Unlike the transverse connectors having cross-sectional properties of associated cell walls, the longitudinal connectors share the same cross-sectional properties with the associated beam elements.
 
 <p align="center">
-<img src="assets/cbl/longitudinal.png"   width="100%" height="100%"/>
+<img src="/assets/cbl/longitudinal.png"   width="100%" height="100%"/>
 </p>
 
 ### Computational pipeline for wood simulations
@@ -96,7 +96,7 @@ Another type of connector also exists and can represent the weak joint (e.g., pi
 The beam lattice and connector elements have been implemented with Abaqus user subroutines `UEL` and `VUEL` for both implicit and explicit analyses. A preprocessing-analysis-postprocessing pipeline has been formed. The [RingsPy package](http://haoyin.io/paper-detail?paper=morphology) has the option to export the Abaqus `.inp` input files, which can be directly used for `CBL-W` simulations.
 
 <p align="center">
-<img src="assets/cbl/VUEL.png"   width="100%" height="100%"/>
+<img src="/assets/cbl/VUEL.png"   width="100%" height="100%"/>
 </p>
 
 The post-processing of the `CBL-W` models can be directly achieved within Abaqus by employing the so-called "ghost mesh" or "phantom mesh". The post-processing is also implementated in a popular visualization tool `Paraview`. The isogeometric beam is visualized in `Paraview` with the Bezier curves.
@@ -142,7 +142,7 @@ moduli, $E_L$, $E_T$, $E_R$, three transverse elastic moduli, $G_{TR}$, $G_{RL}$
 
 
 <p align="center">
-<img src="assets/cbl/Orthotropic elasticity1.png"   width="35%" height="35%"/>
+<img src="/assets/cbl/Orthotropic elasticity1.png"   width="35%" height="35%"/>
 </p>
 
 Under construction!
@@ -150,13 +150,13 @@ Under construction!
 ### Size effect in transverse fracture
 
 <p align="center">
-<img src="assets/cbl/global-plot-T-notched-comparsion-better.png"   width="60%" height="60%"/>
+<img src="/assets/cbl/global-plot-T-notched-comparsion-better.png"   width="60%" height="60%"/>
 </p>
 
 ### Growth ring orientation effects in transverse fracture
 
 <p align="center">
-<img src="assets/cbl/Orientation_effect_wood1.png"   width="90%" height="90%"/>
+<img src="/assets/cbl/Orientation_effect_wood1.png"   width="90%" height="90%"/>
 </p>
 
 <video src="/videos/Cube_Notched_4x4mm_a0_QM_v10_120622-abq1.webm" style="max-width:100%" controls> </video>
@@ -170,7 +170,7 @@ Under construction!
 <video src="/videos/Cube_Notched_4x4mm_QM_v10_120322-abq1.webm" style="max-width:100%" controls> </video>
 
 <p align="center">
-<img src="assets/cbl/global-plot-T-notched-comparsion-diff-alpha.png"   width="60%" height="60%"/>
+<img src="/assets/cbl/global-plot-T-notched-comparsion-diff-alpha.png"   width="60%" height="60%"/>
 </p>
 
 

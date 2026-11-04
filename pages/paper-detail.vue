@@ -37,18 +37,33 @@ export default {
   async asyncData({ $content, query }) {
     let page = "";
     try {
-      page = await $content(query.paper).fetch();
+      if (query.paper) page = await $content(query.paper).fetch();
     } catch (e) {}
     console.log(page);
     return {
       page,
     };
   },
-  mounted() {
-    setTimeout(() => {
-      const content = document.getElementsByClassName("nuxt-content")[0];
-      content.innerHTML = katex.renderToString(content.innerHTML);
-    }, 100);
+  async mounted() {
+    // With `nuxt generate` the pre-rendered /paper-detail page has no query
+    // string, so its payload is empty; fetch the document on the client.
+    if (!this.page || !this.page.body) {
+      const paper = this.$route.query.paper;
+      if (paper) {
+        try {
+          this.page = await this.$content(paper).fetch();
+        } catch (e) {}
+      }
+    }
+    this.$nextTick(() => {
+      setTimeout(() => {
+        const content = document.getElementsByClassName("nuxt-content")[0];
+        if (!content) return;
+        try {
+          content.innerHTML = katex.renderToString(content.innerHTML);
+        } catch (e) {}
+      }, 100);
+    });
   },
 };
 </script>

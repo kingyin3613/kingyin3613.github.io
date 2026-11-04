@@ -18,11 +18,11 @@ for stream line visualization.
 
 
 <p align="center">
-<img src="assets/flow/discreteflow.png"   width="55%" height="55%"/>
+<img src="/assets/flow/discreteflow.png"   width="55%" height="55%"/>
 </p>
 
 <p align="center">
-<img src="assets/flow/FLM.png"   width="70%" height="70%"/>
+<img src="/assets/flow/FLM.png"   width="70%" height="70%"/>
 </p>
 
 ## Flow field analyses of concrete
@@ -30,7 +30,7 @@ This study presents the formulation and validation of a 3D Flow Lattice Model (F
 The FLM is a discrete transport model formulated in association with meso-mechanical models of concrete, such as the Lattice Discrete Particle Model (LDPM).
 
 <p align="center">
-<img src="assets/flow/LDPM.png"   width="95%" height="95%"/>
+<img src="/assets/flow/LDPM.png"   width="95%" height="95%"/>
 </p>
 
 The [Hygro-thermo-chemical (HTC) theoretical formulation](https://www.sciencedirect.com/science/article/pii/S0958946509000420?casa_token=EyLQzc4glHQAAAAA:2tCW6F4x5fzQwVr8MB3_u9gMwtoR0yxMpR6vcmYtrk_zulzFOQUq05_vPMV_0UdFTiUb2kJ1), originally proposed by Di Luzio et al. in 2011, is based on mass and energy conservation laws, written using humidity and temperature as primary variables, and taking into account explicitly various chemical reactions, e.g., cement hydration and silica fume reaction, as internal variables. In this work, the HTC formulation was extended to include the effect of temperature on the sorption isotherm.
@@ -38,13 +38,13 @@ The [Hygro-thermo-chemical (HTC) theoretical formulation](https://www.sciencedir
 For the transport problem of water mass and heat in concrete, the relative humidity $h$ and temperature $T$ are selected as the primary fields (a.k.a., the degrees of freedom in numerical analyses). The values at node sites $N_1$ and $N_2$ in each `Flow Lattice Element (FLE)`, i.e., $h_{i}$, $T_{i}$ ($i=1,2$) represent the mass thermodynamic state in the control volume of the FLE. 
 
 <p align="center">
-<img src="assets/flow/edgenetwork1.png"   width="75%" height="75%"/>
+<img src="/assets/flow/edgenetwork1.png"   width="75%" height="75%"/>
 </p>
 
 Three types of FLE exist as depicted in the figure below: regular (or type 1) elements - all interior elements belong to this category; transitional layer (or type 2) elements, which corresponds to the elements having two nodes - one interior tet point and the other on the boundary of the whole model; boundary layer (or type 3) elements, which shares the node on the boundary of a type 2 element, and then extends orthogonally to the outside of the model boundary. Different from type 1 and type 2, the boundary layer element consists of two triangular prisms with equal volumes $V_{1}=V_{2}$ and equal segment lengths $l_{1}=l_{2}$. Type 3 elements are used to enforce the boundary conditions; details will be discussed in following sections. The formulation of FLEs is the same for all types of elements, but the term values are governed by the geometric properties of different element types.
 
 <p align="center">
-<img src="assets/flow/edge_elem_type.png"   width="80%" height="80%"/>
+<img src="/assets/flow/edge_elem_type.png"   width="80%" height="80%"/>
 </p>
 
 The water mass and heat balance equations in a FLE control volume $V$ consisting of $V_1$ and $V_2$, can be obtained from mass and enthalpy conservation laws, which read
@@ -112,15 +112,15 @@ $$
 The `FLM` is implementated through the Abaqus user element subroutines for implicit analyses, named `UEL`. Generally, for a `UEL`, users should calculate the linearized governing equations (incremental form) for the nonlinear problems, by providing the Jacobian (a.k.a. the tangent stiffness) matrix `AMATRX` and the right hand side (a.k.a. the residual) vector `RHS` of the incremental governing equations to the Abaqus solver, to calculate the nodal increments of degrees of freedom for user elements during each iteration, until the convergence is reached. The remaining parts, such as matrix assemblage and matrix solving, are automatically processed by the Abaqus solver for implicit analyses `Abaqus/Standard`.
 
 <p align="center">
-<img src="assets/flow/solimansettings1.png"   width="65%" height="65%"/>
+<img src="/assets/flow/solimansettings1.png"   width="65%" height="65%"/>
 </p>
 
 The `FLM` solutions were compared with those of a continuum finite element implementation of the HTC model and experimental data available from the literature. Two examples of concrete drying at early-age (left) and temperature-dependent desorption isotherm (right) are shown in figures below. 
 
 <p align="center">
-<img src="assets/flow/HD.png"   width="40%" height="40%"/>
+<img src="/assets/flow/HD.png"   width="40%" height="40%"/>
 
-<img src="assets/flow/isotherm.png"   width="40%" height="40%"/>
+<img src="/assets/flow/isotherm.png"   width="40%" height="40%"/>
 </p>
 
 The overall agreement demonstrates the reliability of the proposed approach in reproducing phenomena such as cement hydration, self-desiccation, temperature-dependent moisture drying, etc.
@@ -154,7 +154,7 @@ Under construction!
 
 
 <p align="center">
-<img src="assets/flow/FlowCellModel.png"   width="75%" height="75%"/>
+<img src="/assets/flow/FlowCellModel.png"   width="75%" height="75%"/>
 </p>
 
 ## Homogenization of discrete flow 
@@ -162,7 +162,7 @@ Under construction!
 Under construction!
 
 <p align="center">
-<img src="assets/8.png"   width="75%" height="75%"/>
+<img src="/assets/8.png"   width="75%" height="75%"/>
 </p>
 
 Related work of homogenization of discrete transport/flow can be found in this paper:
