@@ -1,108 +1,569 @@
 <!doctype html>
-<html data-n-head-ssr lang="en" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+<html lang="en">
   <head>
-    <title>Hao Yin - Personal Website</title><meta data-n-head="ssr" charset="utf-8"><meta data-n-head="ssr" name="viewport" content="width=device-width,initial-scale=1"><meta data-n-head="ssr" name="keywords" content="Hao Yin, Yin Hao, 银皓, Northwestern University, Research"><meta data-n-head="ssr" name="description" content="Hao Yin (银皓)- personal research website. Hao Yin is a Ph.D. candidate of Civil Engineering working in the Multiscale Mechanics of Infrastructure Materials (M2IM) Lab at Northwestern University. He is currently completing his Ph.D. thesis, under the supervision of Dr. Gianluca Cusatis, focusing on the development of a novel computational framework for thermo-hygro-mechanical analyses of complex lattice systems (e.g., wood microstructure, bio-inspired composites). His research interests include lattice/discrete models, bio-inspired materials, fracture mechanics, multiphysics, and generative geometry.."><meta data-n-head="ssr" name="format-detection" content="telephone=no"><meta data-n-head="ssr" data-hid="charset" charset="utf-8"><meta data-n-head="ssr" data-hid="mobile-web-app-capable" name="mobile-web-app-capable" content="yes"><meta data-n-head="ssr" data-hid="apple-mobile-web-app-title" name="apple-mobile-web-app-title" content="yhwebsite"><meta data-n-head="ssr" data-hid="og:type" name="og:type" property="og:type" content="website"><meta data-n-head="ssr" data-hid="og:title" name="og:title" property="og:title" content="yhwebsite"><meta data-n-head="ssr" data-hid="og:site_name" name="og:site_name" property="og:site_name" content="yhwebsite"><meta data-n-head="ssr" data-hid="og:description" name="og:description" property="og:description" content="## Build Setup"><link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico"><link data-n-head="ssr" rel="stylesheet" href="/main.css"><link data-n-head="ssr" rel="stylesheet" href="/font.css"><link data-n-head="ssr" data-hid="shortcut-icon" rel="shortcut icon" href="/_nuxt/icons/icon_64x64.e3e9fb.png"><link data-n-head="ssr" data-hid="apple-touch-icon" rel="apple-touch-icon" href="/_nuxt/icons/icon_512x512.e3e9fb.png" sizes="512x512"><link data-n-head="ssr" rel="manifest" href="/_nuxt/manifest.153f5cc4.json" data-hid="manifest"><link rel="preload" href="/_nuxt/46685ff.js" as="script"><link rel="preload" href="/_nuxt/b7e6b6f.js" as="script"><link rel="preload" href="/_nuxt/9f1abe4.js" as="script"><link rel="preload" href="/_nuxt/9de0fa0.js" as="script"><link rel="preload" href="/_nuxt/6330af1.js" as="script"><link rel="preload" href="/_nuxt/96a31e5.js" as="script"><style data-vue-ssr-id="2469b305:0 517a8dd7:0 1a73ea6b:0">.md-body{margin:0 auto;font-family:"Microsoft YaHei",arial,sans-serif;color:#444;line-height:1;padding:50px 30px 30px}.md-body h1,.md-body h2,.md-body h3,.md-body h4{color:#111;font-weight:400;margin-top:1em}.md-body h1,.md-body h2,.md-body h3,.md-body h4,.md-body h5{font-family:Georgia,Palatino,serif}.md-body dl,.md-body h1,.md-body h2,.md-body h3,.md-body h4,.md-body h5,.md-body p{margin-bottom:16px;padding:0}.md-body h1{font-size:48px;line-height:54px}.md-body h2{font-size:36px;line-height:42px}.md-body h1,.md-body h2{padding-bottom:10px}.md-body h3{font-size:24px;line-height:30px}.md-body h4{font-size:21px;line-height:26px}.md-body h5{font-size:18px;list-style:23px}.md-body a{color:#09f;margin:0;padding:0;vertical-align:baseline}.md-body a:hover{text-decoration:none;color:#f60}.md-body ol,.md-body ul{padding:0 0 0 24px;margin:0}.md-body li{line-height:24px}.md-body ol,.md-body p,.md-body ul{font-size:16px;line-height:24px}.md-body ol ol,.md-body ul ol{list-style-type:lower-roman}.md-body code,.md-body pre{border-radius:3px;background-color:#f7f7f7;color:inherit}.md-body code{font-family:Consolas,Monaco,Andale Mono,monospace;margin:0 2px}.md-body pre{line-height:1.7em;overflow:auto;padding:6px 10px;border-left:5px solid #6ce26c}.md-body pre>code{border:0;display:inline;max-width:none;padding:0;margin:0;overflow:visible;overflow:initial;line-height:inherit;font-size:.85em;white-space:pre;background:0 0}.md-body code{color:#666555}.md-body aside{display:block;float:right;width:390px}.md-body blockquote{border-left:.5em solid #eee;padding:0 0 0 2em;margin-left:0}.md-body blockquote cite{font-size:14px;line-height:20px;color:#bfbfbf}.md-body blockquote cite:before{content:"\2014 \00A0"}.md-body blockquote p{color:#666}.md-body hr{text-align:left;color:#999;height:2px;padding:0;margin:16px 0;background-color:#e7e7e7;border:0}.md-body dl{padding:0}.md-body dl dt{padding:10px 0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}.md-body dl dd{padding:0 16px;margin-bottom:16px}.md-body dd{margin-left:0}.md-body button,.md-body input,.md-body select,.md-body textarea{font-size:100%;margin:0;vertical-align:baseline}.md-body button,.md-body input{line-height:normal}.md-body button::-moz-focus-inner,.md-body input::-moz-focus-inner{border:0;padding:0}.md-body button,.md-body input[type=button],.md-body input[type=reset],.md-body input[type=submit]{cursor:pointer;-webkit-appearance:button}.md-body input:not([type=image]),.md-body textarea{box-sizing:content-box}.md-body input[type=search]{-webkit-appearance:textfield;box-sizing:content-box}.md-body input[type=search]::-webkit-search-decoration{-webkit-appearance:none}.md-body input,.md-body label,.md-body select,.md-body textarea{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:13px;font-weight:400;line-height:normal;margin-bottom:18px}.md-body input[type=checkbox],.md-body input[type=radio]{cursor:pointer;margin-bottom:0}.md-body input[type=password],.md-body input[type=text],.md-body select,.md-body textarea{display:inline-block;width:210px;padding:4px;font-size:13px;font-weight:400;line-height:18px;height:18px;color:grey;border:1px solid #ccc;border-radius:3px}.md-body input[type=file],.md-body select{height:27px;line-height:27px}.md-body textarea{height:auto}.md-body :-moz-placeholder{color:#bfbfbf}.md-body ::-webkit-input-placeholder{color:#bfbfbf}.md-body input[type=password],.md-body input[type=text],.md-body select,.md-body textarea{transition:border .2s linear,box-shadow .2s linear;box-shadow:inset 0 1px 3px rgba(0,0,0,.1)}.md-body input[type=password]:focus,.md-body input[type=text]:focus,.md-body textarea:focus{outline:0;border-color:rgba(82,168,236,.8);box-shadow:inset 0 1px 3px rgba(0,0,0,.1),0 0 8px rgba(82,168,236,.6)}.md-body button{display:inline-block;padding:4px 14px;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:13px;line-height:18px;border-radius:4px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.2),0 1px 2px rgba(0,0,0,.05);background-color:#0064cd;background-repeat:repeat-x;background-image:-khtml-gradient(linear,left top,left bottom,from(#049cdb),to(#0064cd));background-image:linear-gradient(180deg,#049cdb,#0064cd);color:#fff;text-shadow:0 -1px 0 rgba(0,0,0,.25);transition:all .1s linear;border:1px solid rgba(0,0,0,.1);border-bottom-color:rgba(0,0,0,.25)}.md-body button:hover{color:#fff;background-position:0 -15px;text-decoration:none}.md-body button:active{box-shadow:inset 0 3px 7px rgba(0,0,0,.15),0 1px 2px rgba(0,0,0,.05)}.md-body button::-moz-focus-inner{padding:0;border:0}.md-body table{border-spacing:0;width:100%;border:1px solid #ccc;border-radius:6px}.md-body table tr:hover{background:#fbf8e9;transition:all .1s ease-in-out}.md-body .table th,.md-body table td{border-left:1px solid #ccc;border-top:1px solid #ccc;padding:10px;text-align:left}.md-body table th{background-color:#dce9f9;background-image:linear-gradient(180deg,#ebf3fc,#dce9f9);border-top:none;text-shadow:0 1px 0 hsla(0,0%,100%,.5);padding:5px}.md-body table td:first-child,.md-body table th:first-child{border-left:none}.md-body table th:first-child{border-radius:6px 0 0 0}.md-body table th:last-child{border-radius:0 6px 0 0}.md-body table th:only-child{border-radius:6px 6px 0 0}.md-body table tr:last-child td:first-child{border-radius:0 0 0 6px}.md-body table tr:last-child td:last-child{border-radius:0 0 6px 0}code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,"Andale Mono","Ubuntu Mono",monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.nuxt-progress{position:fixed;top:0;left:0;right:0;height:2px;width:0;opacity:1;transition:width .1s,opacity .4s;background-color:#000;z-index:999999}.nuxt-progress.nuxt-progress-notransition{transition:none}.nuxt-progress-failed{background-color:red}</style><link rel="preload" href="/_nuxt/static/1778834153/state.js" as="script"><link rel="preload" href="/_nuxt/static/1778834153/payload.js" as="script"><link rel="preload" href="/_nuxt/static/1778834153/manifest.js" as="script">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Hao Yin · Materials remember</title>
+    <meta name="description" content="Hao Yin (银皓), Research Associate at the University of Cambridge: lattice models of fracture and flow, in-situ X-ray measurement, and recurrent neural operators that learn the laws of matter." />
+    <meta name="keywords" content="Hao Yin, 银皓, University of Cambridge, computational mechanics, scientific machine learning, neural operator, lattice model, fracture, X-ray diffraction, wood, architected materials" />
+    <meta name="theme-color" content="#0b0a09" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href="https://kingyin3613.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Hao Yin · Materials remember" />
+    <meta property="og:description" content="Lattice models, X-ray light and neural operators: how matter bends, breaks and breathes, and how machines learn its laws." />
+    <meta property="og:image" content="https://kingyin3613.github.io/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="module" crossorigin src="/assets/index-DhxQefPE.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-C-kbBmoS.css">
   </head>
   <body>
-    <div data-server-rendered="true" id="__nuxt"><!----><div id="__layout"><div><div class="outercontainer"><header><div class="container header"><div class="ftheader text"><a href="/#home">Hao Yin</a></div> <div class="ftsubheader text"><a href="/#publications">Publications</a></div> <div class="ftsubheader text talk"><a href="/#activities">Activities</a></div> <div class="ftsubheader text group"><a href="/#research">Research</a></div> <div class="ftsubheader text"><a href="/#home">Home</a></div></div></header> <div class="container body"><div id="home" class="content heading anchor"><div class="img"><img src="/assets/HaoYin.jpg" alt="Photo" class="img_responsive"></div> <div class="text info"><h1>Hao Yin (银皓)</h1> <p></p> <div>Research Associate</div> <div>University of Cambridge</div> <div>
-              Email: hy423 [at] cam (dot) ac (dot) uk
-            </div> <p><span><a href="https://scholar.google.com/citations?user=pB-bgC4AAAAJ&hl=en/">Google Scholar</a></span>
-              /
-              <span><a href="https://github.com/kingyin3613/">Github</a></span>
-              /
-              <span><a href="https://www.linkedin.com/in/hao-yin-a86a95166/">LinkedIn</a></span></p> <p></p></div> <div class="text topic"><p></p> <div class="title">Research Interests</div> <ul><li><a href="#physicaldata">Physical Data Acquisition</a></li> <li><a href="#measurement">High-throughput Measurement</a></li> <li><a href="#mechanics">Computational Mechanics</a></li> <li><a href="#fracture">Fracture and Failure</a></li> <li><a href="#multiphysics">Multiphysics Modeling</a></li></ul> <p></p></div> <div class="text"><p>
-			  I am a Research Associate working in the
-              <a href="https://cambridgesolidmechanics.co.uk/">Cambridge Solid Mechanics Group</a> in collaboration with Dr. Vikram Deshpande. I am focusing on the development of integrated measurement-computation techniques for
-              solving physics-driven and/or data-driven mechanics problems (for, e.g., metal fatigue, fracture of cement/wood/composites).
-            </p> <p>
-	          Before joining Cambridge, I received my PhD in Mechanics from Northwestern University, under the supervision of 
-              <a href="https://sites.northwestern.edu/m2im/">Dr. Gianluca Cusatis</a>. 
-			  My dissertation titled "Discrete Modeling of Fracture 
-			  and Flow in Porous Quasi-brittle Materials by Capturing the Internal Structure" 
-			  (Committee: Zdeněk Bažant, Gianluca Cusatis, Eric Landis, and John Rudnicki)
-			  is temporarily unavailable to the public, due to copyright issues. 
-			  However, you may click the research topics below to see my work during doctoral training. I got my master’s degree from <a href="https://cee.illinois.edu/">the University of Illinois at Urbana-Champaign (UIUC)</a>
-               and my bachelor’s degree from
-              <a href="http://en.cau.edu.cn/">China Agricultural University (CAU)</a>, China.
-			</p> <p>
-			  My detailed Curriculum Vitae can be found <a href="http://kingyin3613.github.io/pdf/HaoYin-CV-01012026.pdf">here</a>.
-            </p></div></div> <div id="research" class="content talk anchor"><div class="text front webgl-list"><h2>Research</h2> <ul><li><a style="color:#05a">Computational modeling of micromechanics of wood, cross-laminated timber (CLT), and other fibrous materials</a> <!----></li><li><a style="color:#05a">Computational multimodel framework for coupled transport-mechanical analyses of lattice systems</a> <!----></li><li><a style="color:#05a">Some previous fun projects</a> <!----></li></ul></div></div> <div id="activities" class="content teaching anchor"><div class="text front"><h2>Activities</h2> <h3>Teaching</h3> <ul><li><a href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html">CIV_ENV 216: Mechanics of Materials I, Winter 2022</a>
-                (<a href="/pdf/Evaluation_CIV_ENV216_WI22.pdf">Course Evaluation</a>)
-              </li> <li><a href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html">CIV_ENV 216: Mechanics of Materials I, Spring 2021</a>
-                (<a href="/pdf/Evaluation_CIV_ENV216_SP21.pdf">Course Evaluation</a>)
-              </li> <li><a href="https://www.mccormick.northwestern.edu/mechanical/academics/courses/descriptions/327-finite-element-methods-in-mechanics.html">MECH_ENG 327: Finite Elements Methods in Mechanics, Fall
-                  2020</a>
-                (<a href="/pdf/Evaluation_MECH_ENG327_FA20.pdf">Course Evaluation</a>)
-              </li> <li><a href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html">CIV_ENV 216: Mechanics of Materials I, Spring 2020</a>
-                (<a href="/pdf/Evaluation_CIV_ENV216_SP20.pdf">Course Evaluation</a>)
-              </li> <li><a href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html">CIV_ENV 216: Mechanics of Materials I, Winter 2020</a></li> <li><a href="https://www.mccormick.northwestern.edu/civil-environmental/academics/courses/descriptions/216.html">CIV_ENV 216: Mechanics of Materials I, Winter 2019</a></li></ul></div></div> <div id="talks" class="content talk anchor"><div class="text front"><h3>Talks</h3> <div><span><a target="_blank" href="/pdf/EMI2024_Yin_240529.pdf">
-                  M-LDPM coupling framework (ASCE-EMI 24)
-                  <img src="/assets/EMI2024_Yin_240529.png"></a> <p class="justify-between"><span>May 29, 2024    Chicago, IL</span></p></span><span><a target="_blank" href="/pdf/EMI2022_Yin_220601.pdf">
-                  Connector-beam lattice model (ASCE-EMI 22)
-                  <img src="/assets/EMI2022_Yin_220601.png"></a> <p class="justify-between"><span>Jun 01, 2022    Baltimore, MD</span></p></span><span><a target="_blank" href="/pdf/NUGroup_Yin_210510.pdf">
-                  Coupling between Abaqus solvers
-                  <img src="/assets/NUGroup_Yin_210510.png"></a> <p class="justify-between"><span>May 10, 2021    Remote</span></p></span><span><a target="_blank" href="/pdf/NUGroup_Yin_190917.pdf">
-                  Generalized Timoshenko beam theory
-                  <img src="/assets/NUGroup_Yin_190917.png"></a> <p class="justify-between"><span>Oct 18, 2019    Evanston, IL</span></p></span></div></div></div> <div id="publications" class="content anchor"><div class="text front"><h2>Publications</h2> <div><span class="venue">Year:</span> <span class="tag"><a href="javascropt:viod()">2026</a> <span>/</span></span><span class="tag"><a href="javascropt:viod()">2025</a> <span>/</span></span><span class="tag"><a href="javascropt:viod()">2024</a> <span>/</span></span><span class="tag"><a href="javascropt:viod()">2023</a> <span>/</span></span><span class="tag"><a href="javascropt:viod()">2022</a> <span>/</span></span><span class="tag"><a href="javascropt:viod()">2021 and before</a> <!----></span></div> <div><span class="venue">Current Research Topics:</span> <span class="tag"><a href="javascropt:viod()">Physical Data Acquisition</a> <span>/</span></span><span class="tag"><a href="javascropt:viod()">Computational Mechanics</a> <span>/</span></span><span class="tag"><a href="javascropt:viod()">Fracture and Failure</a> <span>/</span></span><span class="tag"><a href="javascropt:viod()">Multiphysics</a> <span>/</span></span><span class="tag"><a href="javascropt:viod()">High-throughput Measurement</a> <!----></span></div> <div></div></div> <div id="pubs"><div class="text anchor"> </div> <div id="pubsundefined"><!----> <div class="publication"><div class="img"><img src="/assets/20.gif" class="img_responsive"></div> <div class="text"><div class="title"><a href="/pdf/xrd.pdf" target="_blank">
-                      unknown
-                    </a></div> <div class="authors"><span class="author"><b>Hao Yin</b></span></div> <div><span class="venue"><a>In preparation
-                        2026</a></span></div></div></div><div class="publication"><div class="img"><img src="/assets/19.png" class="img_responsive"></div> <div class="text"><div class="title"><a href="/pdf/ise.pdf" target="_blank">
-                      Mechanisms of size effects in elastic architected solids
-                    </a></div> <div class="authors"><span class="author">Sahin Celik, <b>Hao Yin</b>, Ivan Grega, Ankit Srivastava, and Vikram Deshpande</span></div> <div><span class="venue"><a>Acta Materialia
-                        2026</a></span></div></div></div><div class="publication"><div class="img"><img src="/assets/18.png" class="img_responsive"></div> <div class="text"><div class="title"><a href="/pdf///chemrxiv.org/doi/pdf/10.26434/chemrxiv-2025-qfm1t.pdf" target="_blank">
-                      Contact loss in all solid-state Li-ion batteries via deposition of impurities
-                    </a></div> <div class="authors"><span class="author">Sundeep Vema, James Gott, <b>Hao Yin</b>, Ashley Roach, Geoff West, Norman Fleck, Vikram Deshpande, Clare Grey</span></div> <div><span class="venue"><a>Under review
-                        2026</a></span></div></div></div><div class="publication"><div class="img"><img src="/assets/17.jpg" class="img_responsive"></div> <div class="text"><div class="title"><a href="//www.sciencedirect.com/science/article/pii/S095006182504111X" target="_blank">
-                      Multi-scale interfacial adaptation of ECC/UHPC under marine chloride wet-dry cycles
-                    </a></div> <div class="authors"><span class="author">Arslan Shamim, Yingwu Zhou, Zhongfeng Zhu, Menghuan Guo, Biao Hu, <b>Hao Yin</b>, Muhammad Hassan Riaz</span></div> <div><span class="venue"><a>Construction and Building Materials
-                        2025</a></span></div></div></div><div class="publication"><div class="img"><img src="/assets/16.png" class="img_responsive"></div> <div class="text"><div class="title"><a href="//joss.theoj.org/papers/10.21105/joss.04945" target="_blank">
-                      MXene materials: developments and sensor applications in modern infrastructure
-                    </a></div> <div class="authors"><span class="author">Zi Zhang, Chengcheng Tao, <b>Hao Yin</b>, Wenjian Nie, Junyi Duan, Ying Huang, Xingyu Wang</span></div> <div><span class="venue"><a>Journal of Materials Science
-                        2025</a></span></div></div></div><div class="publication"><div class="img"><img src="/assets/15.png" class="img_responsive"></div> <div class="text"><div class="title"><a href="/pdf/15.pdf" target="_blank">
-                      Generative conforming delaunay graph for the discrete modeling of intercellular transport
-                    </a></div> <div class="authors"><span class="author"><b>Hao Yin</b>, Gianluca Cusatis</span></div> <div><span class="venue"><a>In preparation
-                        2025</a></span></div></div></div><div class="publication"><div class="img"><img src="/assets/14.png" class="img_responsive"></div> <div class="text"><div class="title"><a href="/pdf/14.pdf" target="_blank">
-                      High-fidelity method for mesoscopic rheology of fresh fiber-reinforced concrete based on sph-dem
-                    </a></div> <div class="authors"><span class="author">Cheng Huang, Lei Shen, Wenyan Yu, Nizar Faisal Alkayem, Zhenghong Tian, <b>Hao Yin</b>, Gianluca Cusatis</span></div> <div><span class="venue"><a>International Journal of Mechanical Sciences
-                        2025</a></span></div></div></div><div class="publication"><div class="img"><img src="/assets/13.png" class="img_responsive"></div> <div class="text"><div class="title"><a href="/pdf/13.pdf" target="_blank">
-                      An interprocess communication-based two-way coupling approach for implicit-explicit multiphysics lattice discrete particle model simulations
-                    </a></div> <div class="authors"><span class="author"><b>Hao Yin</b>, Matthew Treomner, Weixin Li, Erol Lale, Lifu Yang, Lei Shen, Mohammed Alnaggar, Giovanni Di Luzio, Gianluca Cusatis</span></div> <div><span class="venue"><a>Engineering Fracture Mechanics
-                        2024</a></span></div></div></div><div class="publication"><div class="img"><img src="/assets/11.png" class="img_responsive"></div> <div class="text"><div class="title"><a href="/paper-detail?paper=cbl" target="_blank">
-                      Connector-beam lattice model for wood: from micromorphology simulation to macroscopic behaviors prediction
-                    </a></div> <div class="authors"><span class="author"><b>Hao Yin</b>, Eric Landis, Gianluca Cusatis</span></div> <div><span class="venue"><a>In preparation
-                        2024</a></span></div></div></div><div class="publication"><div class="img"><img src="/assets/10.gif" class="img_responsive"></div> <div class="text"><div class="title"><a href="//joss.theoj.org/papers/10.21105/joss.04945" target="_blank">
-                      RingsPy: a python package for voronoi mesh generation of cellular solids with radial growth pattern
-                    </a></div> <div class="authors"><span class="author"><b>Hao Yin</b>, Gianluca Cusatis</span></div> <div><span class="venue"><a>Journal of Open Source Software
-                        2023</a></span></div></div></div><div class="publication"><div class="img"><img src="/assets/12.jpg" class="img_responsive"></div> <div class="text"><div class="title"><a href="//assets.researchsquare.com/files/rs-2159913/v1_covered.pdf?c=1666018675" target="_blank">
-                      Orthotropic hygroscopic behavior of mass timber: theory, computation, and experimental validation
-                    </a></div> <div class="authors"><span class="author">Danyang Tong, Susan Alexis Brown, <b>Hao Yin</b>, David Corr, Eric Landis, Giovanni Di Luzio, Gianluca Cusatis</span></div> <div><span class="venue"><a>Materials and Structures
-                        2023</a></span></div></div></div><div class="publication"><div class="img"><img src="/assets/9.png" class="img_responsive"></div> <div class="text"><div class="title"><a href="/pdf/9.pdf" target="_blank">
-                      Flow lattice model for the simulation of chemistry dependent transport phenomena in cementitious materials
-                    </a></div> <div class="authors"><span class="author"><b>Hao Yin</b>, Antonio Cibelli, Susan Alexis Brown, Lifu Yang, Lei Shen, Mohammed Alnaggar, Gianluca Cusatis, Giovanni Di Luzio</span></div> <div><span class="venue"><a>European Journal of Environmental and Civil Engineering
-                        2023</a></span></div></div></div><div class="publication"><div class="img"><img src="/assets/8.png" class="img_responsive"></div> <div class="text"><div class="title"><a href="//arxiv.org/pdf/2209.01420.pdf" target="_blank">
-                      Homogenization of discrete diffusion models by asymptotic expansion
-                    </a></div> <div class="authors"><span class="author">Jan Eliáš, <b>Hao Yin</b>, Gianluca Cusatis</span></div> <div><span class="venue"><a>International Journal for Numerical and Analytical Methods in Geomechanics
-                        2022</a></span></div></div></div><div class="publication"><div class="img"><img src="/assets/7.jpg" class="img_responsive"></div> <div class="text"><div class="title"><a href="//www.sciencedirect.com/science/article/abs/pii/S002074032200501X" target="_blank">
-                      Mesoscopic discrete modeling of multiaxial load-induced thermal strain of concrete at high temperature
-                    </a></div> <div class="authors"><span class="author">Lei Shen, Huayi Zhang, Giovanni Di Luzio, <b>Hao Yin</b>, Lifu Yang, Gianluca Cusatis</span></div> <div><span class="venue"><a>International Journal of Mechanical Sciences
-                        2022</a></span></div></div></div><div class="publication"><div class="img"><img src="/assets/6.png" class="img_responsive"></div> <div class="text"><div class="title"><a href="/pdf/6.pdf" target="_blank">
-                      Generalized formulation for the behavior of geometrically curved and twisted three-dimensional timoshenko beams and its isogeometric analysis implementation
-                    </a></div> <div class="authors"><span class="author"><b>Hao Yin</b>, Erol Lale, Gianluca Cusatis</span></div> <div><span class="venue"><a>ASME Journal of Applied Mechanics
-                        2022</a></span></div></div></div><div class="publication"><div class="img"><img src="/assets/5.jpg" class="img_responsive"></div> <div class="text"><div class="title"><a href="//www.sciencedirect.com/science/article/abs/pii/S2352710221007257" target="_blank">
-                      Performance of alkali-activated cementitious composite mortar used for insulating walls
-                    </a></div> <div class="authors"><span class="author">Chongyang Wang, Hongtao Peng, Libo Bian, <b>Hao Yin</b>, Massoud Sofi, Zihao Song, Zhiyuan Zhou</span></div> <div><span class="venue"><a>Journal of Building Engineering
-                        2021</a></span></div></div></div><div class="publication"><div class="img"><img src="/assets/4.png" class="img_responsive"></div> <div class="text"><div class="title"><a href="//journals.sagepub.com/doi/abs/10.1177/0954409718805274?journalCode=pifa" target="_blank">
-                      Numerical and experimental analysis of single tie push tests on different shapes of concrete sleepers in ballasted tracks
-                    </a></div> <div class="authors"><span class="author">Guoqing Jing, Peyman Aela, Hao Fu, <b>Hao Yin</b></span></div> <div><span class="venue"><a>Journal of Rail and Rapid Transit
-                        2019</a></span></div></div></div><div class="publication"><div class="img"><img src="/assets/3.gif" class="img_responsive"></div> <div class="text"><div class="title"><a href="/pdf/3.pdf" target="_blank">
-                      Investigation of relationship between train speed and bolted rail joint fatigue life using finite element analysis
-                    </a></div> <div class="authors"><span class="author"><b>Hao Yin</b>, Yu Qian, J. Riley Edwards, Kaijun Zhu</span></div> <div><span class="venue"><a>Transportation Research Record
-                        2018</a></span></div></div></div><div class="publication"><div class="img"><img src="/assets/2.png" class="img_responsive"></div> <div class="text"><div class="title"><a href="/pdf/2.pdf" target="_blank">
-                      Ballast flight risk assessment based on reliability theory
-                    </a></div> <div class="authors"><span class="author">Shuai Shao, Guoqing Jing, <b>Hao Yin</b></span></div> <div><span class="venue"><a>International Journal of Simulation Systems, Science & Technology
-                        2016</a></span></div></div></div><div class="publication"><div class="img"><img src="/assets/1.gif" class="img_responsive"></div> <div class="text"><div class="title"><a href="//www.sciencedirect.com/science/article/abs/pii/S0263224114005594" target="_blank">
-                      Analysis of ballast direct shear tests by discrete element method under different normal stress
-                    </a></div> <div class="authors"><span class="author">Zijie Wang, Guoqing Jing, Qifan Yu, <b>Hao Yin</b></span></div> <div><span class="venue"><a>Measurement
-                        2015</a></span></div></div></div></div></div></div></div></div></div></div></div><script defer src="/_nuxt/static/1778834153/state.js"></script><script src="/_nuxt/46685ff.js" defer></script><script src="/_nuxt/6330af1.js" defer></script><script src="/_nuxt/96a31e5.js" defer></script><script src="/_nuxt/b7e6b6f.js" defer></script><script src="/_nuxt/9f1abe4.js" defer></script><script src="/_nuxt/9de0fa0.js" defer></script>
+    <a class="skip" href="#main">Skip to content</a>
+    <canvas id="lattice" aria-hidden="true"></canvas>
+    <div class="veil" aria-hidden="true"></div>
+
+    <header class="bar" data-no-indent>
+      <a class="bar__mark" href="#top" aria-label="Hao Yin, back to the beginning">Hao Yin</a>
+      <nav class="bar__nav" aria-label="Site">
+        <a href="#stones">Story</a>
+        <a href="#lab">Lab</a>
+        <a href="#publications">Publications</a>
+        <a href="#path">Path</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button type="button" class="cell-btn bar__ask" data-open-guide aria-controls="guide" aria-expanded="false">
+        <span class="live-dot" data-live-dot></span>Ask the lattice
+      </button>
+    </header>
+
+    <nav class="rail" aria-label="Chapters" data-no-indent>
+      <ol><li><a href="#stones" data-rail="stones"><span class="rail__tick"></span><span class="rail__label">Stones</span></a></li><li><a href="#cells" data-rail="cells"><span class="rail__tick"></span><span class="rail__label">Cells</span></a></li><li><a href="#fracture" data-rail="fracture"><span class="rail__tick"></span><span class="rail__label">Fracture</span></a></li><li><a href="#flow" data-rail="flow"><span class="rail__tick"></span><span class="rail__label">Flow</span></a></li><li><a href="#light" data-rail="light"><span class="rail__tick"></span><span class="rail__label">Light</span></a></li><li><a href="#architecture" data-rail="architecture"><span class="rail__tick"></span><span class="rail__label">Architecture</span></a></li><li><a href="#laws" data-rail="laws"><span class="rail__tick"></span><span class="rail__label">Laws</span></a></li><li><a href="#ask" data-rail="ask"><span class="rail__tick"></span><span class="rail__label">Ask</span></a></li></ol>
+    </nav>
+
+    <main id="main">
+      <section class="hero" id="top" data-state="hero" data-accent="#e8ab62" aria-labelledby="h-top">
+        <div class="hero__inner">
+          <p class="hero__eyebrow"><span>Hao Yin</span><span lang="zh-Hans">银皓</span><span>Cambridge Solid Mechanics</span></p>
+          <h1 class="hero__title" id="h-top" data-letters>Materials remember.</h1>
+          <p class="hero__sub">I’m Hao Yin, a computational mechanician at the University of Cambridge. I model how matter bends, breaks and breathes — and teach machines to learn its laws from light.</p>
+          <div class="hero__actions" data-no-indent>
+            <a class="cell-btn cell-btn--ghost" href="#stones">Begin the story</a>
+            <button type="button" class="cell-btn" data-open-guide>Ask the lattice</button>
+          </div>
+        </div>
+        <p class="hero__hint">Press and drag across the lattice. It is a live mass–spring network.</p>
+        <span class="hero__scroll" aria-hidden="true"></span>
+      </section>
+      
+    <section class="chapter chapter--stones" id="stones" data-state="grains" data-accent="#d4c0a1" aria-labelledby="h-stones">
+      <div class="chapter__inner">
+        <p class="chapter__era" data-reveal>2014 – 2018</p>
+        <h2 class="chapter__title" id="h-stones" data-text="Stones" data-strain>Stones</h2>
+        <p class="chapter__lede" data-reveal>It began beneath the railway, with stones nobody looks at.</p>
+        <div class="chapter__body"><p data-reveal>Ballast is a granular memory: every passing train rearranges it a little. As an undergraduate in Beijing I simulated it grain by grain with the discrete element method — direct shear tests, sleepers pushed through stone beds, the chance that a single grain takes flight beneath a high-speed train.</p><p data-reveal>At Illinois the stones gave way to steel. For New York City Transit I followed fatigue in bolted rail joints, from finite element models to strain measurements around the bolt holes. The lesson stayed with me: what a material does lives in how it is arranged.</p></div>
+        <ul class="notes" data-reveal><li><a href="#pub-dem-shear-2015" data-pub-link="dem-shear-2015">Discrete element models of ballast in direct shear</a></li><li><a href="#pub-rail-joint-2018" data-pub-link="rail-joint-2018">Train speed and the fatigue life of bolted rail joints</a></li><li>Two Chinese patents: a ballast cover plate and an asphalt water-damage tester</li></ul>
+      </div>
+    </section>
+    <section class="chapter chapter--cells" id="cells" data-state="cells" data-accent="#e8ab62" aria-labelledby="h-cells">
+      <div class="chapter__inner">
+        <p class="chapter__era" data-reveal>2018 – 2023</p>
+        <h2 class="chapter__title" id="h-cells" data-text="Cells" data-strain>Cells</h2>
+        <p class="chapter__lede" data-reveal>Wood writes its history in rings.</p>
+        <div class="chapter__body"><p data-reveal>At Northwestern, working with Gianluca Cusatis, I wanted models that see what wood sees: cells, walls and the seasons that built them. RingsPy grows Voronoi cell structures ring by ring. A generalized theory of curved and twisted Timoshenko beams, implemented with isogeometric analysis, turns every cell wall into a beam.</p><p data-reveal>The connector–beam lattice joins them into one material. Beams carry the cell walls, connectors carry the joints between them, and the model runs inside Abaqus at more than ten million elements, resolving features of ten to a hundred microns in specimens tens of centimetres long.</p></div>
+        <ul class="notes" data-reveal><li><a href="#pub-ringspy-2023" data-pub-link="ringspy-2023">RingsPy, open-source growth of cellular solids</a></li><li><a href="#pub-iga-beam-2022" data-pub-link="iga-beam-2022">Curved and twisted Timoshenko beams with isogeometric analysis</a></li><li>NSF CMMI-1762757: multiscale modelling and experiments on mass timber</li></ul>
+      </div>
+    </section>
+    <section class="chapter chapter--fracture" id="fracture" data-state="crack" data-accent="#ff6c3f" aria-labelledby="h-fracture">
+      <div class="chapter__inner">
+        <p class="chapter__era" data-reveal>2019 – 2024</p>
+        <h2 class="chapter__title" id="h-fracture" data-text="Fracture" data-strain data-crack-title>Fracture</h2>
+        <p class="chapter__lede" data-reveal>Breaking is information.</p>
+        <div class="chapter__body"><p data-reveal>Concrete, wood and composites are quasi-brittle: they fail through a slow negotiation between microcracks. In a lattice every connector can soften and break, so cracks find their own path. Size effects emerge without being asked for, and the angle of the growth rings steers fracture just as experiments at the University of Maine showed.</p><p data-reveal>For the U.S. Army Engineer Research and Development Center I carried this to impact: a mixed-mode, rate-dependent law for wood fracture, a dynamic connector–beam lattice, and a FreeCAD-based tool that lets engineers design timber for impact loads.</p></div>
+        <ul class="notes" data-reveal><li><a href="#pub-cbl-prep" data-pub-link="cbl-prep">Connector–beam lattice model for wood</a></li><li><a href="#pub-ldpm-thermal-2022" data-pub-link="ldpm-thermal-2022">Load-induced thermal strain of concrete at high temperature</a></li><li><a href="#pub-thesis-2023" data-pub-link="thesis-2023">Thesis: discrete modelling of fracture and flow in porous quasi-brittle materials</a></li></ul>
+      </div>
+    </section>
+    <section class="chapter chapter--flow" id="flow" data-state="flow" data-accent="#53d8ca" aria-labelledby="h-flow">
+      <div class="chapter__inner">
+        <p class="chapter__era" data-reveal>2020 – now</p>
+        <h2 class="chapter__title" id="h-flow" data-text="Flow" data-strain>Flow</h2>
+        <p class="chapter__lede" data-reveal>Matter breathes.</p>
+        <div class="chapter__body"><p data-reveal>Water, heat and ions travel through the same pores that cracks open. I built the Flow Lattice Model on the topological dual of the mechanical lattice — Voronoi cells for the solid, Delaunay edges for transport — so that both physics live on one geometry.</p><p data-reveal>Then I made the solvers talk. Through inter-process communication, implicit and explicit solvers exchange fields while the simulation runs: a crack draws moisture in, and moisture drives the next crack. The same lattice language now reaches freeze–thaw damage and alkali–silica reaction in concrete.</p></div>
+        <ul class="notes" data-reveal><li><a href="#pub-flm-2023" data-pub-link="flm-2023">Flow Lattice Model for chemistry-dependent transport</a></li><li><a href="#pub-ipc-coupling-2024" data-pub-link="ipc-coupling-2024">Two-way coupling through inter-process communication</a></li><li><a href="#pub-freeze-thaw-2027" data-pub-link="freeze-thaw-2027">Freeze–thaw cracking and alkali–silica reaction</a></li></ul>
+      </div>
+    </section>
+    <section class="chapter chapter--light" id="light" data-state="light" data-accent="#8db8ff" aria-labelledby="h-light">
+      <div class="chapter__inner">
+        <p class="chapter__era" data-reveal>2024 – now</p>
+        <h2 class="chapter__title" id="h-light" data-text="Light" data-strain>Light</h2>
+        <p class="chapter__lede" data-reveal>To learn a law, you first have to see it.</p>
+        <div class="chapter__body"><p data-reveal>Models are only as honest as the measurements that test them. Working with Vikram Deshpande in the Cambridge Solid Mechanics Group, I measure stress inside metals without cutting them open. Energy-dispersive X-ray diffraction reads the spacing between crystal planes — a strain gauge built into the atoms — while digital image correlation follows the surface.</p><p data-reveal>Together they turn one specimen into thousands of stress–strain histories, in situ and non-destructively, for titanium alloys made by 3D printing and by rolling, for Ti-6242 and for Al 7075. The same eye for interfaces now reaches solid-state batteries, where deposits of impurities cost electrodes their contact.</p></div>
+        <ul class="notes" data-reveal><li>Full-field EDXRD + DIC measurement, funded by DARPA</li><li><a href="#pub-edxrd-prep" data-pub-link="edxrd-prep">Democratising lab-based X-ray diffraction</a></li><li><a href="#pub-joule-2026" data-pub-link="joule-2026">Contact loss in all-solid-state Li-ion batteries</a></li></ul>
+      </div>
+    </section>
+    <section class="chapter chapter--architecture" id="architecture" data-state="arch" data-accent="#cdb6ff" aria-labelledby="h-architecture">
+      <div class="chapter__inner">
+        <p class="chapter__era" data-reveal>2024 – 2025</p>
+        <h2 class="chapter__title" id="h-architecture" data-text="Architecture" data-strain>Architecture</h2>
+        <p class="chapter__lede" data-reveal>Some materials are made of geometry.</p>
+        <div class="chapter__body"><p data-reveal>Architected solids take their properties from topology rather than chemistry, and at small scales they stop obeying continuum theory: under an indenter their response depends on size. We analysed these indentation size effects across families of architected solids, and watched lattices deform strut by strut with in-situ X-ray tomography and digital volume correlation.</p><p data-reveal>A lattice is also a graph — nodes, edges, messages passed between neighbours — which is exactly the language modern machine learning speaks. That is where this story was heading all along.</p></div>
+        <ul class="notes" data-reveal><li><a href="#pub-size-effects-2026" data-pub-link="size-effects-2026">Mechanisms of size effects in elastic architected solids</a></li><li>In-situ X-ray CT and digital volume correlation of indentation</li><li>EPSRC EP/X02394X/1: graph-based learning and design of mechanical metamaterials</li></ul>
+      </div>
+    </section>
+    <section class="chapter chapter--laws" id="laws" data-state="laws" data-accent="#ffd27c" aria-labelledby="h-laws">
+      <div class="chapter__inner">
+        <p class="chapter__era" data-reveal>2024 – now</p>
+        <h2 class="chapter__title" id="h-laws" data-text="Laws" data-strain>Laws</h2>
+        <p class="chapter__lede" data-reveal>Teaching machines the memory of matter.</p>
+        <div class="chapter__body"><p data-reveal>Plasticity is memory: what a metal does next depends on everything it has already been through. Classical models store that memory in internal variables someone had to invent. A recurrent neural operator learns them instead — hidden variables that carry the loading history forward, discovered from data.</p><p data-reveal>Trained on laboratory X-ray diffraction and image-correlation measurements, our mechanics-constrained operator reconstructs complex yield surfaces, with tension–compression asymmetry and multiaxial hardening, from a single geometrically complex specimen — inside a pipeline that links experiments, data generation and transfer learning.</p></div>
+        <ul class="notes" data-reveal><li><a href="#pub-xray-plasticity-2026" data-pub-link="xray-plasticity-2026">Learning metal plasticity constitutive models via laboratory-based X-ray measurements</a></li><li>Recurrent neural operators for elastoplasticity from noisy data</li><li>Ti-6Al-4V, Ti-6242 and Al 7075, funded by DARPA</li></ul>
+      </div>
+    </section>
+    <section class="lab" id="lab" data-state="lab" data-accent="#ffd27c" aria-labelledby="h-lab">
+      <div class="lab__inner">
+        <h3 class="lab__title" id="h-lab" data-reveal>This part is live.</h3>
+        <p class="lab__lede" data-reveal>A small recurrent network is learning a plasticity law inside your browser, from noisy data, right now. Draw a strain path and see whether it has learned to remember.</p>
+        <div class="lab__panel" data-no-indent data-lab>
+          <div class="lab__cell lab__cell--path">
+            <div class="lab__label"><span>Strain history</span><span class="lab__hint">draw here</span></div>
+            <canvas class="lab__canvas" data-lab-path aria-label="Strain path editor. Drag to draw a strain history."></canvas>
+            <div class="lab__presets" role="group" aria-label="Preset strain paths">
+              <button type="button" data-lab-preset="cyclic" aria-pressed="true">Cyclic</button>
+              <button type="button" data-lab-preset="growing">Growing</button>
+              <button type="button" data-lab-preset="random">Random</button>
+              <button type="button" data-lab-preset="monotonic">Monotonic</button>
+            </div>
+          </div>
+          <div class="lab__cell lab__cell--plot">
+            <div class="lab__label"><span>Stress against strain</span><span class="lab__legend"><i class="k-truth"></i>physics <i class="k-net"></i>network</span></div>
+            <canvas class="lab__canvas" data-lab-plot aria-label="Stress-strain response: physics model and neural network prediction"></canvas>
+            <div class="lab__stats" aria-live="off">
+              <span>step <b data-lab-step>0</b></span>
+              <span>loss <b data-lab-loss>—</b></span>
+              <span>error on your path <b data-lab-err>—</b></span>
+              <canvas class="lab__spark" data-lab-spark aria-hidden="true"></canvas>
+            </div>
+            <div class="lab__controls">
+              <button type="button" data-lab-toggle>Pause training</button>
+              <button type="button" data-lab-reset>Start from scratch</button>
+            </div>
+          </div>
+        </div>
+        <p class="lab__note" data-reveal>Ground truth comes from a classical return-mapping model with Armstrong–Frederick kinematic and Voce isotropic hardening, calibrated loosely to a titanium alloy. The network, a gated recurrent unit with sixteen hidden variables, never sees those equations: only random strain histories and stresses with measurement noise. Its hidden variables have to discover what back stress and accumulated plastic strain do. That is the idea behind recurrent neural operators, in miniature.</p>
+      </div>
+    </section>
+    <section class="chapter chapter--ask" id="ask" data-state="ask" data-accent="#ffe2a8" aria-labelledby="h-ask">
+      <div class="chapter__inner">
+        <p class="chapter__era" data-reveal>Live</p>
+        <h2 class="chapter__title" id="h-ask" data-text="Ask" data-strain>Ask</h2>
+        <p class="chapter__lede" data-reveal>This site has a voice.</p>
+        <div class="chapter__body"><p data-reveal>Ask about any paper, method or idea here and a Claude model answers from my research record — and moves the lattice to show you. Select any sentence on the page and it will be explained at your level.</p></div>
+        
+        <form class="ask" data-ask-inline data-no-indent>
+          <label class="sr-only" for="ask-inline-input">Ask a question about Hao Yin’s research</label>
+          <textarea id="ask-inline-input" rows="2" maxlength="1500" placeholder="Ask about a paper, a method, an idea…"></textarea>
+          <button type="submit" class="cell-btn">Ask</button>
+        </form>
+        <div class="starters" data-no-indent><button type="button" class="starter" data-starter="What is a recurrent neural operator, in plain words?">What is a recurrent neural operator, in plain words?</button><button type="button" class="starter" data-starter="Show me how wood cracks.">Show me how wood cracks.</button><button type="button" class="starter" data-starter="How can X-rays measure stress inside a metal?">How can X-rays measure stress inside a metal?</button><button type="button" class="starter" data-starter="Which paper should I read first?">Which paper should I read first?</button><button type="button" class="starter" data-starter="Run a cyclic plasticity experiment and explain the loop.">Run a cyclic plasticity experiment and explain the loop.</button><button type="button" class="starter" data-starter="Explain this research to a curious twelve-year-old.">Explain this research to a curious twelve-year-old.</button></div>
+        <p class="fine">Answers are generated by AI from Hao’s public record and can be wrong. The papers are the source of truth.</p>
+      </div>
+    </section>
+      
+    <section class="pubs" id="publications" data-state="quiet" data-accent="#e8ab62" aria-labelledby="h-pubs">
+      <div class="pubs__inner">
+        <h2 class="section-title" id="h-pubs" data-strain data-text="Publications">Publications</h2>
+        <p class="section-lede" data-reveal>25 works, from railway ballast to neural operators. First-author work is marked; every entry can be asked about.</p>
+        <div class="filters" role="group" aria-label="Filter publications by theme" data-no-indent><button type="button" class="filter" data-filter="all" aria-pressed="true">All <span>25</span></button><button type="button" class="filter" data-filter="laws" aria-pressed="false">Learning <span>1</span></button><button type="button" class="filter" data-filter="architecture" aria-pressed="false">Architected <span>1</span></button><button type="button" class="filter" data-filter="light" aria-pressed="false">Measurement <span>3</span></button><button type="button" class="filter" data-filter="flow" aria-pressed="false">Multiphysics <span>9</span></button><button type="button" class="filter" data-filter="fracture" aria-pressed="false">Fracture <span>2</span></button><button type="button" class="filter" data-filter="cells" aria-pressed="false">Wood &amp; cells <span>4</span></button><button type="button" class="filter" data-filter="stones" aria-pressed="false">Granular &amp; rail <span>5</span></button></div>
+        <div class="pubs__list">
+          
+          <div class="pubs__year" data-year-group>
+            <h3 class="pubs__yearlabel">In preparation</h3>
+            <ol class="pubs__items">
+          <li class="pub" id="pub-edxrd-prep" data-theme="light">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#8db8ff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="22" cy="22" rx="4.83" ry="5" stroke-opacity="0.99"/><ellipse cx="22" cy="22" rx="8.69" ry="9" stroke-opacity="0.58"/><ellipse cx="22" cy="22" rx="10.14" ry="10.5" stroke-opacity="0.56"/><ellipse cx="22" cy="22" rx="14.49" ry="15" stroke-opacity="0.91"/><ellipse cx="22" cy="22" rx="17.87" ry="18.5" stroke-opacity="0.97"/><ellipse cx="22" cy="22" rx="19.32" ry="20" stroke-opacity="0.41"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="https://scholar.google.com/scholar?q=%22Democratisation%20of%20lab-based%20energy%20dispersive%20X-ray%20diffraction%20for%20enhancing%20measured%20datasets%20for%20mechanical%20properties%22" target="_blank" rel="noopener">Democratisation of lab-based energy dispersive X-ray diffraction for enhancing measured datasets for mechanical properties</a>
+              <p class="pub__authors">B. Amir, <strong>H. Yin</strong>, R. Wu, Z. Meng, T. Dennis, V. Gandhi, A. J. D. Shaikeea, B. Liu, V. Deshpande</p>
+              <p class="pub__venue">In preparation</p>
+              <p class="pub__links"><a href="https://scholar.google.com/scholar?q=%22Democratisation%20of%20lab-based%20energy%20dispersive%20X-ray%20diffraction%20for%20enhancing%20measured%20datasets%20for%20mechanical%20properties%22" target="_blank" rel="noopener">Find</a><button type="button" class="pub__ask" data-ask-pub="edxrd-prep">Ask about this</button></p>
+            </div>
+          </li>
+          <li class="pub" id="pub-cbl-prep" data-theme="cells">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#e8ab62" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.36 34.99A6 6 0 0 0 8.36 28.99"/><path d="M21.86 34.99A13.5 13.5 0 0 0 8.36 21.49"/><path d="M26.36 34.99A18 18 0 0 0 8.36 16.99"/><path d="M33.86 34.99A25.5 25.5 0 0 0 8.36 9.49"/><path d="M38.36 34.99A30 30 0 0 0 8.36 4.99"/><path d="M45.86 34.99A37.5 37.5 0 0 0 8.36 -2.51"/><path d="M11.34 34.73L48.2 31.5" stroke-opacity="0.45"/><path d="M11.25 34.21L46.99 24.63" stroke-opacity="0.45"/><path d="M11.07 33.72L44.61 18.08" stroke-opacity="0.45"/><path d="M10.81 33.27L41.12 12.04" stroke-opacity="0.45"/><path d="M10.48 32.87L36.64 6.7" stroke-opacity="0.45"/><path d="M10.08 32.53L31.3 2.22" stroke-opacity="0.45"/><path d="M9.62 32.27L25.26 -1.27" stroke-opacity="0.45"/><path d="M9.13 32.09L18.71 -3.65" stroke-opacity="0.45"/><path d="M8.62 32L11.84 -4.86" stroke-opacity="0.45"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="https://scholar.google.com/scholar?q=%22Connector%E2%80%93beam%20lattice%20model%20for%20wood%3A%20from%20micromorphology%20simulation%20to%20macroscopic%20behaviors%20prediction%22" target="_blank" rel="noopener">Connector–beam lattice model for wood: from micromorphology simulation to macroscopic behaviors prediction</a>
+              <p class="pub__authors"><strong>H. Yin</strong>, E. Landis, G. Cusatis</p>
+              <p class="pub__venue">In preparation<span class="tag">first author</span></p>
+              <p class="pub__links"><a href="https://scholar.google.com/scholar?q=%22Connector%E2%80%93beam%20lattice%20model%20for%20wood%3A%20from%20micromorphology%20simulation%20to%20macroscopic%20behaviors%20prediction%22" target="_blank" rel="noopener">Find</a><button type="button" class="pub__ask" data-ask-pub="cbl-prep">Ask about this</button></p>
+            </div>
+          </li>
+          <li class="pub" id="pub-delaunay-prep" data-theme="flow">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#53d8ca" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 9 L4 5.35 L6 6.4 L8 7.73 L10 9.21 L12 10.66 L14 11.93 L16 12.88 L18 13.4 L20 13.44 L22 12.98 L24 12.09 L26 10.86 L28 9.42 L30 7.94 L32 6.57 L34 5.48 L36 4.76 L38 4.52 L40 4.77 L42 5.48" stroke-opacity="0.45"/><circle cx="28.85" cy="9" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 17.5 L4 14.21 L6 15.35 L8 16.73 L10 18.19 L12 19.57 L14 20.73 L16 21.53 L18 21.89 L20 21.77 L22 21.17 L24 20.17 L26 18.88 L28 17.43 L30 16 L32 14.72 L34 13.76 L36 13.2 L38 13.12 L40 13.52 L42 14.36" stroke-opacity="0.6"/><circle cx="37.74" cy="17.5" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 26 L4 27.8 L6 27.29 L8 26.63 L10 25.91 L12 25.2 L14 24.57 L16 24.1 L18 23.84 L20 23.82 L22 24.04 L24 24.47 L26 25.08 L28 25.78 L30 26.51 L32 27.18 L34 27.72 L36 28.08 L38 28.2 L40 28.08 L42 27.74" stroke-opacity="0.75"/><circle cx="9.49" cy="26" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 34.5 L4 37.28 L6 36.86 L8 36.18 L10 35.31 L12 34.36 L14 33.42 L16 32.6 L18 31.99 L20 31.65 L22 31.63 L24 31.93 L26 32.51 L28 33.3 L30 34.23 L32 35.19 L34 36.07 L36 36.78 L38 37.24 L40 37.4 L42 37.23" stroke-opacity="0.9"/><circle cx="21.98" cy="34.5" r="1.3" fill="#53d8ca" stroke="none"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="https://scholar.google.com/scholar?q=%22Generative%20conforming%20Delaunay%20graph%20for%20the%20discrete%20modeling%20of%20intercellular%20transport%22" target="_blank" rel="noopener">Generative conforming Delaunay graph for the discrete modeling of intercellular transport</a>
+              <p class="pub__authors"><strong>H. Yin</strong>, G. Cusatis</p>
+              <p class="pub__venue">In preparation<span class="tag">first author</span></p>
+              <p class="pub__links"><a href="https://scholar.google.com/scholar?q=%22Generative%20conforming%20Delaunay%20graph%20for%20the%20discrete%20modeling%20of%20intercellular%20transport%22" target="_blank" rel="noopener">Find</a><button type="button" class="pub__ask" data-ask-pub="delaunay-prep">Ask about this</button></p>
+            </div>
+          </li></ol>
+          </div>
+          <div class="pubs__year" data-year-group>
+            <h3 class="pubs__yearlabel">2027</h3>
+            <ol class="pubs__items">
+          <li class="pub" id="pub-freeze-thaw-2027" data-theme="flow">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#53d8ca" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 9 L4 6.13 L6 7.3 L8 8.65 L10 10.04 L12 11.32 L14 12.34 L16 13 L18 13.21 L20 12.96 L22 12.28 L24 11.23 L26 9.94 L28 8.54 L30 7.2 L32 6.05 L34 5.23 L36 4.82 L38 4.88 L40 5.38 L42 6.29" stroke-opacity="0.45"/><circle cx="15.62" cy="9" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 17.5 L4 20.98 L6 20.5 L8 19.7 L10 18.65 L12 17.48 L14 16.31 L16 15.27 L18 14.47 L20 14.01 L22 13.93 L24 14.25 L26 14.92 L28 15.88 L30 17.02 L32 18.2 L34 19.32 L36 20.23 L38 20.84 L40 21.08 L42 20.93" stroke-opacity="0.6"/><circle cx="30.39" cy="17.5" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 26 L4 27.09 L6 25.69 L8 24.34 L10 23.16 L12 22.3 L14 21.84 L16 21.85 L18 22.31 L20 23.17 L22 24.35 L24 25.71 L26 27.1 L28 28.37 L30 29.38 L32 30.02 L34 30.21 L36 29.94 L38 29.24 L40 28.18 L42 26.88" stroke-opacity="0.75"/><circle cx="21.55" cy="26" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 34.5 L4 36.29 L6 35.21 L8 34.05 L10 32.94 L12 32.01 L14 31.35 L16 31.03 L18 31.1 L20 31.54 L22 32.31 L24 33.32 L26 34.46 L28 35.6 L30 36.62 L32 37.41 L34 37.88 L36 37.98 L38 37.69 L40 37.05 L42 36.13" stroke-opacity="0.9"/><circle cx="14.92" cy="34.5" r="1.3" fill="#53d8ca" stroke="none"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="https://scholar.google.com/scholar?q=%22Discrete%20hygro-thermo-mechanical%20coupled%20modeling%20of%20concrete%20under%20freeze%E2%80%93thaw%20cycles%3A%20cracking%20pattern%2C%20mechanical%20degradation%20and%20external%20load%20effect%22" target="_blank" rel="noopener">Discrete hygro-thermo-mechanical coupled modeling of concrete under freeze–thaw cycles: cracking pattern, mechanical degradation and external load effect</a>
+              <p class="pub__authors">L. Shen, W. Zhao, <strong>H. Yin</strong>, L. Gan, H. Gu, M. Zhu, G. Di Luzio, G. Cusatis</p>
+              <p class="pub__venue">Computer Methods in Applied Mechanics and Engineering 463, 119338</p>
+              <p class="pub__links"><a href="https://scholar.google.com/scholar?q=%22Discrete%20hygro-thermo-mechanical%20coupled%20modeling%20of%20concrete%20under%20freeze%E2%80%93thaw%20cycles%3A%20cracking%20pattern%2C%20mechanical%20degradation%20and%20external%20load%20effect%22" target="_blank" rel="noopener">Find</a><button type="button" class="pub__ask" data-ask-pub="freeze-thaw-2027">Ask about this</button></p>
+            </div>
+          </li></ol>
+          </div>
+          <div class="pubs__year" data-year-group>
+            <h3 class="pubs__yearlabel">2026</h3>
+            <ol class="pubs__items">
+          <li class="pub" id="pub-xray-plasticity-2026" data-theme="laws">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#ffd27c" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18L16 10" stroke-opacity="0.45"/><path d="M6 18L16 18" stroke-opacity="0.45"/><path d="M6 18L16 26" stroke-opacity="0.45"/><path d="M6 18L16 34" stroke-opacity="0.45"/><path d="M6 26L16 10" stroke-opacity="0.45"/><path d="M6 26L16 18" stroke-opacity="0.45"/><path d="M6 26L16 26" stroke-opacity="0.45"/><path d="M6 26L16 34" stroke-opacity="0.45"/><path d="M16 10L28 10" stroke-opacity="0.45"/><path d="M16 10L28 18" stroke-opacity="0.45"/><path d="M16 10L28 26" stroke-opacity="0.45"/><path d="M16 10L28 34" stroke-opacity="0.45"/><path d="M16 18L28 10" stroke-opacity="0.45"/><path d="M16 18L28 18" stroke-opacity="0.45"/><path d="M16 18L28 26" stroke-opacity="0.45"/><path d="M16 18L28 34" stroke-opacity="0.45"/><path d="M16 26L28 10" stroke-opacity="0.45"/><path d="M16 26L28 18" stroke-opacity="0.45"/><path d="M16 26L28 26" stroke-opacity="0.45"/><path d="M16 26L28 34" stroke-opacity="0.45"/><path d="M16 34L28 10" stroke-opacity="0.45"/><path d="M16 34L28 18" stroke-opacity="0.45"/><path d="M16 34L28 26" stroke-opacity="0.45"/><path d="M16 34L28 34" stroke-opacity="0.45"/><path d="M28 10L38 22" stroke-opacity="0.45"/><path d="M28 18L38 22" stroke-opacity="0.45"/><path d="M28 26L38 22" stroke-opacity="0.45"/><path d="M28 34L38 22" stroke-opacity="0.45"/><circle cx="6" cy="18" r="1.6" fill="#ffd27c" stroke="none"/><circle cx="6" cy="26" r="1.6" fill="#ffd27c" stroke="none"/><circle cx="16" cy="10" r="1.6" fill="#ffd27c" stroke="none"/><circle cx="16" cy="18" r="1.6" fill="#ffd27c" stroke="none"/><circle cx="16" cy="26" r="1.6" fill="#ffd27c" stroke="none"/><circle cx="16" cy="34" r="1.6" fill="#ffd27c" stroke="none"/><circle cx="28" cy="10" r="1.6" fill="#ffd27c" stroke="none"/><circle cx="28" cy="18" r="1.6" fill="#ffd27c" stroke="none"/><circle cx="28" cy="26" r="1.6" fill="#ffd27c" stroke="none"/><circle cx="28" cy="34" r="1.6" fill="#ffd27c" stroke="none"/><circle cx="38" cy="22" r="1.6" fill="#ffd27c" stroke="none"/><path d="M16 12 C 22 3.75, 30 4.43, 28 12" stroke-opacity="0.8"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="https://mechanicsarxiv.org/index.php/engineering/preprint/view/140" target="_blank" rel="noopener">Learning metal plasticity constitutive models via laboratory-based X-ray measurements</a>
+              <p class="pub__authors"><strong>H. Yin</strong>, B. Amir, R. Wu, A. Dennis, Z. Meng, V. Gandhi, A. Shaikeea, B. Liu, M. Atkinson, P. Shanthraj, H. Wadley, V. Deshpande</p>
+              <p class="pub__venue">Preprint, MechanicsArXiv<span class="tag">preprint</span><span class="tag">first author</span><span class="tag">machine learning</span></p>
+              <p class="pub__links"><a href="https://mechanicsarxiv.org/index.php/engineering/preprint/view/140" target="_blank" rel="noopener">Link</a><button type="button" class="pub__ask" data-ask-pub="xray-plasticity-2026">Ask about this</button></p>
+            </div>
+          </li>
+          <li class="pub" id="pub-asr-2026" data-theme="flow">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#53d8ca" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 9 L4 11.72 L6 12.34 L8 12.6 L10 12.46 L12 11.94 L14 11.1 L16 10.03 L18 8.84 L20 7.67 L22 6.64 L24 5.88 L26 5.46 L28 5.43 L30 5.79 L32 6.51 L34 7.5 L36 8.65 L38 9.85 L40 10.95 L42 11.83" stroke-opacity="0.45"/><circle cx="7.4" cy="9" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 17.5 L4 17.94 L6 18.55 L8 19.05 L10 19.38 L12 19.51 L14 19.41 L16 19.1 L18 18.61 L20 18.01 L22 17.35 L24 16.7 L26 16.14 L28 15.73 L30 15.52 L32 15.52 L34 15.75 L36 16.16 L38 16.72 L40 17.37 L42 18.03" stroke-opacity="0.6"/><circle cx="13.86" cy="17.5" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 26 L4 24.11 L6 23.23 L8 22.66 L10 22.45 L12 22.63 L14 23.19 L16 24.05 L18 25.13 L20 26.3 L22 27.44 L24 28.42 L26 29.14 L28 29.51 L30 29.49 L32 29.09 L34 28.35 L36 27.35 L38 26.2 L40 25.03 L42 23.97" stroke-opacity="0.75"/><circle cx="34.27" cy="26" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 34.5 L4 33.09 L6 31.77 L8 30.76 L10 30.16 L12 30.03 L14 30.4 L16 31.22 L18 32.4 L20 33.81 L22 35.3 L24 36.7 L26 37.85 L28 38.64 L30 38.97 L32 38.81 L34 38.18 L36 37.14 L38 35.81 L40 34.33 L42 32.88" stroke-opacity="0.9"/><circle cx="26.7" cy="34.5" r="1.3" fill="#53d8ca" stroke="none"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="https://scholar.google.com/scholar?q=%22A%20multiscale%20homogenization%20approach%20for%20multiphysics%20lattice%20modeling%20of%20alkali%E2%80%93silica%20reaction%20in%20concrete%3A%20upscaling%20coupled%20mechanics%20and%20mass%20transport%22" target="_blank" rel="noopener">A multiscale homogenization approach for multiphysics lattice modeling of alkali–silica reaction in concrete: upscaling coupled mechanics and mass transport</a>
+              <p class="pub__authors">L. Yang, <strong>H. Yin</strong>, H. Su, K. Yao, M. Alnaggar, G. Di Luzio, G. Cusatis</p>
+              <p class="pub__venue">Cement and Concrete Research 205, 108230</p>
+              <p class="pub__links"><a href="https://scholar.google.com/scholar?q=%22A%20multiscale%20homogenization%20approach%20for%20multiphysics%20lattice%20modeling%20of%20alkali%E2%80%93silica%20reaction%20in%20concrete%3A%20upscaling%20coupled%20mechanics%20and%20mass%20transport%22" target="_blank" rel="noopener">Find</a><button type="button" class="pub__ask" data-ask-pub="asr-2026">Ask about this</button></p>
+            </div>
+          </li>
+          <li class="pub" id="pub-joule-2026" data-theme="light">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#8db8ff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="22" cy="22" rx="4.67" ry="5" stroke-opacity="0.43"/><ellipse cx="22" cy="22" rx="8.41" ry="9" stroke-opacity="0.51"/><ellipse cx="22" cy="22" rx="9.81" ry="10.5" stroke-opacity="0.63"/><ellipse cx="22" cy="22" rx="14.01" ry="15" stroke-opacity="0.67"/><ellipse cx="22" cy="22" rx="17.28" ry="18.5" stroke-opacity="0.75"/><ellipse cx="22" cy="22" rx="18.69" ry="20" stroke-opacity="0.42"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="https://chemrxiv.org/doi/pdf/10.26434/chemrxiv-2025-qfm1t" target="_blank" rel="noopener">Contact loss in all-solid-state Li-ion batteries via deposition of impurities</a>
+              <p class="pub__authors">S. Vema, J. A. Gott, <strong>H. Yin</strong>, A. M. Roach, G. West, N. A. Fleck, V. S. Deshpande, C. P. Grey</p>
+              <p class="pub__venue">Joule</p>
+              <p class="pub__links"><a href="https://chemrxiv.org/doi/pdf/10.26434/chemrxiv-2025-qfm1t" target="_blank" rel="noopener">preprint</a><button type="button" class="pub__ask" data-ask-pub="joule-2026">Ask about this</button></p>
+            </div>
+          </li>
+          <li class="pub" id="pub-size-effects-2026" data-theme="architecture">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#cdb6ff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6L11 6"/><path d="M4 6L7.5 12.06M4 6L0.5 12.06" stroke-opacity="0.6"/><path d="M11 6L18 6"/><path d="M11 6L14.5 12.06M11 6L7.5 12.06" stroke-opacity="0.6"/><path d="M18 6L25 6"/><path d="M18 6L21.5 12.06M18 6L14.5 12.06" stroke-opacity="0.6"/><path d="M25 6L32 6"/><path d="M25 6L28.5 12.06M25 6L21.5 12.06" stroke-opacity="0.6"/><path d="M32 6L39 6"/><path d="M32 6L35.5 12.06M32 6L28.5 12.06" stroke-opacity="0.6"/><path d="M39 6L42.5 12.06M39 6L35.5 12.06" stroke-opacity="0.6"/><path d="M7.5 12.06L14.5 12.06"/><path d="M7.5 12.06L11 18.12M7.5 12.06L4 18.12" stroke-opacity="0.6"/><path d="M14.5 12.06L21.5 12.06"/><path d="M14.5 12.06L18 18.12M14.5 12.06L11 18.12" stroke-opacity="0.6"/><path d="M21.5 12.06L28.5 12.06"/><path d="M21.5 12.06L25 18.12M21.5 12.06L18 18.12" stroke-opacity="0.6"/><path d="M28.5 12.06L35.5 12.06"/><path d="M28.5 12.06L32 18.12M28.5 12.06L25 18.12" stroke-opacity="0.6"/><path d="M35.5 12.06L42.5 12.06"/><path d="M35.5 12.06L39 18.12M35.5 12.06L32 18.12" stroke-opacity="0.6"/><path d="M42.5 12.06L46 18.12M42.5 12.06L39 18.12" stroke-opacity="0.6"/><path d="M4 18.12L11 18.12"/><path d="M4 18.12L7.5 24.19M4 18.12L0.5 24.19" stroke-opacity="0.6"/><path d="M11 18.12L18 18.12"/><path d="M11 18.12L14.5 24.19M11 18.12L7.5 24.19" stroke-opacity="0.6"/><path d="M18 18.12L25 18.12"/><path d="M18 18.12L21.5 24.19M18 18.12L14.5 24.19" stroke-opacity="0.6"/><path d="M25 18.12L32 18.12"/><path d="M25 18.12L28.5 24.19M25 18.12L21.5 24.19" stroke-opacity="0.6"/><path d="M32 18.12L39 18.12"/><path d="M32 18.12L35.5 24.19M32 18.12L28.5 24.19" stroke-opacity="0.6"/><path d="M39 18.12L42.5 24.19M39 18.12L35.5 24.19" stroke-opacity="0.6"/><path d="M7.5 24.19L14.5 24.19"/><path d="M7.5 24.19L11 30.25M7.5 24.19L4 30.25" stroke-opacity="0.6"/><path d="M14.5 24.19L21.5 24.19"/><path d="M14.5 24.19L18 30.25M14.5 24.19L11 30.25" stroke-opacity="0.6"/><path d="M21.5 24.19L28.5 24.19"/><path d="M21.5 24.19L25 30.25M21.5 24.19L18 30.25" stroke-opacity="0.6"/><path d="M28.5 24.19L35.5 24.19"/><path d="M28.5 24.19L32 30.25M28.5 24.19L25 30.25" stroke-opacity="0.6"/><path d="M35.5 24.19L42.5 24.19"/><path d="M35.5 24.19L39 30.25M35.5 24.19L32 30.25" stroke-opacity="0.6"/><path d="M42.5 24.19L46 30.25M42.5 24.19L39 30.25" stroke-opacity="0.6"/><path d="M4 30.25L11 30.25"/><path d="M4 30.25L7.5 36.31M4 30.25L0.5 36.31" stroke-opacity="0.6"/><path d="M11 30.25L18 30.25"/><path d="M11 30.25L14.5 36.31M11 30.25L7.5 36.31" stroke-opacity="0.6"/><path d="M18 30.25L25 30.25"/><path d="M18 30.25L21.5 36.31M18 30.25L14.5 36.31" stroke-opacity="0.6"/><path d="M25 30.25L32 30.25"/><path d="M25 30.25L28.5 36.31M25 30.25L21.5 36.31" stroke-opacity="0.6"/><path d="M32 30.25L39 30.25"/><path d="M32 30.25L35.5 36.31M32 30.25L28.5 36.31" stroke-opacity="0.6"/><path d="M39 30.25L42.5 36.31M39 30.25L35.5 36.31" stroke-opacity="0.6"/><path d="M7.5 36.31L14.5 36.31"/><path d="M14.5 36.31L21.5 36.31"/><path d="M21.5 36.31L28.5 36.31"/><path d="M28.5 36.31L35.5 36.31"/><path d="M35.5 36.31L42.5 36.31"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="https://scholar.google.com/scholar?q=%22Mechanisms%20of%20size%20effects%20in%20elastic%20architected%20solids%22" target="_blank" rel="noopener">Mechanisms of size effects in elastic architected solids</a>
+              <p class="pub__authors">S. Celik, <strong>H. Yin</strong>, I. Grega, A. Srivastava, V. S. Deshpande</p>
+              <p class="pub__venue">Acta Materialia, 122486</p>
+              <p class="pub__links"><a href="https://scholar.google.com/scholar?q=%22Mechanisms%20of%20size%20effects%20in%20elastic%20architected%20solids%22" target="_blank" rel="noopener">Find</a><button type="button" class="pub__ask" data-ask-pub="size-effects-2026">Ask about this</button></p>
+            </div>
+          </li></ol>
+          </div>
+          <div class="pubs__year" data-year-group>
+            <h3 class="pubs__yearlabel">2025</h3>
+            <ol class="pubs__items">
+          <li class="pub" id="pub-ecc-uhpc-2025" data-theme="flow">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#53d8ca" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 9 L4 7.28 L6 6.6 L8 6.18 L10 6.08 L12 6.29 L14 6.81 L16 7.56 L18 8.48 L20 9.45 L22 10.37 L24 11.14 L26 11.68 L28 11.92 L30 11.84 L32 11.44 L34 10.78 L36 9.92 L38 8.96 L40 8.01 L42 7.16" stroke-opacity="0.45"/><circle cx="22.08" cy="9" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 17.5 L4 20.57 L6 20.94 L8 20.94 L10 20.55 L12 19.83 L14 18.85 L16 17.72 L18 16.57 L20 15.52 L22 14.69 L24 14.17 L26 14.01 L28 14.24 L30 14.83 L32 15.71 L34 16.79 L36 17.95 L38 19.05 L40 19.99 L42 20.65" stroke-opacity="0.6"/><circle cx="16.96" cy="17.5" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 26 L4 29.06 L6 29.94 L8 30.38 L10 30.35 L12 29.83 L14 28.89 L16 27.64 L18 26.2 L20 24.74 L22 23.42 L24 22.39 L26 21.75 L28 21.58 L30 21.89 L32 22.66 L34 23.8 L36 25.17 L38 26.64 L40 28.04 L42 29.21" stroke-opacity="0.75"/><circle cx="8.97" cy="26" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 34.5 L4 31.4 L6 31.1 L8 31.17 L10 31.6 L12 32.36 L14 33.35 L16 34.47 L18 35.59 L20 36.59 L22 37.36 L24 37.82 L26 37.91 L28 37.62 L30 37 L32 36.09 L34 35.01 L36 33.88 L38 32.81 L40 31.93 L42 31.33" stroke-opacity="0.9"/><circle cx="15.42" cy="34.5" r="1.3" fill="#53d8ca" stroke="none"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="https://www.sciencedirect.com/science/article/pii/S095006182504111X" target="_blank" rel="noopener">Multi-scale interfacial adaptation of ECC/UHPC under marine chloride wet–dry cycles</a>
+              <p class="pub__authors">A. Shamim, Y. Zhou, Z. Zhu, M. Guo, B. Hu, <strong>H. Yin</strong>, M. H. Riaz</p>
+              <p class="pub__venue">Construction and Building Materials 498, 143960</p>
+              <p class="pub__links"><a href="https://www.sciencedirect.com/science/article/pii/S095006182504111X" target="_blank" rel="noopener">Link</a><button type="button" class="pub__ask" data-ask-pub="ecc-uhpc-2025">Ask about this</button></p>
+            </div>
+          </li>
+          <li class="pub" id="pub-mxene-2025" data-theme="light">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#8db8ff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="22" cy="22" rx="4.83" ry="5" stroke-opacity="0.76"/><ellipse cx="22" cy="22" rx="8.7" ry="9" stroke-opacity="0.84"/><ellipse cx="22" cy="22" rx="10.15" ry="10.5" stroke-opacity="0.65"/><ellipse cx="22" cy="22" rx="14.5" ry="15" stroke-opacity="0.85"/><ellipse cx="22" cy="22" rx="17.88" ry="18.5" stroke-opacity="0.79"/><ellipse cx="22" cy="22" rx="19.33" ry="20" stroke-opacity="0.56"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="https://scholar.google.com/scholar?q=%22MXene%20materials%3A%20developments%20and%20sensor%20applications%20in%20modern%20infrastructure%22" target="_blank" rel="noopener">MXene materials: developments and sensor applications in modern infrastructure</a>
+              <p class="pub__authors">Z. Zhang, C. Tao, <strong>H. Yin</strong>, W. Nie, J. Duan, Y. Huang, X. Wang</p>
+              <p class="pub__venue">Journal of Materials Science 60 (28), 11744–11777</p>
+              <p class="pub__links"><a href="https://scholar.google.com/scholar?q=%22MXene%20materials%3A%20developments%20and%20sensor%20applications%20in%20modern%20infrastructure%22" target="_blank" rel="noopener">Find</a><button type="button" class="pub__ask" data-ask-pub="mxene-2025">Ask about this</button></p>
+            </div>
+          </li>
+          <li class="pub" id="pub-sph-dem-2025" data-theme="stones">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#d4c0a1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M39.03 35.14L37.06 38.3L32.58 37.12L31.23 33.81L35.15 30.55L37.93 30.99Z"/><path d="M23.56 34.77L20.1 37.88L16.09 36.87L14.01 29.48L16.71 27.35L24.05 28.76Z"/><path d="M38.54 19.82L34.42 24.01L31.43 23.77L30.53 17.81L33.08 15.61L36.77 15.09Z"/><path d="M27.13 33.4L24.35 35.35L21.57 34.42L20.48 32.05L24.13 28.63L27.51 30.36Z"/><path d="M38.54 27.79L36.27 31.28L33.89 30.13L31.9 27.08L34.96 24.37L37.78 24.78Z"/><path d="M35.81 36.77L32.08 39.51L29.64 38.52L28.74 33.81L30.7 31.77L35.37 33.57Z"/><path d="M30.99 19.95L24.84 25.19L20.41 22.41L19.78 17.15L24.58 14.19L29.22 14.95Z"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="https://scholar.google.com/scholar?q=%22High-fidelity%20SPH%E2%80%93DEM%20framework%20for%20mesoscopic%20rheological%20behavior%20of%20fresh%20fiber-reinforced%20concrete%22" target="_blank" rel="noopener">High-fidelity SPH–DEM framework for mesoscopic rheological behavior of fresh fiber-reinforced concrete</a>
+              <p class="pub__authors">C. Huang, L. Shen, W. Yu, N. F. Alkayem, Y. Han, Z. Tian, <strong>H. Yin</strong>, G. Cusatis</p>
+              <p class="pub__venue">International Journal of Mechanical Sciences 289, 110061</p>
+              <p class="pub__links"><a href="https://scholar.google.com/scholar?q=%22High-fidelity%20SPH%E2%80%93DEM%20framework%20for%20mesoscopic%20rheological%20behavior%20of%20fresh%20fiber-reinforced%20concrete%22" target="_blank" rel="noopener">Find</a><button type="button" class="pub__ask" data-ask-pub="sph-dem-2025">Ask about this</button></p>
+            </div>
+          </li>
+          <li class="pub" id="pub-icf-2025" data-theme="flow">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#53d8ca" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 9 L4 4.95 L6 5.53 L8 6.49 L10 7.73 L12 9.11 L14 10.47 L16 11.68 L18 12.59 L20 13.1 L22 13.16 L24 12.77 L26 11.96 L28 10.82 L30 9.48 L32 8.09 L34 6.8 L36 5.76 L38 5.06 L40 4.81 L42 5.01" stroke-opacity="0.45"/><circle cx="22.51" cy="9" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 17.5 L4 17.1 L6 18.26 L8 19.35 L10 20.23 L12 20.81 L14 21.03 L16 20.86 L18 20.31 L20 19.46 L22 18.39 L24 17.23 L26 16.09 L28 15.11 L30 14.39 L32 14.02 L34 14.02 L36 14.41 L38 15.14 L40 16.13 L42 17.27" stroke-opacity="0.6"/><circle cx="22.85" cy="17.5" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 26 L4 22.78 L6 22.85 L8 23.28 L10 24 L12 24.95 L14 26.01 L16 27.07 L18 28.01 L20 28.73 L22 29.15 L24 29.22 L26 28.94 L28 28.34 L30 27.47 L32 26.45 L34 25.38 L36 24.37 L38 23.55 L40 22.99 L42 22.77" stroke-opacity="0.75"/><circle cx="7.15" cy="26" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 34.5 L4 31.89 L6 32.76 L8 33.81 L10 34.95 L12 36.03 L14 36.95 L16 37.59 L18 37.9 L20 37.83 L22 37.39 L24 36.64 L26 35.65 L28 34.53 L30 33.41 L32 32.41 L34 31.64 L36 31.19 L38 31.1 L40 31.38 L42 32.01" stroke-opacity="0.9"/><circle cx="30.57" cy="34.5" r="1.3" fill="#53d8ca" stroke="none"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="https://scholar.google.com/scholar?q=%22Two-way%20coupled%20multiphysics%20simulation%20of%20lattice%20discrete%20particle%20model%22" target="_blank" rel="noopener">Two-way coupled multiphysics simulation of lattice discrete particle model</a>
+              <p class="pub__authors">G. Cusatis, <strong>H. Yin</strong>, M. Troemner, W. Li, E. Lale, L. Yang, L. Shen, et al.</p>
+              <p class="pub__venue">Conference proceedings</p>
+              <p class="pub__links"><a href="https://scholar.google.com/scholar?q=%22Two-way%20coupled%20multiphysics%20simulation%20of%20lattice%20discrete%20particle%20model%22" target="_blank" rel="noopener">Find</a><button type="button" class="pub__ask" data-ask-pub="icf-2025">Ask about this</button></p>
+            </div>
+          </li></ol>
+          </div>
+          <div class="pubs__year" data-year-group>
+            <h3 class="pubs__yearlabel">2024</h3>
+            <ol class="pubs__items">
+          <li class="pub" id="pub-ipc-coupling-2024" data-theme="flow">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#53d8ca" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 9 L4 5.51 L6 5.11 L8 5.13 L10 5.58 L12 6.4 L14 7.52 L16 8.79 L18 10.09 L20 11.27 L22 12.2 L24 12.77 L26 12.93 L28 12.66 L30 11.99 L32 10.98 L34 9.76 L36 8.46 L38 7.21 L40 6.16 L42 5.42" stroke-opacity="0.45"/><circle cx="11.01" cy="9" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 17.5 L4 14.94 L6 14.39 L8 14.19 L10 14.35 L12 14.86 L14 15.66 L16 16.66 L18 17.75 L20 18.82 L22 19.74 L24 20.41 L26 20.77 L28 20.76 L30 20.4 L32 19.71 L34 18.79 L36 17.72 L38 16.63 L40 15.63 L42 14.84" stroke-opacity="0.6"/><circle cx="27.05" cy="17.5" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 26 L4 25.65 L6 24.2 L8 22.94 L10 22.02 L12 21.54 L14 21.55 L16 22.05 L18 22.98 L20 24.25 L22 25.71 L24 27.2 L26 28.56 L28 29.63 L30 30.31 L32 30.51 L34 30.22 L36 29.46 L38 28.32 L40 26.93 L42 25.43" stroke-opacity="0.75"/><circle cx="23.47" cy="26" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 34.5 L4 30.98 L6 30.5 L8 30.46 L10 30.87 L12 31.68 L14 32.8 L16 34.1 L18 35.45 L20 36.7 L22 37.7 L24 38.35 L26 38.58 L28 38.35 L30 37.71 L32 36.71 L34 35.46 L36 34.12 L38 32.81 L40 31.69 L42 30.88" stroke-opacity="0.9"/><circle cx="24.65" cy="34.5" r="1.3" fill="#53d8ca" stroke="none"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="/pdf/13.pdf" target="_blank" rel="noopener">An interprocess communication-based two-way coupling approach for implicit–explicit multiphysics lattice discrete particle model simulations</a>
+              <p class="pub__authors"><strong>H. Yin</strong>, M. Troemner, W. Li, E. Lale, L. Yang, L. Shen, M. Alnaggar, G. Di Luzio, G. Cusatis</p>
+              <p class="pub__venue">Engineering Fracture Mechanics 310, 110515<span class="tag">first author</span></p>
+              <p class="pub__links"><a href="/pdf/13.pdf" target="_blank" rel="noopener">PDF</a><button type="button" class="pub__ask" data-ask-pub="ipc-coupling-2024">Ask about this</button></p>
+            </div>
+          </li></ol>
+          </div>
+          <div class="pubs__year" data-year-group>
+            <h3 class="pubs__yearlabel">2023</h3>
+            <ol class="pubs__items">
+          <li class="pub" id="pub-flm-2023" data-theme="flow">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#53d8ca" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 9 L4 10.38 L6 9.69 L8 8.92 L10 8.16 L12 7.5 L14 6.99 L16 6.71 L18 6.68 L20 6.91 L22 7.37 L24 8 L26 8.75 L28 9.52 L30 10.24 L32 10.82 L34 11.2 L36 11.34 L38 11.22 L40 10.85 L42 10.29" stroke-opacity="0.45"/><circle cx="25.59" cy="9" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 17.5 L4 18.46 L6 17.27 L8 16.1 L10 15.09 L12 14.35 L14 13.95 L16 13.94 L18 14.32 L20 15.06 L22 16.06 L24 17.22 L26 18.41 L28 19.51 L30 20.38 L32 20.93 L34 21.11 L36 20.89 L38 20.29 L40 19.39 L42 18.28" stroke-opacity="0.6"/><circle cx="35.98" cy="17.5" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 26 L4 29.31 L6 29.48 L8 29.28 L10 28.71 L12 27.84 L14 26.77 L16 25.61 L18 24.5 L20 23.55 L22 22.88 L24 22.54 L26 22.59 L28 23.01 L30 23.76 L32 24.76 L34 25.89 L36 27.04 L38 28.07 L40 28.87 L42 29.36" stroke-opacity="0.75"/><circle cx="17.41" cy="26" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 34.5 L4 37.74 L6 37.27 L8 36.49 L10 35.5 L12 34.39 L14 33.3 L16 32.33 L18 31.61 L20 31.21 L22 31.16 L24 31.49 L26 32.14 L28 33.06 L30 34.13 L32 35.25 L34 36.28 L36 37.12 L38 37.66 L40 37.86 L42 37.69" stroke-opacity="0.9"/><circle cx="7.24" cy="34.5" r="1.3" fill="#53d8ca" stroke="none"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="/pdf/9.pdf" target="_blank" rel="noopener">Flow Lattice Model for the simulation of chemistry dependent transport phenomena in cementitious materials</a>
+              <p class="pub__authors"><strong>H. Yin</strong>, A. Cibelli, S. A. Brown, L. Yang, L. Shen, M. Alnaggar, G. Cusatis, G. Di Luzio</p>
+              <p class="pub__venue">European Journal of Environmental and Civil Engineering 28 (5), 1039–1063<span class="tag">first author</span></p>
+              <p class="pub__links"><a href="/pdf/9.pdf" target="_blank" rel="noopener">PDF</a><button type="button" class="pub__ask" data-ask-pub="flm-2023">Ask about this</button></p>
+            </div>
+          </li>
+          <li class="pub" id="pub-mass-timber-2023" data-theme="cells">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#e8ab62" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.87 34.69A6 6 0 0 0 4.87 28.69"/><path d="M18.37 34.69A13.5 13.5 0 0 0 4.87 21.19"/><path d="M22.87 34.69A18 18 0 0 0 4.87 16.69"/><path d="M30.37 34.69A25.5 25.5 0 0 0 4.87 9.19"/><path d="M34.87 34.69A30 30 0 0 0 4.87 4.69"/><path d="M42.37 34.69A37.5 37.5 0 0 0 4.87 -2.81"/><path d="M7.86 34.43L44.72 31.2" stroke-opacity="0.45"/><path d="M7.77 33.91L43.51 24.34" stroke-opacity="0.45"/><path d="M7.59 33.42L41.12 17.78" stroke-opacity="0.45"/><path d="M7.33 32.97L37.64 11.75" stroke-opacity="0.45"/><path d="M6.99 32.57L33.16 6.4" stroke-opacity="0.45"/><path d="M6.59 32.23L27.81 1.92" stroke-opacity="0.45"/><path d="M6.14 31.97L21.78 -1.56" stroke-opacity="0.45"/><path d="M5.65 31.79L15.22 -3.95" stroke-opacity="0.45"/><path d="M5.13 31.7L8.36 -5.16" stroke-opacity="0.45"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="https://scholar.google.com/scholar?q=%22Orthotropic%20hygroscopic%20behavior%20of%20mass%20timber%3A%20theory%2C%20computation%2C%20and%20experimental%20validation%22" target="_blank" rel="noopener">Orthotropic hygroscopic behavior of mass timber: theory, computation, and experimental validation</a>
+              <p class="pub__authors">D. Tong, S. A. Brown, <strong>H. Yin</strong>, D. Corr, E. Landis, G. Di Luzio, G. Cusatis</p>
+              <p class="pub__venue">Materials and Structures 56 (6), 109</p>
+              <p class="pub__links"><a href="https://scholar.google.com/scholar?q=%22Orthotropic%20hygroscopic%20behavior%20of%20mass%20timber%3A%20theory%2C%20computation%2C%20and%20experimental%20validation%22" target="_blank" rel="noopener">Find</a><button type="button" class="pub__ask" data-ask-pub="mass-timber-2023">Ask about this</button></p>
+            </div>
+          </li>
+          <li class="pub" id="pub-ringspy-2023" data-theme="cells">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#e8ab62" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.47 37.28A6 6 0 0 0 4.47 31.28"/><path d="M17.97 37.28A13.5 13.5 0 0 0 4.47 23.78"/><path d="M22.47 37.28A18 18 0 0 0 4.47 19.28"/><path d="M29.97 37.28A25.5 25.5 0 0 0 4.47 11.78"/><path d="M34.47 37.28A30 30 0 0 0 4.47 7.28"/><path d="M41.97 37.28A37.5 37.5 0 0 0 4.47 -0.22"/><path d="M7.46 37.02L44.32 33.79" stroke-opacity="0.45"/><path d="M7.37 36.5L43.11 26.92" stroke-opacity="0.45"/><path d="M7.19 36.01L40.72 20.37" stroke-opacity="0.45"/><path d="M6.93 35.56L37.24 14.33" stroke-opacity="0.45"/><path d="M6.59 35.16L32.76 8.99" stroke-opacity="0.45"/><path d="M6.19 34.82L27.41 4.51" stroke-opacity="0.45"/><path d="M5.74 34.56L21.38 1.02" stroke-opacity="0.45"/><path d="M5.25 34.38L14.82 -1.36" stroke-opacity="0.45"/><path d="M4.73 34.29L7.96 -2.57" stroke-opacity="0.45"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="https://doi.org/10.21105/joss.04945" target="_blank" rel="noopener">RingsPy: a Python package for Voronoi mesh generation of cellular solids with radial growth pattern</a>
+              <p class="pub__authors"><strong>H. Yin</strong>, G. Cusatis</p>
+              <p class="pub__venue">Journal of Open Source Software 8 (83), 4945<span class="tag">first author</span><span class="tag">open source</span></p>
+              <p class="pub__links"><a href="/pdf/10.pdf" target="_blank" rel="noopener">PDF</a><a href="https://doi.org/10.21105/joss.04945" target="_blank" rel="noopener">DOI</a><a href="https://github.com/kingyin3613/ringspy" target="_blank" rel="noopener">Code</a><button type="button" class="pub__ask" data-ask-pub="ringspy-2023">Ask about this</button></p>
+            </div>
+          </li>
+          <li class="pub" id="pub-thesis-2023" data-theme="fracture">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#ff6c3f" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 24.61 L6 20.57 L10 18.62 L14 28.4 L18 14.15 L22 12.44 L26 30.04 L30 13.11 L34 15.08 L38 12.07 L42 28.71"/><path d="M20.79 37.19l-1.54 -1.09" stroke-opacity="0.5"/><path d="M26.78 14.12l2.45 1.4" stroke-opacity="0.5"/><path d="M23.05 9.09l-2.53 -1.74" stroke-opacity="0.5"/><path d="M11.83 31.73l-2.22 1.03" stroke-opacity="0.5"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="https://scholar.google.com/scholar?q=%22Discrete%20modeling%20of%20fracture%20and%20flow%20in%20porous%20quasi-brittle%20materials%20by%20capturing%20the%20internal%20structure%22" target="_blank" rel="noopener">Discrete modeling of fracture and flow in porous quasi-brittle materials by capturing the internal structure</a>
+              <p class="pub__authors"><strong>H. Yin</strong></p>
+              <p class="pub__venue">Ph.D. thesis, Northwestern University<span class="tag">thesis</span></p>
+              <p class="pub__links"><a href="https://scholar.google.com/scholar?q=%22Discrete%20modeling%20of%20fracture%20and%20flow%20in%20porous%20quasi-brittle%20materials%20by%20capturing%20the%20internal%20structure%22" target="_blank" rel="noopener">Find</a><button type="button" class="pub__ask" data-ask-pub="thesis-2023">Ask about this</button></p>
+            </div>
+          </li></ol>
+          </div>
+          <div class="pubs__year" data-year-group>
+            <h3 class="pubs__yearlabel">2022</h3>
+            <ol class="pubs__items">
+          <li class="pub" id="pub-homogenization-2022" data-theme="flow">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#53d8ca" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 9 L4 8.34 L6 9.96 L8 11.47 L10 12.71 L12 13.54 L14 13.88 L16 13.67 L18 12.95 L20 11.8 L22 10.34 L24 8.73 L26 7.15 L28 5.77 L30 4.75 L32 4.2 L34 4.17 L36 4.68 L38 5.66 L40 7.01 L42 8.58" stroke-opacity="0.45"/><circle cx="33.35" cy="9" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 17.5 L4 21.16 L6 21.43 L8 21.27 L10 20.7 L12 19.78 L14 18.6 L16 17.3 L18 16.03 L20 14.92 L22 14.09 L24 13.63 L26 13.61 L28 14.01 L30 14.79 L32 15.88 L34 17.14 L36 18.44 L38 19.64 L40 20.6 L42 21.22" stroke-opacity="0.6"/><circle cx="33.1" cy="17.5" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 26 L4 23.83 L6 23.43 L8 23.32 L10 23.49 L12 23.95 L14 24.62 L16 25.45 L18 26.35 L20 27.2 L22 27.92 L24 28.43 L26 28.67 L28 28.62 L30 28.28 L32 27.69 L34 26.91 L36 26.03 L38 25.15 L40 24.37 L42 23.76" stroke-opacity="0.75"/><circle cx="18.28" cy="26" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 34.5 L4 34.95 L6 33.54 L8 32.24 L10 31.18 L12 30.49 L14 30.24 L16 30.46 L18 31.13 L20 32.16 L22 33.46 L24 34.86 L26 36.23 L28 37.41 L30 38.27 L32 38.71 L34 38.69 L36 38.21 L38 37.32 L40 36.12 L42 34.74" stroke-opacity="0.9"/><circle cx="35.53" cy="34.5" r="1.3" fill="#53d8ca" stroke="none"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="https://arxiv.org/abs/2209.01420" target="_blank" rel="noopener">Homogenization of discrete diffusion models by asymptotic expansion</a>
+              <p class="pub__authors">J. Eliáš, <strong>H. Yin</strong>, G. Cusatis</p>
+              <p class="pub__venue">International Journal for Numerical and Analytical Methods in Geomechanics</p>
+              <p class="pub__links"><a href="https://arxiv.org/abs/2209.01420" target="_blank" rel="noopener">arXiv</a><button type="button" class="pub__ask" data-ask-pub="homogenization-2022">Ask about this</button></p>
+            </div>
+          </li>
+          <li class="pub" id="pub-ldpm-thermal-2022" data-theme="fracture">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#ff6c3f" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 28.35 L6 23.76 L10 25.35 L14 19.15 L18 25.35 L22 12.92 L26 24.9 L30 17.31 L34 23.49 L38 29.17 L42 17.98"/><path d="M31.76 35.62l-2.36 -2.86" stroke-opacity="0.5"/><path d="M27.32 37.35l-2.59 -2.74" stroke-opacity="0.5"/><path d="M14.08 26.63l-2.33 -0.91" stroke-opacity="0.5"/><path d="M10.88 19.55l1.29 -0.38" stroke-opacity="0.5"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="https://www.sciencedirect.com/science/article/abs/pii/S002074032200501X" target="_blank" rel="noopener">Mesoscopic discrete modeling of multiaxial load-induced thermal strain of concrete at high temperature</a>
+              <p class="pub__authors">L. Shen, H. Zhang, G. Di Luzio, <strong>H. Yin</strong>, L. Yang, G. Cusatis</p>
+              <p class="pub__venue">International Journal of Mechanical Sciences 232, 107613</p>
+              <p class="pub__links"><a href="https://www.sciencedirect.com/science/article/abs/pii/S002074032200501X" target="_blank" rel="noopener">Link</a><button type="button" class="pub__ask" data-ask-pub="ldpm-thermal-2022">Ask about this</button></p>
+            </div>
+          </li>
+          <li class="pub" id="pub-iga-beam-2022" data-theme="cells">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#e8ab62" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13.13 39.07A6 6 0 0 0 7.13 33.07"/><path d="M20.63 39.07A13.5 13.5 0 0 0 7.13 25.57"/><path d="M25.13 39.07A18 18 0 0 0 7.13 21.07"/><path d="M32.63 39.07A25.5 25.5 0 0 0 7.13 13.57"/><path d="M37.13 39.07A30 30 0 0 0 7.13 9.07"/><path d="M44.63 39.07A37.5 37.5 0 0 0 7.13 1.57"/><path d="M10.12 38.8L46.98 35.58" stroke-opacity="0.45"/><path d="M10.03 38.29L45.77 28.71" stroke-opacity="0.45"/><path d="M9.85 37.8L43.39 22.16" stroke-opacity="0.45"/><path d="M9.59 37.35L39.9 16.12" stroke-opacity="0.45"/><path d="M9.26 36.94L35.42 10.78" stroke-opacity="0.45"/><path d="M8.86 36.61L30.08 6.3" stroke-opacity="0.45"/><path d="M8.4 36.35L24.04 2.81" stroke-opacity="0.45"/><path d="M7.91 36.17L17.49 0.43" stroke-opacity="0.45"/><path d="M7.4 36.08L10.62 -0.78" stroke-opacity="0.45"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="https://doi.org/10.1115/1.4054438" target="_blank" rel="noopener">Generalized formulation for the behavior of geometrically curved and twisted three-dimensional Timoshenko beams and its isogeometric analysis implementation</a>
+              <p class="pub__authors"><strong>H. Yin</strong>, E. Lale, G. Cusatis</p>
+              <p class="pub__venue">Journal of Applied Mechanics 89 (7), 071003<span class="tag">first author</span></p>
+              <p class="pub__links"><a href="/pdf/6.pdf" target="_blank" rel="noopener">PDF</a><a href="https://doi.org/10.1115/1.4054438" target="_blank" rel="noopener">DOI</a><button type="button" class="pub__ask" data-ask-pub="iga-beam-2022">Ask about this</button></p>
+            </div>
+          </li></ol>
+          </div>
+          <div class="pubs__year" data-year-group>
+            <h3 class="pubs__yearlabel">2021</h3>
+            <ol class="pubs__items">
+          <li class="pub" id="pub-mortar-2021" data-theme="flow">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#53d8ca" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 9 L4 9.67 L6 10.51 L8 11.18 L10 11.61 L12 11.75 L14 11.59 L16 11.14 L18 10.46 L20 9.62 L22 8.71 L24 7.83 L26 7.08 L28 6.54 L30 6.28 L32 6.31 L34 6.63 L36 7.22 L38 8.01 L40 8.9 L42 9.8" stroke-opacity="0.45"/><circle cx="18.25" cy="9" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 17.5 L4 16.52 L6 17.17 L8 17.86 L10 18.51 L12 19.04 L14 19.41 L16 19.57 L18 19.5 L20 19.21 L22 18.73 L24 18.11 L26 17.43 L28 16.76 L30 16.17 L32 15.72 L34 15.47 L36 15.45 L38 15.65 L40 16.05 L42 16.61" stroke-opacity="0.6"/><circle cx="16.73" cy="17.5" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 26 L4 27.54 L6 27.98 L8 28.2 L10 28.18 L12 27.91 L14 27.44 L16 26.81 L18 26.09 L20 25.36 L22 24.7 L24 24.18 L26 23.87 L28 23.78 L30 23.95 L32 24.34 L34 24.91 L36 25.6 L38 26.34 L40 27.03 L42 27.62" stroke-opacity="0.75"/><circle cx="35.5" cy="26" r="1.3" fill="#53d8ca" stroke="none"/><path d="M2 34.5 L4 38.74 L6 38.04 L8 36.95 L10 35.6 L12 34.12 L14 32.68 L16 31.44 L18 30.54 L20 30.08 L22 30.1 L24 30.61 L26 31.54 L28 32.8 L30 34.25 L32 35.72 L34 37.06 L36 38.12 L38 38.78 L40 38.97 L42 38.66" stroke-opacity="0.9"/><circle cx="29.26" cy="34.5" r="1.3" fill="#53d8ca" stroke="none"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="https://www.sciencedirect.com/science/article/abs/pii/S2352710221007257" target="_blank" rel="noopener">Performance of alkali-activated cementitious composite mortar used for insulating walls</a>
+              <p class="pub__authors">C. Wang, H. Peng, L. Bian, <strong>H. Yin</strong>, M. Sofi, Z. Song, Z. Zhou</p>
+              <p class="pub__venue">Journal of Building Engineering 44, 102867</p>
+              <p class="pub__links"><a href="https://www.sciencedirect.com/science/article/abs/pii/S2352710221007257" target="_blank" rel="noopener">Link</a><button type="button" class="pub__ask" data-ask-pub="mortar-2021">Ask about this</button></p>
+            </div>
+          </li></ol>
+          </div>
+          <div class="pubs__year" data-year-group>
+            <h3 class="pubs__yearlabel">2019</h3>
+            <ol class="pubs__items">
+          <li class="pub" id="pub-tie-push-2019" data-theme="stones">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#d4c0a1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11.28 31.71L9.47 33.54L6.42 32.97L5.13 30.58L7.53 28.23L10.64 29.61Z"/><path d="M33.17 34.08L30.57 36.75L26.44 35.01L25 31.98L27.86 28.21L31.79 28.77Z"/><path d="M37.75 23.87L35.24 27.31L28.89 25.67L28.3 21.03L30.24 17.46L36.7 17.78Z"/><path d="M37.44 22.07L34.6 23.59L32.57 23L31.27 19.06L33.24 17.2L36.3 18.34Z"/><path d="M22.93 22.93L20.36 25.16L15.05 25.03L12.41 20.04L17.9 15.6L23.13 17.27Z"/><path d="M13.34 27.26L11.74 30.27L7.7 29.17L6.83 26.26L10.24 23.74L13.14 24.89Z"/><path d="M31.96 27.67L27.6 29.09L23.85 27.71L21.76 24.22L25.36 20.24L31.34 21.84Z"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="https://journals.sagepub.com/doi/abs/10.1177/0954409718805274" target="_blank" rel="noopener">Numerical and experimental analysis of single tie push tests on different shapes of concrete sleepers in ballasted tracks</a>
+              <p class="pub__authors">G. Jing, P. Aela, H. Fu, <strong>H. Yin</strong></p>
+              <p class="pub__venue">Proc. IMechE, Part F: Journal of Rail and Rapid Transit</p>
+              <p class="pub__links"><a href="https://journals.sagepub.com/doi/abs/10.1177/0954409718805274" target="_blank" rel="noopener">Link</a><button type="button" class="pub__ask" data-ask-pub="tie-push-2019">Ask about this</button></p>
+            </div>
+          </li></ol>
+          </div>
+          <div class="pubs__year" data-year-group>
+            <h3 class="pubs__yearlabel">2018</h3>
+            <ol class="pubs__items">
+          <li class="pub" id="pub-rail-joint-2018" data-theme="stones">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#d4c0a1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M38.93 21.63L35.21 24.73L30.56 24.03L27.55 17.38L31.68 12.4L39.14 14.65Z"/><path d="M24.96 31.44L23.75 32.75L20.79 33L19.69 29.05L22.6 27.94L24.5 27.97Z"/><path d="M20.96 35.43L16.71 38.29L12.31 37L10.92 31.69L16.15 27.71L20.56 30.61Z"/><path d="M30.96 23.84L27.98 26.72L21.81 25.88L20.6 21.98L24.13 18.28L28.68 18.79Z"/><path d="M30.17 35.84L26.72 40.35L22.29 39.34L20.88 33.1L25.7 30.18L30.24 32.25Z"/><path d="M16.56 38.02L13.61 39.68L11.69 38.56L11.2 35.29L12.5 34.4L15.39 34.82Z"/><path d="M15.28 31.48L10.55 35.54L5.12 34.35L3.68 30.14L8.61 25.32L12.76 25.89Z"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="/pdf/3.pdf" target="_blank" rel="noopener">Investigation of relationship between train speed and bolted rail joint fatigue life using finite element analysis</a>
+              <p class="pub__authors"><strong>H. Yin</strong>, Y. Qian, J. R. Edwards, K. Zhu</p>
+              <p class="pub__venue">Transportation Research Record 2672 (10), 85–95<span class="tag">first author</span></p>
+              <p class="pub__links"><a href="/pdf/3.pdf" target="_blank" rel="noopener">PDF</a><button type="button" class="pub__ask" data-ask-pub="rail-joint-2018">Ask about this</button></p>
+            </div>
+          </li></ol>
+          </div>
+          <div class="pubs__year" data-year-group>
+            <h3 class="pubs__yearlabel">2016</h3>
+            <ol class="pubs__items">
+          <li class="pub" id="pub-ballast-flight-2016" data-theme="stones">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#d4c0a1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M36.44 36.32L34.47 37.55L31.81 36.69L31.71 33.57L32.59 32.12L36.35 33.54Z"/><path d="M24.51 34.57L21.79 36.68L20.07 35.79L18.92 31.88L21.83 30.01L24.32 31.53Z"/><path d="M34.45 32.88L28.6 34.7L24.38 32.71L22.86 27.42L27.99 24.54L33.03 24.85Z"/><path d="M40.18 29.27L36.93 32.27L27.96 29.65L29.75 23.88L32.65 21.52L39.42 22.76Z"/><path d="M16.79 24.4L14.36 27.43L9.63 26.69L7.59 22.37L12.58 19.15L16.41 20.87Z"/><path d="M20.06 23.93L15.45 25.65L12.2 23.64L11.26 20.43L13.67 17.85L19.61 18.75Z"/><path d="M34.56 38.18L31.73 41.06L28.92 40.12L28.65 36.76L30.71 34.38L33.08 35.07Z"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="/pdf/2.pdf" target="_blank" rel="noopener">Ballast flight risk assessment based on reliability theory</a>
+              <p class="pub__authors">S. Shao, G. Jing, <strong>H. Yin</strong></p>
+              <p class="pub__venue">Int. J. Simulation: Systems, Science &amp; Technology 17, 36</p>
+              <p class="pub__links"><a href="/pdf/2.pdf" target="_blank" rel="noopener">PDF</a><button type="button" class="pub__ask" data-ask-pub="ballast-flight-2016">Ask about this</button></p>
+            </div>
+          </li></ol>
+          </div>
+          <div class="pubs__year" data-year-group>
+            <h3 class="pubs__yearlabel">2015</h3>
+            <ol class="pubs__items">
+          <li class="pub" id="pub-dem-shear-2015" data-theme="stones">
+            <span class="pub__glyph"><svg viewBox="0 0 44 44" width="44" height="44" fill="none" stroke="#d4c0a1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M24.24 19.32L21.49 21.59L19.42 20.65L18.33 18.71L19.98 16.31L23.07 16.18Z"/><path d="M39.65 24.75L37.67 28.37L32.69 26.54L32.52 23.82L34.25 21.48L38.89 21.62Z"/><path d="M35.66 24.53L33.72 27.44L30.43 26.79L29.94 23.75L32.02 21.29L33.94 22.21Z"/><path d="M19.8 26.57L17.42 29.99L10.73 28.36L10.17 24.11L15.09 18.38L19.1 19.24Z"/><path d="M28.71 31.12L24.49 35.09L19.67 34.31L17.28 29.42L21.23 25.33L27.1 26.61Z"/><path d="M37.74 30.31L35.42 33.3L30.67 32.84L28.98 27.95L32.24 23.99L37.32 25.6Z"/><path d="M20.54 34.33L16.26 36.73L12.68 34.46L11.85 29.83L15.8 27.61L20.3 28.81Z"/></svg></span>
+            <div class="pub__body">
+              <a class="pub__title" href="https://www.sciencedirect.com/science/article/abs/pii/S0263224114005594" target="_blank" rel="noopener">Analysis of ballast direct shear tests by discrete element method under different normal stress</a>
+              <p class="pub__authors">Z. Wang, G. Jing, Q. Yu, <strong>H. Yin</strong></p>
+              <p class="pub__venue">Measurement 63, 17–24</p>
+              <p class="pub__links"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0263224114005594" target="_blank" rel="noopener">Link</a><button type="button" class="pub__ask" data-ask-pub="dem-shear-2015">Ask about this</button></p>
+            </div>
+          </li></ol>
+          </div>
+        </div>
+      </div>
+    </section>
+      
+    <section class="path" id="path" data-state="career" data-accent="#ffd27c" aria-labelledby="h-path">
+      <div class="path__inner">
+        <h2 class="section-title" id="h-path" data-strain data-text="Path">Path</h2>
+        <p class="section-lede" data-reveal>A career, read as growth rings: one ring for every year since 2012. Hover a step to find its ring.</p>
+        <ol class="steps" data-no-indent>
+          <li class="step" data-ring="12" tabindex="0">
+            <span class="step__years">2024 – now</span>
+            <span class="step__role">Research Associate</span>
+            <span class="step__place">Department of Engineering, University of Cambridge</span>
+            <span class="step__detail">Cambridge Solid Mechanics Group, with Vikram Deshpande.</span>
+          </li>
+          <li class="step" data-ring="12" tabindex="0">
+            <span class="step__years">2024</span>
+            <span class="step__role">Postdoctoral Scholar</span>
+            <span class="step__place">Civil and Environmental Engineering, Northwestern University</span>
+            <span class="step__detail">With Gianluca Cusatis.</span>
+          </li>
+          <li class="step" data-ring="6" tabindex="0">
+            <span class="step__years">2018 – 2023</span>
+            <span class="step__role">Ph.D., Civil Engineering</span>
+            <span class="step__place">Northwestern University</span>
+            <span class="step__detail">Thesis: Discrete Modeling of Fracture and Flow in Porous Quasi-brittle Materials by Capturing the Internal Structure. Advisor Gianluca Cusatis; committee Zdeněk Bažant, Gianluca Cusatis, Eric Landis and John Rudnicki.</span>
+          </li>
+          <li class="step" data-ring="4" tabindex="0">
+            <span class="step__years">2016 – 2018</span>
+            <span class="step__role">M.S., Civil Engineering</span>
+            <span class="step__place">University of Illinois Urbana-Champaign</span>
+            <span class="step__detail">Rail infrastructure mechanics, including a study of bolted rail joints for New York City Transit and WSP.</span>
+          </li>
+          <li class="step" data-ring="3" tabindex="0">
+            <span class="step__years">2015</span>
+            <span class="step__role">Structural Design Intern</span>
+            <span class="step__place">Beijing Institute of Architectural Design</span>
+            
+          </li>
+          <li class="step" data-ring="0" tabindex="0">
+            <span class="step__years">2012 – 2016</span>
+            <span class="step__role">B.S., Civil Engineering</span>
+            <span class="step__place">China Agricultural University</span>
+            <span class="step__detail">First research on railway ballast with the discrete element method.</span>
+          </li></ol>
+        <div class="minis">
+          <div class="mini" data-reveal><h3>Funded projects</h3><ul><li><span class="mini__title">Full-field measurement and property prediction of high-performance alloys via X-ray diffraction</span><span class="mini__meta">DARPA, U.S. Department of Defense · 2024 – now</span><span class="mini__text">In-situ, non-destructive full-field stress–strain measurement combining EDXRD and DIC. Recurrent neural operator framework that learns elastoplastic constitutive laws from noisy experimental data under realistic loading. Additively manufactured and rolled Ti-6Al-4V, Ti-6242 and Al 7075.</span></li><li><span class="mini__title">Graph-based learning and design of advanced mechanical metamaterials</span><span class="mini__meta">UKRI EPSRC, EP/X02394X/1 · 2024 – 2025</span><span class="mini__text">Theory and computation of the indentation size effect of architected solids. In-situ X-ray CT and digital volume correlation of indentation tests.</span></li><li><span class="mini__title">Computational tools for engineered wood products under dynamic loading</span><span class="mini__meta">U.S. Army Engineer Research and Development Center · 2022 – 2024</span><span class="mini__text">Mixed-mode constitutive model for dynamic and strain-rate effects in wood fracture. Dynamic connector–beam lattice (dynaCBL) for engineered wood under impact. FreeCAD-based timber structural design software for impact loading.</span></li><li><span class="mini__title">Multiscale modelling and experimentation of mass timber</span><span class="mini__meta">NSF CMMI-1762757 · 2018 – 2022</span><span class="mini__text">Generalized Timoshenko beam theory implemented with isogeometric analysis. The connector–beam lattice model for heterogeneous, anisotropic fracture of wood. End-to-end Python workflow for material modelling, structural analysis and post-processing.</span></li><li><span class="mini__title">Modified rail joint bolt-hole arrangements</span><span class="mini__meta">New York City Transit and WSP · 2017</span><span class="mini__text">Abaqus model of the 116RE bolted rail joint. Dynamic fatigue life with initial defects under varying train speeds, verified by strain measurements around bolt holes.</span></li></ul></div>
+          <div class="mini" data-reveal><h3>Teaching</h3><ul><li><span class="mini__title">3D7 Finite Element Methods</span><span class="mini__meta">Supervisor, University of Cambridge · 2025</span></li><li><span class="mini__title">MECH_ENG 327 Finite Element Methods in Mechanics</span><span class="mini__meta">Teaching assistant, Northwestern University · Fall 2020 <a href="/pdf/Evaluation_MECH_ENG327_FA20.pdf" target="_blank" rel="noopener">evaluation</a></span></li><li><span class="mini__title">CIV_ENV 216 Mechanics of Materials I</span><span class="mini__meta">Teaching assistant, Northwestern University · 2019 – 2022 <a href="/pdf/Evaluation_CIV_ENV216_WI22.pdf" target="_blank" rel="noopener">Winter 2022</a> <a href="/pdf/Evaluation_CIV_ENV216_SP21.pdf" target="_blank" rel="noopener">Spring 2021</a> <a href="/pdf/Evaluation_CIV_ENV216_SP20.pdf" target="_blank" rel="noopener">Spring 2020</a></span></li></ul><h3>Talks</h3><ul><li><a class="mini__title" href="/pdf/EMI2024_Yin_240529.pdf" target="_blank" rel="noopener">A coupling framework for multiphysics LDPM</a><span class="mini__meta">ASCE Engineering Mechanics Institute Conference, Chicago · May 2024</span></li><li><a class="mini__title" href="/pdf/EMI2022_Yin_220601.pdf" target="_blank" rel="noopener">The connector–beam lattice model</a><span class="mini__meta">ASCE Engineering Mechanics Institute Conference, Baltimore · June 2022</span></li><li><a class="mini__title" href="/pdf/NUGroup_Yin_210510.pdf" target="_blank" rel="noopener">Coupling between Abaqus solvers</a><span class="mini__meta">Group seminar, Northwestern University, Remote · May 2021</span></li><li><a class="mini__title" href="/pdf/NUGroup_Yin_190917.pdf" target="_blank" rel="noopener">Generalized Timoshenko beam theory</a><span class="mini__meta">Group seminar, Northwestern University, Evanston · October 2019</span></li></ul><h3>Patents</h3><ul><li><span class="mini__title">A water damage test device for asphalt concrete pavements</span><span class="mini__meta">CN 2014207575876 · 2015</span></li><li><span class="mini__title">A railway ballast cover plate</span><span class="mini__meta">CN 2014203065268 · 2014</span></li></ul><h3>Tools</h3><ul><li><span class="mini__meta">Python, PyTorch, C++, Fortran, MATLAB, JavaScript</span></li><li><span class="mini__meta">Abaqus user elements (UEL/VUEL), MOOSE, COMSOL, FreeCAD, Rhino</span></li><li><span class="mini__meta">Energy-dispersive X-ray diffraction, digital image correlation, X-ray CT and DVC, MTS testing, 3D printing</span></li></ul></div>
+        </div>
+      </div>
+    </section>
+      
+    <section class="contact" id="contact" data-state="contact" data-accent="#e8ab62" aria-labelledby="h-contact">
+      <div class="contact__inner">
+        <h2 class="section-title contact__title" id="h-contact" data-strain data-text="Write to me.">Write to me.</h2>
+        <p class="section-lede" data-reveal>For collaborations on measurement-driven mechanics, lattice models or scientific machine learning, or just to argue about wood.</p>
+        <p class="contact__email" data-reveal data-no-indent>
+          <a href="#contact" data-email data-user="hy423" data-domain="cam.ac.uk">hy423 [at] cam.ac.uk</a>
+          <button type="button" class="copy" data-copy-email>Copy</button>
+        </p>
+        <ul class="contact__links" data-reveal data-no-indent>
+          <li><a href="https://scholar.google.com/citations?user=pB-bgC4AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+          <li><a href="https://github.com/kingyin3613" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/hao-yin-a86a95166/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="/pdf/HaoYin-CV-01012026.pdf" target="_blank" rel="noopener">CV (PDF)</a></li>
+        </ul>
+        <footer class="foot">
+          <p>© 2026 Hao Yin · 银皓. The lattice is a real mass–spring network, the learning lab trains in your browser, and the guide is Claude.</p>
+        </footer>
+      </div>
+    </section>
+    </main>
+
+    <aside class="guide" id="guide" role="dialog" aria-modal="false" aria-labelledby="guide-title" data-no-indent hidden>
+      <div class="guide__head">
+        <div class="guide__titles">
+          <h2 id="guide-title">Ask the lattice</h2>
+          <p class="guide__status" data-guide-status>Connecting…</p>
+        </div>
+        <button type="button" class="icon-btn" data-guide-new aria-label="Start a new conversation" title="New conversation">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12" /></svg>
+        </button>
+        <button type="button" class="icon-btn" data-guide-close aria-label="Close the guide" title="Close">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" /></svg>
+        </button>
+      </div>
+      <div class="guide__log" data-guide-log aria-live="polite"></div>
+      <form class="guide__form" data-guide-form>
+        <label class="sr-only" for="guide-input">Your question</label>
+        <textarea id="guide-input" rows="1" maxlength="1500" placeholder="Ask about a paper, a method, an idea…"></textarea>
+        <button type="submit" class="cell-btn" data-guide-send>Send</button>
+      </form>
+      <p class="guide__fine">Generated by AI from Hao’s public record. It can be wrong; the papers are the source of truth.</p>
+    </aside>
+
+    <div class="lens-btn" data-lens-btn hidden data-no-indent>
+      <button type="button">Explain</button>
+    </div>
+    <div class="lens" data-lens role="dialog" aria-label="Explanation" hidden data-no-indent>
+      <div class="lens__head">
+        <p class="lens__quote" data-lens-quote></p>
+        <button type="button" class="icon-btn" data-lens-close aria-label="Close explanation">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" /></svg>
+        </button>
+      </div>
+      <div class="lens__levels" role="group" aria-label="Explanation level">
+        <button type="button" data-level="curious" aria-pressed="true">Curious</button>
+        <button type="button" data-level="student" aria-pressed="false">Student</button>
+        <button type="button" data-level="expert" aria-pressed="false">Expert</button>
+      </div>
+      <div class="lens__body" data-lens-body aria-live="polite"></div>
+      <div class="lens__foot">
+        <button type="button" class="link-btn" data-lens-more>Ask a follow-up</button>
+      </div>
+    </div>
+    <noscript><style>.chapter__inner,[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
   </body>
 </html>
