@@ -1,0 +1,30 @@
+# Cloudflare Worker that proxies the website's AI features to the Claude API.
+# Deploy: npx wrangler deploy   (from this folder)
+# Secret:  npx wrangler secret put ANTHROPIC_API_KEY
+name = "hao-yin-lattice"
+main = "src/index.js"
+compatibility_date = "2026-11-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# Comma-separated origins allowed to call the API (add your custom domain here).
+ALLOWED_ORIGINS = "https://kingyin3613.github.io,http://localhost:5173,http://localhost:4173"
+# Model and effort for the guide. Haiku 5.5 is the low-cost option: "claude-haiku-5-5".
+CLAUDE_MODEL = "claude-opus-5-5"
+CLAUDE_EFFORT = "low"
+EXPLAIN_EFFORT = "low"
+
+# Per-visitor rate limits (requests per 60 s, per Cloudflare location).
+[[ratelimits]]
+name = "ASK_LIMITER"
+namespace_id = "4101"
+  [ratelimits.simple]
+  limit = 8
+  period = 60
+
+[[ratelimits]]
+name = "EXPLAIN_LIMITER"
+namespace_id = "4102"
+  [ratelimits.simple]
+  limit = 12
+  period = 60
