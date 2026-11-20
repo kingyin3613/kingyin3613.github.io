@@ -82,7 +82,7 @@ videos
 .idea
 
 # Service worker
-sw.*
+# (the old Nuxt PWA rule `sw.*` is gone: public/sw.js is the kill switch for its service worker)
 
 # macOS
 .DS_Store
@@ -92,3 +92,6 @@ sw.*
 *.swp
 static/pdf/Yin-CV-03012024.pdf
 static/pdf/Yin-CV-07282024.pdf
+
+# Cloudflare Worker local state
+.wrangler/

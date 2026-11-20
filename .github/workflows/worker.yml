@@ -1,0 +1,48 @@
+name: Test and deploy the Claude worker
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'worker/**'
+      - 'src/data/**'
+      - 'src/lab/plasticity.js'
+      - '.github/workflows/worker.yml'
+  pull_request:
+    paths:
+      - 'worker/**'
+  workflow_dispatch:
+
+jobs:
+  worker:
+    runs-on: ubuntu-latest
+    env:
+      HAS_CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: worker/package-lock.json
+
+      - name: Install
+        run: npm ci
+        working-directory: worker
+
+      - name: Test against a local stand-in for the Claude API
+        run: npm test
+        working-directory: worker
+
+      # Runs only when CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID are set as
+      # repository secrets. The Anthropic key is stored in Cloudflare once with
+      # `npx wrangler secret put ANTHROPIC_API_KEY` and never passes through GitHub.
+      - name: Deploy to Cloudflare
+        if: ${{ github.event_name != 'pull_request' && env.HAS_CF_TOKEN == 'true' }}
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: worker
