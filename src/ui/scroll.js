@@ -75,10 +75,10 @@ export function initScroll({ lattice, reduced }) {
       current = active;
       const s = sections[active];
       if (s.dataset.accent) document.documentElement.style.setProperty('--accent', s.dataset.accent);
-      for (const [id, link] of railLinks) link.setAttribute('aria-current', String(id === s.id));
-      const navId = { stones: 'stones', cells: 'stones', fracture: 'stones', flow: 'stones', light: 'stones', architecture: 'stones', laws: 'stones', ask: 'stones', lab: 'lab', publications: 'publications', path: 'path', contact: 'contact' }[s.id];
+      for (const [id, link] of railLinks) link.setAttribute('aria-current', String(id === (s.id === 'ringspy' ? 'cells' : s.id)));
+      const navId = { stones: 'stones', cells: 'stones', ringspy: 'stones', fracture: 'stones', flow: 'stones', light: 'stones', architecture: 'stones', laws: 'stones', ask: 'stones', lab: 'lab', publications: 'publications', path: 'path', contact: 'contact' }[s.id];
       for (const l of navLinks) l.setAttribute('aria-current', String(l.getAttribute('href') === '#' + navId));
-      if (rail) rail.dataset.hidden = String(!railLinks.has(s.id) && s.id !== 'lab');
+      if (rail) rail.dataset.hidden = String(!railLinks.has(s.id) && s.id !== 'lab' && s.id !== 'ringspy');
       for (const fn of listeners) fn(s.id);
     }
     if (crackTitle) {

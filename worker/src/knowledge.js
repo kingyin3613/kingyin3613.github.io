@@ -6,6 +6,7 @@ import { chapters, sections } from '../../src/data/chapters.js';
 import { publications } from '../../src/data/publications.js';
 import { path, projects, teaching, talks, patents } from '../../src/data/path.js';
 import { glossary } from '../../src/data/glossary.js';
+import { ringspy } from '../../src/data/software.js';
 
 export const SECTION_IDS = sections.map((s) => s.id);
 export const PUBLICATION_IDS = publications.map((p) => p.id);
@@ -21,6 +22,9 @@ export function record({ compact = false } = {}) {
   lines.push('');
   lines.push('## Funded projects');
   for (const p of projects) lines.push(`- ${p.title} (${p.sponsor}, ${p.years}): ${p.points.join(' ')}`);
+  lines.push('');
+  lines.push('## Open-source software');
+  lines.push(`- ${ringspy.name} (section id: ${ringspy.id}): ${ringspy.summary}`);
   lines.push('');
   lines.push('## Story chapters on the site (section id: title, years)');
   for (const c of chapters) {

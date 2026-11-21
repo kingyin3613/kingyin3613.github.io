@@ -23,7 +23,7 @@ export const TOOLS = [
   {
     name: 'navigate_site',
     description:
-      'Scroll the visitor\'s page to a section so the animated lattice shows that topic. Call this once, before writing your answer, whenever the answer is mainly about one section: stones (railway ballast, discrete elements), cells (wood, RingsPy, beams), fracture, flow (multiphysics, transport), light (X-ray diffraction and image correlation), architecture (architected solids, indentation size effects), laws (neural operators, learning constitutive laws), lab (the in-browser learning lab), publications, path (career, teaching, talks) or contact. Returns the section summary.',
+      'Scroll the visitor\'s page to a section so the animated lattice shows that topic. Call this once, before writing your answer, whenever the answer is mainly about one section: stones (railway ballast, discrete elements), cells (wood, beams), ringspy (the RingsPy software: figures, install commands, links), fracture, flow (multiphysics, transport), light (X-ray diffraction and image correlation), architecture (architected solids, indentation size effects), laws (neural operators, learning constitutive laws), lab (the in-browser learning lab), publications, path (career, teaching, talks) or contact. Returns the section summary.',
     eager_input_streaming: true,
     input_schema: {
       type: 'object',

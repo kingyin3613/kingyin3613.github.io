@@ -134,8 +134,12 @@ const raw = [
     link: 'https://doi.org/10.21105/joss.04945',
     pdf: '/pdf/10.pdf',
     code: 'https://github.com/kingyin3613/ringspy',
+    more: [
+      { label: 'PyPI', href: 'https://pypi.org/project/ringspy/' },
+      { label: 'conda-forge', href: 'https://anaconda.org/conda-forge/ringspy' },
+    ],
     tags: ['first author', 'open source'],
-    summary: 'RingsPy, open-source Python software that generates Voronoi meshes of cellular solids with radial growth patterns such as wood.',
+    summary: 'RingsPy, open-source Python software that generates Voronoi meshes of cellular solids with radial growth patterns such as wood (now v2.2.0, on PyPI and conda-forge).',
   },
   {
     id: 'thesis-2023',
