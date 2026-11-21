@@ -7,7 +7,7 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 
 const STORE = 'lattice-conversation-v1';
 const SECTION_TITLES = {
-  top: 'the beginning', stones: 'Stones', cells: 'Cells', fracture: 'Fracture', flow: 'Flow', light: 'Light',
+  top: 'the beginning', stones: 'Stones', cells: 'Cells', ringspy: 'RingsPy', fracture: 'Fracture', flow: 'Flow', light: 'Light',
   architecture: 'Architecture', laws: 'Laws', ask: 'Ask', lab: 'the learning lab', publications: 'Publications', path: 'Path', contact: 'Contact',
 };
 

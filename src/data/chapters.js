@@ -41,7 +41,7 @@ export const chapters = [
       { text: 'NSF CMMI-1762757: multiscale modelling and experiments on mass timber' },
     ],
     summary:
-      'PhD work at Northwestern University (2018–2023, advisor Gianluca Cusatis) under NSF CMMI-1762757. RingsPy (JOSS 2023) generates Voronoi meshes of cellular solids with radial growth patterns. A generalized formulation for geometrically curved and twisted 3D Timoshenko beams with isogeometric analysis (J. Appl. Mech. 2022) represents cell walls with irregular cruciform cross-sections. The connector–beam lattice (CBL) model for wood combines these beams with nonlinear connector elements (smeared-crack and cohesive laws), implemented as Abaqus UEL/VUEL subroutines for implicit and explicit analysis, optimized for more than 10 million elements with element sizes of 10–100 microns. Validated with experiments by collaborators at the University of Maine on orthotropic elasticity and growth-ring-oriented fracture. He also built an end-to-end Python workflow for material modelling, structural analysis and post-processing of timber.',
+      'PhD work at Northwestern University (2018–2023, advisor Gianluca Cusatis) under NSF CMMI-1762757. RingsPy (JOSS 2023, open source, now v2.2.0 on PyPI and conda-forge) generates Voronoi meshes of cellular solids with radial growth patterns, including hardwood vessels and rays, eccentric and spiral-grained stems, arbitrary outlines and reconstruction from CT scans; the page shows it in a RingsPy card just after this chapter. A generalized formulation for geometrically curved and twisted 3D Timoshenko beams with isogeometric analysis (J. Appl. Mech. 2022) represents cell walls with irregular cruciform cross-sections. The connector–beam lattice (CBL) model for wood combines these beams with nonlinear connector elements (smeared-crack and cohesive laws), implemented as Abaqus UEL/VUEL subroutines for implicit and explicit analysis, optimized for more than 10 million elements with element sizes of 10–100 microns. Validated with experiments by collaborators at the University of Maine on orthotropic elasticity and growth-ring-oriented fracture. He also built an end-to-end Python workflow for material modelling, structural analysis and post-processing of timber.',
     scene: 'A cross-section of wood: Voronoi cells growing in annual rings, earlywood and latewood.',
   },
   {
@@ -171,7 +171,7 @@ export const chapterIds = chapters.map((c) => c.id);
 // Extra navigation targets that are not narrative chapters.
 export const sections = [
   { id: 'top', title: 'Beginning' },
-  ...chapters.map((c) => ({ id: c.id, title: c.title })),
+  ...chapters.flatMap((c) => (c.id === 'cells' ? [{ id: c.id, title: c.title }, { id: 'ringspy', title: 'RingsPy' }] : [{ id: c.id, title: c.title }])),
   { id: 'lab', title: 'Learning lab' },
   { id: 'publications', title: 'Publications' },
   { id: 'path', title: 'Path' },

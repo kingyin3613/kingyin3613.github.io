@@ -5,6 +5,7 @@ import { chapters } from '../data/chapters.js';
 import { publications, themes } from '../data/publications.js';
 import { path, projects, teaching, talks, patents } from '../data/path.js';
 import { starters } from '../data/prompts.js';
+import { ringspy } from '../data/software.js';
 import { glyph } from './glyphs.js';
 
 export const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -26,6 +27,59 @@ function chapterHTML(c) {
         <div class="chapter__body">${c.paras.map((p) => `<p data-reveal>${esc(p)}</p>`).join('')}</div>
         ${notes}${extra}
       </div>
+    </section>`;
+}
+
+function ringspyHTML() {
+  const r = ringspy;
+  const ext = (h) => (h.startsWith('http') ? ' target="_blank" rel="noopener"' : '');
+  const figs = r.figures
+    .map(
+      (f) => `
+            <figure class="soft__fig${f.light ? ' soft__fig--light' : ''}">
+              <a href="${f.full || f.src}" data-zoom aria-label="Enlarge: ${esc(f.caption)}">
+                <img src="${f.src}" width="${f.width}" height="${f.height}" alt="${esc(f.alt)}" loading="lazy" decoding="async">
+              </a>
+              <figcaption>${esc(f.caption)}</figcaption>
+            </figure>`,
+    )
+    .join('');
+  const install = r.install
+    .map(
+      (i) => `
+            <div class="soft__cmd"><span class="soft__cmdlabel">${esc(i.label)}</span><code>${esc(i.cmd)}</code><button type="button" class="copy" data-copy-cmd="${esc(i.cmd)}" aria-label="Copy the ${esc(i.label)} command">Copy</button></div>`,
+    )
+    .join('');
+  return `
+    <section class="soft" id="${r.id}" data-state="cells" data-accent="#c9a27a" aria-labelledby="h-${r.id}">
+      <div class="soft__inner" data-no-indent>
+        <div class="soft__head">
+          <p class="soft__kicker" data-reveal>Open source · <a href="${r.links[0].href}/releases"${ext(r.links[0].href)}>${esc(r.version)}</a></p>
+          <h3 class="soft__title" id="h-${r.id}" data-reveal>${esc(r.name)}</h3>
+          <p class="soft__tagline" data-reveal>${esc(r.tagline)}</p>
+        </div>
+        <div class="soft__grid">
+          <div class="soft__media" data-reveal>
+            <video class="soft__video" data-soft-video muted loop playsinline preload="none" poster="${r.video.poster}" width="800" height="450" aria-label="${esc(r.video.alt)}">
+              <source src="${r.video.mp4}" type="video/mp4">
+            </video>
+            <button type="button" class="soft__play" data-soft-play aria-label="Pause the animation" hidden>Pause</button>
+          </div>
+          <div class="soft__text">
+            <p data-reveal>${esc(r.lede)}</p>
+            <ul class="soft__features" data-reveal>${r.features.map((f) => `<li>${esc(f)}</li>`).join('')}</ul>
+            <div class="soft__install" data-reveal>${install}
+            </div>
+            <ul class="soft__links" data-reveal>${r.links.map((l) => `<li><a href="${l.href}"${ext(l.href)}>${esc(l.label)}</a></li>`).join('')}</ul>
+          </div>
+        </div>
+        <div class="soft__figs" data-reveal>${figs}
+        </div>
+      </div>
+      <dialog class="zoom" data-zoom-dialog aria-label="Enlarged figure">
+        <form method="dialog"><button class="icon-btn zoom__close" aria-label="Close">✕</button></form>
+        <img alt="">
+      </dialog>
     </section>`;
 }
 
@@ -85,6 +139,7 @@ function pubHTML(p) {
   if (p.link) links.push(`<a href="${p.link}" target="_blank" rel="noopener">${esc(p.linkLabel || (p.link.includes('doi.org') ? 'DOI' : 'Link'))}</a>`);
   if (!p.pdf && !p.link) links.push(`<a href="${p.href}" target="_blank" rel="noopener">Find</a>`);
   if (p.code) links.push(`<a href="${p.code}" target="_blank" rel="noopener">Code</a>`);
+  for (const x of p.more || []) links.push(`<a href="${x.href}" target="_blank" rel="noopener">${esc(x.label)}</a>`);
   links.push(`<button type="button" class="pub__ask" data-ask-pub="${p.id}">Ask about this</button>`);
   const tags = (p.tags || []).map((t) => `<span class="tag">${esc(t)}</span>`).join('');
   return `
@@ -196,7 +251,10 @@ function contactHTML() {
 }
 
 export function renderSections(html) {
-  const before = chapters.filter((c) => c.id !== 'ask').map(chapterHTML).join('');
+  const before = chapters
+    .filter((c) => c.id !== 'ask')
+    .map((c) => chapterHTML(c) + (c.id === 'cells' ? ringspyHTML() : ''))
+    .join('');
   const ask = chapterHTML(chapters.find((c) => c.id === 'ask'));
   const rail = chapters
     .map((c) => `<li><a href="#${c.id}" data-rail="${c.id}"><span class="rail__tick"></span><span class="rail__label">${esc(c.title)}</span></a></li>`)

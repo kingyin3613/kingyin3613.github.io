@@ -9,6 +9,7 @@ import { initLab } from './ui/lab.js';
 import { initPublications } from './ui/publications.js';
 import { initPath } from './ui/path.js';
 import { initContact } from './ui/contact.js';
+import { initSoftware } from './ui/software.js';
 import { initGuide } from './ai/guide.js';
 import { initLens } from './ai/lens.js';
 
@@ -22,6 +23,7 @@ initLab({ reduced });
 initPublications();
 initPath({ lattice });
 initContact();
+initSoftware({ reduced });
 const guide = initGuide({ lattice, scroll });
 initLens({ guide });
 

@@ -4,10 +4,12 @@ import { chapters } from '../data/chapters.js';
 import { publications } from '../data/publications.js';
 import { glossary } from '../data/glossary.js';
 import { profile } from '../data/profile.js';
+import { ringspy } from '../data/software.js';
 
 const ch = (id) => chapters.find((c) => c.id === id);
 
 const intents = [
+  { re: /(ringspy|pip install|conda|pypi|install)/i, reply: () => ({ text: ringspy.summary, actions: [{ name: 'navigate_site', view: { section: 'ringspy' } }, { name: 'show_publications', view: { ids: ['ringspy-2023'] } }] }) },
   { re: /\b(twelve|12|kid|child|simple|eli5|non-?expert)\b/i, reply: () => ({
     text: 'Imagine a material as a crowd of tiny pieces holding hands. **Hao** builds computer models of those crowds: stones under railways, cells inside wood, cracks, water seeping through concrete. Then he shines X-rays through metal to see how its atoms stretch, and teaches a computer to learn the rules of how the metal will bend next. Those rules depend on everything the metal has been through, so the computer has to learn a kind of **memory**.',
     actions: [{ name: 'navigate_site', view: { section: 'laws' } }],
